@@ -29,8 +29,8 @@ else
 	echo "downloading neccesary python packages..."
 	wget -O ${DP}/Python-2.6.tgz $P26
 	wget -O ${DP}/Python-2.7.5.tgz $P27
-	tar -C ${DP} xzf ${DP}/Python-2.6.tgz
-	tar -C ${DP} xzf ${DP}/Python-2.7.5.tgz
+	tar -C ${DP} -xzf ${DP}/Python-2.6.tgz
+	tar -C ${DP} -xzf ${DP}/Python-2.7.5.tgz
 	mv ${DP}/Python-2.7.5 ${DP}/Python-2.7
 fi
 
@@ -111,7 +111,7 @@ chmod 755 ${P}/CONTROL/postrm
 
 mkdir -p ${P}${PLUGINPATH}
 cp -rp ${D}/plugin/* ${P}${PLUGINPATH} 2> /dev/null
-rm ${P}${PLUGINPATH}/hsubtitles.json
+rm ${P}${PLUGINPATH}/hsubtitles.json 2> /dev/null
 
 echo "creating locales..." 
 msgfmt ${P}${PLUGINPATH}/locale/cs/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/cs/LC_MESSAGES/SubsSupport.mo
