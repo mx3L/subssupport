@@ -1,0 +1,1210 @@
+msgid ""
+msgstr "Project-Id-Version: SubsSupport\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-06 19:28+0100\n"
+"PO-Revision-Date: 2014-04-06 19:28+0100\n"
+"Last-Translator: mx3L <mxfitsat@gmail.com>\n"
+"Language-Team: mx3L, Vlad Kuzba <mxfitsat@gmail.com>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ../../../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: e2_utils.py:51
+msgid "Language selection"
+msgstr "Výběr jazyka"
+
+#: e2_utils.py:111
+msgid "Type text of picture"
+msgstr "Opište text z obrázku"
+
+#: e2_utils.py:414
+msgid "unpack error: cannot get subname"
+msgstr "chyba při rozbalování: nelze získat subname"
+
+#: e2_utils.py:430
+msgid "unpack error: cannot open archive"
+msgstr "chyba při rozbalování: nelze otevřít archiv"
+
+#: subtitles.py:261
+msgid "red"
+msgstr "červená"
+
+#: subtitles.py:262
+msgid "grey"
+msgstr "šedá"
+
+#: subtitles.py:263
+msgid "green"
+msgstr "zelená"
+
+#: subtitles.py:264
+msgid "purple"
+msgstr "fialová"
+
+#: subtitles.py:265
+msgid "yellow"
+msgstr "žlutá"
+
+#: subtitles.py:266
+msgid "white"
+msgstr "bílá"
+
+#: subtitles.py:267
+msgid "blue"
+msgstr "modrá"
+
+#: subtitles.py:268
+msgid "black"
+msgstr "černá"
+
+#: subtitles.py:287
+msgid "offset"
+msgstr "odchylka"
+
+#: subtitles.py:287
+msgid "border"
+msgstr "orámovaní"
+
+#: subtitles.py:301
+msgid "Block"
+msgstr "Blok"
+
+#: subtitles.py:301
+msgid "Row (experimental)"
+msgstr "Řada (experimentální)"
+
+#: subtitles.py:336
+msgid "TV show"
+msgstr "Seriál"
+
+#: subtitles.py:336
+msgid "Movie"
+msgstr "Film"
+
+#: subtitles.py:340 subtitles.py:2598
+msgid "All"
+msgstr "Všechny"
+
+#: subtitles.py:342
+msgid "Ask"
+msgstr "Zeptat se"
+
+#: subtitles.py:342
+msgid "Allowed"
+msgstr "Povolený"
+
+#: subtitles.py:342
+msgid "Not allowed"
+msgstr "Nepovolený"
+
+#: subtitles.py:343 subtitles.py:2528
+msgid "Language"
+msgstr "Jazyk"
+
+#: subtitles.py:343 subtitles.py:2523 subtitles.py:2528 subtitles.py:3153
+msgid "Provider"
+msgstr "Poskytovatel"
+
+#: subtitles.py:606
+msgid "show subtitles menu"
+msgstr "zobrazit nabídku titulků"
+
+#: subtitles.py:873
+msgid "Cannot load subtitles. Invalid path"
+msgstr "Nelze načíst titulky. Neplatná cesta."
+
+#: subtitles.py:877
+msgid "Cannot decode subtitles. Try another encoding group"
+msgstr "Nelze dekódovat titulky. Zkuste jinou kódovací skupinu."
+
+#: subtitles.py:881
+msgid "Cannot parse subtitles. Not supported subtitles format"
+msgstr "Nelze parsovat titulky.. Nepodporovaný formát titulků."
+
+#: subtitles.py:885
+msgid "Cannot parse subtitles. Invalid subtitles format"
+msgstr "Nelze parsovat titulky.. Neplatný formát titulků."
+
+#: subtitles.py:1655
+msgid "Currently choosed subtitles"
+msgstr "Aktuálně vybrané titulky"
+
+#: subtitles.py:1684
+msgid "Embedded Subtitles"
+msgstr "Vnořené titulky"
+
+#: subtitles.py:1695 subtitles.py:1698
+msgid "Encoding:"
+msgstr "Kódování:"
+
+#: subtitles.py:1698
+msgid "cannot decode"
+msgstr "nemohu dekódovat"
+
+#: subtitles.py:1700
+msgid "None"
+msgstr "Žádné"
+
+#: subtitles.py:1705 subtitles.py:2165
+msgid "Choose subtitles"
+msgstr "Vybrat titulky"
+
+#: subtitles.py:1708
+msgid "Change encoding"
+msgstr "Změnit kódování"
+
+#: subtitles.py:1709
+msgid "Subtitles settings"
+msgstr "Nastavení titulků"
+
+#: subtitles.py:1711 subtitles.py:1713
+msgid "Subtitles settings (embedded)"
+msgstr "Nastavení titulků (vnořené)"
+
+#: subtitles.py:1715
+msgid "Turn off subtitles"
+msgstr "Vypnout titulky"
+
+#: subtitles.py:1784
+msgid "Subtitles setting"
+msgstr "Nastavení titulků"
+
+#: subtitles.py:1794 subtitles.py:1888 subtitles.py:2965 subtitles.py:3133
+#: subtitles.py:3205
+msgid "Save"
+msgstr "Uložit"
+
+#: subtitles.py:1795 subtitles.py:1889 subtitles.py:2966 subtitles.py:3134
+#: subtitles.py:3206
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: subtitles.py:1796 subtitles.py:1890 subtitles.py:2967 subtitles.py:3207
+msgid "Reset Defaults"
+msgstr "Obnovit výchozí nastavení"
+
+#: subtitles.py:1803
+msgid "External subtitles setting"
+msgstr "Nastavení externích titulků"
+
+#: subtitles.py:1810
+msgid "Parsing/Rendering"
+msgstr "Analýza/vykreslování"
+
+#: subtitles.py:1811 subtitles.py:1899
+msgid "Font type"
+msgstr "Font"
+
+#: subtitles.py:1812 subtitles.py:1900
+msgid "Font size"
+msgstr "Velikost písma"
+
+#: subtitles.py:1813 subtitles.py:1901
+msgid "Position"
+msgstr "Pozice"
+
+#: subtitles.py:1814 subtitles.py:1902
+msgid "Color"
+msgstr "Barva"
+
+#: subtitles.py:1815
+msgid "Shadow type"
+msgstr "Typ stínovaní"
+
+#: subtitles.py:1817 subtitles.py:1903
+msgid "Shadow X-offset"
+msgstr "Horizontální odchylka"
+
+#: subtitles.py:1818 subtitles.py:1904
+msgid "Shadow Y-offset"
+msgstr "Vertikální odchylka"
+
+#: subtitles.py:1820
+msgid "Shadow size"
+msgstr "Šířka orámovaní"
+
+#: subtitles.py:1821
+msgid "Shadow color"
+msgstr "Barva stínu"
+
+#: subtitles.py:1822
+msgid "Encoding"
+msgstr "Kódování"
+
+#: subtitles.py:1823
+msgid "Show expert settings"
+msgstr "Zobrazit rozšířené nastavení"
+
+#: subtitles.py:1825
+msgid "Hide delay"
+msgstr "Zpoždění"
+
+#: subtitles.py:1826
+msgid "Sync delay"
+msgstr "Zpoždění sync"
+
+#: subtitles.py:1827
+msgid "Player delay"
+msgstr "Zpoždění přehrávače"
+
+#: subtitles.py:1828
+msgid "Refresh delay"
+msgstr "Zpoždění obnovení"
+
+#: subtitles.py:1829
+msgid "PTS check delay"
+msgstr ""
+
+#: subtitles.py:1896
+msgid "Embedded subtitles setting"
+msgstr "Nastavení vnořených titulek"
+
+#: subtitles.py:1997
+msgid "List of Storage Devices"
+msgstr "Seznam úložných zařízení"
+
+#: subtitles.py:1999
+msgid "Parent Directory"
+msgstr "Nadřazená složka"
+
+#: subtitles.py:2043
+msgid "Choose from embedded subtitles"
+msgstr "Vybrat z vnořených titulků"
+
+#: subtitles.py:2048
+msgid "Search subtitles"
+msgstr "Hledat titulky"
+
+#: subtitles.py:2094
+msgid "Choose Subtitles"
+msgstr "Vybrat titulky"
+
+#: subtitles.py:2199
+msgid "unknown"
+msgstr "neznámý"
+
+#: subtitles.py:2496
+msgid "Subtitles search"
+msgstr "Vyhledávaní titulků"
+
+#: subtitles.py:2516 subtitles.py:3146
+msgid "Title"
+msgstr "Titul"
+
+#: subtitles.py:2517 subtitles.py:3147
+msgid "Type"
+msgstr "Typ"
+
+#: subtitles.py:2519 subtitles.py:3149
+msgid "Year"
+msgstr "Rok"
+
+#: subtitles.py:2521 subtitles.py:3151
+msgid "Season"
+msgstr "Série"
+
+#: subtitles.py:2522 subtitles.py:3152
+msgid "Episode"
+msgstr "Epizóda"
+
+#: subtitles.py:2524
+msgid "Preferred languages"
+msgstr "Preferované jazyky"
+
+#: subtitles.py:2528
+msgid "Release"
+msgstr "Verze"
+
+#: subtitles.py:2528
+msgid "Size"
+msgstr "Velikost"
+
+#: subtitles.py:2528
+msgid "S"
+msgstr ""
+
+#: subtitles.py:2536
+msgid "T"
+msgstr ""
+
+#: subtitles.py:2536
+msgid "F"
+msgstr ""
+
+#: subtitles.py:2545
+msgid "Update Expression"
+msgstr "Aktualizovat hl. výraz"
+
+#: subtitles.py:2547
+msgid "Search"
+msgstr "Hledat"
+
+#: subtitles.py:2549
+msgid "Settings"
+msgstr "Nastavení"
+
+#: subtitles.py:2677
+msgid ""
+"Update search parameters if not correct\n"
+" and press green button for search"
+msgstr "Aktualizujte parametry vyhledávání\n"
+" a spusťte vyhledávání zeleným tlačítkem"
+
+#: subtitles.py:2684 subtitles.py:2709
+msgid "loading subtitles list"
+msgstr "Načítám seznam titulků"
+
+#: subtitles.py:2730
+msgid "No subtitles found :("
+msgstr "Titulky nenalezeny:"
+
+#: subtitles.py:2731
+msgid "Try update(simplify) search expression and try again.."
+msgstr "Skuste aktualizovat(zjednodušit) hledaný výraz.."
+
+#: subtitles.py:2750
+msgid "downloading subtitles..."
+msgstr "stahuji titulky..."
+
+#: subtitles.py:2771
+msgid "cannot unpack rar sub-archive, unrar not find, please install it"
+msgstr "nemohu rozbalit rar-archiv s titulky, unrar nebyl nalezen, prosím nainstalujte ho"
+
+#: subtitles.py:2772
+msgid "opkg install unrar"
+msgstr "Instalace unrar"
+
+#: subtitles.py:2775
+msgid "unpacking..."
+msgstr "rozbaluji..."
+
+#: subtitles.py:2787
+msgid "captcha doesn't match, try again..."
+msgstr "špatně opsaný obrázek, zkuste to znovu..."
+
+#: subtitles.py:2789
+msgid "invalid credentials provided, correct them and try again"
+msgstr "nesprávný přihlasovací údaje, opravte je a skuste to znova"
+
+#: subtitles.py:2791
+msgid "no credentials provided, set them and try again"
+msgstr "chybějící přihlasovací údaje, nastavte je a skuste to znova"
+
+#: subtitles.py:2805
+msgid ""
+"There are more subtitles in unpacked archive\n"
+" please select which one you want to use"
+msgstr "V souboru je více titulků,\n"
+" vyberte, které chcete použít"
+
+#: subtitles.py:2839
+msgid ""
+"Subtitles with this name already exist\n"
+"Do you want to override them"
+msgstr "Titulky s tímhle jménem již existují\n"
+"Chcete je přepsat"
+
+#: subtitles.py:2855
+msgid "Subtitles will be downloaded in"
+msgstr "Titulky budou staženy za"
+
+#: subtitles.py:2855
+msgid "seconds"
+msgstr "sekund"
+
+#: subtitles.py:2883
+msgid "You're trying to search while other search task is not finished"
+msgstr "Snažíte se vyhledávat zatím co předešlé vyhledávaní není ukončeno"
+
+#: subtitles.py:2884
+msgid "It could greatly reduce search performance"
+msgstr "Může to velice spomalit vyhledávaní"
+
+#: subtitles.py:2885
+msgid "Do you want to continue?"
+msgstr "Chcete pokračovat?"
+
+#: subtitles.py:2888
+msgid "You cannot search while other search task is running"
+msgstr "Nemůžete vyhledávat zatím co předešlé vyhledávaní probíhá"
+
+#: subtitles.py:2986 subtitles.py:2987 subtitles.py:2988
+msgid "Preferred Language"
+msgstr "Preferovaný jazyk"
+
+#: subtitles.py:2989
+msgid "Manual search"
+msgstr "Manuální vyhledávaní"
+
+#: subtitles.py:2990
+msgid "Simultaneous search"
+msgstr "Simultánní vyhledávaní"
+
+#: subtitles.py:2991
+msgid "Sort by"
+msgstr "Zoradit dle"
+
+#: subtitles.py:2995
+msgid "Download to movie directory"
+msgstr "Stáhnout do adresára přehrávaného filmu"
+
+#: subtitles.py:2997
+msgid "Save as movie name"
+msgstr "Uložit se stejným názvem jako film"
+
+#: subtitles.py:2998
+msgid "Ask when overriding existing subtitles"
+msgstr "Zeptat se při přejmenování existujících titulků"
+
+#: subtitles.py:3000
+msgid "Download Path"
+msgstr "Stáhnout do:"
+
+#: subtitles.py:3001
+msgid "Temp Path"
+msgstr "Dočasný úložisko"
+
+#: subtitles.py:3006
+msgid "Provider name"
+msgstr "Poskytovatel"
+
+#: subtitles.py:3006
+msgid "Supported languages"
+msgstr "Podporovaný jazyky"
+
+#: subtitles.py:3006
+msgid "State"
+msgstr "Stav"
+
+#: subtitles.py:3013
+msgid "enabled"
+msgstr "zapnutý"
+
+#: subtitles.py:3013
+msgid "disabled"
+msgstr "vypnutý"
+
+#: subtitles.py:3142
+msgid "Update search parameters"
+msgstr "Aktualizujte parametre vyhledávaní"
+
+#: subtitles.py:3214
+msgid "settings"
+msgstr "nastavení"
+
+#: seek.py:159
+#, python-format
+msgid "unsupported archive %s"
+msgstr "nepodporovaný archiv %s"
+
+#: seekers/xbmc_subtitles.py:112 seekers/xbmc_subtitles.py:282
+msgid "Username"
+msgstr "Uživatelské jméno"
+
+#: seekers/xbmc_subtitles.py:113 seekers/xbmc_subtitles.py:283
+msgid "Password"
+msgstr "Heslo"
+
+#~ msgid "Subtitles Menu"
+#~ msgstr "Nabídka titulků"
+
+#~ msgid "Central and Eastern Europe"
+#~ msgstr "Střední a východní Evropa "
+
+#~ msgid "Western Europe"
+#~ msgstr "Západní Evropa "
+
+#~ msgid "Russia"
+#~ msgstr "Rusko "
+
+#~ msgid "Arabic"
+#~ msgstr "Arabština"
+
+#~ msgid "Turkish"
+#~ msgstr "Turečtina"
+
+#~ msgid "Greek"
+#~ msgstr "Řečtina"
+
+#~ msgid "N/A"
+#~ msgstr "není k dispozici"
+
+#~ msgid "Search Expression:"
+#~ msgstr "Hledaný výraz:"
+
+#~ msgid "Reload"
+#~ msgstr "Znovu načíst"
+
+#~ msgid "Set search expression"
+#~ msgstr "Prosím vložte hledaný výraz"
+
+#~ msgid "Use"
+#~ msgstr "Použít"
+
+#~ msgid "Directory browser"
+#~ msgstr "Procházet adresáře"
+
+#~ msgid "Edit settings"
+#~ msgstr "Upravit nastavení"
+
+#~ msgid "repeat playlist"
+#~ msgstr "opakovat playlist"
+
+#~ msgid "save playlist on exit"
+#~ msgstr "uložit playlist při ukončení"
+
+#~ msgid "save last directory on exit"
+#~ msgstr "uložit poslední adresář při ukončení"
+
+#~ msgid "start directory"
+#~ msgstr "výchozí adresář"
+
+#~ msgid "sorting of playlists"
+#~ msgstr "řazení playlistů"
+
+#~ msgid "show in extensions menu"
+#~ msgstr "zobrazit v nabídce rozšíření"
+
+#~ msgid "replace default MediaPlayer in main menu"
+#~ msgstr "nahradit původní MediaPlayer v hlavní nabídce"
+
+#~ msgid "Letterbox"
+#~ msgstr "Letterbox "
+
+#~ msgid "Pan&scan"
+#~ msgstr "Pan&scan "
+
+#~ msgid "Nonlinear"
+#~ msgstr "Nelineární"
+
+#~ msgid "Just scale"
+#~ msgstr "Jen škálovat"
+
+#~ msgid "PillarBox"
+#~ msgstr "PillarBox "
+
+#~ msgid "change aspect ratio"
+#~ msgstr "změna poměru stran"
+
+#~ msgid "Aspect"
+#~ msgstr "Poměr"
+
+#~ msgid "Policy"
+#~ msgstr "Licence"
+
+#~ msgid "Artist"
+#~ msgstr "Umělec"
+
+#~ msgid "Album"
+#~ msgstr "Album "
+
+#~ msgid "Genre"
+#~ msgstr "Žánr"
+
+#~ msgid "Add file to playlist"
+#~ msgstr "Přidat soubor do playlistu"
+
+#~ msgid "Exit mediaplayer"
+#~ msgstr "Ukončit přehrávač?"
+
+#~ msgid "show info"
+#~ msgstr "zobrazit informace"
+
+#~ msgid "Play entry"
+#~ msgstr "Přehrát záznam"
+
+#~ msgid "Pause"
+#~ msgstr "Přerušit"
+
+#~ msgid "Stop entry"
+#~ msgstr "Zastavit záznam"
+
+#~ msgid "Play from previous mark or playlist entry"
+#~ msgstr "Přehrát od předchozí značky nebo položky playlistu"
+
+#~ msgid "Play from next mark or playlist entry"
+#~ msgstr "Přehrát od další značky nebo položky playlistu"
+
+#~ msgid "Menu"
+#~ msgstr "Nabídka"
+
+#~ msgid "Jump to beginning of list"
+#~ msgstr "Přejít na začátek seznamu"
+
+#~ msgid "Jump to end of list"
+#~ msgstr "Přejít na konec seznamu"
+
+#~ msgid "Switch to playlist"
+#~ msgstr "Přepnout na playlist"
+
+#~ msgid "Switch to filelist"
+#~ msgstr "Přepnout na seznam souborů"
+
+#~ msgid "Delete playlist entry"
+#~ msgstr "Odstranit položku playlistu"
+
+#~ msgid "Clear playlist"
+#~ msgstr "Smazat playlist"
+
+#~ msgid "Shuffle playlist"
+#~ msgstr "Náhodné přehrávání playlistu"
+
+#~ msgid "Refresh subtitles"
+#~ msgstr "Obnovit titulky"
+
+#~ msgid "show event details"
+#~ msgstr "zobrazit podrobnosti události"
+
+#~ msgid "No external subtitles loaded"
+#~ msgstr "Externí titulky nejsou načteny"
+
+#~ msgid "Refreshing subtitles..."
+#~ msgstr "Synchronizace titulků..."
+
+#~ msgid "Exit media player?"
+#~ msgstr "Ukončit přehrávač?"
+
+#~ msgid "This receiver cannot decode %s streams!"
+#~ msgstr "Tento přijímač nemůže dekódovat %s proudy!"
+
+#~ msgid "Play audio-CD..."
+#~ msgstr "Přehrát audio-CD ..."
+
+#~ msgid "Add directory to playlist"
+#~ msgstr "Přidat adresář do playlistu"
+
+#~ msgid "Add files to playlist"
+#~ msgstr "Přidat soubory do playlistu"
+
+#~ msgid "Delete file"
+#~ msgstr "Smazat soubor"
+
+#~ msgid "Delete entry"
+#~ msgstr "Smazat záznam"
+
+#~ msgid "Hide player"
+#~ msgstr "Skrýt přehrávač"
+
+#~ msgid "Load playlist"
+#~ msgstr "Načíst playlist"
+
+#~ msgid "Save playlist"
+#~ msgstr "Uložit playlist"
+
+#~ msgid "Delete saved playlist"
+#~ msgstr "Smazat uložený playlist"
+
+#~ msgid "Please enter filename (empty = use current date)"
+#~ msgstr "Prosím, zadejte název souboru (prázdné = použít aktuální datum)"
+
+#~ msgid "Please select a playlist..."
+#~ msgstr "Prosím vyberte playlist ..."
+
+#~ msgid "Please select a playlist to delete..."
+#~ msgstr "Prosím vyberte playlist, který chcete odstranit ..."
+
+#~ msgid "Do you really want to delete %s?"
+#~ msgstr "Opravdu chcete odstranit %s?"
+
+#~ msgid "Delete failed!"
+#~ msgstr "Odstranění se nezdařilo!"
+
+#~ msgid "You cannot delete this!"
+#~ msgstr "Nelze smazat!"
+
+#~ msgid "Media player"
+#~ msgstr "Přehrávač médií"
+
+#~ msgid "Watch movies..."
+#~ msgstr "Sledovat filmy..."
+
+#~ msgid "View video CD..."
+#~ msgstr "Zobrazit video CD..."
+
+#~ msgid "Play music..."
+#~ msgstr "Přehrávat hudbu..."
+
+#~ msgid "Play back media files with subtitles"
+#~ msgstr "Přehrávání multimediálních souborů s titulky"
+
+#~ msgid "Title:"
+#~ msgstr "Název:"
+
+#~ msgid "Internal Subtitles"
+#~ msgstr "Titulky"
+
+#~ msgid "Internal subtitles are available"
+#~ msgstr "Titulky nie sú dostupné"
+
+#~ msgid "encoding"
+#~ msgstr "Kódovaní"
+
+#~ msgid "Do you really want to exit?"
+#~ msgstr "Chcete opustit přehrávač?"
+
+#~ msgid "No"
+#~ msgstr "Žádné"
+
+#~ msgid "ask on exit"
+#~ msgstr "zeptat se při ukončení"
+
+#~ msgid ""
+#~ "The CSFD plugin is not installed!\n"
+#~ "Please install it."
+#~ msgstr ""
+#~ "CSFD plugin není nainstalován!\n"
+#~ "Prosím nainstalujte ho."
+
+#~ msgid "Do you want to update/add archives/tools: "
+#~ msgstr "Chcete aktualizovat/přidat:"
+
+#~ msgid "Following items were successfully updated:"
+#~ msgstr "Následující položky byly úspěšně aktualizovány:"
+
+#~ msgid "Problems appeared during updating, try again later..."
+#~ msgstr "Vyskytli se problémy počas aktualizace, skuste později..."
+
+#~ msgid ""
+#~ "The changes will appear after restart of E2. Do you want to restart E2 "
+#~ "now? "
+#~ msgstr "Změny se projeví po restartu E2. Chcete nyní restartovat E2?"
+
+#~ msgid "ArchivCZSK"
+#~ msgstr "ArchivCZSK"
+
+#~ msgid "Playing CZ/SK archives"
+#~ msgstr "přehrávání CZ/SK archivů"
+
+#~ msgid "TV archives"
+#~ msgstr "TV archivy"
+
+#~ msgid "Video archives"
+#~ msgstr "Video archivy"
+
+#~ msgid "Live streams"
+#~ msgstr "Živé vysílání"
+
+#~ msgid "Archiv CZSK"
+#~ msgstr "ArchivCZSK"
+
+#~ msgid "Author: "
+#~ msgstr "Autor:"
+
+#~ msgid "Version: "
+#~ msgstr "Verze:"
+
+#~ msgid "In this moment, archive is not available, try later"
+#~ msgstr "V tuto chvíli není archiv dostupný, zkuste později."
+
+#~ msgid "Do you want to exit ArchivCZSK?"
+#~ msgstr "Chcete ukončiť archivCZSK?"
+
+#~ msgid "Downloads"
+#~ msgstr "Stáhnuté soubory"
+
+#~ msgid "Shortcuts"
+#~ msgstr "Záložky"
+
+#~ msgid "Update"
+#~ msgstr "Aktualizovat"
+
+#~ msgid "Error in updating list"
+#~ msgstr "Chyba v aktualizaci seznamu"
+
+#~ msgid "Error loading: Not accessible/supported show"
+#~ msgstr "Chyba načítání: nedostupná/nepodporovaná relace"
+
+#~ msgid "Unknown error: Not supported show"
+#~ msgstr "Neznámá chyba: nepodporovaná relace"
+
+#~ msgid "Loaded list is empty"
+#~ msgstr "Načtený seznam je prázdný"
+
+#~ msgid "Additional informations are available"
+#~ msgstr "Jsou dostupné další informace"
+
+#~ msgid "show posibilities of current item"
+#~ msgstr "zobrazí možnosti vybrané položky"
+
+#~ msgid "Open item"
+#~ msgstr "Otevřít položku"
+
+#~ msgid "Add shortcut"
+#~ msgstr "Přidat záložku"
+
+#~ msgid "Play"
+#~ msgstr "Přehrát"
+
+#~ msgid "Play and download"
+#~ msgstr "Přehraj a stahuj"
+
+#~ msgid "Download"
+#~ msgstr "Stáhnout"
+
+#~ msgid "Shortcut was successfully added"
+#~ msgstr "Záložka byla úspěšně přidána"
+
+#~ msgid "Please enter tag name"
+#~ msgstr "Prosím vložte název tag-u"
+
+#~ msgid "finished"
+#~ msgstr "hotovo"
+
+#~ msgid "finished with errors"
+#~ msgstr "hotovo s chybami"
+
+#~ msgid "Do you want to save"
+#~ msgstr "Chcete uložit"
+
+#~ msgid "to disk?"
+#~ msgstr "na disk?"
+
+#~ msgid "Do you want to continue downloading"
+#~ msgstr "Chcete pokračovat v stahování"
+
+#~ msgid "Video starts playing in few seconds..."
+#~ msgstr "Video se začne přehrávat o pár vteřin..."
+
+#~ msgid "ArchivCZSK - Download:"
+#~ msgstr "ArchivCZSK - Stahování:"
+
+#~ msgid "successfully finished."
+#~ msgstr "úspěšně dokončeno."
+
+#~ msgid "finished with errors."
+#~ msgstr "skončeno s chybami."
+
+#~ msgid "started."
+#~ msgstr "začalo."
+
+#~ msgid "The file "
+#~ msgstr "Soubor"
+
+#~ msgid "Download Status"
+#~ msgstr "Pruběh stahování"
+
+#~ msgid "Execution Progress:"
+#~ msgstr "Průběh Vykonání:"
+
+#~ msgid "show download list"
+#~ msgstr "aktuálně stahované soubory"
+
+#~ msgid "Remove"
+#~ msgstr "Odstranit"
+
+#~ msgid "Recent downloads"
+#~ msgstr "Stahované soubory"
+
+#~ msgid "Do you want to remove"
+#~ msgstr "Chcete odstranit"
+
+#~ msgid "is not downloaded yet. Do you want to play it anyway?"
+#~ msgstr "zatím není stažen. Chcete i přesto spustit přehrávaní?"
+
+#~ msgid "downloads"
+#~ msgstr "Stažené soubory"
+
+#~ msgid "Rating: "
+#~ msgstr "Hodnocení:"
+
+#~ msgid "standard player"
+#~ msgstr "Standardní přehrávač"
+
+#~ msgid "custom player (subtitle support)"
+#~ msgstr "Upravený přehrávač (podpora titulků)"
+
+#~ msgid "mipsel player"
+#~ msgstr "Mipsel přehrávač"
+
+#~ msgid "Configuration of Archiv CZSK"
+#~ msgstr "Konfigurace Archiv CZSK"
+
+#~ msgid "Configuration of ArchivCZSK"
+#~ msgstr "Konfigurace ArchivCZSK"
+
+#~ msgid "Video player Buffer"
+#~ msgstr "buffer video přehrávače"
+
+#~ msgid "AutoPlay"
+#~ msgstr "automaticky přehrávat"
+
+#~ msgid "Video player with RTMP support"
+#~ msgstr "Video přehrávač s RTMP podporou"
+
+#~ msgid "TV archive rtmp buffer"
+#~ msgstr "Buffer pro TV archivy"
+
+#~ msgid "Live rtmp streams buffer"
+#~ msgstr "Buffer pro živé vysílání"
+
+#~ msgid "Data path"
+#~ msgstr "Data"
+
+#~ msgid "Allow auto-update"
+#~ msgstr "Povolit automatickou kontrolu aktualizací"
+
+#~ msgid "Debug mode"
+#~ msgstr "Debug mód"
+
+#~ msgid "Free memory after exit"
+#~ msgstr "Uvolnit paměť po ukončení"
+
+#~ msgid "Add to main menu"
+#~ msgstr "Přidat do hlavního menu"
+
+#~ msgid "Settings of "
+#~ msgstr "Nastavení"
+
+#~ msgid "Settings of"
+#~ msgstr "Nastavení"
+
+#~ msgid "Enter the password:"
+#~ msgstr "Zadejte heslo"
+
+#~ msgid "Enter the username:"
+#~ msgstr "Zadejte přihlašovací jméno"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Invalid Location"
+#~ msgstr "Nesprávné umístění"
+
+#~ msgid "Remove shortcut"
+#~ msgstr "Odstranit záložku"
+
+#~ msgid "Shortcut"
+#~ msgstr "Záložky"
+
+#~ msgid "show/hide subtitles"
+#~ msgstr "zobrazit/skrýt titulky"
+
+#~ msgid "items"
+#~ msgstr "položky"
+
+#~ msgid "Infinity"
+#~ msgstr "Nekonečno"
+
+#~ msgid "name"
+#~ msgstr "názvu"
+
+#~ msgid "year"
+#~ msgstr "roku"
+
+#~ msgid "date"
+#~ msgstr "datumu"
+
+#~ msgid "rating"
+#~ msgstr "hodnocení"
+
+#~ msgid "Use alternate stream server?"
+#~ msgstr "Použít alternativní streamovací server"
+
+#~ msgid "Search history"
+#~ msgstr "Historie vyhledávání"
+
+#~ msgid "Order by"
+#~ msgstr "Seřadit podle"
+
+#~ msgid "Filter languages - comma-separated e.g.: cz,sk"
+#~ msgstr "Filtrovat jazyk - jazyky oddělené čárkou např. cz,sk"
+
+#~ msgid "Include movies without language when filtering"
+#~ msgstr "Zobrazit filmy bez uvedeného jazyku pri filtrování"
+
+#~ msgid "Show 18+ content"
+#~ msgstr "Zobrazovat obsah 18+"
+
+#~ msgid "Listings"
+#~ msgstr "Stránkování"
+
+#~ msgid "Plugin to play TV video archive http://www.b-tv.cz"
+#~ msgstr "Plugin pro přehrávání videí z archívu http://www.b-tv.cz"
+
+#~ msgid "Plugin to play TV video archive Huste.tv"
+#~ msgstr "Plugin pro přehrávání videí z archívu Huste.tv"
+
+#~ msgid "Plugin to play TV video archive Metropol.cz"
+#~ msgstr "Plugin pro přehrávání videí z archívu Metropol.cz"
+
+#~ msgid "Plugin to play TV video archive http://www.muvi.cz"
+#~ msgstr "Plugin pro přehrávání videí z archívu http://www.muvi.cz"
+
+#~ msgid "Plugin to play TV video archive iprima.cz/videoarchiv"
+#~ msgstr "Plugin pro přehrávání videí z archívu iprima.cz/videoarchív"
+
+#~ msgid ""
+#~ "To show your videos you need to set your username in Stream archive menu"
+#~ msgstr ""
+#~ "Pro viďení svých videí je potřebné nejprv zadat své uživatelské jméno v "
+#~ "nastavení tohto archivu."
+
+#~ msgid "Plugin to play TV video archive www.stv.sk"
+#~ msgstr "Plugin pro přehrávání videí z archívu Slovenské televize"
+
+#~ msgid "Password is not correct"
+#~ msgstr "Nesprávné tajné heslo"
+
+#~ msgid "The show can only be played on Voyo.cz page"
+#~ msgstr "Relace může být přehrána jen na Voyo.cz stránce"
+
+#~ msgid "Add tag"
+#~ msgstr "Přidat tag"
+
+#~ msgid "Popular videos"
+#~ msgstr "Nejsledovanější videa"
+
+#~ msgid "Remove tag"
+#~ msgstr "Odstranitt tag"
+
+#~ msgid "Next"
+#~ msgstr "Další strana"
+
+#~ msgid "Search on ulozto.cz"
+#~ msgstr "Vyhledávat na uložto"
+
+#~ msgid "Popular"
+#~ msgstr "Nejsledovanější videa"
+
+#~ msgid "Daily maximum (150) requests for movie was reached, try it tomorrow"
+#~ msgstr ""
+#~ "Denní maximum (150) požadavků na film bylo překročeno, zkuste znova zítra"
+
+#~ msgid ""
+#~ "Video is not available, check out if its working on the web page of "
+#~ "archive"
+#~ msgstr "Video není dostupné, zkontrolujte jestli funguje na webu"
+
+#~ msgid "Limit for downloading slots was exceeded, please try again later"
+#~ msgstr "Byl překročen limit volných slotů na stahování, zkuste později"
+
+#~ msgid "New search"
+#~ msgstr "Nové vyhledávání"
+
+#~ msgid "Previous"
+#~ msgstr "Předcházející"
+
+#~ msgid "By date"
+#~ msgstr "Dle datumu"
+
+#~ msgid "By performer"
+#~ msgstr "Dle učínkujícího"
+
+#~ msgid "By rating"
+#~ msgstr "Dle hodnocení"
+
+#~ msgid "archives"
+#~ msgstr "archivy"
+
+#~ msgid "Shortcut "
+#~ msgstr "Záložky"
+
+#~ msgid "Currently choosed subtitles: "
+#~ msgstr "Momentálne vybraté titulky"
+
+#~ msgid "Currently choosed subtitles: None"
+#~ msgstr "Momentálne vybraté titulky: Žiadne"
+
+#~ msgid "Currently active downloads"
+#~ msgstr "Momentálne prebiehajúce sťahovanie"
+
+#~ msgid "Watch content from videacesky.cz"
+#~ msgstr ""
+#~ "Sledujte videá, reklamy, seriály, články a návody zo serveru videacesky.cz"
+
+#~ msgid "Add shortcut "
+#~ msgstr "Pridať záložku"
+
+#~ msgid "Download:"
+#~ msgstr "Sťahovanie:"
+
+#~ msgid "Updated "
+#~ msgstr "Aktualizované"
+
+#~ msgid "Select path"
+#~ msgstr "Vyberte adresár"
+
+#~ msgid "Watch online content from bezvadata.cz"
+#~ msgstr ""
+#~ "Sledujte alebo sťahujte obsah zo serveru bezvadata.cz. Sťahovanie a "
+#~ "prehrávanie bez obmedzení."
+
+#~ msgid "Watch online content from movie-library.cz"
+#~ msgstr ""
+#~ "Sledujte online obsah ze serveru movie-library.cz. Plugin podporuje "
+#~ "prehrávanie a sťahovanie videí ze serveru uloz.to bez nutnosti video "
+#~ "sťahovať alebo vždy opisovať kontrolný kód!!. Ďalej je možné vyhľadávať "
+#~ "videá ako na movie-library.cz tak aj priamo na ulozto.cz a taktiež "
+#~ "sťahovať videá na disk."
+
+#~ msgid "Watch online tales mostly in czech language on pohadkar.cz"
+#~ msgstr ""
+#~ "Sledujte online rozprávky zo serveru pohádkář.cz. Ideálne pre zabavenie "
+#~ "detí."
+
+#~ msgid "Watch news about games on re-play.cz"
+#~ msgstr "Sledujte novinky o hrách na re-play.cz"
+
+#~ msgid "Watch online series from serialycz.cz"
+#~ msgstr "Sledujte seriály na serialycz.cz"
+
+#~ msgid "Additional informations are available, press INFO button"
+#~ msgstr "Sú dostupné ďaľšie informácie, stlačte tlačidlo INFO"
+
+#~ msgid "Plugin to play TV video archive from CT iVysilani"
+#~ msgstr "Plugin pre prehrávanie videí z archívu ČT iVysílání"
+
+#~ msgid "Plugin to play TV video archive joj.sk"
+#~ msgstr "Plugin pre prehrávanie videí z archívu joj.sk"
+
+#~ msgid "Plugin to play TV video archive Voyo.cz"
+#~ msgstr "Plugin pre prehrávanie videí z archívu Voyo.cz"
+
+#~ msgid "Watch online HD content from koukni.cz"
+#~ msgstr "Sledujte online HD obsah zo serveru koukni.cz"
+
+#~ msgid "XML"
+#~ msgstr "XML"
+
+#~ msgid "Turn on xml writing/loading?"
+#~ msgstr "Zapnúť xml zapisovanie/načítavanie"
+
+#~ msgid "Plugin to play videos form FilmyCZ.com"
+#~ msgstr "Plugin pre prehrávanie videí z FilmyCZ.com"
+
+#~ msgid ""
+#~ "Plugin to play TV video archive from markiza.sk including archive doma tv "
+#~ "and fun tv "
+#~ msgstr ""
+#~ "Plugin pre prehrávanie videí z archívu markiza.sk vrátane doma tv a fun "
+#~ "tv... "
+
+#~ msgid "Add tag:"
+#~ msgstr "Pridať tag:"
+
+#~ msgid "Configuration of ArchívCZSK"
+#~ msgstr "Konfigurácia ArchívCZSK"
+
+#~ msgid "English"
+#~ msgstr "Anglicky"
+
+#~ msgid "Slovak"
+#~ msgstr "Slovensky"
+
+#~ msgid "Czech"
+#~ msgstr "Česky"
+
+#~ msgid "Český"
+#~ msgstr "Česky"
+
+#~ msgid "Shortcut was succesfully added"
+#~ msgstr "Záložka bola úspešne pridaná"
+
+#~ msgid "Error loading:  Not accessible/supported show"
+#~ msgstr "Chyba načítania: nedostupná/nepodporovaná relácia"

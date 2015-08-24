@@ -1,0 +1,1241 @@
+{3339}{3404}DONNIE DARKO
+{6246}{6307}Budu volit Dukakise.
+{6409}{6459}Dobrá...
+{6497}{6550}Moná, kdybys mìla svoje vlastní dìti,
+{6551}{6620}které by potøebovali nìco na sebe|a ty bys na to nemìla,
+{6622}{6679}protoe polovina vıplaty|tvého manela
+{6680}{6751}bude pro vládu, tak bys toho mohla litovat.
+{6753}{6793}Manelova vıplata?
+{6854}{6938}Mimochodem, nebudu ádného hledat,|tak do 30.
+{6939}{6990}Budeš poøád pracovat v Yarn Barn?
+{6992}{7051}Slyšel jsem, e je to dobré místo pro vıchovu dìtí.
+{7052}{7094}Fakt vtipnı.
+{7095}{7159}Ne, myslím e naše spoleèné chvíle konèí.
+{7161}{7198}Pøíští rok pùjde na Harvard.
+{7200}{7241}Ale mami, ještì jsem se tam ani nedostala.
+{7243}{7299}Opravdu si myslíš, e|se Michael Dukakis bude starat
+{7301}{7351}o tenhle kraj, ne si nìkoho vezmeš?
+{7353}{7391}Jo, myslím e jo.
+{7393}{7467}- A kde si mùu já nìkoho sehnat?|- A po osmı tøídì.
+{7503}{7550}Coe?
+{7551}{7610}Donnie, jsi fakt blbec.
+{7611}{7659}Áá, Elizabeth!
+{7661}{7719}Jsi trochu zaujatá.
+{7721}{7770}Moná jsi jednièka v terapii.
+{7772}{7822}Potom by máma a táta|mohli nìkomu platit 200$ za hodinu
+{7824}{7891}aby mohli poslouchat tvoje názory,|tak my fakt nemusíme.
+{7916}{7970}Dobøe.|Chceš abych øekla mámì a tátovi,
+{7971}{8010}proè jsi pøestal brát ty léky?
+{8011}{8075}- Jsi èubka!|- Prosím?!
+{8077}{8121}Prosím.
+{8123}{8175}Øekl jsi, e jsem "èubka"?
+{8177}{8247}- Elizabeth, to staèí.|- Vyli si.
+{8249}{8308}Elizabeth, a mùeš mi vysvìtlit jak?
+{8310}{8353}- Chceš abych ti to øekla?|- Jo.
+{8355}{8418}Tohle nebudem probírat u veèeøe.
+{8419}{8466}- To staèí.
+{8691}{8771}Co je èubka?
+{8988}{9042}Ètu si.|Odejdi z mého pokoje.
+{9129}{9175}Kam pùjdeš v noci?
+{9211}{9266}Mùeš prostì jenom odejít?
+{9267}{9311}Udìlal si to s tím toaleákem|na dùm Johnsonù?
+{9313}{9350}A proto si sem pøišla?
+{9351}{9380}Ne.
+{9410}{9470}Tìch blbostí sem nechal v šestı tøídì, mami.
+{9472}{9522}Co se stalo mému synovi?
+{9524}{9569}Nemùu tì dneska poznat.
+{9571}{9634}Tak proè nezaèneš brát zas ty|zatracenı prášky?
+{9879}{9906}Kurvo.
+{10117}{10185}Náš syn mì nazval kurvou.
+{10252}{10305}Nejsi kurva.
+{10340}{10423}Zlobíš, ale nejsi kurva.
+{11344}{11394}{Y:i}Chci bıt prezidentem Spojenıch Státù,
+{11395}{11458}{Y:i}kterı si bude jistı tím,|{Y:i}e u nikdy nebude vyjednávat
+{11459}{11515}{Y:i}s diktátorem Panamy co se drog tıèe.
+{11516}{11554}{Y:i}- e u nikdy...|- Dukakis!
+{11556}{11599}{Y:i}nebudeme ani trochu tolerovat pomoc|{Y:i}usvìdèenıch obchodníkù s drogami.
+{11600}{11643}Zkurvysyn.
+{11645}{11681}{Y:i}Panama je pøátelskı stát.
+{11683}{11741}{Y:i}Byl jsem tam, a mluvil|{Y:i}s prezidentem Panamy...
+{11743}{11789}- Øekni, George!|{Y:i}- ohlednì...
+{11791}{11867}{Y:i}jejich vypranıch penìz.|{Y:i}A byl tam i pan Noriega,
+{11868}{11915}{Y:i}ale to jsme ještì nemìli ádnı dùkaz.
+{11917}{11985}{Y:i}Jakmile jsme mìli dùkaz,|{Y:i}obalovali jsme ho.
+{12060}{12107}{Y:i}Vstávej.
+{12630}{12714}{Y:i}Sleduji tì.
+{13343}{13403}{Y:i}Pojï blí.
+{13633}{13678}{Y:i}Blí.
+{14253}{14291}{Y:i}28 dní...
+{14335}{14382}{Y:i}6 hodin...
+{14384}{14457}{Y:i}42 minut...
+{14459}{14522}{Y:i}12 sekund.
+{14643}{14709}{Y:i}To je doba za kterou svìt
+{14711}{14761}{Y:i}zanikne.
+{14763}{14815}Proè?
+{16315}{16360}Hochu?
+{16362}{16415}Hochu.|Donnie Darko?
+{16417}{16475}Donnie Darko.
+{16476}{16511}Co se tady kruci dìje?
+{16513}{16567}- Kdo to je?|- Dítì Eddieho Darka.
+{16568}{16624}Omlouvám se za to Jime.|Je to dítì ze sousedství.
+{16662}{16704}Myslíš e hrál golf pøi spaní?
+{16742}{16786}Pozor na tu rozpouštìjící se skvrnu.
+{16867}{16914}Jsi v poøádku chlapèe?
+{17067}{17147}Dr se v noci dál od høištì, ano?
+{17186}{17232}Omlouvám se dr. Fishere.
+{17234}{17282}U se to víckrát nestane.
+{17283}{17330}Nesnáším dìti.
+{17331}{17368}Pojïme hrát.
+{17419}{17469}{Y:i}Pojïme na to, uhaste to!
+{17535}{17589}Donnie, Donnie, Donnie!
+{17591}{17662}Co se stalo s vaším domem?
+{17715}{17767}- Sem nikdo nesmí.|- Já tady bydlím.
+{17769}{17813}- Øekl jsem...|- Bydlím tu!
+{17847}{17893}On mùe.
+{18019}{18072}{Y:i}...Zprávy kanálu 6.
+{18074}{18137}{Y:i}Právì jsme pøijeli na místo...
+{18478}{18514}Poèkej chvilku.
+{18515}{18571}Tady je tvùj bratr.
+{18573}{18623}Spadlo to k tobì do pokoje.
+{18625}{18686}Dávejte pozor tam dole!
+{19102}{19172}Paní Darková,|Jsem Bob Garland.
+{19174}{19216}Jsem z F.A.A.
+{19218}{19293}- Èeho?!|- Z F.A.A.
+{19295}{19360}Chceme si s vámi a vaším manelem|v soukromí promluvit.
+{19362}{19410}- V soukromí?|- Prosím.
+{19443}{19478}Dobrá.
+{19860}{19915}A... tady.
+{19917}{19971}- Jak chcete.|- Dobrá.
+{19972}{20039}Pøipravili jsme vám pokoje v hotelu.
+{20041}{20108}Trochu se vyspìte a my se tu|o to postaráme.
+{20110}{20158}- Skvìle.|- Dìkuji vám.
+{20159}{20216}Dìti pojïte, jedeme do hotelu.
+{20218}{20274}Neví odkud to pochází.
+{20275}{20312}{Y:i}To je dobré! Pøesnì tam.
+{20314}{20359}{Y:i}Nechte to tam.
+{20360}{20405}{Y:i}Ano uvate to pøesnì tady.
+{20599}{20680}{Y:i}Místní a státní dopravní policie...
+{20682}{20720}{Y:i}zaèala mezistatní pátrání po...
+{20722}{20762}Frankie Feedler.
+{20763}{20824}{Y:i}...navzdory faktu, e všechny|{Y:i}aerolinky nepovolí...
+{20826}{20878}Pamatuješ si na nìj?
+{20880}{20939}Z vysoké školy.
+{20941}{21012}{Y:i}F.A.A. podala pouze|{Y:i}mlhavé detaily...
+{21014}{21058}{Y:i}souèasné situace.
+{21059}{21117}Zemøel.
+{21119}{21170}{Y:i}Motor, kterı se oddìlil z...
+{21172}{21268}Na cestì na svoji promoci.|Pamatuješ?
+{21344}{21405}Øíkali e to byl osud.
+{21519}{21569}Jeiši.
+{21601}{21673}To samé mohou øíct o Donniem.
+{21785}{21846}Pokud to spadlo z letadla,
+{21847}{21919}tak co se s ním stalo?
+{21921}{21982}Oni to nevìdí Samantho.
+{22220}{22286}Paní Farmerová tì vezme|po tréninku domù.
+{22287}{22332}- Pa mami!|- Ahoj zlatíèko.
+{22334}{22399}Donnie hodnì štìstí.
+{22400}{22465}Mùj boe!|Dobøe, øekni mi všechno.
+{22467}{22537}- Nemohu vám to øíct.|- Ó mùj boe.
+{22539}{22599}- Èau Cherito.|- Buï zticha!
+{22601}{22647}Darko podvedls smrt!
+{22673}{22726}Jseš jako celebrity.
+{22727}{22773}Volal jsem ti mnohokrát.
+{22775}{22820}- Kde jsi byl?|- Byli jsme v hotelu.
+{22822}{22873}Mùj otec øíkal e tì vidìl|na golfovém høišti.
+{22875}{22921}Zase seš námìsíènej kámo?
+{22923}{22958}Nechci o tom mluvit.
+{22960}{23008}A teï kdy seš známej,
+{23010}{23056}by sis mìl zakouøit.
+{23147}{23208}Co se stane kdy o tom øekneš|mámì a tátovi Sam?
+{23210}{23274}Dáš Ariel do drtièe kuchyòskıch odpadkù.
+{23276}{23336}Jasnì, e jo.
+{23338}{23374}Fakt ubohı.
+{23375}{23428}Hej Cherito, dáš si cigáro?
+{23430}{23496}- Dr hubu!|- Dr hubu!
+{23498}{23561}Vra se do Èíny krávo!
+{23625}{23672}Nechte ji bejt.
+{23674}{23710}Je to dobrı co?
+{23711}{23767}Proklatì dobrá cigareta.
+{27468}{27515}"Na papírech budou nadpisy.
+{27517}{27578}Dokonce i velké gangy,|které utíkájí pøi sázení
+{27580}{27611}na zápasy wrestlingu
+{27612}{27651}a poulièní prodavaèi,|budou bráni s respektem
+{27653}{27719}jako kdy byl znièen dùm|staré Misery.
+{27747}{27804}A aèkoliv byl pro tento zámìr
+{27806}{27866}celı svùj ivot,|rozvaoval o nìm roky,
+{27867}{27956}nyní ve svıch 15ti letech|si vytøídil
+{27958}{28004}bolest z puberty."
+{28073}{28135}Co se nám Graham Greene snaí øíct
+{28137}{28185}tímto úryvkem?
+{28187}{28240}Proè se dìti vloupali do domu|staré Misery?
+{28276}{28350}- Joanie?|- Chtìli ho vykrást.
+{28352}{28424}Joanie, kdyby jsi si tu|krátkou povídku pøeèetla
+{28426}{28497}která je na 13 stran|musela bys bıt vzhùru celou noc,
+{28499}{28563}- a vìdìla bys, e dìti...|- Víš hovno.
+{28565}{28607}...našli pod matrací spousty penìz,
+{28609}{28639}ale spálily je.
+{28723}{28779}Donnie Darko,
+{28780}{28844}i po té nedávné nehodì,
+{28846}{28883}bychom rádi znali tvùj názor.
+{28885}{28985}Øíkají to dobøe,|po tom co zatopili dùm
+{28987}{29026}a znièili ho na kousky,
+{29027}{29083}tohle zboøení je podobné vıtvoru.
+{29085}{29167}Take skuteènost e opravdu|spálili peníze je ironická.
+{29169}{29237}Jenom chtìli vidìt, co se stane|kdy rozdìlí svìt od sebe.
+{29268}{29311}Chtìli zmìnit nìjaké vìci.
+{29472}{29513}Mùeme vám pomoci?
+{29515}{29561}Ano, právì jsem se zapsala
+{29563}{29610}a dali mì do špatné tøídy
+{29611}{29668}Vypadá to, e patøíte sem.
+{29709}{29755}Kam si mám sednout?
+{29830}{29903}Sedni si vedle kluka o kterém si myslíš,|e je nejroztomilejší.
+{29905}{29954}- Ticho!
+{29956}{29999}A si vybere.
+{30502}{30545}Joanie, vstávej.
+{31105}{31151}Opraváøi øíkají, e to zabere
+{31153}{31198}tak tıden ne spraví støechu.
+{31199}{31263}Ty zatracenı aerolinky nám|to pìknì posrali s tou støechou.
+{31291}{31330}Poøád nevìdí?
+{31331}{31420}- Co?|- Odkud to bylo.
+{31422}{31498}Ne. Zøejmì nám to ještì nemohou øíct.
+{31499}{31545}Asi kvùli...
+{31547}{31618}odpovídajícímu sériovému èíslu,|které shoøelo.
+{31620}{31679}Musel sem podepsat prohlášení,|e o tom s nikım nebudu mluvit.
+{31744}{31792}Take nesmíme nikomu øíkat
+{31794}{31869}- co nikdo neví?|- Ano.
+{31871}{31915}Ale, mùeš...
+{31917}{31983}Jak se jmenuje tvùj doktor?
+{31985}{32027}- Dr. Thurman tati.|- Ano.
+{32029}{32088}Dr. Thurman mùeš øíct|cokoliv budeš chtít.
+{32131}{32163}- Tati?|- Ano?
+{32165}{32205}Tati!
+{32759}{32810}ádná pošta dnes.|Snad zítra.
+{33210}{33277}Dobøe?|Co ti øíkala?
+{33436}{33475}Mám nového kamaráda.
+{33477}{33523}Skuteèného nebo imaginárního?
+{33524}{33567}Imaginárního.
+{33569}{33615}Chceš si o nìm promluvit?
+{33616}{33694}- Frank.|- Frank.
+{33695}{33764}- Co ti øíkal?|- Øekl mi a jdu za ním.
+{33766}{33827}- Za ním? Kam?|- Do budoucnosti.
+{33829}{33891}A co se stalo potom?
+{33942}{33995}A potom øekl...
+{34022}{34110}Potom mi øekl e svìt se blíí ke konci.
+{34111}{34166}A ty si myslíš e bude konec svìta?
+{34282}{34316}Ne.
+{34382}{34425}Je to blbost.
+{34463}{34562}Po celı svùj ivot,|jsem byla obìtí svého strachu.
+{34588}{34635}Láska.
+{34660}{34737}Sytila jsem strach jídlem.
+{34823}{34861}Strach.
+{35042}{35097}A jednou jsem se podívala do zrcadla.
+{35099}{35162}Nejen do zrcadla...
+{35163}{35219}Podívala jsem se skrz nìj.
+{35221}{35269}V tom obraze,
+{35271}{35317}jsem vidìla odraz svého ega.
+{35396}{35443}Dva roky, jsem si myslela,|e je to normální,
+{35444}{35503}kdy se v 10ti poèùrával v posteli.
+{35505}{35551}- Zkoušeli jsme všechno.|- Pssst!
+{35553}{35590}Ticho!
+{35641}{35711}Ale øešení tu bylo vdycky.
+{35737}{35784}U se nebojím!
+{35828}{35873}Po celé Americe,
+{35875}{35934}lidé pøicházejí aby si navzájem pomohli.
+{35936}{35988}Lidé, kteøí vìøí,
+{35990}{36043}e lidskı ivot
+{36045}{36111}je naprosto jak dùleitı,
+{36113}{36159}tak cennı,
+{36160}{36240}a tak vzácnı ne aby byl,|kontrolován strachem.
+{36329}{36403}Ahoj, jmenuji se Jim Cunningham.
+{36405}{36452}A vítejte v "Ovládáme strach."
+{36739}{36792}{Y:i}Vstávej, Donnie.
+{37589}{37661}6.ØÍJEN 1988|(ZBİVAJÍCÍ ÈAS: 24 DNÍ)
+{37708}{37750}"A princ byl zaveden do svìta
+{37751}{37812}podivné a pøekrásné magie."
+{37814}{37860}Hej, tak co,|Co si myslíte?!
+{37862}{37903}Nemùu tomu uvìøit!
+{37935}{37976}Máma øíkala e škola je dnes zavøená
+{37978}{38030}- protoe je zatopená.|- Ani náhodou.
+{38032}{38082}- Ano.|- Jekovi oèi!
+{38083}{38129}To je nejlepší zpráva,|co jsem kdy slyšel!
+{38276}{38351}Mùj boe, to nikdy nepøestane?
+{38353}{38400}Èasem ano.
+{38402}{38478}Ale v tuto chvíli tu mám|12 tøíd plnıch vody,
+{38480}{38536}všechnu z rozbitého hlavního vedení.
+{38538}{38607}- Co ještì?|- Co ještì?!
+{38609}{38689}Øediteli Cole, ukái vám co ještì.
+{38767}{38813}To je neuvìøitelnı.
+{38815}{38854}To je pevnı bronz, e jo?
+{38855}{38904}- Jo.|- Jak se to stalo?
+{38906}{38950}Máma Bethy øíkala, e chlapecké skøíòky
+{38951}{39011}byly vyplavenı,|a všude byly usazeniny.
+{39012}{39065}- Co jsou usazeniny?|- Malé myšky.
+{39067}{39087}Áá...
+{39527}{39588}Hej...
+{39590}{39671}U ti nìkdo øekl, e seš sexy?
+{39672}{39739}Líbí se mi tvoje òadra.
+{39741}{39778}Hej.
+{39780}{39827}Ahoj.
+{39856}{39903}Škola odpadla.
+{39947}{39986}Chceš mì doprovodit domù?
+{39987}{40042}Jasnì.
+{40279}{40330}- Nevypadáš moc vystrašenì.|- Nejsem.
+{40331}{40391}Mìla by sis zkontrolovat|tvùj batoh,
+{40392}{40442}tihle tıpci rádi nìco kradou.
+{40516}{40562}Proè jsi se sem pøistìhovala?
+{40563}{40610}Moji rodièe se rozvedli.
+{40611}{40673}Máma musela udìlat ochrannı opatøení|proti otci.
+{40675}{40758}- Mìl citovı problémy.|- Taky takovı mám.
+{40759}{40826}Jakej druh citovejch problémù|mìl tvùj otec?
+{40827}{40892}Ètyøikrát bodnul mamku do hrudníku.
+{40920}{40961}Óh.
+{40963}{41009}Šel do vìzení?
+{41011}{41093}Ne utekl.|Poøád ho nemohou najít.
+{41095}{41146}Ale máma a já jsme si zmìnili jména.
+{41148}{41207}A to jsem si myslela, e "Gretchen Ross"|bylo dobrı jméno.
+{41208}{41300}Jednou jsem byl ve vìzení.|Chci øíct...
+{41302}{41348}Náhodou jsem spálil ten barák.
+{41350}{41398}Byl opuštìnej, ale poøád,
+{41399}{41482}musím chodit do školy|a nemùu øídit ne mi bude 21.
+{41484}{41536}Ale u jsem se pøes to dostal.
+{41572}{41631}Maluju a tak.
+{41632}{41688}Píšu.|Chtìl bych bıt spisovatel.
+{41690}{41734}nebo moná malíø,|nebo snad oboje.
+{41735}{41813}Psát kníky a kreslit obrázky.
+{41815}{41870}Pak mì snad lidi pochopí.
+{41871}{41920}Neumím mìnit vìci.
+{41922}{41995}"Donnie Darko"?|Co je to za tajemnı jméno?
+{41997}{42053}Zní to jako nìjakej superhrdina|nebo tak nìco.
+{42086}{42135}A proè si myslíš e nejsem?
+{42236}{42287}Mìla bych jít.
+{42289}{42362}Monnitoff mi dal napsat esej z fyziky...
+{42363}{42424}"Nejlepší vynález všech dob,|kterı pøispìl lidstvu."
+{42499}{42545}To je celej Monnitoff.|Ale je to lehkı.
+{42547}{42590}Dezinfekèní prostøedek.
+{42591}{42646}Nejdùleitìjší vìc pro zdravotnictví.
+{42647}{42694}Joseph Lister, 1895.
+{42695}{42752}Pøedtím, nebylo nic takového,
+{42754}{42799}obzvláš v lékaøství.
+{42800}{42838}Myslíš, mıdlo?
+{43002}{43063}Jsem opravdu rád, e byla dnes|škola zatopena.
+{43065}{43113}Proè?
+{43139}{43206}Protoe jinak bychom si spolu|takhle nikdy nepopovídali.
+{43244}{43310}Jsi zvláštní.
+{43311}{43350}Promiò.
+{43352}{43401}Ne, to byl kompliment.
+{43495}{43539}Dobøe, podívej...
+{43608}{43655}chceš abych s tebou chodil?
+{43700}{43747}Kam chceš jít?
+{43748}{43813}Ne, myslel jsem to jako,|"chodit" se mnou.
+{43815}{43879}Tak tomu tady øíkáme.
+{43881}{43918}- "Chodit spolu."|- Jasnì.
+{44007}{44054}Dobøe.|Kam jdeš?
+{44123}{44162}Domù.
+{44274}{44342}Taková blbost!
+{44343}{44389}"Kam jdeš?"
+{44576}{44642}Chtìla bych vyzkoušet tentokrát|nìco nového.
+{44691}{44753}Byl jsi u nìkdy zhypnotizován?
+{44779}{44818}Ne.
+{45018}{45087}A dvakrát tlesknu rukama,
+{45089}{45146}tak se probereš. Jasnı?
+{45147}{45207}Ano.
+{45209}{45284}Tak... øekni mi o tvém tıdnu.
+{45286}{45337}Potkal jsem dívku.
+{45399}{45446}Jak se jmenuje?
+{45447}{45507}Gretchen.
+{45509}{45589}Chodíme spolu.
+{45632}{45709}Poøád myslíš hodnì na holky?
+{45711}{45766}Ano.
+{45831}{45901}Jak se máš ve škole?
+{45903}{45966}Poøád na nì moc myslím.
+{45968}{46024}Ptala jsem se tì na školu, Donnie.
+{46026}{46066}Myslím...
+{46067}{46138}hodnì na šukání bìhem školy.
+{46163}{46227}A na co jiného ještì?
+{46229}{46280}"enatı se závazky."
+{46282}{46335}Myslíš na svoji rodinu?
+{46337}{46395}Prostì se uvolním...
+{46397}{46460}a myslím na to jak šukám|Christinu Applegate.
+{46462}{46526}Ptala jsem se tì na rodinu, Donnie.
+{46528}{46576}Ne.
+{46578}{46644}Nemyslím na to jak šukám se svoji rodinou.
+{46646}{46693}To je sprostı.
+{46695}{46765}Chtìla bych slyšet o tvém|kamarádovi Frankovi.
+{47155}{47223}Sam Bylen?
+{47254}{47296}Ahmm.
+{47648}{47695}Donald Darko.
+{48225}{48297}Daye Dennis.
+{48429}{48489}Hej, ty sráèi!
+{48491}{48551}Øekl jsi jim, e jsem zatopil školu?
+{48603}{48646}Neøekl sakra.
+{48647}{48700}Slyšel jsem nìco jinıho.|Myslí si, e jsem to udìlal.
+{48702}{48739}Dobøe, tak kdy jsi nevinnı,
+{48741}{48792}tak se nemáš èeho obávat ne?
+{48818}{48863}Jdi do prdele!|Víš co si myslím?
+{48908}{48950}Myslím, es to udìlal ty.
+{49330}{49400}Pivo a kundièky, to je všechno co potøebuju.
+{49402}{49456}Mìli bychom si najít Šmoulinku.
+{49458}{49492}Šmoulinku?
+{49494}{49528}Mm-hmm.
+{49530}{49594}Nemyslím nìjakou s pevnım zadeèkem,|støedníma kozièkama, chápeš?
+{49596}{49627}Jako tahle šikovná malá blondınka,
+{49629}{49682}která prostì jde s kadım.
+{49683}{49757}- Pøesnì jako Šmoulinka.|- Šmoulinka nešuká.
+{49811}{49849}Kecy.
+{49851}{49891}Šmoulinka šuká s ostatníma šmoulama.
+{49893}{49931}Proè myslíš e by ji taka Šmoula stvoøil?
+{49933}{49990}Protoe ostatní šmoulové|byly moc nadrenı.
+{49991}{50025}Ne, ne, ne,|ne "Ješita."
+{50027}{50061}Slyšel jsem e byl homosexuál.
+{50063}{50097}Tak dobøe,|Víš co?
+{50099}{50158}Tak je šuká, kdy se Ješita kouká. Dobøe?
+{50160}{50202}Co taka Šmoula?
+{50204}{50260}Musí bıt pøi akci.
+{50262}{50326}Jo, co dìlá je,|e toèí grupáè.
+{50327}{50395}A pak si ho honí kdy si to pouští.
+{50420}{50457}Take,
+{50459}{50513}taka Šmoula nestvoøil Šmoulinku.
+{50515}{50575}Ale Gargamel. Poslal jí jako|zlou špiónku,
+{50577}{50639}se zámìrem znièit Šmoulí vesnici.
+{50641}{50684}Ale nepøekonatelnı pùvab
+{50686}{50751}šmoulího ivota ji zmìnil.
+{50753}{50813}A kvùli scénáøi tìch všech šmoulù,
+{50815}{50874}se mu to nepovedlo.
+{50876}{50959}Šmoulové jsou asexuální.|Ani nemají...
+{50960}{51039}reproduktivní orgány,|pod tìma bílejma trenkama.
+{51081}{51132}To je to nelogickı, víš,
+{51134}{51181}bejt Šmoulou.
+{51183}{51229}A jakej je smysl ivota...
+{51231}{51289}kdy nemáte ptáka?
+{51349}{51398}Kurva Donnie.
+{51400}{51447}Proè dìláš tak chytrıho?
+{51477}{51530}Babka Smrtka.
+{51531}{51591}Promiòte! Promiòte!
+{51621}{51672}Zustaòte mimo cestu, sleèno Sparrowová.
+{51674}{51709}Jestli se to stane znovu,
+{51711}{51750}zavolám na vás sociálku.
+{51752}{51789}Nesnáším tu paní Farmerovou.
+{51789}{51848}- Dávej pozor na cestu. To je vše.|- Je to taková dìvka.
+{51850}{51914}- Tady to máš, to je ale holka.|- Jo jo.
+{51915}{51987}- Kolik je Babce Smrtce?|- 101.
+{52024}{52085}Poøád dìlá tu samou vìc kadej den.
+{52087}{52133}Jenom chodí tam a zpátky
+{52135}{52230}a tam a zpátky k tı schránce.
+{52231}{52291}Nikdy tam nic není.
+{52358}{52394}Óó, poèkej, poèkej, poèkej.
+{52460}{52525}Jde...|Jde zase zpátky ke schránce.
+{52527}{52570}Ještì tam mùe nìco mít.
+{52571}{52615}- Pošta, pošta, pošta.|- A je to tady.
+{52616}{52658}- A...?|- Tøeba moná...
+{52659}{52715}Óóu!
+{52716}{52778}Zase nic bábo.|Nic, smùla. Smùla.
+{52780}{52827}Nìkdo by tı bábì mìl napsat.
+{52863}{52907}{Y:i}Policie dnes pokraèuje v pátrání
+{52908}{52972}{Y:i}po podezøelıch z vandalizmu,|{Y:i}na støední škole Ridge.
+{52974}{53034}{Y:i}Tato soukromá škola poádala,|{Y:i}o veøejné dotace
+{53036}{53078}{Y:i}na rekonstrukci maskota,
+{53079}{53139}{Y:i}známého jako "Psisko."|{Y:i}V dalších zprávách...
+{53154}{53221}DNES VEÈER MIMOØÁDNÁ SCHùZE P.T.A.
+{53261}{53331}Ve spolupráci s místní policií,
+{53333}{53390}jsme zaèali vyšetøovat
+{53391}{53446}tento pøípad vytopení.
+{53447}{53535}A k našim podezøelım patøí i|nìkolik našich studentù...
+{53537}{53587}Rád bych vìdìla, proè se|v tohlem svinstvu
+{53589}{53633}musí uèit naše dìti.
+{53869}{53917}Kitty, ocenil bych...
+{53919}{53954}{Y:i}Nechte ji proboha domluvit!
+{53956}{54006}- Kdyby jste poèkal...|- Dr. Cole,
+{54008}{54053}nejsem jen uèitelka,
+{54055}{54142}ale také matka dítìte,|které chodí do této školy.
+{54143}{54205}Z toho dùvodu, jsem jediná osoba,
+{54207}{54278}která je na úrovni rodiè-uèitel.
+{54351}{54416}{Y:i}Neboj se.
+{54418}{54479}{Y:i}Mìl by si toho nechat.
+{54481}{54517}Drím ve svıch rukou knihu
+{54519}{54566}Grahama Greena "Nièitelé".
+{54567}{54606}Tato krátká povídka,
+{54607}{54672}je èástí úkolu z angliètiny mé dcery.
+{54674}{54714}{Y:i}Jsme s tebou Kitty!
+{54716}{54767}V této povídce, nìkolik dìtí
+{54769}{54842}znièí dùm starého mue.
+{55157}{55203}Jak si to udìlal?
+{55381}{55427}A jak to mùou udìlat oni?
+{55428}{55467}Zatopili školu,
+{55469}{55540}tím e znièili hlavní vedení.
+{55583}{55640}{Y:i}Mohu udìlat cokoliv si pøeji.
+{55671}{55711}{Y:i}I ty mùeš.
+{55713}{55766}Platíme dost penìz této škole.
+{55768}{55817}- Jsou to naše dìti!
+{55819}{55894}A myslím si, e tato kniha|do školy nepatøí.
+{55895}{55940}Promiòte.
+{55942}{56011}O co tu skuteènì jde?|P.T.A. knihy nezakazuje.
+{56012}{56079}P.T.A. je tu od toho,|aby uznali,
+{56080}{56161}e v našem uèivu se probírá i pornografie!
+{56163}{56206}Myslela jsem to ironicky.
+{56207}{56275}Promiòte. Mìla byste se vrátit do školy.
+{56301}{56351}Proè mì obviòujete z toho vytopení?
+{56460}{56535}{Y:i}Hrozí jim velké nebezpeèí.
+{56537}{56573}{Y:i}- Máme svá práva!|- Kitty...
+{56575}{56617}víte vùbec kdo je Graham Greene?
+{56619}{56702}Myslím e Bonanzu jsme vidìli všichni.
+{56766}{56811}Dobøe...
+{56813}{56873}- Dobrá práce Kitty.|- Pøejdìme tedy k dalším tématùm...
+{56875}{56919}Odkud pocházíš?
+{56963}{57026}{Y:i}Vìøíš v cestování èasem?
+{57069}{57128}S kım si tu povídáš?
+{57244}{57296}Jenom si beru prášky, Sam.
+{57540}{57574}Je na èase dıchat.
+{57603}{57652}Díky, Jime Cunninghame.
+{57654}{57705}Díky, Jime Cunninghame.
+{57754}{57830}A teï zaèneme první cvièení|vedením ivota.
+{57831}{57894}Nyní stisknìte "Stop".
+{58052}{58098}Jak jste mohli vidìt,
+{58099}{58145}Èára ivota je rozdìlena
+{58147}{58194}na dva opaèné konce.
+{58195}{58257}Strach a lásku.
+{58259}{58350}Strach je na negativním konci.
+{58351}{58425}A láska na pozitivním.
+{58427}{58475}To tak.
+{58477}{58541}Prosím?|"To tak..."
+{58543}{58591}je produktem strachu.
+{58620}{58687}Nyní, na kadé kartì
+{58689}{58747}je nìjaké dilema,
+{58748}{58812}které odpovídá èáøe ivota.
+{58853}{58907}Prosím... Vemte si to!
+{58909}{58953}Díky.
+{58955}{59021}Pøeètìte si prosím potichu|vaše dilema,
+{59023}{59072}a oznaète køíkem,
+{59074}{59139}na správném konci èáry ivota.
+{59141}{59187}Cherito?
+{59398}{59451}"Juanita má dnes dùleitou písemku z matiky.
+{59453}{59514}Vìdìla o tom nìkolik tıdnu dopøedu,
+{59515}{59570}ale neuèila se.
+{59571}{59652}Aby nepropadla,
+{59654}{59700}Juanita se rozhodla
+{59702}{59750}pøi písemce podvádìt."
+{59823}{59885}Dobøe, dobøe.|Správnì.
+{59887}{59922}Pane Darko.
+{60118}{60178}"Ling Ling našel na zemi penìenku|plnou penìz.
+{60180}{60240}Odnesl ji na adresu, která byla na|øidièském prùkazu,
+{60242}{60309}a peníze v ní nechal ."
+{60346}{60404}Omlouvám se paní Farmerová.|Nechápu to.
+{60406}{60446}Jenom nakresli køíek
+{60448}{60479}na správnı konec.
+{60481}{60563}Vím co mám dìlat.|Jenom... to nechápu.
+{60565}{60610}Nemùete shrnout vìci do|dvou kategorií.
+{60611}{60647}Vìci nejsou tak jednoduché.
+{60649}{60702}Èára ivota je tak rozdìlená.
+{60703}{60761}ivot není tak jednoduchı.
+{60763}{60820}Myslím tím, koho zajímá jestli Ling Ling
+{60822}{60877}vrátil penìenku nebo si nechal peníze?
+{60879}{60930}Se strachem a láskou to|nemá nic spoleènıho.
+{60931}{60995}Strach a láskou jsou nejhlubšími|lidskımi emocemi.
+{60997}{61058}OK. Ale vy mì neposloucháte.
+{61060}{61136}Jsou tady další vìci, kterı|bychom mìli vzít v potaz.
+{61138}{61191}Jako je celé spektrum lidskıch emocí.
+{61193}{61267}Prostì nemùeme všechno shrnout|jenom do dvou kategorií
+{61269}{61314}a popírat všechno ostatní.
+{61315}{61365}Jestli nikam nenakreslíš køíek,
+{61367}{61418}dostaneš za tuto hodinu pìtku.
+{61535}{61580}Donalde...
+{61582}{61631}Dovol mi abych na úvod øekl,
+{61633}{61692}e vısledky tvıch testù jsou...
+{61694}{61753}zastrašující.
+{61804}{61851}Take...
+{61852}{61901}to proberem znovu.
+{61903}{61983}Co pøesnì si øekl paní Farmerové?
+{62037}{62080}Øeknu vám co mi povìdìl.
+{62082}{62126}Zeptal se mì, jestli si nechci
+{62127}{62183}strèit tu kartu s cvièením do øiti!
+{62349}{62398}Teï je jiná doba.
+{62400}{62447}Moje politické názory jsou jasnı,
+{62449}{62507}a jestlie tu bude kandidát na|více prezidenta
+{62508}{62575}kterımu bych mìla dát hlas,|tak je to Dan Quayle.
+{62577}{62638}Nikdo nedbá na odpovìdnost,
+{62639}{62685}morálku, rodinné hodnoty.
+{62687}{62728}Mm-hmm.
+{62792}{62842}Kitty...
+{62843}{62886}Omluvte nás, prosím.
+{62987}{63055}Zakázali mu jeho školní aktivity
+{63056}{63103}na šest mìsícù.
+{63169}{63213}Od té nehody, s tím motorem
+{63215}{63272}upøímnì nevím co se s ním stalo...
+{63274}{63319}Rose, øíkám ti to,|protoe naše dcery
+{63320}{63374}jsou spolu v taneèním krouku|u dva roky,
+{63375}{63419}a já si tì jako eny váím.
+{63421}{63484}Ale potom co jsem byla svìdkem,|chování tvého syna
+{63486}{63534}mám závané obavy o tvého...
+{63595}{63663}Cesty kterımi vedeme náš ivot|musí bıt èestné.
+{63664}{63730}ádám tì, abys šla domù a podívala|se do zrcadla
+{63732}{63827}a pøála si aby tvùj syn|nepodlehl cestì strachu.
+{63948}{64017}Poèkej. Pamatuješ si
+{64019}{64074}tu zvláštní uèitelku,|paní Farmerovou?
+{64111}{64172}Dobøe. Mùj bratr
+{64174}{64231}jí dnes øekl aby si tu knihu strèila do øiti.
+{64232}{64313}A pak mu rodièe koupily všechny ty novı vìci.
+{64339}{64427}Jo, vím. Pøála bych si aby ten|motor spadl ke mnì.
+{64504}{64561}{Y:i}Mohu ti ukázat cestu.
+{64563}{64590}10.ØÍJEN 1988|(ZBİVAJÍCÍ ÈAS: 20 DNÍ)
+{64865}{64930}- Dr. Monnitoff?|- Donnie.
+{64932}{65000}Vím e to bude znít trošku divnì,
+{65002}{65075}ale... víte nìco o...
+{65077}{65122}cestování èasem?
+{65227}{65310}Áá, èerví díra mezi Einsteinovım a Rosenovım|pøemostìním,
+{65311}{65354}která je...
+{65355}{65404}teoreticky, dírou v prostoru.
+{65406}{65450}ovládána nìkım.
+{65505}{65558}Take, podle Hawkinga,
+{65560}{65638}je èerví díru mono pouívat
+{65639}{65716}pro pøemístìním mezi dvìmi vzdálenımi|místy v èasoprostoru.
+{65718}{65802}Abych mohl cestovat zpátky v èase,|musím mít velkou vesmírnou loï
+{65804}{65853}nebo nìco co musí bıt rychlejší|ne svìtlo.
+{65855}{65893}- Teoreticky.|- A monost najít
+{65894}{65906}jednu z tìch èervích dìr?
+{65907}{65986}Základní principy cestování|v èase jsou tady.
+{65987}{66017}Musíš mít svou loï a portál,
+{66019}{66071}a ta loï musí bıt
+{66073}{66134}- nìco jako raketa.|- Jako DeLorean?
+{66136}{66177}Jakákoliv kovová loï.
+{66179}{66225}Víte, miluju ten film,|tím zpùsobem jak byl natoèen.
+{66227}{66260}Je to tak...
+{66262}{66305}futuristické víte?
+{66352}{66387}Poslouchej...
+{66389}{66443}nikomu neøíkej, e jsem ti to dal.
+{66445}{66506}Ta ena, která to napsala|tu kdysi uèila.
+{66508}{66589}Pøedtím byla mnoho let jeptiškou,|ale...
+{66591}{66657}znièehonic,|se...
+{66659}{66716}stalou úplnì jinou osobou.
+{66718}{66770}Opustila kostel a napsala tuto knihu.
+{66799}{66865}A pak zaèala vyuèovat vìdu,
+{66867}{66905}právì na tıhle škole.
+{66907}{66979}"Filosofie Cestování Èasem."
+{67010}{67046}Roberta Sparrow?
+{67047}{67098}Ano.
+{67139}{67187}Ale no tak.
+{67189}{67238}Roberta Sparrow?
+{67712}{67762}Roberta Sparrow.
+{67795}{67851}"Babka Smrtka."
+{67878}{67942}Jmenuje se to "Filosofie Cestování Èasem."
+{67971}{68030}Co má filosofie spoleènıho s|cestováním èasem?
+{68031}{68083}- Podívám se.|- Hádej kdo to napsal.
+{68085}{68122}Kdo?
+{68123}{68173}Roberta Sparrow?!
+{68175}{68226}Huh. Ona napsala knihu.
+{68227}{68297}"Babka Smrtka" napsala knihu.
+{68299}{68347}To je hrozná pøezdívka.
+{68349}{68422}Skoro kadej druhej den do|ní málem vrazíme autem.
+{68451}{68512}ije tam v tı hroznı barabiznì
+{68514}{68560}a je pìknì prachatá. Je...
+{68562}{68602}Jo, máš pravdu.
+{68604}{68675}Zaèala bıt známá tou svoji|sbírkou drahokamù.
+{68677}{68731}Dìti...
+{68733}{68790}se tam poøád snaili vloupat
+{68791}{68839}a nìco jí ukrást.
+{68840}{68882}Je to úplná samotáøka.
+{68884}{68965}Huh.. Ani jsem nevìdìl e je naivu
+{68967}{69030}dokud jsme ji málem nesrazili.
+{69097}{69146}Jenom tam tak stála,
+{69147}{69195}uprostøed cesty, uplnì nehybná.
+{69197}{69243}Tak jsem vyšel z auta,
+{69244}{69313}podívat se jestli je v poøádku.
+{69315}{69375}A ona mi pošeptala do ucha.
+{69377}{69418}Co ti øíkala?
+{69419}{69470}Myslím, e Frank chce,|abych si s ní promluvil,
+{69471}{69514}protoe kdy jsem ho naposledy vidìl,
+{69516}{69567}zeptal se mì, jestli vím nìco o|cestování èasem.
+{69569}{69615}Ona o tom napsala knihu,
+{69616}{69655}a to nemùe bıt náhoda, e jo?
+{69726}{69786}Donnie co ti øekla Roberta Sparrow?
+{69831}{69902}Øekla mi, e kadá ijící bytost|na Zemi zemøe sama.
+{70011}{70068}Jak ses po tom cítil?
+{70161}{70227}Pøipomnìlo mi to mou fenku Callie.
+{70258}{70305}Zemøela kdy mi bylo osm,
+{70307}{70363}a plazila se skoro mrtvá pod...
+{70365}{70408}verandou.
+{70479}{70521}Aby umøela?
+{70587}{70629}Aby byla sama.
+{70675}{70746}A ty se teï cítíš sám?
+{70844}{70889}Nevím.
+{70947}{71012}Chtìl bych vìøit,|e nejsem, ale...
+{71055}{71114}prostì sem nevidìl ádnej dùkaz, take...
+{71115}{71172}u o tom neuvauju, chápete?
+{71174}{71218}Je to nìco jako kdybych mohl strávit|celı svùj ivot tím,
+{71219}{71289}e o tom poøád a poøád budu uvaovat,|porovnávat plusy a mínusy,
+{71291}{71351}a na konci, poøád nebudu mít|ádnı dùkaz. Tak u...
+{71353}{71399}U o tom nikdy neuvauju.
+{71400}{71460}Je to absurdní.
+{71551}{71604}Hledání Boha je absurdní?
+{71665}{71718}Jako to e kadej zemøe sám.
+{71749}{71786}Bojíš se toho?
+{71870}{71925}Nechci bejt sám.
+{72242}{72309}A jeho kazety mi pomohli|uvìdomit si
+{72311}{72367}e za posledních 39 let,
+{72368}{72432}jsem byl vìznìna vlastním strachem.
+{72434}{72482}Strachem?
+{72484}{72559}Rose, mìla by ses setkat|s Jimem Cunninghamem.
+{72598}{72652}Nevìøím tomu e ije sám.
+{72678}{72726}{Y:i}Byl to dnes vskutku nepøíjemnı veèer,
+{72727}{72776}{Y:i}pro tyto šampióny Super Bowlu.
+{72778}{72823}{Y:i}Máš pravdu Dane.
+{72824}{72866}{Y:i}Trenér Joe Gibbs|{Y:i}si za postranní èarou,
+{72868}{72928}{Y:i}èistí své brıle,|{Y:i}a mìl by se zamyslet,
+{72930}{72993}{Y:i}"Co se stalo? Co se dnes pokazilo?"
+{72995}{73029}{Y:i}A tady je vıkop...
+{73073}{73128}{Y:i}A tohle není dobré.
+{73130}{73202}- Do hajzlu, potøebujeme quarterbacka.|- A zázrak.
+{73203}{73258}Potøebujeme usilovat.
+{73293}{73349}{Y:i}Mark Rypien|{Y:i}má dobré pøedpoklady,
+{73351}{73382}{Y:i}pro udrení vısledku.
+{73383}{73421}{Y:i}Ano to opravdu má.
+{73423}{73492}{Y:i}A co pøinese budoucnost tomuto|{Y:i}Super Bowl M.V.P.
+{73494}{73536}{Y:i}poèkáme a uvidíme.
+{73646}{73686}- Potøebujete nìco?|- Ne.
+{73688}{73746}{Y:i}Darrell Green nám opìt pøedvádí|{Y:i}svou úasnou rychlost...
+{73747}{73795}Jdu si pro pivo.
+{74109}{74149}VOLTE DUKASISE
+{74206}{74245}{Y:i}...hluboko v poli soupeøe.
+{74247}{74295}{Y:i}Vypadá to na 20-yardovou pøihrávku.
+{74297}{74366}{Y:i}A je to 0:10
+{74367}{74440}{Y:i} Dobrı veèer dámy a ghoulové.
+{74442}{74505}{Y:i}Pøidejte se k nám na besídku|{Y:i}Middlesex Mall
+{74507}{74592}{Y:i}na Halloweenskı lov...
+{76564}{76619}18.ØÍJEN 1988|(ZBİVAJÍCÍ ÈAS: 12 DNÍ)
+{76624}{76690}A co kdy se mùeš vrátit zpátky|v èase,
+{76691}{76751}a všechny ty hodiny bolesti a|temnoty vzít zpìt
+{76753}{76807}a vymìnit je za nìco lepšího?
+{76809}{76855}Jako dojmy nebo co?
+{76856}{76939}Jo nìco jako vıchod slunce na Havaii|nebo v Grand Canyonu.
+{76941}{77002}Záitky, které ti pøipomenou,|jak je svìt krásnej...
+{77003}{77050}Proto spolu chodíme, dva tıdny.
+{77088}{77122}Ano?
+{77176}{77221}Víš...
+{77279}{77327}Chceš mì políbit?
+{77510}{77570}- Promiò.|- Podívej Donnie, poèkej.
+{77571}{77655}- Mám tì moc rád.|- Chtìla bych, aby...
+{77657}{77724}to pøišlo ve správnı okamik...
+{77726}{77771}A to je kdy?
+{77773}{77827}Kdy mi to pøipomene...|Jenom...
+{77866}{77937}Kdy ti to pøipomene|jak krásnej mùe bejt svìt?
+{77964}{78007}Jo.
+{78033}{78102}A teï je tu nìjakej tlouštík|co po nás èumí.
+{78259}{78352}Dìkujeme vám, e jste pøišla,|i pøes tu pozdní oznámení.
+{78354}{78426}Oba si myslíme, e nastal èas
+{78428}{78466}aby jste pøišla a promluvili si...
+{78467}{78532}Jde o vašeho syna e ano?
+{78534}{78594}Ano.
+{78595}{78671}Dobøe, on...
+{78723}{78762}Znáte jeho minulost,
+{78763}{78801}a byl vylouèen ze školy
+{78803}{78862}za uráku své uèitelky.
+{78864}{78911}A nemyslím si, e je to správné varování.
+{78912}{78975}Myslím tím e ji urazil.
+{78977}{79042}Rose, øeknu vám,
+{79044}{79078}co si myslím e se tady dìje.
+{79155}{79211}Donnieho agresivní chování...
+{79249}{79340}jeho zvıšená lhostejnost k realitì,
+{79342}{79438}vychází z neschopnosti vyrovnat se
+{79439}{79522}s vìcmi na svìte které chápe,|jako vıhruky.
+{79663}{79721}Øekl vám nìkdy o svém pøíteli Frankovi?
+{79834}{79879}Frankovi?
+{79881}{79936}Ano, ten obrovskı králík.
+{79967}{80002}Co?
+{80104}{80163}Nevzpomínám si...
+{80165}{80235}e by se nìkdy zmínil o králíkovi.
+{80237}{80302}Donnie se potıká s tím co se nazıvá
+{80304}{80352}denní halucinace.
+{80454}{80539}Je to normální vlastnost mezi|paranoidními schizofreniky.
+{80594}{80638}Co pro to mùeme udìlat?
+{80639}{80690}Chtìla bych...
+{80692}{80734}mu udìlat více hypnoterapie,
+{80790}{80847}a zvıšit jeho dávky.
+{80997}{81065}Cokoliv, mu pomùe, opravdu,
+{81106}{81148}proto jsme taky tady
+{81150}{81232}Chtìli bychom mu nìjak...
+{81234}{81282}pomoc.
+{81283}{81372}Take jestli si myslíte,|e mu zvıšené dávky pomohou,
+{81400}{81502}tak si myslím,|e bychom to mìli zkusit.
+{81783}{81846}Donnie Darko.
+{81913}{81959}Já vím.
+{82180}{82218}Dobré ráno psi!
+{82219}{82250}Dobré ráno.
+{82252}{82294}A to je vše co mi øeknete?
+{82295}{82326}Øekl jsem "Dobré ráno!"
+{82328}{82390}Dobré ráno!
+{82391}{82435}Dobøe, to je o trošku trošièku lepší.
+{82437}{82498}Ale poøád tady vidím studenty,
+{82500}{82576}kteøí se bojí øíct "Dobré ráno!"
+{82578}{82657}- Dobré ráno!|- Ano, tak jsem to chtìl slyšet!
+{82659}{82735}Protoe naprostá vìtšina|mladıch muù a en
+{82737}{82816}je paralyzována svım vlastním strachem.
+{82846}{82915}Odevzdávají své tìlo na pokušení
+{82917}{83013}a zánik drogami, alkoholem|a pøedmanelskım sexem.
+{83048}{83131}A teï vám øeknu krátkı pøíbìh.
+{83132}{83186}Je to srdcervoucí smutnı pøíbìh
+{83188}{83237}mladého mue
+{83239}{83292}jeho ivot byl kompletnì znièen
+{83294}{83346}tìmito nástroji strachu.
+{83348}{83393}Tento mladı mu,
+{83395}{83473}hledal lásku na všech špatnıch místech.
+{83499}{83563}Jmenoval se Frank.
+{83663}{83706}Ahoj, moje sestra...
+{83708}{83775}mám o ni èasto strach,|e pøíliš mnoho jí.
+{83777}{83835}- Buï zticha, Kim!|- Zlatíèko, prosím.
+{83837}{83886}Jak se mám rozhodnout co dìlat,|a budu velkej?
+{83887}{83919}To je tìká otázka.
+{83951}{83998}Co mám dìlat abych se nauèil bojovat?
+{83999}{84080}"Co mám dìlat abych se nauèil bojovat?"
+{84082}{84176}Chlapèe, násilí je vısledkem strachu.
+{84178}{84220}Nauè se opravdu mít rád sám sebe.
+{84222}{84278}- Dobøe.|- Dobøe, tak pojï sem.
+{84279}{84346}- OK.|- Tak jo.
+{84425}{84476}- Dobré ráno.|- Dobré ráno.
+{84478}{84526}Umm...
+{84527}{84566}Kolik vám platí za to e tu jste?
+{84601}{84637}Uh... prosím?
+{84690}{84730}Jak se jmenuješ chlapèe?
+{84731}{84775}Gerald.
+{84777}{84814}Dobøe Geralde,
+{84815}{84852}Myslím, e si ustrašenı.
+{84854}{84895}Øíkáš nám tohle abychom|si koupili tvoji knihu?
+{84897}{84943}Protoe vám chci øíct,|e pokud ano,
+{84945}{84991}tak je to nejhorší rada,|co jsem kdy slyšel.
+{84992}{85030}Vidíte jak je toto smutné?
+{85032}{85068}Chceš aby tvoje sestra zhubla?
+{85070}{85112}Tak jí øekni a se zvedne z pohovky,|pøestane jíst chipsy,
+{85114}{85187}a a si jde zahrát tøeba hokej.|Víš co?
+{85189}{85250}Nikdo neví èím budeš a vyrosteš.
+{85251}{85316}Chvilku to potrvá, ale pøijdeš na to sám.
+{85318}{85363}Viï, Jime?|A ty...
+{85365}{85415}Ano, ty.
+{85442}{85514}Štve tì kdy ti nìjakej vùl|strká hlavu do záchodu?
+{85516}{85568}Moná bys mohl posilovat,
+{85570}{85627}nebo zaèít chodit na karate.|A a to zkusí pøíštì znovu,
+{85629}{85674}kopni ho do koulí.
+{85730}{85778}Chlapèe. Vidíš tohle?
+{85779}{85832}- Dobøe?|- To je naštvanı vìzeò,
+{85834}{85874}- Dám ti pøíklad z knihy.
+{85875}{85912}Vidíte ten strach lidi?
+{85914}{85982}Tento chlapec je pravdou|vystrašenı k smrti.
+{85983}{86058}Hochu, uplnì mi to láme srdce,|øíct ti to,
+{86060}{86170}ale myslím si e jsi velmi|problematickı a zmatenı mladı mu.
+{86171}{86243}Odpovìdi hledáš na nesprávnıch místech.
+{86244}{86283}Vlastnì, máte pravdu.
+{86285}{86316}Jsem dost...|Dost problematickı
+{86318}{86365}a dost zmatenı, ale...
+{86367}{86436}ale opravdu se bojím, skuteènì se bojím.
+{86438}{86472}Doopravdy.|Ale...
+{86474}{86521}Myslím si e jste zasranej Antikrist.
+{86571}{86639}Odveïte ho odsud!|Kdo si myslíš e jsi?
+{86835}{86865}To je udivující.
+{86867}{86910}Ten chlap si myslí e mluví pravdu,
+{86912}{86985}a všechno co øíká je prachsprostá le!
+{86987}{87039}Všechno!
+{87041}{87123}Všichni si myslí kdovíjak je chytrej.|Ale je to takovej kokot.
+{87125}{87181}- Cokoliv co dìla...|- Jsi v pohodì?
+{87272}{87355}- Jo.|- Sedni si. Uklidni se.
+{87477}{87526}Slyšela jsi u o Babce Smrtce?
+{87555}{87583}O kom?
+{87723}{87766}"Filosofie Cestování Èasem."
+{87767}{87818}Co je to?
+{87820}{87856}Napsala to.
+{88078}{88129}Já...
+{88131}{88172}Vidìl jsem u tolik vìcí.
+{88174}{88239}Myslím, jako hodnì divnejch vìcí.
+{88268}{88309}A v tı kníce jsou kapitoly,
+{88311}{88352}kterı popisují to, co jsem vidìl.
+{88354}{88403}To nemùe bejt náhoda.
+{88462}{88532}Všechny lodì cestují podle vektoru...
+{88534}{88603}skrz èasoprostor, podél støedu pøitalivosti.
+{88605}{88642}Jako oštìp.
+{88644}{88706}Promiòte?
+{88708}{88774}Jako kdy vyndám oštìp z vašeho hrudníku.
+{88775}{88838}Aha... jasnì.
+{88840}{88927}Abys mohl cestovat èasem,
+{88929}{89001}musíš najít portál,|nebo v tomto pøípadì èerví díru...
+{89003}{89050}Mohou tyto portály...
+{89052}{89152}Mouhou se prostì objevit|kdekoliv a kdykoliv?
+{89154}{89204}Myslím, e je to dost nepravdìpodobné.
+{89206}{89252}Ne, myslím si, e to|o èem mluvíš...
+{89254}{89287}je Boí zásah.
+{89289}{89348}Pokud Bùh èas ovládá,|tak je pøedem urèenı.
+{89394}{89438}Nesouhlasím s tebou.
+{89439}{89499}Kadá ivá bytost se pohybuje|urèitou vlastní cestou.
+{89500}{89580}A pokud by jsi tu cestu znal,
+{89582}{89634}tak by jsi mohl znát budoucnost, co?
+{89636}{89688}Tak... tohle mùe bıt jedna|z forem cestování èasem.
+{89690}{89778}Dobøe, ale to popírá,|to co øíkáte.
+{89780}{89822}Pokud bychom mohli vidìt
+{89823}{89882}evidentnì naše osudy,|my sami
+{89883}{89933}pak bychom mìli monost
+{89935}{89991}je oklamat .
+{89993}{90033}A pouhı fakt, e tyto monosti existují,
+{90035}{90139}by zpùsobil to e všechny pøedem|dané osudy by skonèily.
+{90141}{90183}Ne, pokud by jsi cestoval|Boskou cestou.
+{90251}{90292}Umm...
+{90294}{90394}Myslím, e bychom nemìli v tomto|rozhovoru dále pokraèovat.
+{90450}{90516}- Proè?|- Mohl bych tu pøijít o práci.
+{90561}{90598}Dobøe.
+{91887}{91941}{Y:i}A teï víš kde ije.
+{91999}{92059}Vyrùstá to z našich hrudníku...
+{92060}{92106}Solar Plexus?
+{92107}{92157}Jak to popsala v tı kníce,
+{92159}{92215}zpùsob jakım se pohybují|a zapáchají.
+{92217}{92258}Jsou jako...|Jako dìlníci.
+{92299}{92342}Kadı z nás má svého.
+{92343}{92406}Vypadají jako...|Jako tekutina.
+{92439}{92496}Šel jsem za tím...
+{92498}{92561}do lonice mıch rodièù.
+{92563}{92601}Co jsi našel?
+{92723}{92767}Nic.
+{92863}{92932}Tak je nazıváme IMGs.
+{92934}{92991}lnfant Memory Generators.
+{92993}{93065}Myšlenka je v tom, e si koupíte|tyto brıle pro vaše dítì,
+{93067}{93113}a dáte je dítìti na noc.
+{93140}{93223}Ale uvnitø jsou takovéto diapozitivy.
+{93224}{93309}A na kadém je nìco|pìkného nebo tak...
+{93311}{93372}cokoliv rodièe chtìjí dát dovnitø.
+{93374}{93435}A jakı vısledek to mùe mít na dítì?
+{93437}{93490}Dobrá...
+{93492}{93536}je to tak, e nikdo si nepamatuje|své dìtství.
+{93538}{93594}A ten kdo øíká e ano, le.
+{93595}{93654}A my si myslíme, e toto|pomùe rozvíjet si pamì v niším vìku.
+{93655}{93690}Jasnì.
+{93691}{93751}Pøemıšleli jste nìkdy e dítì mùe|potøebovat tmu.
+{93752}{93823}e tma mùe bıt èásti jejich|pøirozeného vıvoje?
+{93915}{93958}- Ne.|- Mm-mm.
+{94027}{94063}Ano.
+{94064}{94126}Co kdy tam rodièe dají obrázky Satana?
+{94128}{94175}Nebo, øeknìme mrtvejch lidí?
+{94176}{94236}To bys chtìl ukazovat svım dìtem?
+{94274}{94322}Dobøe, myslím...
+{94324}{94398}Neprobodal otec tvou matku?
+{94623}{94669}Vypadni.
+{94701}{94768}Gretchen!|Omlouvám se, Gretchen.
+{94770}{94827}Gretchen,|Omlouvám se ti za ty hovada.
+{94828}{94859}Jsou to zasranı...
+{95505}{95546}Dvakrát "Evil Dead".
+{95547}{95605}Dva dolary.
+{96734}{96814}Proè nosíš ten blbej oblek králíka?
+{96930}{97007}{Y:i}Proè nosíš ten blbej oblek èlovìka?
+{97234}{97292}Sundej si ho.
+{97759}{97810}Co se ti stalo s oèima?
+{97965}{98025}{Y:i}Moc se omlouvám.
+{98196}{98246}Proè ti øíkají Frank?
+{98248}{98321}{Y:i}Je to jméno mého otce...
+{98396}{98455}{Y:i}a jeho otce.
+{98544}{98587}Franku?
+{98682}{98728}Kdy tohle skonèí?
+{98730}{98792}{Y:i}To u bys mìl vìdìt.
+{98876}{98931}{Y:i}Chci abys sledoval plátno.
+{98983}{99046}{Y:i}Je tu nìco co bych ti rád ukázal.
+{99242}{99302}{Y:i}Vidìl jsi u nìkdy portál?
+{99747}{99786}{Y:i}Spál to, všechno.
+{100688}{100749}PØEHLÍDKA TALENTù '88
+{101563}{101631}Vıbornì dívky a teï...
+{101633}{101664}bych chtìla aby jste se soustøedili.
+{101666}{101732}Nezdar nepøichází v úvahu.
+{101734}{101828}A Bethany, jestli máš potøebu zvracet tady...
+{101830}{101906}- prostì to spolkni.|- Dobøe mami.
+{101908}{101970}Tady jste, hodnì štìstí.
+{102344}{102419}Táhni z pódia, Cherito!
+{102517}{102554}Jsi k hovnu!
+{102733}{102788}Vydrte.
+{102911}{102953}To bylo doopravdy nìco.
+{102955}{103013}Podìkujme Cherite Chenové,|za "Podzimního Andìla."
+{103015}{103106}A nyní pøichází chvíle, na kterou|jsme všichni èekali.
+{103107}{103153}Je mi velkou ctí a potìšením
+{103155}{103196}vám pøedstavit...
+{103198}{103240}Emily Bates, Suzy Bailey,
+{103242}{103300}Samantha Darko,|Beth Farmer,
+{103302}{103374}a Joanie James.|a jejich... "Tøpytivı Pohyb."
+{105883}{105943}{Y:i}Vıbornì!
+{107580}{107636}Jak sem spala dlouho?
+{107638}{107696}Celej film.
+{107932}{107970}Poruèíku...
+{107972}{108014}vypadá to, e vzadu je ještì jeden pokoj.
+{108058}{108087}{Y:i}Poár byl uhašen
+{108089}{108150}{Y:i}po 20:00 vèera veèer.
+{108152}{108218}{Y:i}Hasièi objevili to co by mohlo|{Y:i}bıt pojmenováno
+{108220}{108278}{Y:i}"brlohem dìtské pornografie."
+{108279}{108339}{Y:i}Cunningham, kterı se stal nedávnou|{Y:i}slavnou osobou
+{108341}{108382}{Y:i}kvùli svım knihám|{Y:i}a motivaèním plakátùm,
+{108383}{108450}{Y:i}- byl dnes ráno zatèen...|- Mùj boe!
+{108451}{108514}{Y:i}...v Sarasota Heighs Country klubu.
+{108516}{108561}{Y:i}háøství nebylo vylouèeno
+{108563}{108604}{Y:i}jako jedna z monıch pøíèin poáru.
+{108606}{108696}{Y:i}Skupina zamìstnancù z Cunning Vision...
+{108698}{108744}Mùj boe.|Táta hrál s tim chlápkem golf.
+{108746}{108803}{Y:i}...dùraznì odmítla údajné spojitosti
+{108805}{108857}{Y:i}s dìtskou pornografií ve svıch kruzích.
+{108859}{108902}{Y:i}Ve zpustlém obydlí,
+{108903}{108971}{Y:i}Cunningham zaútoèil na èlena|{Y:i}hasièského sboru,
+{108973}{109026}{Y:i}a prohlašoval e vše je velké spiknutí.
+{109028}{109102}Omlouvám se Karen,|ale nemyslíme si, e metody
+{109103}{109163}které tu zavadíte jsou vhodné.
+{109165}{109231}Se vší úctou pane, co pøesnì|na mıch metodách
+{109233}{109281}nacházíte nevhodné?
+{109315}{109368}Nemám èas, o tomto debatovat.
+{109370}{109445}Myslím e jsem to øekl dost jasnì.
+{109447}{109511}Vy jste mì zavolal?
+{109513}{109550}Nemyslím si, e máte správnı pøístup,
+{109551}{109606}jak komunikovat s tìmi dìtmi.
+{109608}{109703}A ztrácíme jejich postoj...
+{109749}{109829}k tìmto stanovenım nesmyslùm.
+{109860}{109907}Mizí nám mezi prsty.
+{109908}{109976}Je mi líto, e jste neuspìla.
+{109978}{110079}Teï jestli mì omluvíte,|mám další jednání.
+{110121}{110179}Tenhle tıden ještì mùete dodìlat.
+{110314}{110403}Sakra!
+{110876}{110918}Dobré odpoledne.
+{110919}{110975}Je mi velkım potìšením
+{110977}{111030}e byl náš školní taneèní tım
+{111032}{111082}{Y:i}pozván k úèinkování
+{111083}{111140}{Y:i}v akci Edieho McMahona|{Y:i}"Hledání Hvìzd '88"
+{111142}{111196}{Y:i}v Los Angeles, California.
+{111559}{111613}JIM CUNINNGHAM ZATÈEN
+{111769}{111849}MÍSTNÍ SPISOVATEL ODHALEN V KRUZÍCH DÌTSKÉ PORNOGRAFIE.
+{112035}{112108}Ne, bylo to legraèní.|Zavolám ti zpátky.
+{112157}{112212}- Rose.|- Kitty.
+{112263}{112317}Urèitì jsi u slyšela ty dìsivá obvinìní
+{112319}{112354}proti Jimu Cunninghamovi.
+{112356}{112391}Ano, vidìla jsem to v televizi.
+{112392}{112439}Nìco jako...|"Brloh dìtského porna."
+{112441}{112523}Prosím tì, prosím.|Nepouívej tyto slova!
+{112524}{112591}Je to zøejmì nìjaké spiknutí
+{112593}{112639}aby znièilo tohoto nevinného mue.
+{112640}{112710}Rozhodla jsem vést
+{112711}{112759}obrannou kampaò Jima Cunninghama.
+{112804}{112843}Rose...
+{112845}{112907}Budu zítra ráno pøi jeho obalobì.
+{112909}{112964}A jak víš, tak dívky mají
+{112966}{113008}ráno na odjet do Los Angeles.
+{113010}{113077}Protoe je vedu, dostala jsem monost
+{113079}{113118}je doprovázet na jejich vılet...
+{113119}{113182}Ale teï...|s nimi nemùeš.
+{113183}{113226}- Ano.|- Hmm.
+{113227}{113292}Vìø mi, jako i ostatní matky,
+{113294}{113348}nikdy sem netušila e se tì budu|muset zeptat.
+{113350}{113412}Ale ostatní matky nemohou.
+{113479}{113524}Já nevím Kitty.
+{113526}{113602}Je to špatnı víkend.|Eddie je v New Yorku.
+{113603}{113651}Rose!
+{113653}{113707}Nevím, jestli si vìdomá toho,
+{113709}{113804}jaká je tohle pøíleitost pro naše dcery!
+{113806}{113857}Je to Samanthin sen
+{113859}{113918}a i všech ostatních u dlouhou dobu.
+{113919}{114022}Udìlala jsem z ní hlavní taneènici!
+{114023}{114087}Nìkdy pochybuji o tvém závazku
+{114089}{114136}ke "Tøpytivému Pohybu".
+{114862}{114925}Elizabeth bude v práci.
+{114927}{114983}Odveze tì na terapii.
+{114985}{115057}Pokud budeš cokoliv potøebovat,|slib mi,
+{115059}{115115}e zavoláš doktorce Thurmanové?
+{115157}{115210}Dobøe.
+{115363}{115438}Jakı to je mít syna jako pako?
+{115571}{115637}Je to pìknı.
+{116399}{116459}26.ØÍJEN 1988|(ZBİVAJÍCÍ ÈAS: 4 DNÍ)
+{116612}{116686}Take co mám øíct ostatním kdy se|na vás budou ptát?
+{116734}{116803}Øekni jim e všechno bude v poøádku.
+{116862}{116912}Co jsou "Sklepní dvíøka"?
+{116959}{117004}Jeden slavnı jazykovìdec jednou øekl,
+{117006}{117091}e všechny fráze v angliètinì|mohou dohromady...
+{117093}{117154}dát nekoneènou kombinaci...
+{117155}{117201}slov v celé historii,
+{117203}{117271}a e "Sklepní dvíøka"|jsou ze všech nejhezèí.
+{117339}{117386}"Sklepní dvíøka"?
+{118144}{118199}Slibuju, e jednou
+{118201}{118251}bude všechno lepší.
+{118297}{118356}Buï zticha!
+{118660}{118715}Chtìla bych si s tebou dnes promluvit|o tvé minulosti.
+{118717}{118760}Ne.
+{118762}{118845}Chtìla bych si promluvit o...|tobì a tvıch rodièích.
+{118873}{118879}Nekoupili mi
+{118879}{118926}Nekoupili mi
+{118927}{118964}to co sem chtìl k Vánocùm.
+{118966}{119040}Co jsi tenkrát chtìl?
+{119066}{119110}"Hungry, Hungry Hippos."
+{119179}{119218}Jakı jsi z toho mìl pocit,
+{119220}{119292}nedostat "Hungry, Hungry Hippos"?
+{119294}{119342}Zklamání.
+{119344}{119408}Z èeho jsi ještì zklamanı?
+{119462}{119514}e jsem to znovu udìlal.
+{119547}{119588}Znovu udìlal?
+{119590}{119653}Vytopil školu,
+{119655}{119742}a zapálil dùm toho zvrhlíka.
+{119791}{119856}Mám jenom pár dní ne na to pøijdou.
+{119858}{119917}Øekl ti Frank, aby jsi tyto vìci udìlal?
+{119919}{119989}Musím ho poslouchat.|Zachránil mi ivot.
+{120030}{120101}Musím ho poslouchat|nebo budu uplnì sám.
+{120103}{120159}A pak...
+{120161}{120211}A pak nebudu moc zjistit,
+{120213}{120260}k èemu to všechno je.
+{120262}{120348}Nebudu vìdìt plán Pána.
+{120350}{120438}Myslíš Boí plán?
+{120464}{120531}Vìøíš v Boha?
+{120533}{120595}Mám schopnosti postavit Stroj èasu.
+{120597}{120646}Jak je to moné?
+{120727}{120774}Jak je moné cestovat èasem?
+{120776}{120818}Donnie?
+{120820}{120872}Èas vypršel,|Øekl Frank.
+{120874}{120928}Kdy se to stane?
+{120930}{120988}Brzo.
+{121072}{121122}Brzo.
+{121458}{121514}A co se stane?
+{121599}{121659}Frank nìkoho zabije.
+{121661}{121710}Koho zabije?
+{121804}{121858}Kdo koho zabije Donnie?
+{121860}{121898}Právì teï ho vidím!
+{122002}{122066}Nebe se rozevírá.
+{122214}{122292}Kdyby se nebe náhodou otevøelo,
+{122294}{122379}nebyl by tu ádnı zákon.|ádná pravidla.
+{122381}{122453}Byl by jsi tu jen ty,|a tvé vzpomínky...
+{122455}{122518}volby, které jsi zvolil,
+{122520}{122573}a lidé kterıch by jsi se dotkl.
+{122599}{122644}Pokud svìt opravdu skonèí,
+{122646}{122695}tak tu budeš pouze ty...
+{122697}{122746}a on...
+{122747}{122795}A nikdo jinı.
+{123418}{123477}29.ØÍJEN 1988|(ZBİVAJÍCÍ ÈAS: 1 DEN)
+{123708}{123762}Èau.
+{123763}{123805}Dostala jsem se tam.
+{123897}{123952}Pùjdu na Harvard.
+{124006}{124059}Mìli bysme uspoøádat party.
+{124061}{124109}Myslel jsem, kdy tu rodièe nejsou.
+{124111}{124180}Je Halloweenskej karneval.|Mìli bysme to oslavit.
+{124182}{124277}Dobøe, ale jenom nìco menšího, jo?
+{124279}{124342}- Co máte kluci?|- Nic moc.
+{124343}{124398}Štastnej Halloween!
+{125039}{125088}Máme tu vajíèka, balónky
+{125090}{125136}spoustu toaleáku.
+{125138}{125192}A tátovi jsem vzal ètyøi piva.
+{125194}{125279}- Dobøe, máme sud.|- Pivo ze sudu je pro srágory.
+{125694}{125760}{Y:i}Rose tady je Lilian Thurmanová.
+{125762}{125821}{Y:i}Je to velmi dùleité,
+{125823}{125863}zavolej mi ihned co budeš moct.
+{125865}{125901}Díky.
+{126053}{126106}- Ahoj.|- Èau.
+{126197}{126233}Jsi v poøádku?
+{126289}{126333}Jo, máma je pryè.
+{126381}{126427}Chceš jít dál?
+{126429}{126466}Jasnì.
+{126995}{127035}Já fakt nevim...
+{127037}{127106}nenechala mi ádnej vzkaz
+{127107}{127173}a po celım domì byl pìknej bordel.
+{127175}{127230}Ale jsi v pohodì?
+{127299}{127362}Zavolala jsi policajtùm?
+{127364}{127415}Jo, øekli mi e bych mìla jít|pryè z domu
+{127417}{127502}na nìjakı bezpeènı místo.
+{127537}{127588}Mám takovej strach.
+{127590}{127636}Myslím e se stalo
+{127638}{127709}nìco ošklivıho, a...
+{127711}{127786}e je za tím mùj otec,|Chápu.
+{128007}{128072}Myslím e nìkteøí lidi se u narodí
+{128074}{128124}s neštìstím v krvi.
+{128218}{128266}Hej nevidìli jste Franka?
+{128268}{128316}Ne, myslím e šli závodit|v pití piva.
+{128318}{128350}- Kurva.
+{128399}{128450}{Y:i}Jestli jsi tam,|{Y:i}zvedni to prosím.
+{128452}{128500}{Y:i}Tak dobøe.|{Y:i}Dobré zprávy.
+{128502}{128548}{Y:i}Dívky dostali tøi a pùl hvìzdièky,
+{128550}{128605}{Y:i}a postupují do ètvrtfinále.
+{128607}{128698}{Y:i}Bylo to nádhernı.|{Y:i}Mimochodem...
+{128700}{128779}dnes veèer se nevrátíme, a pøiletíme...
+{128781}{128821}Mami... Letadlo za chvíli odlétá.
+{128823}{128869}Dobøe, dobøe. A vezeme to zpátky dnes veèer.
+{128871}{128947}Mìli bychom pøijet okolo pùl deváte.
+{128949}{129024}Doufám, e je všechno v poøádku.
+{129026}{129116}Miluji vás. Pa.
+{129779}{129841}30.ØÍJEN 1988|(ZBİVAJÍCÍ ÈAS: 6 HODIN)
+{130812}{130871}BYL TU FRANK, ŠEL PRO PIVO
+{131628}{131675}{Y:i}...Sklepní dvíøka...
+{131851}{131918}- Pojï se mnou.|- Kam jdeme
+{131919}{131986}- Donnie.|- Podívej, prostì musíme.
+{132013}{132057}- Kam?|- U si vidìla Babku Smrtku?
+{132059}{132103}Proè, je to kvùli tı knize?
+{132105}{132141}- Ne, kvùli Frankovi.|- Donnie...
+{132143}{132190}Èas utíká!|Musíme jít.
+{132935}{132997}Roberta Sparrow.
+{133028}{133082}Babka Smrtka.
+{133291}{133369}Donnie, nikdo tu není.|Prostì na to zapomeò.
+{133415}{133470}Co...|"Sklepní dvíøka."
+{133471}{133509}Co?
+{134973}{135034}Pane Boe!|Donnie! Donnie!
+{135134}{135174}Donnie...!
+{135201}{135248}Co tady kurva dìláš?!
+{135250}{135284}Mùj Boe!
+{135364}{135400}Seš mrtvej!
+{135402}{135430}Co to dìláš?
+{135432}{135477}- Do prdele!|- Nechte ho tu!
+{135562}{135618}Ani se kurva nehni!|Ani se kurva nehni!
+{135664}{135715}Kurva!
+{135835}{135914}- Tady je auto.
+{135915}{135958}Vypadnìte odsud. Hned!
+{135995}{136054}Sethe u jede auto. Pojï!
+{136055}{136110}Teï mám vìtší nù.
+{136213}{136254}Dìlej!|Zavolal poldy!
+{136339}{136376}Ty jsi zavolal zasranı poldy?!
+{136404}{136468}- Deus ex machina.|- Co si to øekl?
+{136524}{136588}- Co si to do øiti øekl?|- Náš spasitel.
+{136698}{136744}Donnie!
+{137023}{137082}Gretchen...?
+{137186}{137228}Gretchen...?
+{137274}{137312}Gretchen.
+{137406}{137458}Vstávej, Gretchen.
+{137459}{137519}- Franku...|- Vstávej.
+{137521}{137567}Co jsi to udìlal?
+{137617}{137688}Gretchen, no tak. Vstávej.
+{137690}{137734}Probuï se.
+{137793}{137838}Gretchen...
+{137839}{137884}Gretchen...
+{137886}{137945}Co si to sakra udìlal?
+{137982}{138028}Ty jsi ji zabil Franku!
+{138112}{138155}Je mrtvá?
+{138341}{138421}Co jste tady dìlali uprostøed silnice?!
+{138423}{138462}Co si myslíš?!
+{138636}{138699}Jdi domù.
+{138701}{138758}Jdi domù, a øekni rodièùm,|e všechno bude OK.
+{138803}{138842}Jdi!
+{141870}{141924}{Y:i}28 dní...
+{141950}{142002}{Y:i}6 hodin...|6 hodin...
+{142003}{142090}{Y:i}42 minut...|42 minut...
+{142092}{142148}12 sekund.
+{142232}{142286}{Y:i}Odcházím domù.
+{142726}{142786}{Y:i}Take abychom mohli cestovat èasem,
+{142788}{142846}{Y:i}potøebujeme velkou vesmírnou loï,|{Y:i}nebo nìco èím mùeme cestovat
+{142847}{142904}{Y:i}- rychleji ne rychlost svìtla?|{Y:i}- Teoreticky.
+{142906}{142950}{Y:i}A monost nají jednu z tìch èervích dìr?
+{142951}{143002}{Y:i}Základní principy cestování|{Y:i}v èase jsou tady.
+{143003}{143059}{Y:i}Musíš mít svou loï a portál.
+{143061}{143106}{Y:i}A ta loï musí bıt,
+{143107}{143162}{Y:i}nìco jako raketa.
+{143163}{143216}{Y:i}Jakákoliv kovová loï.
+{143519}{143566}{Y:i}A co kdy se mùeš vrátit zpátky|{Y:i}v èase,
+{143567}{143627}{Y:i}a všechny ty hodiny bolesti a|{Y:i}temnoty vzít zpìt
+{143628}{143694}{Y:i}a vymìnit je za nìco lepšího
+{144746}{144810}{Y:i}"Drahá Roberto Sparrow,
+{144812}{144877}{Y:i}Dostal jsem se k vaši knize,
+{144879}{144934}{Y:i}ale je zde tolik vìci o kterıch|{Y:i}bych s vámi chtìl mluvit.
+{144960}{145019}{Y:i}Nìkdy se bojím toho co mi mùete øíct.
+{145150}{145190}{Y:i}Nìkdy se bojím toho,|{Y:i}e mi øeknete,
+{145192}{145230}{Y:i}e ta kniha není fikce.
+{145260}{145329}{Y:i}Mohu jen doufat, e odpovìdi
+{145331}{145397}{Y:i}se dozvím ve svıch snech.
+{145399}{145453}{Y:i}Vìøím, e a pøijde konec svìta,
+{145455}{145517}{Y:i}e budu moci dıchat|{Y:i}povznesen útìchou,
+{145519}{145620}{Y:i}protoe tu bude tolik vìci,|{Y:i}na které je mono se dívat."
+{147617}{147679}2.ØÍJEN 1988
+{152107}{152150}Ahoj...
+{152151}{152204}Co se tu stalo?
+{152206}{152254}Hrozné neštìstí.
+{152256}{152293}Mùj soused...
+{152295}{152338}zemøel.
+{152339}{152401}Co se stalo?
+{152403}{152454}Zasáhl ho motor z letadla.
+{152590}{152642}Jak se jmenoval?
+{152644}{152712}Donnie.|Donnie Darko.
+{152759}{152811}Dost špatnı pro jeho rodinu.
+{152849}{152882}Jo.
+{153054}{153101}Znala jsi ho?
+{153174}{153220}Ne.
+{153764}{153826}{Y:i}Pøepínám na stanici.
+{153827}{153902}{Y:i}Všechny jednotky jsou na pùvodní frekvenci.

@@ -1,0 +1,4 @@
+{162}{362}{c:$0000ff}lines1 red
+{365}{500}{c:$00ff00}lines2 green|{c:$0000ff}red
+{749}{807}{c:$00ff00}lines3 green|{c:$0000ff}red|red
+{812}{950}{y:i}lines2 italic|{y:b}bold

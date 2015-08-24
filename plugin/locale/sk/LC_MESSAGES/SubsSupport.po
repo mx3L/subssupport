@@ -1,0 +1,886 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SubsSupport\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-19 10:31+0100\n"
+"PO-Revision-Date: 2015-02-19 11:05+0100\n"
+"Last-Translator: mx3L <mxfitsat@gmail.com>\n"
+"Language-Team: mx3L <mxfitsat@gmail.com>\n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ../../../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: subtitles.py:277
+msgid "top"
+msgstr "na vrchu"
+
+#: subtitles.py:279
+msgid "bottom"
+msgstr "na spodku"
+
+#: subtitles.py:284
+msgid "red"
+msgstr "červená"
+
+#: subtitles.py:285
+msgid "grey"
+msgstr "šedá"
+
+#: subtitles.py:286
+msgid "green"
+msgstr "zelená"
+
+#: subtitles.py:287
+msgid "purple"
+msgstr "fialová"
+
+#: subtitles.py:288
+msgid "yellow"
+msgstr "žltá"
+
+#: subtitles.py:289
+msgid "white"
+msgstr "biela"
+
+#: subtitles.py:290
+msgid "blue"
+msgstr "modrá"
+
+#: subtitles.py:291
+msgid "black"
+msgstr "čierna"
+
+#: subtitles.py:306
+msgid "opaque"
+msgstr "nepriehľadné"
+
+#: subtitles.py:308
+msgid "transparent"
+msgstr "transparentné"
+
+#: subtitles.py:321
+msgid "offset"
+msgstr "odchýlka"
+
+#: subtitles.py:321
+msgid "border"
+msgstr "orámovanie"
+
+#: subtitles.py:328
+msgid "dynamic"
+msgstr "dynamické"
+
+#: subtitles.py:328
+msgid "static"
+msgstr "statické"
+
+#: subtitles.py:346
+msgid "Block (old)"
+msgstr "B"
+
+#: subtitles.py:346
+msgid "Block (new)"
+msgstr ""
+
+#: subtitles.py:346
+msgid "Row (experimental)"
+msgstr ""
+
+#: subtitles.py:361
+msgid "List"
+msgstr "Zoznam"
+
+#: subtitles.py:361
+msgid "List + File"
+msgstr "Zoznam + Súbor"
+
+#: subtitles.py:371
+msgid "TV show"
+msgstr "Seriál"
+
+#: subtitles.py:371
+msgid "Movie"
+msgstr "Film"
+
+#: subtitles.py:375 subtitles.py:376 subtitles.py:377 subtitles.py:3629
+#: subtitles.py:3639 subtitles.py:3644
+msgid "All"
+msgstr "Všetky"
+
+#: subtitles.py:380 subtitles.py:3958
+msgid "Language"
+msgstr "Jazyk"
+
+#: subtitles.py:380 subtitles.py:2641 subtitles.py:3960 subtitles.py:4055
+#: subtitles.py:4828
+msgid "Provider"
+msgstr "Poskytovateľ"
+
+#: subtitles.py:381
+#, fuzzy
+msgid "Default"
+msgstr "Pôvodné nastavenie"
+
+#: subtitles.py:381 subtitles.py:3668 subtitles.py:3959
+msgid "Release"
+msgstr ""
+
+#: subtitles.py:381 subtitles.py:3670
+msgid "Video filename"
+msgstr "Video súbor"
+
+#: subtitles.py:382 subtitles.py:3671 subtitles.py:3673
+msgid "User defined"
+msgstr "Uživateľsky definované"
+
+#: subtitles.py:382 subtitles.py:3675
+msgid "Next to video"
+msgstr "Pri videu"
+
+#: subtitles.py:623
+msgid "show subtitles menu"
+msgstr "zobraziť nastavenia tituliek"
+
+#: subtitles.py:895
+msgid "Cannot load subtitles. Invalid path"
+msgstr "Chyba načítania tituliek"
+
+#: subtitles.py:899
+msgid "Cannot decode subtitles. Try another encoding group"
+msgstr "Nemôžem dekódovať titulky. Skúste použiť inú skupinu kódovaní."
+
+#: subtitles.py:903
+msgid "Cannot parse subtitles. Not supported subtitles format"
+msgstr "Chyba načítania tituliek, nepodporovaný formát"
+
+#: subtitles.py:907
+msgid "Cannot parse subtitles. Invalid subtitles format"
+msgstr "Chyba načítania tituliek"
+
+#: subtitles.py:1961
+msgid "Currently choosed subtitles"
+msgstr "Momentálne vybraté titulky"
+
+#: subtitles.py:1990
+msgid "Embedded Subtitles"
+msgstr "Vnorené titulky"
+
+#: subtitles.py:2001 subtitles.py:2004
+msgid "Encoding:"
+msgstr "Kódovanie:"
+
+#: subtitles.py:2004
+msgid "cannot decode"
+msgstr "nemôžem dekódovať"
+
+#: subtitles.py:2006
+msgid "None"
+msgstr "žiadne"
+
+#: subtitles.py:2011 subtitles.py:2884
+msgid "Choose subtitles"
+msgstr "Vybrať titulky"
+
+#: subtitles.py:2013
+msgid "Search subtitles"
+msgstr "Vyhľadať titulky"
+
+#: subtitles.py:2016
+msgid "Change encoding"
+msgstr "Zmeniť kódovanie"
+
+#: subtitles.py:2017
+msgid "Subtitles settings"
+msgstr "Nastavenie tituliek"
+
+#: subtitles.py:2019 subtitles.py:2021
+msgid "Subtitles settings (embedded)"
+msgstr "Nastavenie tituliek (vnorené)"
+
+#: subtitles.py:2023
+msgid "Turn off subtitles"
+msgstr "Vypnúť titulky"
+
+#: subtitles.py:2097
+msgid "Some subtitles providers are not working"
+msgstr "Niektorý poskytovatelia tituliek sú nefunkčný"
+
+#: subtitles.py:2098
+msgid "For more details please check search settings"
+msgstr ""
+
+#: subtitles.py:2100
+msgid "Do you want to show this message again?"
+msgstr "Chcete zobraziť túto správu znova?"
+
+#: subtitles.py:2155
+msgid "Subtitles setting"
+msgstr "Nastavenia tituliek"
+
+#: subtitles.py:2165 subtitles.py:2288 subtitles.py:2808 subtitles.py:4536
+#: subtitles.py:5008
+msgid "Save"
+msgstr "Uložiť"
+
+#: subtitles.py:2166 subtitles.py:2289 subtitles.py:2809 subtitles.py:4537
+#: subtitles.py:5009
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: subtitles.py:2167 subtitles.py:2290 subtitles.py:2810 subtitles.py:4538
+#: subtitles.py:5010
+msgid "Reset Defaults"
+msgstr "Pôvodné nastavenie"
+
+#: subtitles.py:2174
+msgid "External subtitles setting"
+msgstr "Nastavenia externých tituliek"
+
+#: subtitles.py:2185
+msgid "Pause video on opening subtitles menu"
+msgstr "Pozastaviť video po otvorení menu tituliek"
+
+#: subtitles.py:2187
+msgid "Parsing/Rendering"
+msgstr "Parsovanie/Zobrazovanie"
+
+#: subtitles.py:2188 subtitles.py:2300
+msgid "Font type"
+msgstr "Font"
+
+#: subtitles.py:2189 subtitles.py:2301
+msgid "Font size"
+msgstr "Velkosť písma"
+
+#: subtitles.py:2190 subtitles.py:2302
+msgid "Position"
+msgstr "Pozícia"
+
+#: subtitles.py:2191 subtitles.py:2303
+msgid "Color"
+msgstr "Farba"
+
+#: subtitles.py:2192
+msgid "Transparency"
+msgstr "Transparentnosť"
+
+#: subtitles.py:2193
+msgid "Shadow"
+msgstr "Tieňovanie"
+
+#: subtitles.py:2195
+msgid "Shadow type"
+msgstr "Typ tieňovania"
+
+#: subtitles.py:2197 subtitles.py:2304
+msgid "Shadow X-offset"
+msgstr "Horizontálna odchýlka"
+
+#: subtitles.py:2198 subtitles.py:2305
+msgid "Shadow Y-offset"
+msgstr "Vertikálna odchýlka"
+
+#: subtitles.py:2200
+msgid "Shadow size"
+msgstr "Šírka orámovania"
+
+#: subtitles.py:2201
+msgid "Shadow color"
+msgstr "Farba tieňovania"
+
+#: subtitles.py:2203
+msgid "Background"
+msgstr "Pozadie"
+
+#: subtitles.py:2205
+msgid "Background type"
+msgstr "Typ pozadia"
+
+#: subtitles.py:2207
+msgid "Background X-offset"
+msgstr "Horizontálna odchýlka pozadia"
+
+#: subtitles.py:2208
+msgid "Background Y-offset"
+msgstr "Vertikálna odchýlka pozadia"
+
+#: subtitles.py:2209
+msgid "Background color"
+msgstr "Farba pozadia"
+
+#: subtitles.py:2210
+msgid "Background transparency"
+msgstr "Transparentnosť pozadia"
+
+#: subtitles.py:2211
+msgid "Encoding"
+msgstr "Skupina kódovaní"
+
+#: subtitles.py:2212
+msgid "Show expert settings"
+msgstr "Zobraziť experné nastavenia"
+
+#: subtitles.py:2214
+msgid "Hide delay"
+msgstr "Oneskorenie skrytia tituliek"
+
+#: subtitles.py:2215
+msgid "Sync delay"
+msgstr ""
+
+#: subtitles.py:2216
+msgid "Player delay"
+msgstr "Oneskorenie prehrávača"
+
+#: subtitles.py:2217
+#, fuzzy
+msgid "Refresh delay"
+msgstr "Zobraziť titulky"
+
+#: subtitles.py:2218
+msgid "PTS check delay"
+msgstr ""
+
+#: subtitles.py:2296
+msgid "Embedded subtitles setting"
+msgstr "Nastavenia vnorených tituliek"
+
+#: subtitles.py:2398
+msgid "List of Storage Devices"
+msgstr ""
+
+#: subtitles.py:2400
+msgid "Parent Directory"
+msgstr "Vyberte adresár"
+
+#: subtitles.py:2444
+msgid "Choose from embedded subtitles"
+msgstr "Vybrať z \"vnorených\" tituliek"
+
+#: subtitles.py:2449
+msgid "Choose from downloaded subtitles"
+msgstr "Vybrať zo stiahnutých tituliek"
+
+#: subtitles.py:2510
+msgid "Subtitles will be downloaded in"
+msgstr "Titulky sa stiahnu za "
+
+#: subtitles.py:2510
+msgid "seconds"
+msgstr "sekúnd"
+
+#: subtitles.py:2556
+msgid "Choose Subtitles"
+msgstr "Vybrať titulky"
+
+#: subtitles.py:2640
+msgid "Name"
+msgstr "Názov"
+
+#: subtitles.py:2642
+msgid "Download date"
+msgstr "Dátum stiahnutia"
+
+#: subtitles.py:2645
+msgid "Remove (file)"
+msgstr "Zmazať (súbor)"
+
+#: subtitles.py:2646 subtitles.py:3967 subtitles.py:4098
+msgid "Settings"
+msgstr "Nastavenia"
+
+#: subtitles.py:2682
+msgid "Downloaded Subtitles"
+msgstr "Stiahnuté Titulky"
+
+#: subtitles.py:2710
+msgid "Entries count:"
+msgstr "Počet položiek:"
+
+#: subtitles.py:2714
+msgid "Remove Entry (List+File)"
+msgstr "Zmazať Položku (Zoznam+Súbor)"
+
+#: subtitles.py:2716
+msgid "Remove Entry (List)"
+msgstr "Zmazať Položku (Zoznam)"
+
+#: subtitles.py:2726
+msgid "There was an error while removing subtitle, please check log"
+msgstr "Nastala chyba pri mazaní tituliek, prosím skontrolujte log"
+
+#: subtitles.py:2744 subtitles.py:2751
+msgid "Subtitle"
+msgstr "Titulky"
+
+#: subtitles.py:2744
+msgid "will be removed from file system"
+msgstr "bude zmazaný z disku"
+
+#: subtitles.py:2745 subtitles.py:2752
+msgid "Do you want to proceed?"
+msgstr "Chcete pokračovať?"
+
+#: subtitles.py:2751
+msgid "will be removed from list"
+msgstr "bude zmazaný zo zoznamu"
+
+#: subtitles.py:2821
+msgid "Max history entries"
+msgstr "Maximálny počet položiek v histórii"
+
+#: subtitles.py:2822
+msgid "Remove action"
+msgstr "Zmazať"
+
+#: subtitles.py:2823
+msgid "Ask on remove action"
+msgstr "Potvrdiť zmazanie"
+
+#: subtitles.py:2834
+msgid "Select Directory"
+msgstr "Vyberte adresár"
+
+#: subtitles.py:2918
+msgid "unknown"
+msgstr ""
+
+#: subtitles.py:3027
+msgid ""
+"There are more subtitles in unpacked archive\n"
+" please select which one do you want to use"
+msgstr ""
+"V balíčku sa nachádza viac tituliek\n"
+" vyberte tie ktoré chcete použiť"
+
+#: subtitles.py:3031
+msgid ""
+"Subtitles with this name already exist\n"
+"Do you want to overwrite them"
+msgstr ""
+"Titulky s týmto menom už existujú\n"
+"Chcete ich prepísať?"
+
+#: subtitles.py:3415
+msgid "Suggestions"
+msgstr "Návrhy"
+
+#: subtitles.py:3415
+msgid "press green"
+msgstr "stlačte zelené"
+
+#: subtitles.py:3419 subtitles.py:3966 subtitles.py:4097
+msgid "History"
+msgstr "História"
+
+#: subtitles.py:3419
+msgid "press red"
+msgstr "stlačte červené"
+
+#: subtitles.py:3687 subtitles.py:3716
+msgid "Save to"
+msgstr "Uložiť do"
+
+#: subtitles.py:3688 subtitles.py:3717
+msgid "Save as"
+msgstr "Uložiť ako"
+
+#: subtitles.py:3689 subtitles.py:3719
+msgid "Append language to filename"
+msgstr "Pripojiť jazyk titulkov k názvu súboru"
+
+#: subtitles.py:3697
+msgid "Filename"
+msgstr "Názov súboru"
+
+#: subtitles.py:3698
+msgid "Path"
+msgstr "Cesta"
+
+#: subtitles.py:3699
+msgid "Reset"
+msgstr ""
+
+#: subtitles.py:3723
+msgid "Download options"
+msgstr "Možnosti sťahovania"
+
+#: subtitles.py:3760
+msgid "Edit Filename"
+msgstr "Editovať názov súboru"
+
+#: subtitles.py:3768
+msgid "Edit download path"
+msgstr "Editovať cestu sťahovania"
+
+#: subtitles.py:3773
+msgid "Filename cannot be empty!"
+msgstr "Musíte zadať názov súboru!"
+
+#: subtitles.py:3777
+msgid "Path doesn't exist!"
+msgstr "Zadaná cesta neexistuje!"
+
+#: subtitles.py:3961
+msgid "S"
+msgstr ""
+
+#: subtitles.py:3964 subtitles.py:4095
+msgid "Update"
+msgstr "Aktualizovať"
+
+#: subtitles.py:3965 subtitles.py:4096
+msgid "Search"
+msgstr "Hľadať"
+
+#: subtitles.py:4033
+msgid "Subtitles search"
+msgstr "Vyhladávanie tituliek"
+
+#: subtitles.py:4047
+msgid "yes"
+msgstr "áno"
+
+#: subtitles.py:4047
+msgid "no"
+msgstr "nie"
+
+#: subtitles.py:4048 subtitles.py:4821
+msgid "Title"
+msgstr "Názov"
+
+#: subtitles.py:4049 subtitles.py:4822
+msgid "Type"
+msgstr "Typ"
+
+#: subtitles.py:4051 subtitles.py:4824
+msgid "Year"
+msgstr "Rok"
+
+#: subtitles.py:4053 subtitles.py:4826
+msgid "Season"
+msgstr "Séria"
+
+#: subtitles.py:4054 subtitles.py:4827
+msgid "Episode"
+msgstr "Epizóda"
+
+#: subtitles.py:4056
+msgid "Preferred languages"
+msgstr "Preferované jazyky"
+
+#: subtitles.py:4057 subtitles.py:4829
+msgid "Use File path"
+msgstr "Použiť cestu k videu"
+
+#: subtitles.py:4172
+msgid ""
+"Update search parameters if not correct\n"
+" and press green button for search"
+msgstr ""
+"Aktualizujte parametre pre vyhľadávanie\n"
+"a stlačte zelené tlačidlo pre vyhľadanie tituliek"
+
+#: subtitles.py:4181 subtitles.py:4213
+msgid "loading subtitles list"
+msgstr "Načítavam zoznam tituliek"
+
+#: subtitles.py:4182 subtitles.py:4214
+msgid "subtitles found"
+msgstr "nájdených tituliek"
+
+#: subtitles.py:4183 subtitles.py:4215
+msgid "Press OK to Stop"
+msgstr "Stlačte OK pre Zastavenie"
+
+#: subtitles.py:4247
+msgid "No subtitles found :("
+msgstr "Nenašli sa žiadne titulky :("
+
+#: subtitles.py:4248
+msgid "Try update(simplify) search expression and try again.."
+msgstr "Skúste aktualizovať (zjednodušiť) hľadaný výraz.."
+
+#: subtitles.py:4287
+msgid "downloading subtitles..."
+msgstr "sťahujem titulky..."
+
+#: subtitles.py:4339
+msgid "captcha doesn't match, try again..."
+msgstr "zle opísaný obrázok, skúste znova..."
+
+#: subtitles.py:4341
+msgid "invalid credentials provided, correct them and try again"
+msgstr "použili ste nesprávne prihlasovacie údaje, opravte ich a skúste znova"
+
+#: subtitles.py:4343
+msgid "no credentials provided, set them and try again"
+msgstr "zadajte prihlasovacie údaje a skúste znova"
+
+#: subtitles.py:4358
+msgid "Download (user defined)"
+msgstr "Stiahnuť (uživateľsky definované)"
+
+#: subtitles.py:4359
+msgid "Download (next to video)"
+msgstr "Stiahnuť (vedľa videa)"
+
+#: subtitles.py:4360
+msgid "Download (more...)"
+msgstr "Stiahnuť (viac...)"
+
+#: subtitles.py:4363
+msgid "Download and Load (user defined) "
+msgstr "Stiahnuť a Načítať (uživateľsky definované)"
+
+#: subtitles.py:4364
+msgid "Download and Load (next to video)"
+msgstr "Stiahnuť a Načítať (vedľa videa)"
+
+#: subtitles.py:4365
+msgid "Download and Load (more...)"
+msgstr "Stiahnuť a Načítať (viac...)"
+
+#: subtitles.py:4558 subtitles.py:4559 subtitles.py:4560
+msgid "Preferred subtitles language"
+msgstr "Preferovaný jazyk tituliek"
+
+#: subtitles.py:4561
+msgid "Preferred Movie provider"
+msgstr "Preferovaný poskytovateľ pre filmy"
+
+#: subtitles.py:4562
+msgid "Preferred TV show provider"
+msgstr "Preferovaný poskytovateľ pre relácie"
+
+#: subtitles.py:4563
+msgid "Manual search"
+msgstr "Manuálne vyhľadávanie"
+
+#: subtitles.py:4564
+msgid "Subtitles provider timeout"
+msgstr "Časový limit poskytovateľa tituliek"
+
+#: subtitles.py:4565
+msgid "Check search parameters before subtitles search"
+msgstr "Skontrolovať parametre vyhľadávania pred jeho spustením"
+
+#: subtitles.py:4566
+msgid "Sort subtitles list by"
+msgstr "Zoradiť titulky podľa"
+
+#: subtitles.py:4567
+msgid "Save subtitles as"
+msgstr "Uložiť titulky ako"
+
+#: subtitles.py:4568
+msgid "Add subtitle's language to filename"
+msgstr "Pridať jazyk titulkov k názvu súboru"
+
+#: subtitles.py:4570
+msgid "Save subtitles to"
+msgstr "Uložiť titulky do"
+
+#: subtitles.py:4572 subtitles.py:4574
+msgid "Subtitles download path"
+msgstr "Sťahovať titulky do"
+
+#: subtitles.py:4575
+msgid "Subtitles temp path"
+msgstr "Dočasné úložisko pre titulky"
+
+#: subtitles.py:4576
+msgid "Always ask before overwriting existing subtitles"
+msgstr "Spýtať sa pred prepisovaním tituliek"
+
+#: subtitles.py:4577
+msgid "Load subtitles after download"
+msgstr "Načítať titulky po stiahnutí"
+
+#: subtitles.py:4579
+msgid "Save downloaded subtitles to history"
+msgstr "Uložiť stiahnuté titulky do histórie"
+
+#: subtitles.py:4581
+msgid "Load/Save download history directory"
+msgstr "Adresár pre históriu sťahovania"
+
+#: subtitles.py:4585
+msgid "Provider name"
+msgstr "Názov poskytovatela"
+
+#: subtitles.py:4585
+msgid "Supported languages"
+msgstr "Podporované jazyky"
+
+#: subtitles.py:4585
+msgid "State"
+msgstr "Stav"
+
+#: subtitles.py:4593
+msgid "error"
+msgstr "chyba"
+
+#: subtitles.py:4596
+msgid "enabled"
+msgstr "povolené"
+
+#: subtitles.py:4599
+msgid "disabled"
+msgstr "vypnuté"
+
+#: subtitles.py:4717
+msgid "missing"
+msgstr "chýba"
+
+#: subtitles.py:4717
+msgid "library"
+msgstr "knižnica"
+
+#: subtitles.py:4767
+msgid "Source title not provided"
+msgstr "Zdrojový názov nie je k dispozícii"
+
+#: subtitles.py:4769 subtitles.py:4846
+msgid "Source title"
+msgstr "Zdrojový názov"
+
+#: subtitles.py:4771
+msgid "Search parameters"
+msgstr "Parametre vyhľadávania"
+
+#: subtitles.py:4772
+msgid "Press OK to confirm"
+msgstr "Potvrdte stlačením OK tlačidla"
+
+#: subtitles.py:4817
+msgid "Update Search params"
+msgstr "Aktualizujte parametre vyhľadávania"
+
+#: subtitles.py:5016
+msgid "settings"
+msgstr "nastavenia"
+
+#: e2_utils.py:108
+msgid "Language selection"
+msgstr "Výber jazyka"
+
+#: e2_utils.py:237
+msgid "Type text of picture"
+msgstr "Opíšte text obrázku"
+
+#: e2_utils.py:374
+msgid "unpack error: cannot get subname"
+msgstr "chyba rozbalovania"
+
+#: e2_utils.py:390
+msgid "unpack error: cannot open archive"
+msgstr "chyba rozbalovania: nemôžem otvoriť archív"
+
+#: seek.py:324
+#, python-format
+msgid "unsupported archive %s"
+msgstr "nepodporovaný archív %s"
+
+#: plugin.py:10 plugin.py:11
+msgid "SubsSupport downloader"
+msgstr ""
+
+#: plugin.py:10 plugin.py:11
+msgid "Download subtitles for your videos"
+msgstr ""
+
+#: seekers/xbmc_subtitles.py:123 seekers/xbmc_subtitles.py:301
+#: seekers/xbmc_subtitles.py:397
+msgid "Username"
+msgstr "Prihlasovacie meno"
+
+#: seekers/xbmc_subtitles.py:124 seekers/xbmc_subtitles.py:302
+#: seekers/xbmc_subtitles.py:398
+msgid "Password"
+msgstr "Heslo"
+
+#~ msgid "Size"
+#~ msgstr "Veľkosť"
+
+#~ msgid "Update Expression"
+#~ msgstr "Aktualizovať hl. výraz"
+
+#~ msgid "Select download location"
+#~ msgstr "Vyberte umiestnenie"
+
+#~ msgid "Always ask where to download subtitles"
+#~ msgstr "Spýtať kam sťahovať titulky"
+
+#~ msgid "Ask"
+#~ msgstr "Spýtať sa"
+
+#~ msgid "Allowed"
+#~ msgstr "Povolené"
+
+#~ msgid "Not allowed"
+#~ msgstr "Nepovolené"
+
+#~ msgid "cannot unpack rar sub-archive, unrar not find, please install it"
+#~ msgstr "nemôžem rozbaliť rar-archív unrar nie je nainštalovaný"
+
+#~ msgid "unpacking..."
+#~ msgstr "rozbaľujem"
+
+#~ msgid "You're trying to search while other search task is not finished"
+#~ msgstr "Snažíte sa vyhľadávať pričom predošlé vyhľadávanie ešte neskončilo"
+
+#~ msgid "It could greatly reduce search performance"
+#~ msgstr "Môže to veľmi spomaliť vyhľadávanie"
+
+#~ msgid "You cannot search while other search task is running"
+#~ msgstr "Nie je možné vyhľadávať pokiaľ predošlé vyhľadávanie ešte prebieha"
+
+#~ msgid "Preferred Language"
+#~ msgstr "Preferovaný jazyk"
+
+#~ msgid "Simultaneous search"
+#~ msgstr "Simultánne vyhľadávanie"
+
+#~ msgid "Sort by"
+#~ msgstr "Zoradiť podľa"
+
+#~ msgid "Save as movie name"
+#~ msgstr "Premenovať titulky podľa názvu videa"
+
+#~ msgid "Central and Eastern Europe"
+#~ msgstr "Stredná a východná Európa"
+
+#~ msgid "Western Europe"
+#~ msgstr "Západná Európa"
+
+#~ msgid "Russia"
+#~ msgstr "Rusko"
+
+#~ msgid "Search Expression:"
+#~ msgstr "Hľadaný výraz:"
+
+#~ msgid "Reload"
+#~ msgstr "Znovu načítať"
+
+#~ msgid "Set search expression"
+#~ msgstr "Zvolte hľadaný výraz"
+
+#~ msgid "Primary Language"
+#~ msgstr "Primárny jazyk"
+
+#~ msgid "Secondary Language"
+#~ msgstr "Sekundárny jazyk"
+
+#, fuzzy
+#~ msgid "Third Language"
+#~ msgstr "Preferovaný jazyk"
+
+#~ msgid "Size (MB)"
+#~ msgstr "Veľkosť (MB)"
