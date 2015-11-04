@@ -4,7 +4,7 @@ Created on Sep 16, 2014
 @author: marko
 '''
 import time
-
+from . import _
 from Components.ActionMap import HelpableActionMap
 from Components.Label import Label
 from Components.Sources.EventInfo import EventInfo

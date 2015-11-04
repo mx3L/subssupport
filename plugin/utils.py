@@ -14,8 +14,11 @@ def load(subpath):
                 response.close()
         return text
     else:
-        with open(subpath, 'r') as f:
-            return f.read()
+        try:
+            with open(subpath, 'r') as f:
+                return f.read()
+        except Exception:
+            return ""
 
 def toString(text):
     if isinstance(text,basestring):

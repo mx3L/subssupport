@@ -15,7 +15,7 @@
 #    GNU General Public License for more details.
 #
 #################################################################################
-
+from . import _
 import os
 import shutil
 from twisted.web.client import downloadPage
@@ -478,7 +478,7 @@ class BaseMenuScreen(Screen, ConfigListScreen):
                 <widget name="key_yellow" position="310,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
                 <widget name="key_blue" position="460,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
                 <eLabel position="-1,55" size="612,1" backgroundColor="#999999" />
-                <widget name="config" position="0,75" size="610,360" scrollbarMode="showOnDemand" />
+                <widget name="config" position="0,75" size="610,355" scrollbarMode="showOnDemand" />
             </screen>"""
 
     def __init__(self, session, title):

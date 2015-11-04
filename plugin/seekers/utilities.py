@@ -305,9 +305,12 @@ class HeadRequest(urllib2.Request):
         return "HEAD"
 
 def getFileSize(filepath):
-    if os.path.isfile(filepath):
-        return os.path.getsize(filepath)
-    elif filepath.startswith('http://'):
+    try:
+        if os.path.isfile(filepath):
+            return os.path.getsize(filepath)
+    except Exception:
+        return None
+    if filepath.startswith('http://'):
         try:
             resp = urllib2.urlopen(HeadRequest(filepath))
             return  long(resp.info().get('Content-Length'))

@@ -1,3 +1,4 @@
+from . import _
 from Components.ActionMap import ActionMap
 from Components.MenuList import MenuList
 from Components.PluginComponent import PluginDescriptor
@@ -30,8 +31,8 @@ def openSubsSupportSettings(session, **kwargs):
 
 class SubsSupportSettings(Screen):
     skin = """
-        <screen position="center,center" size="300,300">
-            <widget name="menuList" position="10,10" size="280,280"/>
+        <screen position="center,center" size="370,200">
+            <widget name="menuList" position="10,10" size="340,180"/>
         </screen>
         """
     def __init__(self, session, generalSettings, searchSettings, externalSettings, embeddedSettings, dvbSettings):
@@ -42,7 +43,7 @@ class SubsSupportSettings(Screen):
         self.embeddedSettings = embeddedSettings
         self.dvbSettings = dvbSettings
         self["menuList"] = MenuList([
-            (("General settings"), "general"),
+            (_("General settings"), "general"),
             (_("External subtitles settings"), "external"),
             (_("Embedded subtitles settings"), "embedded"),
             (_("Search settings"), "search"),
@@ -56,10 +57,11 @@ class SubsSupportSettings(Screen):
             "cancel": self.close,
         })
         self.onLayoutFinish.append(self.setWindowTitle)
-        
+
     def setWindowTitle(self):
-        self.title = _("SubsSupport settings")
-        
+        self.setup_title = _("SubsSupport settings")
+        self.setTitle(self.setup_title)
+
     def confirmSelection(self):
         selection  = self["menuList"].getCurrent()[1]
         if selection == "general":
@@ -71,7 +73,7 @@ class SubsSupportSettings(Screen):
         elif selection == "search":
             self.openSearchSettings()
         elif selection == "dvb":
-            self.openDVBPlayerSettings()                                   
+            self.openDVBPlayerSettings()
         
     def openGeneralSettings(self):
         self.session.open(SubsSetupGeneral, self.generalSettings)
