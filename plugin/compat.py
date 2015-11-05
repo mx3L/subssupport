@@ -16,6 +16,7 @@ from Tools.Directories import fileExists
 from enigma import eTimer as Timer
 from enigma import eServiceReference, eListboxPythonMultiContent, eServiceCenter, gFont
 
+from . import _
 
 try:
     Timer().callback

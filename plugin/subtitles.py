@@ -2301,17 +2301,17 @@ class SubsChooserMenuList(MenuList):
         if embeddedAvailable:
             res = [('embedded')]
             res.append(MultiContentEntryPixmapAlphaTest(pos=(5, 5), size=(35, 25), png=loadPNG(os.path.join(os.path.dirname(__file__), 'img', 'key_red.png'))))
-            res.append(MultiContentEntryText(pos=(60, 5), size=(330, 25), font=0, flags=RT_VALIGN_CENTER, text=_("Choose from embedded subtitles")))
+            res.append(MultiContentEntryText(pos=(60, 5), size=(350, 25), font=0, flags=RT_VALIGN_CENTER, text=_("Choose from embedded subtitles")))
             menulist.append(res)
         if historySupport:
             res = [('downloaded')]
             res.append(MultiContentEntryPixmapAlphaTest(pos=(5, 5), size=(35, 25), png=loadPNG(os.path.join(os.path.dirname(__file__), 'img', 'key_yellow.png'))))
-            res.append(MultiContentEntryText(pos=(60, 5), size=(330, 25), font=0, flags=RT_VALIGN_CENTER, text=_("Choose from downloaded subtitles")))
+            res.append(MultiContentEntryText(pos=(60, 5), size=(350, 25), font=0, flags=RT_VALIGN_CENTER, text=_("Choose from downloaded subtitles")))
             menulist.append(res)
         if searchSupport:
             res = [('search')]
             res.append(MultiContentEntryPixmapAlphaTest(pos=(5, 5), size=(35, 25), png=loadPNG(os.path.join(os.path.dirname(__file__), 'img', 'key_blue.png'))))
-            res.append(MultiContentEntryText(pos=(60, 5), size=(330, 25), font=0, flags=RT_VALIGN_CENTER, text=_("Choose from web subtitles")))
+            res.append(MultiContentEntryText(pos=(60, 5), size=(350, 25), font=0, flags=RT_VALIGN_CENTER, text=_("Choose from web subtitles")))
             menulist.append(res)
         if embeddedAvailable or historySupport or searchSupport:
             self.l.setList(menulist)
@@ -2727,7 +2727,7 @@ class SubsDownloadedSubtitlesMenu(Screen, ConfigListScreen):
         self.onLayoutFinish.append(self.updateTitle)
 
     def updateTitle(self):
-        self.setTitle("Downloaded Subtitles - Settings")
+        self.setTitle(_("Downloaded Subtitles - Settings"))
 
     def buildMenu(self):
         menuList = []
@@ -4450,7 +4450,7 @@ class SubsSearchSettings(Screen, ConfigListScreen):
         <widget name="key_yellow" position="330,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
         <widget name="key_blue" position="490,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
         <eLabel position="-1,55" size="650,1" backgroundColor="#999999" />
-        <widget name="config" position="10,75" size="630,165" scrollbarMode="showOnDemand" />
+        <widget name="config" position="10,75" size="630,178" scrollbarMode="showOnDemand" />
         <!-- <eLabel position="5,245" size="640,1" backgroundColor="#999999" /> -->
         <widget source="header_name" render="Label" position = "10,265" size="200,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
         <widget source="header_lang" render="Label" position = "220,265" size="180,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
@@ -4494,7 +4494,7 @@ class SubsSearchSettings(Screen, ConfigListScreen):
         self["key_green"] = Label(_("Save"))
         self["key_red"] = Label(_("Cancel"))
         self["key_blue"] = Label(_("Reset Defaults"))
-        self["key_yellow"] = Label("Switch List")
+        self["key_yellow"] = Label(_("Switch List"))
         self["actions"] = ActionMap(["DirectionActions", "SetupActions", "OkCancelActions", "ColorActions", "ListboxActions"],
         {
             "ok": self.keyOk,
