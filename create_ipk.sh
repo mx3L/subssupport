@@ -117,6 +117,7 @@ echo "creating locales..."
 msgfmt ${P}${PLUGINPATH}/locale/cs/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/cs/LC_MESSAGES/SubsSupport.mo
 msgfmt ${P}${PLUGINPATH}/locale/sk/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/sk/LC_MESSAGES/SubsSupport.mo
 msgfmt ${P}${PLUGINPATH}/locale/pl/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/pl/LC_MESSAGES/SubsSupport.mo
+msgfmt ${P}${PLUGINPATH}/locale/ru/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/ru/LC_MESSAGES/SubsSupport.mo
 
 #echo "compiling to python bytecode..."
 #python -O -m compileall ${P} 1> /dev/null
