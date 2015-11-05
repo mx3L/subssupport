@@ -49,12 +49,7 @@ if [ -f "$with_pass" ]; then
 		bye
 	EOFFTP
 else
-    sftp $E2_USERNAME@$E2_HOST <<- EOFFTP > /dev/null
-		cd /tmp
-		lcd ${D}
-		put $IPK_NAME
-		bye
-	EOFFTP
+    scp $IPK_NAME $E2_USERNAME@$E2_HOST:/tmp
 fi
    
 echo "installing '${IPK_NAME}' to $E2_HOST..."
