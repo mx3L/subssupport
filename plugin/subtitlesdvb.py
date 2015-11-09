@@ -7,7 +7,6 @@ import time
 from . import _
 from Components.ActionMap import HelpableActionMap
 from Components.Label import Label
-from Components.Sources.EventInfo import EventInfo
 from Components.config import ConfigSubsection, getConfigListEntry
 from Components.config import config, ConfigOnOff
 from Screens.HelpMenu import HelpableScreen
@@ -33,7 +32,7 @@ class SubsSetupDVBPlayer(BaseMenuScreen):
     def __init__(self, session, dvbSettings):
         BaseMenuScreen.__init__(self, session, _("DVB player settings"))
         self.dvbSettings = dvbSettings
-        
+
     def buildMenu(self):
         self['config'].setList([getConfigListEntry(_("Auto sync to current event"), self.dvbSettings.autoSync)])
 
@@ -42,7 +41,7 @@ class SubsSupportDVB(object):
         self.session = session
         self.subsSettings = initSubsSettings()
         session.openWithCallback(self.subsChooserCB, SubsChooser, self.subsSettings, searchSupport=True, historySupport=True, titleList=self.getTitleList())
-        
+
     def getTitleList(self):
         eventList = []
         eventNow = self.session.screen["Event_Now"].getEvent()
@@ -159,13 +158,13 @@ class SubsControllerDVB(Screen, HelpableScreen):
             self.onFirstExecBegin.append(self.eventSync)
         self.onClose.append(self.engine.close)
         self.onClose.append(self.stopTimers)
-        
+
     def startEventTimer(self):
         self.eventTimer.start(500)
-        
+
     def startSubtitlesTimer(self):
         self.subtitlesTimer.start(self.subtitlesTimerStep)
-        
+
     def setProvidedSubtitlesFps(self):
         self.engine.setSubsFps(self.providedSubtitlesFps)
         self.updateSubtitlesFps()
@@ -189,7 +188,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
             else:
                 nextSub = self.engine.subsList[nextSubIdx]
             self.updateSubtitle(nextSub, active=False)
-            
+
     def showStatusWithTimer(self):
         self.showStatus(True)
 
@@ -218,12 +217,12 @@ class SubsControllerDVB(Screen, HelpableScreen):
         self['eventName'].visible = False
         self['eventTime'].visible = False
         self['eventDuration'].visible = False
-        
+
     def updateSubtitle(self, sub, active):
         if sub is None:
             self['subtitle'].setText("")
             return
-        st = sub['start'] * self.engine.fpsRatio / 90000 
+        st = sub['start'] * self.engine.fpsRatio / 90000
         et = sub['end'] * self.engine.fpsRatio / 90000
         stStr = "%d:%02d:%02d" % ((st / 3600, st % 3600 / 60, st % 60))
         etStr = "%d:%02d:%02d" % ((et / 3600, et % 3600 / 60, et % 60))
@@ -233,12 +232,12 @@ class SubsControllerDVB(Screen, HelpableScreen):
         else:
             self['subtitle'].instance.setForegroundColor(parseColor("#aaaaaa"))
             self['subtitle'].setText("%s ----> %s" % (stStr, etStr))
-        
+
     def updateSubtitlesPosition(self, position=None):
         if position is None:
             position = self.engine.subsList.index(self.engine.getCurrentSub())
         self['subtitlesPosition'].setText("%s: %d / %d" % (_("Subtitles Position"), position, len(self.engine.subsList) - 1))
-    
+
     def updateSubtitlesTime(self, sub=None):
         if sub:
             self._baseTime = sub['start'] * self.engine.fpsRatio / 90
@@ -252,7 +251,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
             st = self._subtitlesTime / 1000
             time = "%d:%02d:%02d" % (st / 3600, st % 3600 / 60, st % 60)
             self['subtitlesTime'].setText("%s: %s" % (_("Subtitles Time"), time))
-        
+
     def updateSubtitlesFps(self):
         subsFps = self.engine.getSubsFps()
         videoFps = getFps(self.session, True)
@@ -275,7 +274,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
                     self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), str(self.providedSubtitlesFps) ))
             else:
                 self['subtitlesFps'].setText("%s: %s" % (_("Subtitles FPS"), str(subsFps)))
-            
+
     def updateEventStatus(self):
         event = self.session.screen["Event_Now"].getEvent()
         if event is not None:
@@ -308,7 +307,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
             self["eventName"].setText("")
             self["eventTime"].setText("")
             self["eventDuration"].setText("")
-            
+
     def changeFps(self):
         subsFps = self.engine.getSubsFps()
         if subsFps is None:
@@ -333,15 +332,15 @@ class SubsControllerDVB(Screen, HelpableScreen):
         else:
             self.statusLocked = True
             self.showStatus()
-            
+
     def eventSync(self):
-        event = EventInfo(self.session.nav, EventInfo.NOW).getEvent()
+        event = self.session.screen["Event_Now"].getEvent()
         if event is not None:
             progress = (int(time.time()) - event.getBeginTime()) * 1000
             self.engine.seekTo(progress)
         else:
             self.session.open(MessageBox, _("cannot sync to event, event is not available"), MessageBox.TYPE_INFO, simple=True, timeout=3)
-            
+
     def playPause(self):
         if self.engine.isPaused():
             self.resume()
@@ -357,7 +356,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
         self.engine.resume()
         self.startSubtitlesTimer()
         self.showStatus(True)
-        
+
     def restart(self):
         self.engine.pause()
         self.engine.resume()
@@ -366,22 +365,22 @@ class SubsControllerDVB(Screen, HelpableScreen):
     def nextSkip(self):
         self.engine.toNextSub()
         self.showStatus(True)
-        
+
     def nextMinuteSkip(self):
         self.engine.seekRelative(60 * 1000)
         self.showStatus(True)
-        
+
     def nextManual(self):
         def nextManualCB(minutes):
             if minutes > 0:
                 self.engine.seekRelative(minutes* 60 * 1000)
                 self.showStatus(True)
         self.session.openWithCallback(nextManualCB, MinuteInput)
-        
+
     def previousSkip(self):
         self.engine.toPrevSub()
         self.showStatus(True)
-        
+
     def previousMinuteSkip(self):
         self.engine.seekRelative(-60 * 1000)
         self.showStatus(True)
@@ -418,7 +417,7 @@ class SubsEngineDVB(object):
 
     def setSubsList(self, subsList):
         self.subsList = subsList
-        
+
     def setSubsFps(self, subsFps):
         print "[SubsEngineDVB] setSubsFps - setting fps to %s" % str(subsFps)
         videoFps = getFps(self.session, True)
@@ -439,18 +438,18 @@ class SubsEngineDVB(object):
         self.__position = position
         for f in self.onPositionUpdate:
             f(self.__position)
-        
+
     def getPosition(self):
         return self.__position
-        
+
     position = property(getPosition, setPosition)
-    
+
     def getSubsFps(self):
         videoFps = getFps(self.session, True)
         if videoFps is None:
             return None
         return fps_float(self.fpsRatio * videoFps)
-    
+
     def getCurrentSub(self):
         return self.subsList[self.position]
 
@@ -458,7 +457,7 @@ class SubsEngineDVB(object):
         self.reftime = time.time() * 1000
         self.refposition = self.position
         self.delay = 0
-        
+
     def isPaused(self):
         return self.paused
 
@@ -491,7 +490,7 @@ class SubsEngineDVB(object):
 
     def startHideTimer(self):
         self.hideTimer.start(int(self.subsList[self.position]['duration'] * self.fpsRatio), True)
-        
+
     def hideTimerCallback(self):
         self.hideTimer.stop()
         self.waitTimer.stop()
@@ -505,7 +504,7 @@ class SubsEngineDVB(object):
             self.toTime = self.reftime + ((self.subsList[self.position]['start'] - self.subsList[self.refposition]['start'])/90 * self.fpsRatio)
             timeout = ((self.subsList[self.position]['start'] - self.subsList[self.position - 1]['end']) / 90 * self.fpsRatio) + self.delay
             self.waitTimer.start(int(timeout), True)
-        
+
     def doWait(self):
         timeNow = time.time() * 1000
         delay = int(self.toTime - timeNow)
@@ -523,7 +522,7 @@ class SubsEngineDVB(object):
             self.waitTimer.stop()
             self.renderSub()
             self.startHideTimer()
-            
+
     def seekTo(self, time):
         self.waitTimer.stop()
         self.hideTimer.stop()
