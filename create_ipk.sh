@@ -113,17 +113,19 @@ mkdir -p ${P}${PLUGINPATH}
 cp -rp ${D}/plugin/* ${P}${PLUGINPATH} 2> /dev/null
 rm ${P}${PLUGINPATH}/hsubtitles.json 2> /dev/null
 
-echo "creating locales..." 
-msgfmt ${P}${PLUGINPATH}/locale/cs/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/cs/LC_MESSAGES/SubsSupport.mo
-msgfmt ${P}${PLUGINPATH}/locale/sk/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/sk/LC_MESSAGES/SubsSupport.mo
-msgfmt ${P}${PLUGINPATH}/locale/pl/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/pl/LC_MESSAGES/SubsSupport.mo
-msgfmt ${P}${PLUGINPATH}/locale/ru/LC_MESSAGES/SubsSupport.po -o ${P}${PLUGINPATH}/locale/ru/LC_MESSAGES/SubsSupport.mo
+echo "creating locales..."
+for lang in cs sk pl ru; do \
+    mkdir -p ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES; \
+    msgfmt ${D}/locale/${lang}.po -o ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/SubsSupport.mo; \
+    cp -rp ${D}/locale/${lang}.po ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/;
+done
 
 #echo "compiling to python bytecode..."
 #python -O -m compileall ${P} 1> /dev/null
 
 echo "cleanup..."
 #find ${P} -name "*.po" -exec rm {} \;
+find ${P} -name "Makefile.am" -print -exec rm {} \;
 find ${P} -name "*.pyo" -print -exec rm {} \;
 find ${P} -name "*.pyc" -print -exec rm {} \;
 
