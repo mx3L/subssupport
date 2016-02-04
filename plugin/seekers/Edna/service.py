@@ -1,9 +1,8 @@
 # -*- coding: UTF-8 -*-
 
-import sys
 import os
 
-import urllib2,urllib,re
+import urllib,re
 from ..utilities import log,  languageTranslate
 
 

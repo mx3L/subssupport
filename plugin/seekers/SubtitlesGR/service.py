@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
-import os, re, string, urllib, urllib2
-import shutil
+import os, re, urllib, urllib2
 
 from ..utilities import log
 

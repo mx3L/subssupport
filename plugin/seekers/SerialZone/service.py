@@ -1,9 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-import sys
-import os
-
-import urllib2,urllib,re
+import urllib,re
 from ..utilities import log, hashFile, languageTranslate
 
 def search_subtitles( file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack ): #standard input

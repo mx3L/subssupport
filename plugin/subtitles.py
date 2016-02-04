@@ -19,9 +19,7 @@
 from Queue import Queue
 from datetime import datetime
 import json
-from os import path as os_path, listdir
 import os
-from re import compile as re_compile
 import re
 import sys
 from threading import Thread
@@ -38,7 +36,6 @@ from Components.Language import language
 from Components.MenuList import MenuList
 from Components.MultiContent import MultiContentEntryText, \
     MultiContentEntryPixmapAlphaTest
-from Components.Renderer.Renderer import Renderer
 from Components.ServiceEventTracker import ServiceEventTracker, InfoBarBase
 from Components.Sources.Boolean import Boolean
 from Components.Sources.List import List
@@ -63,10 +60,10 @@ from compat import eTimer, FileList
 from e2_utils import messageCB, E2SettingsProvider, MyLanguageSelection, unrar, \
     ConfigFinalText, Captcha, DelayMessageBox, MyConfigList, getFps, fps_float, \
     getFonts, BaseMenuScreen
-from enigma import RT_HALIGN_RIGHT, RT_VALIGN_TOP, eSize, ePoint, RT_HALIGN_LEFT, \
-    RT_HALIGN_RIGHT, RT_HALIGN_CENTER, RT_VALIGN_CENTER, eListboxPythonMultiContent, \
-    gFont, getDesktop, eServiceCenter, iServiceInformation, eServiceReference, \
-    iSeekableService, iPlayableService, iPlayableServicePtr, addFont, gFont, \
+from enigma import eSize, ePoint, RT_HALIGN_LEFT, \
+    RT_HALIGN_RIGHT, RT_VALIGN_CENTER, eListboxPythonMultiContent, \
+    getDesktop, eServiceCenter, eServiceReference, \
+    iPlayableService, gFont, \
     gRGB, loadPNG, ePythonMessagePump, eConsoleAppContainer, eLabel
 from parsers import SubRipParser, MicroDVDParser
 from process import SubsLoader, DecodeError, ParseError, ParserNotFoundError, \
