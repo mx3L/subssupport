@@ -3915,7 +3915,6 @@ class SubsSearch(Screen):
         self["searchActions"].setEnabled(False)
         
         self.__contextMenu = self.session.instantiateDialog(SubsSearchContextMenu)
-        self.__contextMenu.hide()
         self["contextMenuActions"] = ActionMap(["DirectionActions", "OkCancelActions", "MenuActions"],
         {
             "up":self.__contextMenu.up,
