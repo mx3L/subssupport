@@ -4046,7 +4046,7 @@ class SubsSearch(Screen):
             self["menuActions"].setEnabled(False)
             self["searchActions"].setEnabled(False)
             self["contextMenuActions"].setEnabled(False)
-        elif self.__contextMenu.shown:
+        elif self.__contextMenu.already_shown and self.__contextMenu.shown:
             self["okCancelActions"].setEnabled(False)
             self["listActions"].setEnabled(False)
             self["menuActions"].setEnabled(False)
