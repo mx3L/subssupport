@@ -37,7 +37,7 @@ from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Directories import fileExists, SCOPE_SKIN, resolveFilename
 
-from compat import LanguageEntryComponent, eConnectCallback
+from compat import LanguageEntryComponent
 from enigma import addFont, ePicLoad, eEnv
 from utils import toString
 
@@ -65,14 +65,7 @@ class MyConfigList(ConfigList):
     def postWidgetCreate(self, instance):
         if not self.enabled:
             instance.setSelectionEnable(False)
-        instance.setContent(self.l)
-
-    def preWidgetRemove(self, instance):
-        if not self.enabled:
-            instance.setContent(None)
-        else:
-            if isinstance(self.current, tuple) and len(self.current) >= 2:
-                self.current[1].onDeselect(self.session)
+        ConfigList.postWidgetCreate(self, instance)
 
 
 class MyLanguageSelection(Screen):
