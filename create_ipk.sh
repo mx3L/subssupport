@@ -13,9 +13,9 @@ pushd ${D} &> /dev/null
 
 PVER=$(cat plugin/__init__.py|grep __version__|sed s/__version__\ =\ //|sed s/\"//g|tr -d '[[:space:]]')
 GITVER=$(git log -1 --format="%ci" | awk -F" " '{ print $1 }' | tr -d "-")
-VER=$PVER\_$GITVER
+VER=$PVER-$GITVER
 
-PKG=${D}/enigma2-plugin-extensions-subssupport_${VER}_all.ipk
+PKG=${D}/enigma2-plugin-extensions-subssupport_${VER}_all
 PLUGINPATH=/usr/lib/enigma2/python/Plugins/Extensions/SubsSupport
 popd &> /dev/null
 
@@ -43,7 +43,6 @@ Priority: optional
 Maintainer: mxfitsat@gmail.com
 Recommends: python-xmlrpc, unrar, python-compression, python-codecs, python-zlib, python-difflib
 Homepage: https://code.google.com/p/mediaplayer2-for-sh4/
-Source: https://code.google.com/p/mediaplayer2-for-sh4/
 Description: Enigma2 subtitles support library  $VER"
 EOF
 
@@ -180,7 +179,8 @@ echo "2.0" > ${B}/debian-binary
 
 cd ${B}
 ls -la
-ar -r ${PKG} ./debian-binary ./data.tar.gz ./control.tar.gz
+ar -r ${PKG}.ipk ./debian-binary ./control.tar.gz ./data.tar.gz
+ar -r ${PKG}.deb ./debian-binary ./control.tar.gz ./data.tar.gz
 cd -
 
 rm -rf ${P}
