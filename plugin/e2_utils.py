@@ -37,36 +37,35 @@ from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Directories import fileExists, SCOPE_SKIN, resolveFilename
 
-from compat import LanguageEntryComponent
+from compat import LanguageEntryComponent, eConnectCallback
 from enigma import addFont, ePicLoad, eEnv
 from utils import toString
 
 
 class MyConfigList(ConfigList):
     def __init__(self, list, session, enabled=True):
-        ConfigList.__init__(self, list, session)
         self.enabled = enabled
+        ConfigList.__init__(self, list, session)
 
     def enableList(self):
-        self.instance.setSelectionEnable(True)
-        self.instance.selectionChanged.get().append(self.selectionChanged)
-        self.selectionChanged()
         self.enabled = True
+        self.instance.setSelectionEnable(True)
+        self.selectionChanged()
 
     def disableList(self):
         self.instance.setSelectionEnable(False)
         if isinstance(self.current, tuple) and len(self.current) >= 2:
                 self.current[1].onDeselect(self.session)
-        self.instance.selectionChanged.get().remove(self.selectionChanged)
         self.enabled = False
+
+    def selectionChanged(self):
+        if self.enabled:
+            return ConfigList.selectionChanged(self)
 
     def postWidgetCreate(self, instance):
         if not self.enabled:
             instance.setSelectionEnable(False)
-            instance.setContent(self.l)
-        else:
-            instance.selectionChanged.get().append(self.selectionChanged)
-            instance.setContent(self.l)
+        instance.setContent(self.l)
 
     def preWidgetRemove(self, instance):
         if not self.enabled:
@@ -74,7 +73,6 @@ class MyConfigList(ConfigList):
         else:
             if isinstance(self.current, tuple) and len(self.current) >= 2:
                 self.current[1].onDeselect(self.session)
-            instance.selectionChanged.get().remove(self.selectionChanged)
 
 
 class MyLanguageSelection(Screen):
@@ -243,8 +241,9 @@ class CaptchaDialog(VirtualKeyBoard):
         self.Scale = AVSwitch().getFramebufferScale()
         self.picPath = captcha_file
         self.picLoad = ePicLoad()
-        self.picLoad.PictureData.get().append(self.decodePicture)
+        self.picLoad_conn = eConnectCallback(self.picLoad.PictureData, self.decodePicture)
         self.onLayoutFinish.append(self.showPicture)
+        self.onClose.append(self.__onClose)
 
     def showPicture(self):
         self.picLoad.setPara([self["captcha"].instance.size().width(), self["captcha"].instance.size().height(), self.Scale[0], self.Scale[1], 0, 1, "#002C2C39"])
@@ -259,6 +258,10 @@ class CaptchaDialog(VirtualKeyBoard):
         if ptr != None:
             self["captcha"].instance.setPixmap(ptr.__deref__())
             self["captcha"].show()
+
+    def __onClose(self):
+        del self.picLoad_conn
+        del self.picLoad
 
 class DelayMessageBox(MessageBox):
     def __init__(self, session, seconds, message):
@@ -396,14 +399,14 @@ def unrar(rarPath, destDir, successCB, errorCB):
     cmdRarSubName = 'unrar lb "%s"' % rarPath
     extraArgs = (rarPath, destDir)
     Console().ePopen(toString(cmdRarSubName), rarSubNameCB, extraArgs)
-    
+
 class fps_float(float):
     def __eq__(self, other):
         return "%.3f"%self == "%.3f"%other
-    
+
     def __str__(self):
         return "%.3f"%(self)
-    
+
 def getFps(session, validOnly=False):
     from enigma import iServiceInformation
     service = session.nav.getCurrentService()
@@ -499,13 +502,13 @@ class BaseMenuScreen(Screen, ConfigListScreen):
         self.title = title
         self.onLayoutFinish.append(self.setWindowTitle)
         self.onLayoutFinish.append(self.buildMenu)
-        
+
     def setWindowTitle(self):
         self.setTitle(self.title)
-        
+
     def buildMenu(self):
         pass
-        
+
     def resetDefaults(self):
         for x in self["config"].list:
             x[1].value = x[1].default

@@ -13,29 +13,39 @@ from Components.MenuList import MenuList
 from Screens.MessageBox import MessageBox as OrigMessageBox
 from Tools.Directories import fileExists
 
-from enigma import eTimer as Timer
 from enigma import eServiceReference, eListboxPythonMultiContent, eServiceCenter, gFont
 
 from . import _
 
-try:
-    Timer().callback
-except AttributeError:
-    # eTimer has changed interface on DMM images
-    class  eTimer(object):
-        def __init__(self):
-            self._timer = Timer()
-            
-        def __getattr__(self, key):
-            if key == "callback" and not hasattr(self._timer, "callback"):
-                timeout = self._timer.timeout
-                timeout.append = timeout.connect
-                return timeout
-            else:
-                return getattr(self._timer, key)
-else:
-    eTimer = Timer
+# taken from IPTVPlayer
+class eConnectCallbackObj:
+    def __init__(self, obj=None, connectHandler=None):
+        self.connectHandler = connectHandler
+        self.obj = obj
     
+    def __del__(self):
+        if 'connect' not in dir(self.obj):
+            if 'get' in dir(self.obj):
+                self.obj.get().remove(self.connectHandler)
+            else:
+                self.obj.remove(self.connectHandler)
+        else:
+            del self.connectHandler
+        self.connectHandler = None
+        self.obj = None
+
+# taken from IPTVPlayer
+def eConnectCallback(obj, callbackFun):
+    if 'connect' in dir(obj):
+        return eConnectCallbackObj(obj, obj.connect(callbackFun))
+    else:
+        if 'get' in dir(obj):
+            obj.get().append(callbackFun)
+        else:
+            obj.append(callbackFun)
+        return eConnectCallbackObj(obj, callbackFun)
+    return eConnectCallbackObj()
+
 # this function is not the same accross different images
 def LanguageEntryComponent(file, name, index):
     from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN

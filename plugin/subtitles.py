@@ -56,15 +56,15 @@ from Tools.Directories import SCOPE_SKIN_IMAGE, SCOPE_SKIN, resolveFilename, \
 from Tools.ISO639 import LanguageCodes
 from Tools.LoadPixmap import LoadPixmap
 
-from compat import eTimer, FileList
+from compat import eConnectCallback, FileList
 from e2_utils import messageCB, E2SettingsProvider, MyLanguageSelection, unrar, \
     ConfigFinalText, Captcha, DelayMessageBox, MyConfigList, getFps, fps_float, \
     getFonts, BaseMenuScreen
-from enigma import eSize, ePoint, RT_HALIGN_LEFT, \
+from enigma import eTimer, eConsoleAppContainer, ePythonMessagePump, eSize, ePoint, RT_HALIGN_LEFT, \
     RT_HALIGN_RIGHT, RT_VALIGN_CENTER, eListboxPythonMultiContent, \
     getDesktop, eServiceCenter, eServiceReference, \
     iPlayableService, gFont, \
-    gRGB, loadPNG, ePythonMessagePump, eConsoleAppContainer, eLabel
+    gRGB, loadPNG, eLabel
 from parsers import SubRipParser, MicroDVDParser
 from process import SubsLoader, DecodeError, ParseError, ParserNotFoundError, \
     LoadError
@@ -729,8 +729,9 @@ class SubsSupport(SubsSupportEmbedded):
         self.__forceDefaultPath = forceDefaultPath
         self.__showGUIInfoMessages = showGUIInfoMessages
         self.__checkTimer = eTimer()
+        self.__checkTimer_conn = None
         self.__starTimer = eTimer()
-        self.__starTimer.callback.append(self.__updateSubs)
+        self.__startTimer_conn = eConnectCallback(self.__starTimer.timeout, self.__updateSubs)
         try:
             from Screens.InfoBar import InfoBar
             InfoBar.instance.subtitle_window.hide()
@@ -968,10 +969,12 @@ class SubsSupport(SubsSupportEmbedded):
             self.__subsScreen = None
 
         self.__starTimer.stop()
-        self.__starTimer = None
+        del self.__startTimer_conn
+        del self.__starTimer
 
         self.__checkTimer.stop()
-        self.__checkTimer = None
+        del self.__checkTimer_conn
+        del self.__checkTimer
 
         print '[SubsSupport] closing subtitleDisplay'
 
@@ -1084,8 +1087,8 @@ class SubsSupport(SubsSupportEmbedded):
         self.__starTimer.stop()
 
         if self.__working:
-            del self.__checkTimer.callback[:]
-            self.__checkTimer.callback.append(checkWorking)
+            del self.__checkTimer_conn
+            self.__checkTimer_conn = eConnectCallback(self.__checkTimer.timeout, checkWorking) 
             self.__checkTimer.start(200, True)
         else:
             fnc()
@@ -1464,16 +1467,18 @@ class SubsEngine(object):
         self.__callbackPts = None
         self.preDoPlay = [self.updateSubPosition]
         self.refreshTimer = eTimer()
-        self.refreshTimer.callback.append(self.play)
+        self.refreshTimer_conn = eConnectCallback(self.refreshTimer.timeout, self.play)
         self.refreshTimerDelay = 1000
         self.hideTimer = eTimer()
-        self.hideTimer.callback.append(self.checkHideSub)
-        self.hideTimer.callback.append(self.incSubPosition)
-        self.hideTimer.callback.append(self.doPlay)
+        self.hideTimer_conn_array = []
+        self.hideTimer_conn_array.append(eConnectCallback(self.hideTimer.timeout, self.checkHideSub))
+        self.hideTimer_conn_array.append(eConnectCallback(self.hideTimer.timeout, self.incSubPosition))
+        self.hideTimer_conn_array.append(eConnectCallback(self.hideTimer.timeout, self.doPlay))
         self.getPlayPtsTimer = eTimer()
-        self.getPlayPtsTimer.callback.append(self.getPts)
-        self.getPlayPtsTimer.callback.append(self.validPts)
-        self.getPlayPtsTimer.callback.append(self.callbackPts)
+        self.getPlayPtsTimer_conn_array = []
+        self.getPlayPtsTimer_conn_array.append(eConnectCallback(self.getPlayPtsTimer.timeout, self.getPts))
+        self.getPlayPtsTimer_conn_array.append(eConnectCallback(self.getPlayPtsTimer.timeout, self.validPts))
+        self.getPlayPtsTimer_conn_array.append(eConnectCallback(self.getPlayPtsTimer.timeout, self.callbackPts))
         self.getPlayPtsTimerDelay = 200
         self.resume = self.play
         self.addNotifiers()
@@ -1758,9 +1763,12 @@ class SubsEngine(object):
             self.hideTimer.stop()
 
     def exit(self):
-        self.hideTimer = None
-        self.refreshTimer = None
-        self.getPlayPtsTimer = None
+        del self.hideTimer_conn_array[:]
+        del self.hideTimer
+        del self.refreshTimer_conn
+        del self.refreshTimer
+        del self.getPlayPtsTimer_conn_array[:]
+        del self.getPlayPtsTimer
         del self.onSubsDelayChanged[:]
         del self.onSubsFpsChanged[:]
         self.removeNotifiers()
@@ -2902,7 +2910,7 @@ class SubsDownloadThread(Thread):
         self.messageIn = Queue()
         self.messageOut = Queue()
         self.messagePump = ePythonMessagePump()
-        self.messagePump.recv_msg.get().append(self._runInMainThread)
+        self.messagePump_conn = eConnectCallback(self.messagePump.recv_msg, self._runInMainThread)
 
     def start(self):
         SubsDownloadThread.THREADS.append(self)
@@ -2935,10 +2943,14 @@ class SubsDownloadThread(Thread):
             else:
                 self.callback(subFile)
             SubsDownloadThread.THREADS.remove(self)
+            del self.messagePump_conn
+            self.messagePump.stop()
         elif request == self.FINISH_REQUEST_ERROR:
             error = ret[1]
             self.errorback(error)
             SubsDownloadThread.THREADS.remove(self)
+            del self.messagePump_conn
+            self.messagePump.stop()
         elif request == self.CHOICE_REQUEST:
             subFiles = ret[1]
             choiceTitle = _("There are more subtitles in unpacked archive\n please select which one do you want to use")
@@ -3011,9 +3023,9 @@ class SubsSearchProcess(object):
         self.data = ""
         self.__stopping = False
         self.appContainer = eConsoleAppContainer()
-        self.appContainer.stdoutAvail.append(self.dataOutCB)
-        self.appContainer.stderrAvail.append(self.dataErrCB)
-        self.appContainer.appClosed.append(self.finishedCB)
+        self.stdoutAvail_conn = eConnectCallback(self.appContainer.stdoutAvail, self.dataOutCB)
+        self.stderrAvail_conn = eConnectCallback(self.appContainer.stderrAvail, self.dataErrCB)
+        self.appContainer_conn = eConnectCallback(self.appContainer.appClosed, self.finishedCB)
 
     def recieveMessages(self, data):
         def getMessage(data):
@@ -3088,7 +3100,9 @@ class SubsSearchProcess(object):
     def stop(self):
         def check_stopped():
             if not self.appContainer.running():
-                timer.stop()
+                self.stopTimer.stop()
+                del self.stopTimer_conn
+                del self.stopTimer
                 del self.__i
                 return
             if self.__i == 0:
@@ -3096,7 +3110,9 @@ class SubsSearchProcess(object):
                 self.log.debug('2. sending SIGKILL')
                 self.appContainer.kill()
             elif self.__i == 1:
-                timer.stop()
+                self.stopTimer.stop()
+                del self.stopTimer_conn
+                del self.stopTimer
                 raise Exception("cannot kill process")
 
         if self.__stopping:
@@ -3109,16 +3125,20 @@ class SubsSearchProcess(object):
         if self.appContainer.running():
             self.log.debug('1. sending SIGINT')
             self.appContainer.sendCtrlC()
-            timer = eTimer()
-            timer.callback.append(check_stopped)
-            timer.start(2000, False)
+            self.stopTimer = eTimer()
+            self.stopTimer_conn = eConnectCallback(self.stopTimer.timeout, check_stopped)
+            self.stopTimer.start(2000, False)
         else:
             self.log.debug('process is already stopped')
 
     def write(self, data):
         dump = json.dumps(data)
         dump = "%07d%s" % (len(dump), dump)
-        self.appContainer.write(dump)
+        try:
+            self.appContainer.write(dump)
+        # DMM image
+        except TypeError:
+            self.appContainer.write(dump, len(dump))
 
     def dataErrCB(self, data):
         self.log.debug("dataErrCB: '%s'", data)
@@ -3461,7 +3481,7 @@ class Message(object):
         self.infowidget = infowidget
         self.errorwidget = errorwidget
         self.timer = eTimer()
-        self.timer.callback.append(self.hide)
+        self.timer_conn = eConnectCallback(self.timer.timeout, self.hide)
 
     def info(self, text, timeout=None):
         self.timer.stop()
@@ -3483,6 +3503,11 @@ class Message(object):
         self.timer.stop()
         self.errorwidget.hide()
         self.infowidget.hide()
+
+    def exit(self):
+        self.hide()
+        del self.timer_conn
+        del self.timer
 
 class SearchParamsHelper(object):
     def __init__(self, seeker, searchSettings):
@@ -3937,7 +3962,7 @@ class SubsSearch(Screen):
             self.onLayoutFinish.append(self.searchMessage)
         self.onClose.append(self.__contextMenu.hide)
         self.onClose.append(self.__contextMenu.doClose)
-        self.onClose.append(self.message.hide)
+        self.onClose.append(self.message.exit)
         self.onClose.append(self.searchParamsHelper.resetSearchParams)
         self.onClose.append(self.stopSearchSubs)
         self.onClose.append(self.closeSeekers)
