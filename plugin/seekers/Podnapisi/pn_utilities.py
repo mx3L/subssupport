@@ -146,6 +146,8 @@ class PNServer:
         if subtitles:
             for subtitle in subtitles:
                 filename = self.get_element(subtitle, "release")
+                if len(filename):
+                    filename = filename.split()[0]
 
                 if filename == "":
                     filename = self.get_element(subtitle, "title")
