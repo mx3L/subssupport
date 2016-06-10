@@ -1,0 +1,1014 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BH_SubsSupport\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-18 08:15+0100\n"
+"PO-Revision-Date: 2016-05-20 18:50+0300\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: Vytenis P. <vyteniui@edlonta.lt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: subtitles.py:4434
+msgid "Add subtitle's language to filename"
+msgstr "Į failo vardą įtraukti subtitrų kalbą"
+
+#: subtitles.py:307 subtitles.py:308 subtitles.py:325 subtitles.py:3549
+#: subtitles.py:3559 subtitles.py:3564
+msgid "All"
+msgstr "visi"
+
+#: subtitles.py:4438
+msgid "Always ask before overwriting existing subtitles"
+msgstr "Visada klausti, prieš perrašant jau sukurtus subtitrus"
+
+#: subtitles.py:3609 subtitles.py:3639
+msgid "Append language to filename"
+msgstr "Į failo vardą įtraukti kalbą"
+
+#: subtitles.py:2736
+msgid "Ask on remove action"
+msgstr "Klausti prieš pašalinant"
+
+#: subtitlesdvb.py:38
+msgid "Auto sync to current event"
+msgstr "Autosinchronizavimas su dabartiniu įvykiu"
+
+#: subtitles.py:2026
+msgid "Background"
+msgstr "Fonas"
+
+msgid "Central and Eastern Europe"
+msgstr "Vidurio ir Rytų Europa"
+
+msgid "Western Europe"
+msgstr "Vakarų Europa"
+
+msgid "Arabic"
+msgstr "Arabų"
+
+msgid "Turkish"
+msgstr "Turkų"
+
+msgid "Russia"
+msgstr "Rusų"
+
+msgid "Greek"
+msgstr "Graikų"
+
+#: subtitles.py:2030
+msgid "Background X-offset"
+msgstr "Horizontalus fono poslinkis"
+
+#: subtitles.py:2031
+msgid "Background Y-offset"
+msgstr "Vertikalus fono poslinkis"
+
+#: subtitles.py:2032
+msgid "Background color"
+msgstr "Fono spalva"
+
+#: subtitles.py:2033
+msgid "Background transparency"
+msgstr "Fono skaidrumas"
+
+#: subtitles.py:2028
+msgid "Background type"
+msgstr "Fono tipas"
+
+#: e2_utils.py:496 subtitles.py:2722 subtitles.py:4495
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: subtitles.py:1053 subtitlesdvb.py:64
+msgid "Cannot decode subtitles. Try another encoding group"
+msgstr "Subtitrų iškoduoti nepavyksta. Pabandykite kitą koduotę"
+
+#: subtitles.py:1049 subtitlesdvb.py:62
+msgid "Cannot load subtitles. Invalid path"
+msgstr "Subtitrų įkelti nepavyko. Neteisingas kelias"
+
+#: subtitles.py:1061 subtitlesdvb.py:68
+msgid "Cannot parse subtitles. Invalid subtitles format"
+msgstr "Subtitrų apdoroti nepavyko. Neteisingas subtitrų formatas"
+
+#: subtitles.py:1057 subtitlesdvb.py:66
+msgid "Cannot parse subtitles. Not supported subtitles format"
+msgstr "Subtitrų apdoroti nepavyko. Nepalaikomas subtitrų formatas"
+
+#: subtitles.py:1875
+msgid "Change encoding"
+msgstr "Pakeisti koduotę"
+
+#: plugin.py:100
+msgid "Change subssupport settings"
+msgstr "Keisti subtitrų nuostatas"
+
+#: subtitles.py:4430
+msgid "Check search parameters before subtitles search"
+msgstr "Prieš subtitrų paiešką patikslinti paieškos parametrus"
+
+#: subtitles.py:2433
+msgid "Choose Subtitles"
+msgstr "Pasirinkti subtitrus"
+
+#: subtitles.py:2309
+msgid "Choose from downloaded subtitles"
+msgstr "Pasirinkti subtitrus iš parsiųstų"
+
+#: subtitles.py:2304
+msgid "Choose from embedded subtitles"
+msgstr "Pasirinkti subtitrus iš esamų įterptų"
+
+#: subtitles.py:2314
+msgid "Choose from web subtitles"
+msgstr "Pasirinkti subtitrus iš interneto"
+
+#: subtitles.py:1870 subtitles.py:2797
+msgid "Choose subtitles"
+msgstr "Pasirinkti subtitrus"
+
+#: subtitles.py:2148
+msgid "Color"
+msgstr "Spalva"
+
+#: subtitles.py:1820
+msgid "Currently choosed subtitles"
+msgstr "Dabar pasirinkti subtitrai"
+
+#: plugin.py:49 subtitlesdvb.py:34
+msgid "DVB player settings"
+msgstr "DVB leistuvo parametrai"
+
+#: subtitles.py:311 subtitles.py:312
+msgid "Default"
+msgstr "numatytasis"
+
+#: subtitles.py:2658 subtitles.py:2665
+msgid "Do you want to proceed?"
+msgstr "Ar norite tęsti?"
+
+#: subtitles.py:1959 subtitles.py:2478
+msgid "Do you want to show this message again?"
+msgstr "Ar rodyti šį pranešimą ir vėliau?"
+
+#: subtitles.py:4296
+msgid "Download (more...)"
+msgstr "Parsisiųsti (daugiau...)"
+
+#: subtitles.py:4295
+msgid "Download (next to video)"
+msgstr "Parsisiųsti (kartu su vaizdu)"
+
+#: subtitles.py:4294
+msgid "Download (user defined)"
+msgstr "Parsisiųsti (pasirinktą vartotojo)"
+
+#: subtitles.py:4301
+msgid "Download and Load (more...)"
+msgstr "Parsisiųsti ir įkelti (daugiau...)"
+
+#: subtitles.py:4300
+msgid "Download and Load (next to video)"
+msgstr "Parsisiųsti ir įkelti (kartu su vaizdu)"
+
+#: subtitles.py:4299
+msgid "Download and Load (user defined) "
+msgstr "Parsisiųsti ir įkelti (pasirinktą vartotojo)"
+
+#: subtitles.py:2554
+msgid "Download date"
+msgstr "Parsiuntimo data"
+
+#: subtitles.py:3643
+msgid "Download options"
+msgstr "Parsiuntimo parinktys"
+
+#: plugin.py:101 plugin.py:102
+msgid "Download subtitles for your videos"
+msgstr "Atsiųsti subtitrus savo filmams"
+
+#: subtitles.py:2594
+msgid "Downloaded Subtitles"
+msgstr "Parsisiųsti subtitrai"
+
+msgid "Downloaded Subtitles - Settings"
+msgstr "Parsisiųsti subtitrai - nuostatos"
+
+#: subtitlesdvb.py:304
+msgid "Duration"
+msgstr "Trukmė"
+
+#: subtitles.py:3680
+msgid "Edit Filename"
+msgstr "Redaguoti failo pavadinimą"
+
+#: subtitles.py:3688
+msgid "Edit download path"
+msgstr "Redaguoti parsisiuntimo kelią"
+
+#: subtitles.py:1849
+msgid "Embedded Subtitles"
+msgstr "Įterpti subtitrai"
+
+#: plugin.py:47 subtitles.py:2154
+msgid "Embedded subtitles settings"
+msgstr "Įterptų subtitrų nuostatos"
+
+#: subtitles.py:2080 subtitles.py:2176
+msgid "Encoding"
+msgstr "Koduotė"
+
+#: subtitles.py:1860 subtitles.py:1863
+msgid "Encoding:"
+msgstr "Koduotė:"
+
+#: subtitles.py:2623
+msgid "Entries count:"
+msgstr "Įrašų skaičius:"
+
+#: subtitles.py:3988 subtitles.py:4771
+msgid "Episode"
+msgstr "Epizodas"
+
+#: subtitlesdvb.py:128 subtitlesdvb.py:306
+msgid "Event Duration"
+msgstr "Įvykio trukmė"
+
+#: subtitlesdvb.py:126
+msgid "Event Name"
+msgstr "Įvykio pavadinimas"
+
+#: subtitlesdvb.py:127 subtitlesdvb.py:293
+msgid "Event Time"
+msgstr "Įvykio  laikas"
+
+#: subtitles.py:2037
+msgid "External Subtitles settings"
+msgstr "Išorinių subtitrų nuostatos"
+
+#: plugin.py:46
+msgid "External subtitles settings"
+msgstr "Išorinių subtitrų nuostatos"
+
+#: subtitles.py:3617
+msgid "Filename"
+msgstr "Failo pavadinimas"
+
+#: subtitles.py:3693
+msgid "Filename cannot be empty!"
+msgstr "Failopavadinimas negali būti tuščias!"
+
+#: subtitles.py:2013
+msgid "Font color (Bold)"
+msgstr "Šrifto spalva (paryškintas)"
+
+#: subtitles.py:2010
+msgid "Font color (Italic"
+msgstr "Šrifto spalva (kursyvas)"
+
+#: subtitles.py:2007
+msgid "Font color (Regular)"
+msgstr "Šrifto spalva (įprastas)"
+
+#: subtitles.py:2015 subtitles.py:2146
+msgid "Font size"
+msgstr "Šrifto dydis"
+
+#: subtitles.py:2014
+msgid "Font transparency (Bold)"
+msgstr "Šrifto skaidrumas (paryškintas)"
+
+#: subtitles.py:2011
+msgid "Font transparency (Italic)"
+msgstr "Šrifto skaidrumas (kursyvas)"
+
+#: subtitles.py:2008
+msgid "Font transparency (Regular)"
+msgstr "Šrifto skaidrumas (įprastas)"
+
+#: subtitles.py:2012 subtitles.py:2145
+msgid "Font type (Bold)"
+msgstr "Šrifto tipas (paryškintas)"
+
+#: subtitles.py:2009 subtitles.py:2144
+msgid "Font type (Italic)"
+msgstr "Šrifto tipas (kursyvas)"
+
+#: subtitles.py:2006 subtitles.py:2143
+msgid "Font type (Regular)"
+msgstr "Šrifto tipas (įprastas)"
+
+#: subtitles.py:1957 subtitles.py:2476
+msgid "For more details please check search settings"
+msgstr "Įšsamesnės informacijos gausite, patikrinę paieškos nustatymus"
+
+#: subtitles.py:2170
+msgid "General settings"
+msgstr "Bendrosios nuostatos"
+
+#: subtitles.py:2084
+msgid "Hide delay"
+msgstr "Slėpti uždelsimą"
+
+#: subtitles.py:3340 subtitles.py:3882 subtitles.py:4031
+msgid "History"
+msgstr "Istorija"
+
+#: subtitles.py:310 subtitles.py:3874
+msgid "Language"
+msgstr "kalbą"
+
+#: e2_utils.py:112
+msgid "Language selection"
+msgstr "Kalbos pasirinkimas"
+
+#: subtitles.py:298
+msgid "List"
+msgstr "Sąrašas"
+
+#: subtitles.py:298
+msgid "List + File"
+msgstr "Sąrašas + failas"
+
+#: compat.py:200 subtitles.py:2257
+msgid "List of storage devices"
+msgstr "Laikmenos įrenginių sąrašas"
+
+#: subtitles.py:4439
+msgid "Load subtitles after download"
+msgstr "Parsiuntus, įkelti subtitrus"
+
+#: subtitles.py:4443
+msgid "Load/Save download history directory"
+msgstr "Įkelti /iIšsaugoti parsisiuntimų katalogą"
+
+#: subtitles.py:4428
+msgid "Manual search"
+msgstr "Rankinė paieška"
+
+#: subtitles.py:2734
+msgid "Max history entries"
+msgstr "Maks. istorijos įrašų skaičius"
+
+#: subtitles.py:321
+msgid "Movie"
+msgstr "Filmas"
+
+#: subtitles.py:2552
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: subtitles.py:313 subtitles.py:3595
+msgid "Next to video"
+msgstr "su vaizdo failu"
+
+#: subtitles.py:519 subtitles.py:521
+msgid "No external subtitles are loaded"
+msgstr "Išorinių subtitrų neįkelta"
+
+#: subtitles.py:4172
+msgid "No subtitles found :("
+msgstr "Subtitrų nerasta"
+
+#: subtitles.py:1865
+msgid "None"
+msgstr "Nieko"
+
+#: subtitles.py:2088
+msgid "PTS check delay"
+msgstr "PTS patikrinimo delsa"
+
+#: compat.py:202 subtitles.py:2259
+msgid "Parent directory"
+msgstr "Aukštesnysis katalogas"
+
+#: subtitles.py:3618
+msgid "Path"
+msgstr "Kelias"
+
+#: subtitles.py:3697
+msgid "Path doesn't exist!"
+msgstr "Kelias neegzistuoja!"
+
+#: subtitles.py:2077 subtitles.py:2175
+msgid "Pause video on opening subtitles menu"
+msgstr "Atvėrus subtitrų meniu, pristabdyti vaizdo įrašą"
+
+#: subtitles.py:2086
+msgid "Player delay"
+msgstr "Grotuvo delsa"
+
+#: subtitles.py:2016 subtitles.py:2147
+msgid "Position"
+msgstr "Padėtis"
+
+#: subtitles.py:4426
+msgid "Preferred Movie provider"
+msgstr "Pageidaujamas filmų teikėjas"
+
+#: subtitles.py:4427
+msgid "Preferred TV show provider"
+msgstr "Pageidaujamas TV šou teikėjas"
+
+#: subtitles.py:3990
+msgid "Preferred languages"
+msgstr "Pageidaujama kalba"
+
+#: subtitles.py:4423 subtitles.py:4424 subtitles.py:4425
+msgid "Preferred subtitles language"
+msgstr "Pageidaujama subtitrų kalba"
+
+#: subtitles.py:4108 subtitles.py:4140
+msgid "Press OK to Stop"
+msgstr "Kad sustabdyti, spauskitr 'OK'"
+
+#: subtitles.py:4716
+msgid "Press OK to confirm"
+msgstr "Patvirtinimui, spauskite'OK'"
+
+#: subtitles.py:310 subtitles.py:2553 subtitles.py:3876 subtitles.py:3989
+#: subtitles.py:4772
+msgid "Provider"
+msgstr "tiekėją"
+
+#: subtitles.py:4491
+msgid "Provider name"
+msgstr "Tiekėjo pavadinimas"
+
+#: subtitles.py:2087
+msgid "Refresh delay"
+msgstr "Atnaujinimo delsa"
+
+#: subtitles.py:311 subtitles.py:312 subtitles.py:3588 subtitles.py:3875
+msgid "Release"
+msgstr "leidimo data"
+
+#: subtitles.py:2557
+msgid "Remove (file)"
+msgstr "Pašalinti (failą)"
+
+#: subtitles.py:2629
+msgid "Remove Entry (List)"
+msgstr "Pašalinti įrašą (sąrašas)"
+
+#: subtitles.py:2627
+msgid "Remove Entry (List+File)"
+msgstr "Pašalinti įrašą (sąrašas+failas)"
+
+#: subtitles.py:2735
+msgid "Remove action"
+msgstr "Pašalinti veiksmą"
+
+#: subtitles.py:3619
+msgid "Reset"
+msgstr "Atkurti"
+
+#: e2_utils.py:497 subtitles.py:2723 subtitles.py:4496
+msgid "Reset Defaults"
+msgstr "Atkurti į numatytasias"
+
+#: subtitles.py:3877
+msgid "S"
+msgstr "S"
+
+#: e2_utils.py:495 subtitles.py:2721 subtitles.py:4494
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: subtitles.py:3608 subtitles.py:3637
+msgid "Save as"
+msgstr "Įrašyti, kaip"
+
+#: subtitles.py:4441
+msgid "Save downloaded subtitles to history"
+msgstr "Išsaugoti atsisiųstus subtitrus į istoriją"
+
+#: subtitles.py:4432
+msgid "Save subtitles as"
+msgstr "Išsaugoti subtitrus, kaip"
+
+#: subtitles.py:4433
+msgid "Save subtitles as (fallback)"
+msgstr "Išsaugoti subtitrus, kaip (rezerv.)"
+
+#: subtitles.py:4435
+msgid "Save subtitles to"
+msgstr "Išsaugoti subtitrus į"
+
+#: subtitles.py:3607 subtitles.py:3636
+msgid "Save to"
+msgstr "Įrašyti į"
+
+#: subtitles.py:3881 subtitles.py:4030
+msgid "Search"
+msgstr "Paieška"
+
+#: subtitles.py:4715
+msgid "Search parameters"
+msgstr "Paieškos parametrai"
+
+#: plugin.py:48
+msgid "Search settings"
+msgstr "Paieškos nuostatos"
+
+#: subtitles.py:1872
+msgid "Search subtitles"
+msgstr "Subtitrų paieška"
+
+#: subtitles.py:3987 subtitles.py:4770
+msgid "Season"
+msgstr "Sezonas"
+
+#: subtitles.py:2747
+msgid "Select Directory"
+msgstr "Pasirinkite katalogą"
+
+#: subtitles.py:2558 subtitles.py:3883 subtitles.py:4032
+msgid "Settings"
+msgstr "Nuostatos"
+
+#: subtitles.py:2017
+msgid "Shadow"
+msgstr "Šešėlis"
+
+#: subtitles.py:2021 subtitles.py:2149
+msgid "Shadow X-offset"
+msgstr "Šešėlis - horizontalus poslinkis"
+
+#: subtitles.py:2022 subtitles.py:2150
+msgid "Shadow Y-offset"
+msgstr "Šešėlis - vertikalus poslinkis"
+
+#: subtitles.py:2025
+msgid "Shadow color"
+msgstr "Šešėlio spalva"
+
+#: subtitles.py:2024
+msgid "Shadow size"
+msgstr "Šešėlio dydis"
+
+#: subtitles.py:2019
+msgid "Shadow type"
+msgstr "Šešėlio tipas"
+
+#: subtitles.py:2081
+msgid "Show expert settings"
+msgstr "Rodyti išplėstinius nustatymus"
+
+#: subtitles.py:1956 subtitles.py:2475
+msgid "Some subtitles providers are not working"
+msgstr "Kai kurie subtitrų tiekėjai neveikia"
+
+#: subtitles.py:4431
+msgid "Sort subtitles list by"
+msgstr "Rūšiuoti subtitrų sąrašą pagal"
+
+#: subtitles.py:4713 subtitles.py:4790
+msgid "Source title"
+msgstr "Šaltinio pavadinimas"
+
+#: subtitles.py:4711
+msgid "Source title not provided"
+msgstr "Šaltinio pavadinimas nepateiktas"
+
+#: subtitles.py:4493
+msgid "State"
+msgstr "Būklė"
+
+#: plugin.py:103 plugin.py:104
+msgid "SubsSupport DVB player"
+msgstr "Subtitrai - DVB leistuvas"
+
+#: plugin.py:101 plugin.py:102
+msgid "SubsSupport downloader"
+msgstr "Subtitrai - įkėlimas"
+
+#: plugin.py:61 plugin.py:100
+msgid "SubsSupport settings"
+msgstr "Subtitrai - parametrai"
+
+#: subtitles.py:2657 subtitles.py:2664
+msgid "Subtitle"
+msgstr "Subtitrai"
+
+#: subtitles.py:439 subtitles.py:441 subtitles.py:444 subtitles.py:446
+msgid "Subtitles Delay"
+msgstr "Subtitrų delsa"
+
+#: subtitles.py:428 subtitles.py:431 subtitles.py:433 subtitlesdvb.py:125
+#: subtitlesdvb.py:260 subtitlesdvb.py:265 subtitlesdvb.py:267
+#: subtitlesdvb.py:269 subtitlesdvb.py:273 subtitlesdvb.py:275
+#: subtitlesdvb.py:277
+msgid "Subtitles FPS"
+msgstr "Subtitrų FPS"
+
+#: subtitlesdvb.py:123 subtitlesdvb.py:240
+msgid "Subtitles Position"
+msgstr "Subtitrų padėtis"
+
+#: subtitlesdvb.py:124 subtitlesdvb.py:254
+msgid "Subtitles Time"
+msgstr "Subtitrų laikas"
+
+#: subtitles.py:4436
+msgid "Subtitles download path"
+msgstr "Subtitrų parsisiuntimo kelias"
+
+#: subtitles.py:4429
+msgid "Subtitles provider timeout"
+msgstr "Subtitrų tiekėjo atsakas"
+
+#: subtitles.py:3962
+msgid "Subtitles search"
+msgstr "Subtitrų paieška"
+
+#: subtitles.py:4518
+msgid "Subtitles search settings"
+msgstr "Subtitrų paiešos nuostatos"
+
+#: subtitles.py:2071
+msgid "Subtitles setting"
+msgstr "Subtitrų nustatymas"
+
+#: subtitles.py:1876
+msgid "Subtitles settings"
+msgstr "Subtitrų nuostatos"
+
+#: subtitles.py:1878 subtitles.py:1880
+msgid "Subtitles settings (embedded)"
+msgstr "Subtitrų nuostatos (įterptos)"
+
+#: subtitles.py:4437
+msgid "Subtitles temp path"
+msgstr "Subtitrų laikinasis kelias"
+
+#: subtitles.py:2379
+msgid "Subtitles will be downloaded in"
+msgstr "Subtitrai bus parsiųsti į"
+
+#: subtitles.py:2951 subtitles.py:3336
+msgid "Suggestions"
+msgstr "Pasiūlymai"
+
+#: subtitles.py:4492
+msgid "Supported languages"
+msgstr "Palaikomos kalbos"
+
+#: subtitles.py:2085
+msgid "Sync delay"
+msgstr "Sinchronizavimo delsa"
+
+#: subtitles.py:321
+msgid "TV show"
+msgstr "TV šou"
+
+#: subtitles.py:2947
+msgid ""
+"There are more subtitles in unpacked archive\n"
+" please select which one do you want to use"
+msgstr ""
+"Išskleistame archyve yra daugiau subtitrų,\n"
+"pasirinkite, kuriuos norite naudoti"
+
+#: subtitles.py:2639
+msgid "There was an error while removing subtitle, please check log"
+msgstr "Šalinant subtitrus, įvyko klaida. Žiūrėkite klaidų žurnalą"
+
+#: subtitlesdvb.py:291
+msgid "Time"
+msgstr "Laikas"
+
+#: subtitles.py:3982 subtitles.py:4765
+msgid "Title"
+msgstr "Pavadinimas"
+
+#: subtitles.py:4173
+msgid "Try update(simplify) search expression and try again.."
+msgstr "Pabandykite supaprastinti paieškos kriterijus ir bandykite dar kartą..."
+
+#: subtitles.py:1882
+msgid "Turn off subtitles"
+msgstr "Išjungti subtitrus"
+
+#: subtitles.py:3983 subtitles.py:4766
+msgid "Type"
+msgstr "Tipas"
+
+#: e2_utils.py:241
+msgid "Type text of picture"
+msgstr "Įrašykite paveikslėlio tekstą"
+
+#: subtitles.py:3880 subtitles.py:4029
+msgid "Update"
+msgstr "Atnaujinimas"
+
+#: subtitles.py:4761
+msgid "Update Search params"
+msgstr "Pakeisti paieškos parametrus"
+
+#: subtitles.py:4097
+msgid ""
+"Update search parameters if not correct\n"
+" and press green button for search"
+msgstr ""
+"Pakeiskite paieškos parametrus, jei šie neteisingi\n"
+"ir paieškai pradėti, spauskite 'ŽALIĄ' mygtuką"
+
+#: subtitles.py:3991 subtitles.py:4773
+msgid "Use File path"
+msgstr "Kelias iki failo"
+
+msgid "Switch List"
+msgstr "Perjungti sąrašą"
+
+#: subtitles.py:313 subtitles.py:3591 subtitles.py:3593
+msgid "User defined"
+msgstr "pasirinkta vartotojo"
+
+#: subtitles.py:311 subtitles.py:3590
+msgid "Video filename"
+msgstr "vaizdo failo pavadinimas"
+
+#: subtitles.py:3985 subtitles.py:4768
+msgid "Year"
+msgstr "Metai"
+
+#: plugin.py:92
+msgid "You have OpenPli-based image, please change embedded subtitles settings in Settings / System / Subtitles settings"
+msgstr "Naudojate OpenPLi pagrindu kurtą atvaizdą, pakeiskite įterptųjų subtitrų nustatymus -> Nuostatos > Sistema > Subtitrų nuostatos"
+
+#: subtitles.py:212
+msgid "black"
+msgstr "juoda"
+
+#: subtitles.py:211
+msgid "blue"
+msgstr "mėlyna"
+
+#: subtitles.py:253
+msgid "border"
+msgstr "kraštas"
+
+#: subtitles.py:200
+msgid "bottom"
+msgstr "apačia"
+
+#: subtitles.py:1863
+msgid "cannot decode"
+msgstr "iškoduoti nepavyksta"
+
+#: subtitlesdvb.py:343
+msgid "cannot sync to event, event is not available"
+msgstr "nepavyksta sinchronizuoti su įvykiu, įvykis neprieinamas"
+
+#: subtitles.py:4266
+msgid "captcha doesn't match, try again..."
+msgstr "kodas neatitinka, bandykite dar kartą"
+
+#: subtitles.py:491
+msgid "change external subtitles status"
+msgstr "pakeiskite išorinių subtitrų statusą"
+
+#: subtitles.py:396 subtitlesdvb.py:144
+msgid "change subtitles fps"
+msgstr "keisti subtitrų fps"
+
+#: subtitlesdvb.py:131
+msgid "close plugin"
+msgstr "uždaryti įskiepį"
+
+#: subtitles.py:391
+msgid "decrease subtitles delay"
+msgstr "sumažinti subtitrų delsą"
+
+#: subtitles.py:4535
+msgid "disabled"
+msgstr "išjungta"
+
+#: subtitles.py:400
+msgid "displays this menu"
+msgstr "rodo šį meniu"
+
+#: subtitles.py:4214
+msgid "downloading subtitles..."
+msgstr "atsiunčiami subtitrai ..."
+
+#: subtitles.py:260
+msgid "dynamic"
+msgstr "dinaminis"
+
+#: subtitles.py:4532
+msgid "enabled"
+msgstr "įjungta"
+
+#: subtitles.py:4529
+msgid "error"
+msgstr "klaida"
+
+#: subtitles.py:401
+msgid "exit"
+msgstr "užverti"
+
+#: subtitles.py:207
+msgid "green"
+msgstr "žalia"
+
+#: subtitles.py:206
+msgid "grey"
+msgstr "pilka"
+
+#: subtitles.py:390
+msgid "increase subtitles delay"
+msgstr "padidinti subtitrų delsą"
+
+#: subtitles.py:4268
+msgid "invalid credentials provided, correct them and try again"
+msgstr "įvesti neteisingi duomenys, ištaisykite ir bandykite dar kartą"
+
+#: subtitles.py:388
+msgid "jump to next subtitle"
+msgstr "pereiti prie kitų subtitrų"
+
+#: subtitles.py:389
+msgid "jump to previous subtitle"
+msgstr "pereiti prie ankstesnių subtitrų"
+
+#: subtitles.py:4657
+msgid "library"
+msgstr "biblioteka"
+
+#: subtitles.py:4106 subtitles.py:4138
+msgid "loading subtitles list"
+msgstr "įkeliamas subtitrų sąrašas"
+
+#: subtitles.py:4657
+msgid "missing"
+msgstr "trūksta"
+
+#: subtitles.py:3981
+msgid "no"
+msgstr "ne"
+
+#: subtitles.py:4270
+msgid "no credentials provided, set them and try again"
+msgstr "neįvesti duomenys, įveskite ir bandykite dar kartą"
+
+#: compat.py:221 subtitles.py:2278
+msgid "nothing connected"
+msgstr "nieko nepajungta"
+
+#: subtitles.py:253
+msgid "offset"
+msgstr "poslinkis"
+
+#: subtitles.py:227
+msgid "opaque"
+msgstr "neskaidrus"
+
+#: subtitles.py:431 subtitlesdvb.py:265 subtitlesdvb.py:267 subtitlesdvb.py:269
+#: subtitlesdvb.py:273
+msgid "original"
+msgstr "originalus"
+
+#: subtitlesdvb.py:134
+msgid "pause subtitles playback"
+msgstr "subtitrų atkūrimo pauzė"
+
+#: subtitlesdvb.py:133
+msgid "play/pause subtitles playback"
+msgstr "subtitrų atkūrimo paleidimas/pauzė"
+
+#: subtitles.py:3336
+msgid "press green"
+msgstr "spauskite 'ŽALIĄ' mygtuką"
+
+#: subtitles.py:3340
+msgid "press red"
+msgstr "spauskite 'RAUDONĄ' mygtuką"
+
+#: subtitles.py:208
+msgid "purple"
+msgstr "violetinė"
+
+#: subtitles.py:205
+msgid "red"
+msgstr "raudona"
+
+#: subtitles.py:395
+msgid "reset subtitles delay/fps"
+msgstr "atkurti numatytą delsą ir fps"
+
+#: subtitlesdvb.py:136
+msgid "restarts current subtitle"
+msgstr "dabartinius subtitrus įkels iš naujo"
+
+#: subtitlesdvb.py:135
+msgid "resumes subtitles playback"
+msgstr "pratęs subtitrų atkūrimą"
+
+#: subtitles.py:2379
+msgid "seconds"
+msgstr "sek."
+
+#: subtitles.py:4931
+msgid "settings"
+msgstr "nustatymai"
+
+#: subtitles.py:752
+msgid "show subtitles menu"
+msgstr "rodyti subtitrų meniu"
+
+#: subtitlesdvb.py:132
+msgid "show/hide subtitles status"
+msgstr "rodyti/slėpti subtitrų statusą"
+
+#: subtitlesdvb.py:142
+msgid "skip previous subtitle by setting time in minutes"
+msgstr "grįžti prie ankstesnių subtitrų pagal laiką minutėmis"
+
+#: subtitlesdvb.py:143
+msgid "skip subtitle to current event position"
+msgstr "pereiti prie šios įvykio pozicijos subtitrų"
+
+#: subtitlesdvb.py:137
+msgid "skip to next subtitle"
+msgstr "pereiti prie sekančių subtitrų"
+
+#: subtitlesdvb.py:138
+msgid "skip to next subtitle (minute jump)"
+msgstr "pereiti prie sekančių subtitrų (minutės šuolis)"
+
+#: subtitlesdvb.py:139
+msgid "skip to next subtitle by setting time in minutes"
+msgstr "pereiti prie sekančių subtitrų pagal laiką minutėmis"
+
+#: subtitlesdvb.py:140
+msgid "skip to previous subtitle"
+msgstr "grįžti prie ankstesnių subtitrų"
+
+#: subtitlesdvb.py:141
+msgid "skip to previous subtitle (minute jump)"
+msgstr "grįžti prie ankstesnių subtitrų (minutės šuolis)"
+
+#: subtitles.py:260
+msgid "static"
+msgstr "statinis"
+
+#: subtitles.py:4107 subtitles.py:4139
+msgid "subtitles found"
+msgstr "rasti subtitrai"
+
+#: subtitles.py:198
+msgid "top"
+msgstr "viršus"
+
+#: subtitles.py:229
+msgid "transparent"
+msgstr "skaidrus"
+
+#: subtitles.py:428 subtitles.py:2831 subtitlesdvb.py:260 subtitlesdvb.py:287
+msgid "unknown"
+msgstr "nežinomas"
+
+#: e2_utils.py:378
+msgid "unpack error: cannot get subname"
+msgstr "išskleidimo klaida: nerastas subtitrų pavadinimas"
+
+#: e2_utils.py:394
+msgid "unpack error: cannot open archive"
+msgstr "išskleidimo klaida: archyvas neatsidaro"
+
+#: seek.py:328
+#, python-format
+msgid "unsupported archive %s"
+msgstr "nepalaikomas archyvas %s"
+
+#: plugin.py:103 plugin.py:104
+msgid "watch DVB broadcast with subtitles"
+msgstr "žiūrėti DVB transliaciją su subtitrais"
+
+#: subtitles.py:210
+msgid "white"
+msgstr "balta"
+
+#: subtitles.py:2657
+msgid "will be removed from file system"
+msgstr "bus pašalinti iš failų sistemos"
+
+#: subtitles.py:2664
+msgid "will be removed from list"
+msgstr "bus pašalinti iš sąrašo"
+
+#: subtitles.py:209
+msgid "yellow"
+msgstr "geltona"
+
+#: subtitles.py:3981
+msgid "yes"
+msgstr "taip"
