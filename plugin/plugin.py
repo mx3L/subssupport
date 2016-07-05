@@ -1,11 +1,12 @@
 from . import _
 from Components.ActionMap import ActionMap
-from Components.MenuList import MenuList
+from Components.Sources.List import List
 from Components.PluginComponent import PluginDescriptor
 from Components.config import config
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 
+from e2_utils import isFullHD
 from subtitles import E2SubsSeeker, SubsSearch, initSubsSettings, \
     SubsSetupGeneral, SubsSearchSettings, SubsSetupExternal, SubsSetupEmbedded
 from subtitlesdvb import SubsSupportDVB, SubsSetupDVBPlayer
@@ -30,11 +31,41 @@ def openSubsSupportSettings(session, **kwargs):
     session.open(SubsSupportSettings, settings, settings.search, settings.external, settings.embedded, config.plugins.subsSupport.dvb)
 
 class SubsSupportSettings(Screen):
-    skin = """
-        <screen position="center,center" size="370,200">
-            <widget name="menuList" position="10,10" size="340,180"/>
-        </screen>
-        """
+    if isFullHD():
+        skin = """
+            <screen position="center,center" size="550,300">
+                <widget source="menuList" render="Listbox" scrollbarMode="showOnDemand" position="10,10" size="530,280" zPosition="3" transparent="1" >
+                    <convert type="TemplatedMultiContent">
+                        {"templates":
+                            {"default": (36, [
+                                MultiContentEntryText(pos=(0, 0), size=(530, 36), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=0, color=0xFFFFFF)
+                            ], True, "showOnDemand"),
+                            },
+                        "fonts": [gFont("Regular", 31)],
+                        "itemHeight": 36
+                        }
+                    </convert>
+                </widget>
+            </screen>
+            """
+    else:
+        skin = """
+            <screen position="center,center" size="370,200">
+                <widget source="menuList" render="Listbox" scrollbarMode="showOnDemand" position="10,10" size="340,180" zPosition="3" transparent="1" >
+                    <convert type="TemplatedMultiContent">
+                        {"templates":
+                            {"default": (30, [
+                                MultiContentEntryText(pos=(0, 0), size=(340, 30), font = 0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=0, color=0xFFFFFF)
+                            ], True, "showOnDemand"),
+                            },
+                        "fonts": [gFont("Regular", 23)],
+                        "itemHeight": 30
+                        }
+                    </convert>
+                </widget>
+            </screen>
+            """
+
     def __init__(self, session, generalSettings, searchSettings, externalSettings, embeddedSettings, dvbSettings):
         Screen.__init__(self, session)
         self.generalSettings = generalSettings
@@ -42,17 +73,16 @@ class SubsSupportSettings(Screen):
         self.externalSettings = externalSettings
         self.embeddedSettings = embeddedSettings
         self.dvbSettings = dvbSettings
-        self["menuList"] = MenuList([
+        self["menuList"] = List([
             (_("General settings"), "general"),
             (_("External subtitles settings"), "external"),
             (_("Embedded subtitles settings"), "embedded"),
             (_("Search settings"), "search"),
-            (_("DVB player settings"), "dvb")
-        ])
+            (_("DVB player settings"), "dvb")])
         self["actionmap"] = ActionMap(["OkCancelActions", "DirectionActions"], 
         {
-            "up": self["menuList"].up,
-            "down": self["menuList"].down,
+            "up": self["menuList"].selectNext,
+            "down": self["menuList"].selectPrevious,
             "ok": self.confirmSelection,
             "cancel": self.close,
         })

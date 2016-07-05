@@ -38,8 +38,21 @@ from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Directories import fileExists, SCOPE_SKIN, resolveFilename
 
 from compat import LanguageEntryComponent
-from enigma import addFont, ePicLoad, eEnv
+from enigma import addFont, ePicLoad, eEnv, getDesktop
 from utils import toString
+
+
+def getDesktopSize():
+    s = getDesktop(0).size()
+    return (s.width(), s.height())
+
+def isFullHD():
+    desktopSize = getDesktopSize()
+    return desktopSize[0] == 1920
+
+def isHD():
+    desktopSize = getDesktopSize()
+    return desktopSize[0] >= 1280 and desktopSize[0] < 1920
 
 
 class MyConfigList(ConfigList):
@@ -467,15 +480,26 @@ def getFonts():
     return FONTS.keys()
 
 class BaseMenuScreen(Screen, ConfigListScreen):
-    skin = """
-            <screen position="center,center" size="610,435" >
-                <widget name="key_red" position="10,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" shadowOffset="-2,-2" shadowColor="black" />
-                <widget name="key_green" position="160,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" shadowOffset="-2,-2" shadowColor="black" />
-                <widget name="key_yellow" position="310,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
-                <widget name="key_blue" position="460,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
-                <eLabel position="-1,55" size="612,1" backgroundColor="#999999" />
-                <widget name="config" position="0,75" size="610,355" scrollbarMode="showOnDemand" />
-            </screen>"""
+    if isFullHD():
+        skin = """
+                <screen position="center,center" size="915,652" >
+                    <widget name="key_red" position="15,7" zPosition="1" size="210,67" font="Regular;30" halign="center" valign="center" backgroundColor="#9f1313" shadowOffset="-2,-2" shadowColor="black" />
+                    <widget name="key_green" position="240,7" zPosition="1" size="210,67" font="Regular;30" halign="center" valign="center" backgroundColor="#1f771f" shadowOffset="-2,-2" shadowColor="black" />
+                    <widget name="key_yellow" position="465,7" zPosition="1" size="210,67" font="Regular;30" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
+                    <widget name="key_blue" position="690,7" zPosition="1" size="210,67" font="Regular;30" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
+                    <eLabel position="-1,83" size="918,1" backgroundColor="#999999" />
+                    <widget name="config" position="0,112" size="915,532" font="Regular;26" itemHeight="36" scrollbarMode="showOnDemand" />
+                </screen>"""
+    else:
+        skin = """
+                <screen position="center,center" size="610,435" >
+                    <widget name="key_red" position="10,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" shadowOffset="-2,-2" shadowColor="black" />
+                    <widget name="key_green" position="160,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" shadowOffset="-2,-2" shadowColor="black" />
+                    <widget name="key_yellow" position="310,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
+                    <widget name="key_blue" position="460,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
+                    <eLabel position="-1,55" size="612,1" backgroundColor="#999999" />
+                    <widget name="config" position="0,75" size="610,355" scrollbarMode="showOnDemand" />
+                </screen>"""
 
     def __init__(self, session, title):
         Screen.__init__(self, session)

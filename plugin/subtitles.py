@@ -59,7 +59,7 @@ from Tools.LoadPixmap import LoadPixmap
 from compat import eConnectCallback, FileList
 from e2_utils import messageCB, E2SettingsProvider, MyLanguageSelection, unrar, \
     ConfigFinalText, Captcha, DelayMessageBox, MyConfigList, getFps, fps_float, \
-    getFonts, BaseMenuScreen
+    getFonts, BaseMenuScreen, isFullHD, isHD, getDesktopSize
 from enigma import eTimer, eConsoleAppContainer, ePythonMessagePump, eSize, ePoint, RT_HALIGN_LEFT, \
     RT_HALIGN_RIGHT, RT_VALIGN_CENTER, eListboxPythonMultiContent, \
     getDesktop, eServiceCenter, eServiceReference, \
@@ -359,13 +359,27 @@ def initSubsSettings(configSubsection=None):
 class SubsStatusScreen(Screen, HelpableScreen):
 
     def __init__(self, session, setSubsDelay, getSubsDelay, subscribeDelay, unsubscribeDelay, toNextSub, toPrevSub, setSubsFps, getSubsFps, subsDelayStepInMs=200, showDelayInMs=False):
-        desktopWidth = getDesktop(0).size().width()
-        offset = 50
+
+        ratio       = 1.5 if isFullHD() else 1
+        desktopSize = getDesktopSize()
+        windowSize  = (0.9 * desktopSize[0], 0.15 * desktopSize[1])
+        fontSize    = 22 * ratio
+        delaySize   = (0.45 * windowSize[0], windowSize[1])
+        fpsSize     = (0.45 * windowSize[0], windowSize[1])
+
+        windowPos   = (0.05 * desktopSize[0], 0.05 * desktopSize[0])
+        delayPos    = (0, 0)
+        fpsPos      = (0.55 * windowSize[0], 0)
+
         self.skin = """
-            <screen position="%d,20" size="%d,90" zPosition="5" backgroundColor="transparent" flags="wfNoBorder">
-                    <widget source="delay" render="Label" position="0,0" size="%d,70" valign="center" halign="left" font="Regular;22" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-                    <widget source="fps" render="Label" position="%d,0" size="%d,70" valign="center" halign="right" font="Regular;22" transparent="1" foregroundColor="#6F9EF5" shadowColor="#40101010" shadowOffset="2,2" />
-            </screen>""" % (offset, desktopWidth-(2*offset), (desktopWidth - (2*offset))/2 - 5, (desktopWidth-(2*offset))/2 + 5, (desktopWidth-(2*offset))/2 - 5)
+        <screen position="%d,%d" size="%d,%d" zPosition="5" backgroundColor="transparent" flags="wfNoBorder">
+            <widget source="delay" render="Label" position="%d,%d" size="%d,%d" valign="top" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
+            <widget source="fps" render="Label" position="%d,%d" size="%d,%d" valign="top" halign="right" font="Regular;%d" transparent="1" foregroundColor="#6F9EF5" shadowColor="#40101010" shadowOffset="2,2" />
+        </screen>""" % (
+                windowPos[0], windowPos[1], windowSize[0], windowSize[1],
+                delayPos[0], delayPos[1], delaySize[0], delaySize[1], fontSize,
+                fpsPos[0], fpsPos[1], fpsSize[0], fpsSize[1], fontSize
+                )
 
         Screen.__init__(self, session)
         HelpableScreen.__init__(self)
@@ -1798,15 +1812,26 @@ def PanelColorListEntry(name, value, colorName, colorValue, sizePanelX):
     return res
 
 class SubsMenu(Screen):
-    skin = """
-        <screen position="center,center" size="500,400" zPosition="1" >
-            <widget name="title_label" position="0,5" size="500,35" valign="center" halign="center" font="Regular;25" transparent="1" foregroundColor="white" />
-            <widget name="subfile_label" position="0,50" size="500,50" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="#DAA520" />
-            <widget name="subfile_list" position="center,100" size="300,30" transparent="1" />
-            <eLabel position="5,135" size="490,1" backgroundColor="#999999" />
-            <widget name="menu_list" position="0,140" size="500,235" transparent="1" scrollbarMode="showOnDemand" />
-            <widget name="copyright" position="10,375" size="480,20" valign="center" halign="center" font="Regular;15" transparent="1" foregroundColor="white" />
-        </screen>"""
+    if isFullHD():
+        skin = """
+            <screen position="center,center" size="750,600" zPosition="1" >
+                <widget name="title_label" position="0,5" size="750,35" valign="center" halign="center" font="Regular;25" transparent="1" foregroundColor="white" />
+                <widget name="subfile_label" position="0,50" size="750,50" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="#DAA520" />
+                <widget name="subfile_list" position="center,100" size="400,30" transparent="1" />
+                <eLabel position="5,202" size="735,1" backgroundColor="#999999" />
+                <widget name="menu_list" position="0,210" size="750,352" transparent="1" scrollbarMode="showOnDemand" />
+                <widget name="copyright" position="15,562" size="720,20" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="white" />
+            </screen>"""
+    else:
+        skin = """
+            <screen position="center,center" size="500,400" zPosition="1" >
+                <widget name="title_label" position="0,5" size="500,35" valign="center" halign="center" font="Regular;25" transparent="1" foregroundColor="white" />
+                <widget name="subfile_label" position="0,50" size="500,50" valign="center" halign="center" font="Regular;22" transparent="1" foregroundColor="#DAA520" />
+                <widget name="subfile_list" position="center,100" size="300,30" transparent="1" />
+                <eLabel position="5,135" size="490,1" backgroundColor="#999999" />
+                <widget name="menu_list" position="0,140" size="500,235" transparent="1" scrollbarMode="showOnDemand" />
+                <widget name="copyright" position="10,375" size="480,20" valign="center" halign="center" font="Regular;15" transparent="1" foregroundColor="white" />
+            </screen>"""
 
     def __init__(self, session, infobar, subfile=None, subdir=None, encoding=None, embeddedSupport=False, embeddedEnabled=False, searchSupport=False):
         Screen.__init__(self, session)
@@ -2187,17 +2212,24 @@ class SubsSetupGeneral(BaseMenuScreen):
         ])
 
 def FileEntryComponent(name, absolute=None, isDir=False):
-        res = [ (absolute, isDir) ]
-        res.append((eListboxPythonMultiContent.TYPE_TEXT, 35, 1, 470, 20, 0, RT_HALIGN_LEFT, toString(name)))
-        if isDir:
-            png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "extensions/directory.png"))
-        else:
-            png = LoadPixmap(os.path.join(os.path.dirname(__file__), 'img', 'subtitles.png'))
-        if png is not None:
-            res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 10, 2, 20, 20, png))
-        return res
+    res = [ (absolute, isDir) ]
+    if isFullHD():
+        res.append((eListboxPythonMultiContent.TYPE_TEXT, 35, 1, 770, 30, 1, RT_HALIGN_LEFT, toString(name)))
+    else:
+        res.append((eListboxPythonMultiContent.TYPE_TEXT, 35, 1, 570, 30, 0, RT_HALIGN_LEFT, toString(name)))
+    if isDir:
+        png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "extensions/directory.png"))
+    else:
+        png = LoadPixmap(os.path.join(os.path.dirname(__file__), 'img', 'subtitles.png'))
+    if png is not None:
+        res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 10, 2, 20, 20, png))
+    return res
 
 
+
+# TODO rework so there is one general SubtitlesChooser, where we can quickly
+# switch between different views(search, embedded, external, history..), i.e
+# we can go directly from search screen -> embedded screen (if embedded subtitles are available)
 
 class SubFileList(FileList):
     def __init__(self, defaultDir):
@@ -2205,6 +2237,13 @@ class SubFileList(FileList):
         for parser in PARSERS:
             extensions += list(parser.parsing)
         FileList.__init__(self, defaultDir, matchingPattern="(?i)^.*\." + '(' + '|'.join(ext[1:] for ext in extensions) + ')', useServiceRef=False)
+        self.l.setFont(0, gFont("Regular", 18))
+        self.l.setFont(1, gFont("Regular", 27))
+        if isFullHD():
+            self.l.setItemHeight(35)
+        else:
+            self.l.setItemHeight(23)
+
 
     def changeDir(self, directory, select = None):
         self.list = []
@@ -2306,7 +2345,7 @@ class SubsChooserMenuList(MenuList):
     def __init__(self, embeddedAvailable=False, searchSupport=False, historySupport=False):
         MenuList.__init__(self, [], False, eListboxPythonMultiContent)
         self.l.setItemHeight(30)
-        self.l.setFont(0, gFont("Regular", 20))
+        self.l.setFont(0, gFont("Regular", 21))
         menulist = []
         if embeddedAvailable:
             res = [('embedded')]
@@ -2391,15 +2430,22 @@ class E2SubsSeeker(SubsSeeker):
 
 
 class SubsChooser(Screen):
-    skin = """
-        <screen position="center,center" size="610,460" zPosition="3" >
-           <!-- <widget source="filename" render="Label" position="10, 10" size="590,50"  valign="center" halign="center" font="Regular;21" /> -->
-            <!-- <eLabel position="5,65" size="600,1" backgroundColor="#999999" /> -->
-            <widget name="file_list" position="0,30" size="610,330" scrollbarMode="showOnDemand" />
-            <eLabel position="5,370" size="600,1" backgroundColor="#999999" />
-            <widget name="menu_list" position="0,380" size="610,80" scrollbarMode="showOnDemand" />
-        </screen>
-        """
+    if isFullHD():
+        skin = """
+            <screen position="center,center" size="915,690" zPosition="3" >
+                <widget name="file_list" position="0,45" size="915,495" scrollbarMode="showOnDemand" />
+                <eLabel position="7,555" size="900,1" backgroundColor="#999999" />
+                <widget name="menu_list" position="0,570" size="915,120" scrollbarMode="showOnDemand" />
+            </screen>
+            """
+    else:
+        skin = """
+            <screen position="center,center" size="610,460" zPosition="3" >
+                <widget name="file_list" position="0,30" size="610,330" scrollbarMode="showOnDemand" />
+                <eLabel position="5,370" size="600,1" backgroundColor="#999999" />
+                <widget name="menu_list" position="0,380" size="610,80" scrollbarMode="showOnDemand" />
+            </screen>
+            """
 
     def __init__(self, session, subsSettings, subdir=None, embeddedSupport=False, searchSupport=False, historySupport=False, titleList=None):
         Screen.__init__(self, session)
@@ -2517,45 +2563,84 @@ class SubsChooser(Screen):
 
 class SubsDownloadedSelection(Screen):
     class InfoScreen(Screen):
-        skin = """
-        <screen position = "center,center" size="650,200" zPosition="4" flags="wfNoBorder" backgroundColor="#333333">
-            <widget source="path" render="Label" position="5,5" size="640,190" valign="center" halign="center" font="Regular;20"/>
-        </screen>
-        """
+        if isFullHD():
+            skin = """
+            <screen position = "center,center" size="975,300" zPosition="4" flags="wfNoBorder" backgroundColor="#333333">
+                <widget source="path" render="Label" position="7,7" size="960,285" valign="center" halign="center" font="Regular;30"/>
+            </screen>
+            """
+        else:
+            skin = """
+            <screen position = "center,center" size="650,200" zPosition="4" flags="wfNoBorder" backgroundColor="#333333">
+                <widget source="path" render="Label" position="5,5" size="640,190" valign="center" halign="center" font="Regular;20"/>
+            </screen>
+            """
         def __init__(self, session, subtitle):
             Screen.__init__(self, session)
             self["path"] = StaticText(_(toString(subtitle['fpath'])))
     
-    skin = """
-    <screen  position="center,center" size="700,520" zPosition="3">
-        <widget source="header_name" render="Label" position = "5,10" size="360,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <widget source="header_provider" render="Label" position = "380,10" size="165,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <widget source="header_date" render="Label" position = "525, 10" size="170,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <eLabel position="5,45" size="690,1" backgroundColor="#999999" />
-        <widget source="subtitles" render="Listbox" scrollbarMode="showOnDemand" position="5,55" size="690,355" zPosition="3" transparent="1" >
-            <convert type="TemplatedMultiContent">
-                {"templates":
-                    {"default": (50, [
-                        MultiContentEntryPixmapAlphaBlend(pos = (0, 15),   size = (24, 24), png=0), # key,
-                        MultiContentEntryText(pos = (30, 0),   size = (325, 50),  font = 0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER|RT_WRAP, text=1, color=0xFF000004), # name,
-                        MultiContentEntryText(pos = (375, 0),  size = (165, 50),  font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 2, color=0xFF000004), # provider,
-                        MultiContentEntryText(pos = (520, 0), size = (170, 50), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 3, color=0xFF000004), # date,
-                    ], True, "showOnDemand"),
-                    },
-                "fonts": [gFont("Regular", 19), gFont("Regular", 16)],
-                "itemHeight": 50
-                }
-            </convert>
-        </widget>
-        <eLabel position="5,430" size="690,1" backgroundColor="#999999" />
-        <widget source="entries_sum" render="Label" position = "10, 440" size="300,25" font="Regular;18" halign="left" foregroundColor="white" />
-        <eLabel position="5,470" size="690,1" backgroundColor="#999999" />
-        <ePixmap  pixmap="skin_default/buttons/key_info.png" position="10,485" size="35,25" transparent="1" alphatest="on" />
-        <ePixmap  pixmap="skin_default/buttons/key_red.png" position="50,485" size="35,25" transparent="1" alphatest="on" />
-        <widget source="key_red" render="Label" position = "90, 485" size="230,25" font="Regular;20" halign="left" foregroundColor="white" />
-        <ePixmap pixmap="skin_default/buttons/key_blue.png" position="500,485" size="35,25" transparent="1" alphatest="on" />
-        <widget source="key_blue" render="Label" position = "540, 485" size="130,25" font="Regular;20" halign="left" foregroundColor="white" />
-    </screen> """
+    if isFullHD():
+        skin = """
+        <screen  position="center,center" size="1050,780" zPosition="3">
+            <widget source="header_name" render="Label" position = "7,15" size="540,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_provider" render="Label" position = "570,15" size="247,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_date" render="Label" position = "787, 15" size="170,25" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+            <eLabel position="7,67" size="1035,1" backgroundColor="#999999" />
+            <widget source="subtitles" render="Listbox" scrollbarMode="showOnDemand" position="7,82" size="1035,532" zPosition="3" transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (60, [
+                            MultiContentEntryPixmapAlphaBlend(pos = (0, 18),   size = (29, 29), png=0), # key,
+                            MultiContentEntryText(pos = (45, 0),   size = (487, 60),  font = 0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER|RT_WRAP, text=1, color=0xFF000004), # name,
+                            MultiContentEntryText(pos = (562, 0),  size = (247, 60),  font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 2, color=0xFF000004), # provider,
+                            MultiContentEntryText(pos = (780, 0), size = (255, 60), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 3, color=0xFF000004), # date,
+                        ], True, "showOnDemand"),
+                        },
+                    "fonts": [gFont("Regular", 23)],
+                    "itemHeight": 60
+                    }
+                </convert>
+            </widget>
+            <eLabel position="7,645" size="1035,1" backgroundColor="#999999" />
+            <widget source="entries_sum" render="Label" position = "15, 660" size="450,37" font="Regular;27" halign="left" foregroundColor="white" />
+            <eLabel position="7,705" size="1035,1" backgroundColor="#999999" />
+            <ePixmap  pixmap="skin_default/buttons/key_info.png" position="15,727" size="35,25" transparent="1" alphatest="on" />
+            <ePixmap  pixmap="skin_default/buttons/key_red.png" position="75,727" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_red" render="Label" position = "135, 727" size="345,37" font="Regular;30" halign="left" foregroundColor="white" />
+            <ePixmap pixmap="skin_default/buttons/key_blue.png" position="750,727" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_blue" render="Label" position = "810, 727" size="195,37" font="Regular;30" halign="left" foregroundColor="white" />
+        </screen> """
+    else:
+        skin = """
+        <screen  position="center,center" size="700,520" zPosition="3">
+            <widget source="header_name" render="Label" position = "5,10" size="360,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_provider" render="Label" position = "380,10" size="165,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_date" render="Label" position = "525, 10" size="170,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <eLabel position="5,45" size="690,1" backgroundColor="#999999" />
+            <widget source="subtitles" render="Listbox" scrollbarMode="showOnDemand" position="5,55" size="690,355" zPosition="3" transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (50, [
+                            MultiContentEntryPixmapAlphaBlend(pos = (0, 15),   size = (24, 24), png=0), # key,
+                            MultiContentEntryText(pos = (30, 0),   size = (325, 50),  font = 0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER|RT_WRAP, text=1, color=0xFF000004), # name,
+                            MultiContentEntryText(pos = (375, 0),  size = (165, 50),  font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 2, color=0xFF000004), # provider,
+                            MultiContentEntryText(pos = (520, 0), size = (170, 50), font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 3, color=0xFF000004), # date,
+                        ], True, "showOnDemand"),
+                        },
+                    "fonts": [gFont("Regular", 19), gFont("Regular", 16)],
+                    "itemHeight": 50
+                    }
+                </convert>
+            </widget>
+            <eLabel position="5,430" size="690,1" backgroundColor="#999999" />
+            <widget source="entries_sum" render="Label" position = "10, 440" size="300,25" font="Regular;18" halign="left" foregroundColor="white" />
+            <eLabel position="5,470" size="690,1" backgroundColor="#999999" />
+            <ePixmap  pixmap="skin_default/buttons/key_info.png" position="10,485" size="35,25" transparent="1" alphatest="on" />
+            <ePixmap  pixmap="skin_default/buttons/key_red.png" position="50,485" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_red" render="Label" position = "90, 485" size="230,25" font="Regular;20" halign="left" foregroundColor="white" />
+            <ePixmap pixmap="skin_default/buttons/key_blue.png" position="500,485" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_blue" render="Label" position = "540, 485" size="130,25" font="Regular;20" halign="left" foregroundColor="white" />
+        </screen> """
     
     def __init__(self, session, subtitles, historySettings, marked=None):
         Screen.__init__(self, session)
@@ -2705,39 +2790,12 @@ class SubsDownloadedSelection(Screen):
     def cancel(self):
         self.close(self.subtitles, None)
         
-        
-class SubsDownloadedSubtitlesMenu(Screen, ConfigListScreen):
-    skin = """
-            <screen position="center,center" size="610,435" >
-                <widget name="key_red" position="10,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" shadowOffset="-2,-2" shadowColor="black" />
-                <widget name="key_green" position="160,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" shadowOffset="-2,-2" shadowColor="black" />
-                <widget name="key_yellow" position="310,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
-                <widget name="key_blue" position="460,5" zPosition="1" size="140,45" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
-                <eLabel position="-1,55" size="612,1" backgroundColor="#999999" />
-                <widget name="config" position="0,75" size="610,360" scrollbarMode="showOnDemand" />
-            </screen>"""
 
+
+class SubsDownloadedSubtitlesMenu(BaseMenuScreen):
     def __init__(self, session, historySettings):
-        Screen.__init__(self, session)
-        ConfigListScreen.__init__(self, [], session=session)
-        self["actions"] = ActionMap(["SetupActions", "ColorActions"],
-            {
-                "cancel": self.keyCancel,
-                "green": self.keySave,
-                "red": self.keyCancel,
-                "blue": self.resetDefaults,
-            }, -2)
-
-        self["key_green"] = Label(_("Save"))
-        self["key_red"] = Label(_("Cancel"))
-        self["key_blue"] = Label(_("Reset Defaults"))
-        self["key_yellow"] = Label("")
+        BaseMenuScreen.__init__(self, session, _("Downloaded Subtitles - Settings"))
         self.historySettings = historySettings
-        self.buildMenu()
-        self.onLayoutFinish.append(self.updateTitle)
-
-    def updateTitle(self):
-        self.setTitle(_("Downloaded Subtitles - Settings"))
 
     def buildMenu(self):
         menuList = []
@@ -2746,52 +2804,51 @@ class SubsDownloadedSubtitlesMenu(Screen, ConfigListScreen):
         menuList.append(getConfigListEntry(_("Ask on remove action"), self.historySettings.removeActionAsk))
         self["config"].setList(menuList)
 
-    def resetDefaults(self):
-        for x in self["config"].list:
-            x[1].value = x[1].default
-        self.buildMenu()
-        
     def keyOK(self):
         if self["config"].getCurrent()[1] == self.historySettings.path:
             self.session.openWithCallback(self.changeDir, LocationBox,
                  _("Select Directory"), currDir=self.historySettings.path.value)
 
-    def keySave(self):
-        for x in self["config"].list:
-            x[1].save()
-        configfile.save()
-        self.close(True)
-
-    def keyCancel(self):
-        for x in self["config"].list:
-            x[1].cancel()
-        self.close()
-
-    def keyLeft(self):
-        ConfigListScreen.keyLeft(self)
-
-    def keyRight(self):
-        ConfigListScreen.keyRight(self)
-
 # source from openpli
 class SubsEmbeddedSelection(Screen):
-    skin = """<screen name="SubsEmbeddedSelection" position="center,center" size="485,220">
-        <widget source="streams" render="Listbox" scrollbarMode="showOnDemand" position="10,40" size="465,180" zPosition="3" transparent="1" >
-            <convert type="TemplatedMultiContent">
-                {"templates":
-                    {"default": (25, [
-                        MultiContentEntryText(pos = (0, 0),   size = (35, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # key,
-                        MultiContentEntryText(pos = (40, 0),  size = (60, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # number,
-                        MultiContentEntryText(pos = (110, 0), size = (120, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # description,
-                        MultiContentEntryText(pos = (240, 0), size = (200, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 4), # language,
-                    ], True, "showNever"),
-                    },
-                "fonts": [gFont("Regular", 20), gFont("Regular", 16)],
-                "itemHeight": 25
-                }
-            </convert>
-        </widget>
-    </screen>"""
+    if isFullHD():
+        skin = """
+        <screen name="SubsEmbeddedSelection" position="center,center" size="727,330">
+            <widget source="streams" render="Listbox" scrollbarMode="showOnDemand" position="15,60" size="697,270" zPosition="3" transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (37, [
+                            MultiContentEntryText(pos = (0, 0),   size = (52, 37),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # key,
+                            MultiContentEntryText(pos = (60, 0),  size = (90, 37),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # number,
+                            MultiContentEntryText(pos = (165, 0), size = (180, 37), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # description,
+                            MultiContentEntryText(pos = (360, 0), size = (300, 37), font = 0, flags = RT_HALIGN_LEFT,  text = 4), # language,
+                        ], True, "showNever"),
+                        },
+                    "fonts": [gFont("Regular", 30)],
+                    "itemHeight": 37
+                    }
+                </convert>
+            </widget>
+        </screen>"""
+    else:
+        skin = """
+        <screen name="SubsEmbeddedSelection" position="center,center" size="485,220">
+            <widget source="streams" render="Listbox" scrollbarMode="showOnDemand" position="10,40" size="465,180" zPosition="3" transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (25, [
+                            MultiContentEntryText(pos = (0, 0),   size = (35, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # key,
+                            MultiContentEntryText(pos = (40, 0),  size = (60, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # number,
+                            MultiContentEntryText(pos = (110, 0), size = (120, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # description,
+                            MultiContentEntryText(pos = (240, 0), size = (200, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 4), # language,
+                        ], True, "showNever"),
+                        },
+                    "fonts": [gFont("Regular", 20), gFont("Regular", 16)],
+                    "itemHeight": 25
+                    }
+                </convert>
+            </widget>
+        </screen>"""
     def __init__(self, session):
         Screen.__init__(self, session)
         self["streams"] = List([], enableWrapAround=True)
@@ -3213,53 +3270,57 @@ class HistorySuggestions(Suggestions):
         getHistory(queryString)
         return d
 
-class SuggestionsListScreen(Screen):
-    s = getDesktop(0).size()
-    desktopSize = (s.width(), s.height())
-    windowSize = (int(0.35 * desktopSize[0]), 160)
-    skin = """
-        <screen name="SuggestionsListScreen" position="%d, 20" zPosition="6" size="%d,160" flags="wfNoBorder" backgroundColor="#33202020" >
-            <widget source="suggestionstitle" render="Label" position = "0,0" size="%d, 25" foregroundColor="#00ff00" font="Regular;20" halign="center" valign="center" transparent="0" />
-            <widget source="suggestionslist" render="Listbox" position="%d,35" size="%d,115" scrollbarMode="showOnDemand" transparent="1" >
-                <convert type="TemplatedMultiContent">
-                     {"templates":
-                        {"default": (23, [
-                            MultiContentEntryText(pos = (0, 0),   size = (360, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # title,
-                        ], True, "showOnDemand"),
-                        "notselected": (23, [
-                            MultiContentEntryText(pos = (0, 0),   size = (360, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # title,
-                        ], False, "showOnDemand")
-                        },
-                    "fonts": [gFont("Regular", 18), gFont("Regular", 16)],
-                    "itemHeight": 23
-                }
-                </convert>
-            </widget>
-        </screen>""" % (int(0.6 * desktopSize[0]), windowSize[0],
-                          windowSize[0],
-                          int(0.05 * windowSize[0]), int(0.9 * windowSize[0]))
-
-    def __init__(self, session, title, configTextWithSuggestions):
+class BaseSuggestionsListScreen(Screen):
+    def __init__(self, session, title, configTextWithSuggestions, positionX, titleColor):
+        desktopSize = getDesktopSize()
+        windowSize = (int(0.35 * desktopSize[0]), 0.25 * desktopSize[1])
+        fontSize = 27 if isFullHD() else 18
+        self.skin = """
+            <screen position="%d, %d" size="%d,%d" backgroundColor="#33202020" flags="wfNoBorder" zPosition="6" >
+                <widget source="suggestionstitle" render="Label" position = "0,0" size="%d, %d" font="Regular;%d" halign="center" valign="center" foregroundColor="%s" transparent="0" />
+                <widget source="suggestionslist" render="Listbox" position="%d,%d" size="%d, %d" scrollbarMode="showOnDemand" transparent="1" >
+                    <convert type="TemplatedMultiContent">
+                         {"templates":
+                            {"default": (%d, [
+                                MultiContentEntryText(pos = (0, 0),   size = (%d, %d),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # title,
+                            ], True, "showOnDemand"),
+                            "notselected": (%d, [
+                                MultiContentEntryText(pos = (0, 0),   size = (%d, %d),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # title,
+                            ], False, "showOnDemand")
+                            },
+                        "fonts": [gFont("Regular", %d)],
+                        "itemHeight": %d
+                    }
+                    </convert>
+                </widget>
+            </screen>""" % (
+                    positionX, int(0.03 * desktopSize[1]), windowSize[0], windowSize[1],
+                    windowSize[0], fontSize + 10, fontSize, titleColor,
+                    int(0.05 * windowSize[0]), fontSize + 10 + 20, int(0.9 * windowSize[0]), windowSize[1] - (fontSize + 10 + 20 + int(0.05 * windowSize[1])),
+                    fontSize + 5,
+                    int(0.9 * windowSize[0]), fontSize + 10,
+                    fontSize + 5,
+                    int(0.9 * windowSize[0]), fontSize + 10,
+                    fontSize,
+                    fontSize + 5)
         Screen.__init__(self, session)
-        self.activeState = False
         self.list = []
-        self.suggestlist = []
         self["suggestionslist"] = List(self.list)
         self["suggestionstitle"] = StaticText(toString(title))
         self.configTextWithSuggestion = configTextWithSuggestions
 
     def update(self, suggestions):
-        if suggestions and len(suggestions) > 0:
+        if suggestions:
             if not self.shown:
                 self.show()
             suggestions.sort(key=lambda x: int(x['total']))
             suggestions.reverse()
-            if len(suggestions):
-                self.list = []
-                for s in suggestions:
-                    self.list.append((toString(s['name']),))
-                self["suggestionslist"].setList(self.list)
-                self["suggestionslist"].setIndex(0)
+            self.list = []
+            for s in suggestions:
+                self.list.append((toString(s['name']),))
+            self["suggestionslist"].setList(self.list)
+            self["suggestionslist"].setIndex(0)
+            print suggestions
         else:
             self.hide()
 
@@ -3267,22 +3328,22 @@ class SuggestionsListScreen(Screen):
         return len(self.list)
 
     def up(self):
-        if self.list and len(self.list) > 0:
+        if self.list:
             self["suggestionslist"].selectPrevious()
             return self.getSelection()
 
     def down(self):
-        if self.list and len(self.list) > 0:
+        if self.list:
             self["suggestionslist"].selectNext()
             return self.getSelection()
 
     def pageUp(self):
-        if self.list and len(self.list) > 0:
+        if self.list:
             self["suggestionslist"].selectPrevious()
             return self.getSelection()
 
     def pageDown(self):
-        if self.list and len(self.list) > 0:
+        if self.list:
             self["suggestionslist"].selectNext()
             return self.getSelection()
 
@@ -3305,34 +3366,19 @@ class SuggestionsListScreen(Screen):
         else:
             self['suggestionslist'].style = 'notselected'
 
-class HistoryListScreen(SuggestionsListScreen):
-    s = getDesktop(0).size()
-    desktopSize = (s.width(), s.height())
-    windowSize = (int(0.35 * desktopSize[0]), 160)
-    skin = """
-        <screen name="HistoryListScreen" position="%d, 20" zPosition="6" size="%d,160" flags="wfNoBorder" backgroundColor="#33202020" >
-            <widget source="suggestionstitle" render="Label" position = "0,0" size="%d, 25" foregroundColor="#ff0000" font="Regular;20" halign="center" valign="center" transparent="0" />
-            <widget source="suggestionslist" render="Listbox" position="%d,35" size="%d,115" scrollbarMode="showOnDemand" transparent="1" >
-                <convert type="TemplatedMultiContent">
-                     {"templates":
-                        {"default": (23, [
-                            MultiContentEntryText(pos = (0, 0),   size = (360, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # title,
-                        ], True, "showOnDemand"),
-                        "notselected": (23, [
-                            MultiContentEntryText(pos = (0, 0),   size = (360, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # title,
-                        ], False, "showOnDemand")
-                        },
-                    "fonts": [gFont("Regular", 18), gFont("Regular", 16)],
-                    "itemHeight": 23
-                }
-                </convert>
-            </widget>
-        </screen>""" % (int(0.05 * desktopSize[0]), windowSize[0],
-                          windowSize[0],
-                          int(0.05 * windowSize[0]), int(0.9 * windowSize[0]))
+class SuggestionsListScreen(BaseSuggestionsListScreen):
+    def __init__(self, session, configTextWithSuggestions):
+        title = _("Suggestions") + " (" + _("press green") + ")"
+        positionX = getDesktopSize()[0] * 0.6
+        BaseSuggestionsListScreen.__init__(self, session, title, configTextWithSuggestions, positionX, 'green')
 
-    def __init__(self, session, title, configTextWithSuggestions):
-        SuggestionsListScreen.__init__(self, session, title, configTextWithSuggestions)
+
+class HistoryListScreen(BaseSuggestionsListScreen):
+    def __init__(self, session, configTextWithSuggestions):
+        title = _("History") + " (" + _("press red") + ")"
+        positionX = getDesktopSize()[0] * 0.05
+        BaseSuggestionsListScreen.__init__(self, session, title, configTextWithSuggestions, positionX, 'red')
+
 
 class ConfigTextWithSuggestionsAndHistory(ConfigText):
     def __init__(self, historyCfg, default="", fixed_size=True, visible_width=False):
@@ -3355,13 +3401,11 @@ class ConfigTextWithSuggestionsAndHistory(ConfigText):
         ConfigText.onSelect(self, session)
         if session is not None:
             if self.suggestionsWindow is None:
-                suggestionsWindowTitle = _("Suggestions") + " (" + _("press green") + ")"
-                self.suggestionsWindow = session.instantiateDialog(SuggestionsListScreen, suggestionsWindowTitle , self)
+                self.suggestionsWindow = session.instantiateDialog(SuggestionsListScreen, self)
             self.suggestionsWindow.deactivate()
             self.suggestionsWindow.show()
-            historyWindowTitle = _("History") + " (" + _("press red") + ")"
             if self.historyWindow is None:
-                self.historyWindow = session.instantiateDialog(HistoryListScreen, historyWindowTitle, self)
+                self.historyWindow = session.instantiateDialog(HistoryListScreen, self)
             self.historyWindow.deactivate()
             self.historyWindow.show()
         self.getSuggestions()
@@ -3593,22 +3637,40 @@ class SearchParamsHelper(object):
         self.searchSettings.movieProvider.setChoices(choiceList)
         
 class SubsSearchDownloadOptions(Screen, ConfigListScreen):
-    skin="""
-        <screen position="center,center" size="490,350" zPosition="5" >
-            <widget name="config" position="10, 10" size="470,110" zPosition="1" />
-            <eLabel position="8,128" size="474,79" backgroundColor="#ff0000" />
-            <widget source="fname" render="Label" position="10,130" size="470,75" valign="center" halign="center" font="Regular;19" foregroundColor="#ffffff" zPosition="1" />
-            <eLabel position="8,220" size="474,79" backgroundColor="#00ff00" />
-            <widget source="dpath" render="Label" position="10,222" size="470,75" valign="center" halign="center" font="Regular;19" foregroundColor="#ffffff" zPosition="1" />
-            <eLabel position="5,305" size="480,1" backgroundColor="#999999" />
-            <ePixmap  pixmap="skin_default/buttons/key_red.png" position="10,315" size="35,25" transparent="1" alphatest="on" />
-            <widget source="key_red" render="Label" position = "50, 315" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
-            <ePixmap pixmap="skin_default/buttons/key_green.png" position="170,315" size="35,25" transparent="1" alphatest="on" />
-            <widget source="key_green" render="Label" position = "210, 315" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
-            <ePixmap pixmap="skin_default/buttons/key_blue.png" position="330,315" size="35,25" transparent="1" alphatest="on" />
-            <widget source="key_blue" render="Label" position = "370, 315" size="480,25" font="Regular;20" halign="left" foregroundColor="white" />
-        </screen>
-    """
+    if isFullHD():
+        skin="""
+            <screen position="center,center" size="735,525" zPosition="5" >
+                <widget name="config" position="15,15" size="705,165" font="Regular;27" itemHeight="37" zPosition="1" />
+                <eLabel position="12,192" size="711,118" backgroundColor="#ff0000" />
+                <widget source="fname" render="Label" position="15,195" size="705,112" valign="center" halign="center" font="Regular;28" foregroundColor="#ffffff" zPosition="1" />
+                <eLabel position="12,330" size="711,118" backgroundColor="#00ff00" />
+                <widget source="dpath" render="Label" position="15,333" size="705,112" valign="center" halign="center" font="Regular;28" foregroundColor="#ffffff" zPosition="1" />
+                <eLabel position="7,457" size="720,1" backgroundColor="#999999" />
+                <ePixmap  pixmap="skin_default/buttons/key_red.png" position="15,472" size="35,25" transparent="1" alphatest="on" />
+                <widget source="key_red" render="Label" position = "75,472" size="165,37" font="Regular;30" halign="left" foregroundColor="white" />
+                <ePixmap pixmap="skin_default/buttons/key_green.png" position="255,472" size="35,25" transparent="1" alphatest="on" />
+                <widget source="key_green" render="Label" position = "315,472" size="165,37" font="Regular;30" halign="left" foregroundColor="white" />
+                <ePixmap pixmap="skin_default/buttons/key_blue.png" position="495,472" size="35,25" transparent="1" alphatest="on" />
+                <widget source="key_blue" render="Label" position = "555,472" size="720,37" font="Regular;30" halign="left" foregroundColor="white" />
+            </screen>
+        """
+    else:
+        skin="""
+            <screen position="center,center" size="490,350" zPosition="5" >
+                <widget name="config" position="10, 10" size="470,110" zPosition="1" />
+                <eLabel position="8,128" size="474,79" backgroundColor="#ff0000" />
+                <widget source="fname" render="Label" position="10,130" size="470,75" valign="center" halign="center" font="Regular;19" foregroundColor="#ffffff" zPosition="1" />
+                <eLabel position="8,220" size="474,79" backgroundColor="#00ff00" />
+                <widget source="dpath" render="Label" position="10,222" size="470,75" valign="center" halign="center" font="Regular;19" foregroundColor="#ffffff" zPosition="1" />
+                <eLabel position="5,305" size="480,1" backgroundColor="#999999" />
+                <ePixmap  pixmap="skin_default/buttons/key_red.png" position="10,315" size="35,25" transparent="1" alphatest="on" />
+                <widget source="key_red" render="Label" position = "50, 315" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
+                <ePixmap pixmap="skin_default/buttons/key_green.png" position="170,315" size="35,25" transparent="1" alphatest="on" />
+                <widget source="key_green" render="Label" position = "210, 315" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
+                <ePixmap pixmap="skin_default/buttons/key_blue.png" position="330,315" size="35,25" transparent="1" alphatest="on" />
+                <widget source="key_blue" render="Label" position = "370, 315" size="480,25" font="Regular;20" halign="left" foregroundColor="white" />
+            </screen>
+        """
     def __init__(self, session, subtitle, saveAs, saveTo, addLang, dPath, vPath=None):
         Screen.__init__(self, session)
         saveAsOptions = []
@@ -3768,24 +3830,44 @@ class SubsSearchDownloadOptions(Screen, ConfigListScreen):
     
         
 class SubsSearchContextMenu(Screen):
-    skin = """
-        <screen position="center,center" size="400,350" zPosition="5" flags="wfNoBorder">
-            <eLabel position="0,0" size="400,350" backgroundColor="#999999" zPosition="0" />
-            <widget source="subtitle_release" render="Label" position="5,5" size="390,50" valign="center" halign="center" font="Regular;19" foregroundColor="#66BFFF" zPosition="1" />
-            <widget source="context_menu" render="Listbox" position="5,60" size="390,285" scrollbarMode="showNever" zPosition="1">
-            <convert type="TemplatedMultiContent">
-                {"templates":
-                    {"default": (22, [
-                        MultiContentEntryText(pos = (5, 0),   size = (380, 22),  font = 0, color = 0xffffff, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 0), # langname,
-                    ], True, "showOnDemand"),
-                    },
-                "fonts": [gFont("Regular", 19)],
-                "itemHeight":22,
-                }
-            </convert>
-        </widget>
-        </screen>
-    """
+    if isFullHD():
+        skin = """
+            <screen position="center,center" size="600,525" zPosition="5" flags="wfNoBorder">
+                <eLabel position="0,0" size="600,525" backgroundColor="#999999" zPosition="0" />
+                <widget source="subtitle_release" render="Label" position="7,7" size="585,75" valign="center" halign="center" font="Regular;28" foregroundColor="#66BFFF" zPosition="1" />
+                <widget source="context_menu" render="Listbox" position="7,90" size="585,427" scrollbarMode="showNever" zPosition="1">
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (33, [
+                            MultiContentEntryText(pos = (7,0),   size = (570,33),  font = 0, color = 0xffffff, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 0), # langname,
+                        ], True, "showOnDemand"),
+                        },
+                    "fonts": [gFont("Regular", 28)],
+                    "itemHeight":33,
+                    }
+                </convert>
+            </widget>
+            </screen>
+        """
+    else:
+        skin = """
+            <screen position="center,center" size="400,350" zPosition="5" flags="wfNoBorder">
+                <eLabel position="0,0" size="400,350" backgroundColor="#999999" zPosition="0" />
+                <widget source="subtitle_release" render="Label" position="5,5" size="390,50" valign="center" halign="center" font="Regular;19" foregroundColor="#66BFFF" zPosition="1" />
+                <widget source="context_menu" render="Listbox" position="5,60" size="390,285" scrollbarMode="showNever" zPosition="1">
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (22, [
+                            MultiContentEntryText(pos = (5, 0),   size = (380, 22),  font = 0, color = 0xffffff, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER,  text = 0), # langname,
+                        ], True, "showOnDemand"),
+                        },
+                    "fonts": [gFont("Regular", 19)],
+                    "itemHeight":22,
+                    }
+                </convert>
+            </widget>
+            </screen>
+        """
         
     def __init__(self, session):
         Screen.__init__(self, session)
@@ -3815,64 +3897,111 @@ class SubsSearchContextMenu(Screen):
         
 
 class SubsSearch(Screen):
-    skin = """
-    <screen name="SubsSearch" position="center,center" size="700,520" zPosition="3" >
-        <widget source="search_info" render="Listbox" position="10,10" size="680,150" zPosition="3" scrollbarMode="showNever"  transparent="1" >
-            <convert type="TemplatedMultiContent">
-                {"templates":
-                    {"default": (22, [
-                        MultiContentEntryText(pos = (0, 0),   size = (200, 22),  font = 0, color = 0xDAA520, flags = RT_HALIGN_LEFT,  text = 0), # langname,
-                        MultiContentEntryText(pos = (205, 0),   size = (400, 22),  font = 0, flags = RT_HALIGN_LEFT,  text = 1)
-                    ], False, "showNever"),
-                    },
-                "fonts": [gFont("Regular", 18)],
-                "itemHeight":22,
-                }
-            </convert>
-        </widget>
-        <widget source="header_country" render="Label" position = "5,175" size="120,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <widget source="header_release" render="Label" position = "145,175" size="335,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <widget source="header_provider" render="Label" position = "505, 175" size="135,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <widget source="header_sync" render="Label" position = "650, 175" size="20,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <eLabel position="5,205" size="690,1" backgroundColor="#999999" />
-        <widget name="loadmessage"  position="5,210" size="690,260" valign="center" halign="center" font="Regular;19" foregroundColor="#ffffff" zPosition="4" />
-        <widget name="errormessage" position="5,210" size="690,260" valign="center" halign="center" font="Regular;19" foregroundColor="#ff0000" zPosition="5" />
-        <widget source="subtitles" render="Listbox" scrollbarMode="showOnDemand" position="5,210" size="690,260" zPosition="3" transparent="1" >
-            <convert type="TemplatedMultiContent">
-                {"templates":
-                    {"default": (23, [
-                        MultiContentEntryPixmapAlphaBlend(pos = (0, 0),   size = (24, 24), png=0), # key,
-                        MultiContentEntryText(pos = (30, 0),   size = (100, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # language,
-                        MultiContentEntryText(pos = (140, 0),  size = (335, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # filename,
-                        MultiContentEntryText(pos = (500, 0), size = (135, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # size,
-                        MultiContentEntryPixmapAlphaBlend(pos = (645, 0),   size = (24, 24), png=4), # syncPng,
-                    ], True, "showOnDemand"),
-                    "old": (23, [
-                        MultiContentEntryPixmapAlphaBlend(pos = (0, 0),   size = (24, 24), png=0), # key,
-                        MultiContentEntryText(pos = (30, 0),   size = (60, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # language,
-                        MultiContentEntryText(pos = (100, 0),  size = (335, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # filename,
-                        MultiContentEntryText(pos = (445, 0), size = (130, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # size,
-                        MultiContentEntryText(pos = (585, 0), size = (95, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 4), # sync,
-                    ], True, "showOnDemand"),
-                    },
-                "fonts": [gFont("Regular", 18), gFont("Regular", 16)],
-                "itemHeight": 23
-                }
-            </convert>
-        </widget>
-        <eLabel position="5,475" size="690,1" backgroundColor="#999999" />
-        <widget source="key_menu_img" render="Pixmap" pixmap="skin_default/buttons/key_menu.png" position="3,485" size="35,25" transparent="1" alphatest="on" >
-            <convert type="ConditionalShowHide" />
-        </widget>
-        <ePixmap  pixmap="skin_default/buttons/key_red.png" position="40,485" size="35,25" transparent="1" alphatest="on" />
-        <widget source="key_red" render="Label" position = "80, 485" size="120,25" font="Regular;20" halign="left" foregroundColor="white" />
-        <ePixmap pixmap="skin_default/buttons/key_green.png" position="205,485" size="35,25" transparent="1" alphatest="on" />
-        <widget source="key_green" render="Label" position = "245, 485" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
-        <ePixmap pixmap="skin_default/buttons/key_yellow.png" position="365,485" size="35,25" transparent="1" alphatest="on" />
-        <widget source="key_yellow" render="Label" position = "405, 485" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
-        <ePixmap pixmap="skin_default/buttons/key_blue.png" position="525,485" size="35,25" transparent="1" alphatest="on" />
-        <widget source="key_blue" render="Label" position = "565, 485" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
-    </screen> """
+    if isFullHD():
+        skin = """
+        <screen name="SubsSearch" position="center,center" size="1350,780" zPosition="3" >
+            <widget source="search_info" render="Listbox" position="15,15" size="1320,225" zPosition="3" scrollbarMode="showNever"  transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (33, [
+                            MultiContentEntryText(pos = (0,0),   size = (300,33),  font = 0, color = 0xDAA520, flags = RT_HALIGN_LEFT,  text = 0), # langname,
+                            MultiContentEntryText(pos = (307,0),   size = (600,33),  font = 0, flags = RT_HALIGN_LEFT,  text = 1)
+                        ], False, "showNever"),
+                        },
+                    "fonts": [gFont("Regular", 27)],
+                    "itemHeight":33,
+                    }
+                </convert>
+            </widget>
+            <widget source="header_country" render="Label" position = "7,262" size="180,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_release" render="Label" position = "217,262" size="802,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_provider" render="Label" position = "1057,262" size="202,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_sync" render="Label" position = "1275,262" size="30,37" font="Regular;27" halign="left" foregroundColor="#0xcccccc" />
+            <eLabel position="7,307" size="1335,1" backgroundColor="#999999" />
+            <widget name="loadmessage"  position="7,315" size="1335,390" valign="center" halign="center" font="Regular;28" foregroundColor="#ffffff" zPosition="4" />
+            <widget name="errormessage" position="7,315" size="1335,390" valign="center" halign="center" font="Regular;28" foregroundColor="#ff0000" zPosition="5" />
+            <widget source="subtitles" render="Listbox" scrollbarMode="showOnDemand" position="7,315" size="1335,390" zPosition="3" transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (34, [
+                            MultiContentEntryPixmapAlphaBlend(pos = (0,0),   size = (36,36), png=0), # key,
+                            MultiContentEntryText(pos = (45,0),   size = (150,37),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # language,
+                            MultiContentEntryText(pos = (210,0),  size = (802,37),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # filename,
+                            MultiContentEntryText(pos = (1050,0), size = (202,37), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # size,
+                            MultiContentEntryPixmapAlphaBlend(pos = (1267,0),   size = (36,36), png=4), # syncPng,
+                        ], True, "showOnDemand"),
+                        },
+                    "fonts": [gFont("Regular", 27), gFont("Regular", 16)],
+                    "itemHeight": 34
+                    }
+                </convert>
+            </widget>
+            <eLabel position="7,712" size="1335,1" backgroundColor="#999999" />
+            <widget source="key_menu_img" render="Pixmap" pixmap="skin_default/buttons/key_menu.png" position="10,727" size="35,25" transparent="1" alphatest="on" >
+                <convert type="ConditionalShowHide" />
+            </widget>
+            <ePixmap  pixmap="skin_default/buttons/key_red.png" position="50,727" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_red" render="Label" position = "93,727" size="268,37" font="Regular;30" halign="left" foregroundColor="white" />
+            <ePixmap pixmap="skin_default/buttons/key_green.png" position="371,727" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_green" render="Label" position = "414,727" size="268,37" font="Regular;30" halign="left" foregroundColor="white" />
+            <ePixmap pixmap="skin_default/buttons/key_yellow.png" position="692,727" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_yellow" render="Label" position = "735,727" size="268,37" font="Regular;30" halign="left" foregroundColor="white" />
+            <ePixmap pixmap="skin_default/buttons/key_blue.png" position="1013,727" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_blue" render="Label" position = "1056,727" size="268,37" font="Regular;30" halign="left" foregroundColor="white" />
+        </screen>
+        """
+    else:
+        skin = """
+        <screen name="SubsSearch" position="center,center" size="700,520" zPosition="3" >
+            <widget source="search_info" render="Listbox" position="10,10" size="680,150" zPosition="3" scrollbarMode="showNever"  transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (22, [
+                            MultiContentEntryText(pos = (0, 0),   size = (200, 22),  font = 0, color = 0xDAA520, flags = RT_HALIGN_LEFT,  text = 0), # langname,
+                            MultiContentEntryText(pos = (205, 0),   size = (400, 22),  font = 0, flags = RT_HALIGN_LEFT,  text = 1)
+                        ], False, "showNever"),
+                        },
+                    "fonts": [gFont("Regular", 18)],
+                    "itemHeight":22,
+                    }
+                </convert>
+            </widget>
+            <widget source="header_country" render="Label" position = "5,175" size="120,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_release" render="Label" position = "145,175" size="335,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_provider" render="Label" position = "505, 175" size="135,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_sync" render="Label" position = "650, 175" size="20,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <eLabel position="5,205" size="690,1" backgroundColor="#999999" />
+            <widget name="loadmessage"  position="5,210" size="690,260" valign="center" halign="center" font="Regular;19" foregroundColor="#ffffff" zPosition="4" />
+            <widget name="errormessage" position="5,210" size="690,260" valign="center" halign="center" font="Regular;19" foregroundColor="#ff0000" zPosition="5" />
+            <widget source="subtitles" render="Listbox" scrollbarMode="showOnDemand" position="5,210" size="690,260" zPosition="3" transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (23, [
+                            MultiContentEntryPixmapAlphaBlend(pos = (0, 0),   size = (24, 24), png=0), # key,
+                            MultiContentEntryText(pos = (30, 0),   size = (100, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # language,
+                            MultiContentEntryText(pos = (140, 0),  size = (335, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # filename,
+                            MultiContentEntryText(pos = (500, 0), size = (135, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # size,
+                            MultiContentEntryPixmapAlphaBlend(pos = (645, 0),   size = (24, 24), png=4), # syncPng,
+                        ], True, "showOnDemand"),
+                        },
+                    "fonts": [gFont("Regular", 18), gFont("Regular", 16)],
+                    "itemHeight": 23
+                    }
+                </convert>
+            </widget>
+            <eLabel position="5,475" size="690,1" backgroundColor="#999999" />
+            <widget source="key_menu_img" render="Pixmap" pixmap="skin_default/buttons/key_menu.png" position="3,485" size="35,25" transparent="1" alphatest="on" >
+                <convert type="ConditionalShowHide" />
+            </widget>
+            <ePixmap  pixmap="skin_default/buttons/key_red.png" position="40,485" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_red" render="Label" position = "80, 485" size="120,25" font="Regular;20" halign="left" foregroundColor="white" />
+            <ePixmap pixmap="skin_default/buttons/key_green.png" position="205,485" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_green" render="Label" position = "245, 485" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
+            <ePixmap pixmap="skin_default/buttons/key_yellow.png" position="365,485" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_yellow" render="Label" position = "405, 485" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
+            <ePixmap pixmap="skin_default/buttons/key_blue.png" position="525,485" size="35,25" transparent="1" alphatest="on" />
+            <widget source="key_blue" render="Label" position = "565, 485" size="110,25" font="Regular;20" halign="left" foregroundColor="white" />
+        </screen> """
 
     def __init__(self, session, seeker, searchSettings, filepath=None, searchTitles=None, resetSearchParams=True, standAlone=False):
         Screen.__init__(self, session)
@@ -4471,39 +4600,74 @@ class SubsSearchSettings(Screen, ConfigListScreen):
             configList.append(getConfigListEntry(_("Load/Save download history directory"), historySettings.path))
         return configList
     
-    skin = """
-    <screen name="SubsSearch" position="center,center" size="650,500" zPosition="3" >
-        <widget name="key_red" position="10,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" shadowOffset="-2,-2" shadowColor="black" />
-        <widget name="key_green" position="170,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" shadowOffset="-2,-2" shadowColor="black" />
-        <widget name="key_yellow" position="330,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
-        <widget name="key_blue" position="490,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
-        <eLabel position="-1,55" size="650,1" backgroundColor="#999999" />
-        <widget name="config" position="10,75" size="630,178" scrollbarMode="showOnDemand" />
-        <!-- <eLabel position="5,245" size="640,1" backgroundColor="#999999" /> -->
-        <widget source="header_name" render="Label" position = "10,265" size="200,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <widget source="header_lang" render="Label" position = "220,265" size="180,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
-        <widget source="header_state" render="Label" position = "410, 265" size="200,25" font="Regular;18" halign="right" foregroundColor="#0xcccccc" />
-        <eLabel position="5,295" size="640,1" backgroundColor="#999999" />
-        <widget source="providers" render="Listbox" scrollbarMode="showOnDemand" position="10,305" size="630,185" zPosition="3" transparent="1" >
-            <convert type="TemplatedMultiContent">
-                {"templates":
-                    {"default": (23, [
-                        MultiContentEntryText(pos = (0, 0),   size = (200, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # name,
-                        MultiContentEntryText(pos = (210, 0),  size = (180, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # lang,
-                        MultiContentEntryText(pos = (400, 0), size = (200, 25), font = 0, flags = RT_HALIGN_RIGHT, text = 2, color=0xFF000003) # enabled,
-                    ], True, "showOnDemand"),
-                    "notselected": (23, [
-                        MultiContentEntryText(pos = (0, 0),   size = (200, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # name,
-                        MultiContentEntryText(pos = (210, 0),  size = (180, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # lang,
-                        MultiContentEntryText(pos = (400, 0), size = (200, 25), font = 0, flags = RT_HALIGN_RIGHT,  text = 2, color=0xFF000003) # enabled,
-                    ], False, "showOnDemand")
-                    },
-                "fonts": [gFont("Regular", 18), gFont("Regular", 16)],
-                "itemHeight": 23
-                }
-            </convert>
-        </widget>
-    </screen> """
+    if isFullHD():
+        skin = """
+        <screen position="center,center" size="835,642" zPosition="3" >
+            <widget name="key_red" position="12,6" zPosition="1" size="192,57" font="Regular;25" halign="center" valign="center" backgroundColor="#9f1313" shadowOffset="-2,-2" shadowColor="black" />
+            <widget name="key_green" position="218,6" zPosition="1" size="192,57" font="Regular;25" halign="center" valign="center" backgroundColor="#1f771f" shadowOffset="-2,-2" shadowColor="black" />
+            <widget name="key_yellow" position="424,6" zPosition="1" size="192,57" font="Regular;25" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
+            <widget name="key_blue" position="629,6" zPosition="1" size="192,57" font="Regular;25" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
+            <eLabel position="-1,83" size="835,1" backgroundColor="#999999" />
+            <widget name="config" position="12,96" size="809,228" font="Regular;27" itemHeight="37" scrollbarMode="showOnDemand" />
+            <widget source="header_name" render="Label" position = "12,340" size="257,32" font="Regular;23" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_lang" render="Label" position = "282,340" size="231,32" font="Regular;23" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_state" render="Label" position = "527,340" size="257,32" font="Regular;23" halign="right" foregroundColor="#0xcccccc" />
+            <eLabel position="6,379" size="822,1" backgroundColor="#999999" />
+            <widget source="providers" render="Listbox" scrollbarMode="showOnDemand" position="12,392" size="809,237" zPosition="3" transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (37, [
+                            MultiContentEntryText(pos = (0,0),   size = (257,32),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # name,
+                            MultiContentEntryText(pos = (269,0),  size = (231,32),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # lang,
+                            MultiContentEntryText(pos = (514,0), size = (257,32), font = 0, flags = RT_HALIGN_RIGHT, text = 2, color=0xFF000003) # enabled,
+                        ], True, "showOnDemand"),
+                        "notselected": (37, [
+                            MultiContentEntryText(pos = (0,0),   size = (257,32),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # name,
+                            MultiContentEntryText(pos = (269,0),  size = (231,32),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # lang,
+                            MultiContentEntryText(pos = (514,0), size = (257,32), font = 0, flags = RT_HALIGN_RIGHT,  text = 2, color=0xFF000003) # enabled,
+                        ], False, "showOnDemand")
+                        },
+                    "fonts": [gFont("Regular", 27)],
+                    "itemHeight": 37
+                    }
+                </convert>
+            </widget>
+        </screen>
+        """
+    else:
+        skin = """
+        <screen position="center,center" size="650,500" zPosition="3" >
+            <widget name="key_red" position="10,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" shadowOffset="-2,-2" shadowColor="black" />
+            <widget name="key_green" position="170,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" shadowOffset="-2,-2" shadowColor="black" />
+            <widget name="key_yellow" position="330,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" shadowOffset="-2,-2" shadowColor="black" />
+            <widget name="key_blue" position="490,5" zPosition="1" size="150,45" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" shadowOffset="-2,-2" shadowColor="black" />
+            <eLabel position="-1,55" size="650,1" backgroundColor="#999999" />
+            <widget name="config" position="10,75" size="630,178" scrollbarMode="showOnDemand" />
+            <!-- <eLabel position="5,245" size="640,1" backgroundColor="#999999" /> -->
+            <widget source="header_name" render="Label" position = "10,265" size="200,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_lang" render="Label" position = "220,265" size="180,25" font="Regular;18" halign="left" foregroundColor="#0xcccccc" />
+            <widget source="header_state" render="Label" position = "410, 265" size="200,25" font="Regular;18" halign="right" foregroundColor="#0xcccccc" />
+            <eLabel position="5,295" size="640,1" backgroundColor="#999999" />
+            <widget source="providers" render="Listbox" scrollbarMode="showOnDemand" position="10,305" size="630,185" zPosition="3" transparent="1" >
+                <convert type="TemplatedMultiContent">
+                    {"templates":
+                        {"default": (23, [
+                            MultiContentEntryText(pos = (0, 0),   size = (200, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # name,
+                            MultiContentEntryText(pos = (210, 0),  size = (180, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # lang,
+                            MultiContentEntryText(pos = (400, 0), size = (200, 25), font = 0, flags = RT_HALIGN_RIGHT, text = 2, color=0xFF000003) # enabled,
+                        ], True, "showOnDemand"),
+                        "notselected": (23, [
+                            MultiContentEntryText(pos = (0, 0),   size = (200, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 0), # name,
+                            MultiContentEntryText(pos = (210, 0),  size = (180, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # lang,
+                            MultiContentEntryText(pos = (400, 0), size = (200, 25), font = 0, flags = RT_HALIGN_RIGHT,  text = 2, color=0xFF000003) # enabled,
+                        ], False, "showOnDemand")
+                        },
+                    "fonts": [gFont("Regular", 18), gFont("Regular", 16)],
+                    "itemHeight": 23
+                    }
+                </convert>
+            </widget>
+        </screen> """
 
     FOCUS_CONFIG, FOCUS_PROVIDERS = range(2)
 
@@ -4707,21 +4871,40 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
     LIST_HISTORY = 2
 
     def __init__(self, session, seeker, searchSettings, titleList=None, resetSearchParams=True, enabledList=True, windowTitle=None):
-        s = getDesktop(0).size()
-        desktopSize = (s.width(), s.height())
-        windowSize = (550, 330)
+        ratio               = 1.5 if isFullHD() else 1
+        xOffset             = 10
+        desktopSize         = getDesktopSize()
+        windowSize          = (desktopSize[0]/2, desktopSize[1]*2/5)
+        xFullSize           = (windowSize[0] - (2 * xOffset * ratio))
+        sourceTitleInfoFont = 22 * ratio
+        sourceTitleInfoSize = (xFullSize, sourceTitleInfoFont + 10)
+        sourceTitleFont     = 21 * ratio
+        sourceTitleSize     = (xFullSize, sourceTitleFont * 2 + 10)
+        separatorSize       = (xFullSize, 2 * ratio)
+        configSize          = (xFullSize, windowSize[1] - (2 * 10 * ratio))
+        configFont          = 21 * ratio
+        configItemHeight    = configFont + 10
+
+        windowPos           = (desktopSize[0]/2 - windowSize[0]/2, desktopSize[1]/5 * 3 - windowSize[1]/2)
+
+        sourceTitleInfoPos  = (xOffset * ratio, 10 * ratio)
+        sourceTitlePos      = (xOffset * ratio, sourceTitleInfoPos[1] + sourceTitleInfoSize[1] + 10 * ratio)
+        separatorPos        = (xOffset * ratio, sourceTitlePos[1] + sourceTitleSize[1] + 10 * ratio)
+        configPos           = (xOffset * ratio, separatorPos[1] + separatorSize[1] + 10 * ratio)
+
         self.skin = """
-            <screen position="center,%d" size="550,330" >
-                <widget source="sourceTitleInfo" render="Label" position="10,10" size="530,25" halign="center" font="Regular;22" foregroundColor="#66BFFF" />
-                <widget source="sourceTitle" render="Label" position="10,35" size="530,55" halign="center" valign="center" font="Regular;21" />
-                <widget source="searchTitleParams" render="Label" position="10,90" size="530,25" halign="center" font="Regular;22" foregroundColor="#ffbb00"/>
-                <eLabel position="10,120" size="530,1" backgroundColor="#999999" />
-                <widget name="config" position="10,130" size="530,160" scrollbarMode="showOnDemand" />
-                <eLabel position="10,285" size="530,1" backgroundColor="#999999" />
-                <widget source="pressOkTitleInfo" render="Label" position="10,295" size="530,25" halign="center" font="Regular;21" />
-            </screen>""" % ((desktopSize[1] / 2) - (windowSize[1] / 2) + 50)
-
-
+            <screen position="%d,%d" size="%d,%d" >
+                <widget source="sourceTitleInfo" render="Label" position="%d,%d" size="%d,%d" halign="center" font="Regular;%d" foregroundColor="#66BFFF" />
+                <widget source="sourceTitle" render="Label" position="%d,%d" size="%d,%d" halign="center" valign="center" font="Regular;%d" />
+                <eLabel position="%d,%d" size="%d,%d" backgroundColor="#999999" />
+                <widget name="config" position="%d,%d" size="%d,%d" font="Regular;%d" itemHeight="%d" scrollbarMode="showOnDemand" />
+            </screen>""" % (
+                    windowPos[0], windowPos[1], windowSize[0], windowSize[1],
+                    sourceTitleInfoPos[0], sourceTitleInfoPos[1], sourceTitleInfoSize[0], sourceTitleInfoSize[1], sourceTitleInfoFont,
+                    sourceTitlePos[0], sourceTitlePos[1], sourceTitleSize[0], sourceTitleSize[1], sourceTitleFont,
+                    separatorPos[0], separatorPos[1], separatorSize[0], separatorSize[1],
+                    configPos[0], configPos[1], configSize[0], configSize[1], configFont, configItemHeight
+                    )
         Screen.__init__(self, session)
         ConfigListScreen.__init__(self, [], session=session)
         self["config"] = MyConfigList([], session, enabledList)
@@ -4740,8 +4923,6 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
         else:
             self['sourceTitleInfo'] = StaticText("%s [%d/%d]" % (_("Source title"), 1, len(self.sourceTitleList)))
         self['sourceTitle'] = StaticText(self.sourceTitle)
-        self['searchTitleParams'] = StaticText(_("Search parameters"))
-        self['pressOkTitleInfo'] = StaticText(_("Press OK to confirm"))
         self["suggestionActions"] = ActionMap(["DirectionActions", "ColorActions", "OkCancelActions"],
             {
                  "red": self.cancelToHistoryList,

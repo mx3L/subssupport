@@ -14,7 +14,7 @@ from compat import MessageBox, eConnectCallback
 from Screens.MinuteInput import MinuteInput
 from Screens.Screen import Screen
 
-from e2_utils import getFps, fps_float, BaseMenuScreen
+from e2_utils import getFps, fps_float, BaseMenuScreen, isFullHD, getDesktopSize
 from enigma import eTimer, getDesktop
 from parsers.baseparser import ParseError
 from process import LoadError, DecodeError, ParserNotFoundError
@@ -80,22 +80,31 @@ class SubsControllerDVB(Screen, HelpableScreen):
     fpsChoices = ["23.976", "23.980","24.000", "25.000", "29.970", "30.000"]
 
     def __init__(self, session, engine, autoSync=False, setSubtitlesFps=False, subtitlesFps=None):
-        desktopWidth = getDesktop(0).size().width()
-        offset = 20
-        screenWidth = desktopWidth - (2 * offset)
-        widgetWidth = screenWidth / 2 - 5
+        desktopSize    = getDesktopSize()
+        windowPosition = (int(0.03 * desktopSize[0]), int(0.05 * desktopSize[1]))
+        windowSize     = (int(0.9 * desktopSize[0]), int(0.4 * desktopSize[1]))
+        fontSize       = 33 if isFullHD() else 22
+        leftWidget     = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
+        rightWidget    = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
+        xpos           = (int(0.6 * windowSize[0]), )
         self.skin = """
-            <screen position="%d,0" size="%d,140" zPosition="2" backgroundColor="transparent" flags="wfNoBorder">
-                <widget name="subtitle" position="0,0" size="%d,30" valign="center" halign="left" font="Regular;22" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-                <widget name="subtitlesTime" position="0,35" size="%d,30" valign="center" halign="left" font="Regular;22" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-                <widget name="subtitlesPosition" position="0,70" size="%d,30" valign="center" halign="left" font="Regular;22" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-                <widget name="subtitlesFps" position="0,105" size="%d,30" valign="center" halign="left" font="Regular;22" transparent="1" foregroundColor="#6F9EF5" shadowColor="#40101010" shadowOffset="2,2" />
-                <widget name="eventName" position="%d,0" size="%d,30" valign="center" halign="left" font="Regular;22" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-                <widget name="eventTime" position="%d,35" size="%d,30" valign="center" halign="left" font="Regular;22" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-                <widget name="eventDuration" position="%d,70" size="%d,30" valign="center" halign="left" font="Regular;22" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-            </screen>""" % (offset, screenWidth,
-                            widgetWidth, widgetWidth, widgetWidth, widgetWidth,
-                            widgetWidth + 5, widgetWidth, widgetWidth + 5, widgetWidth, widgetWidth + 5, widgetWidth)
+            <screen position="%d,%d" size="%d,%d" zPosition="2" backgroundColor="transparent" flags="wfNoBorder">
+                <widget name="subtitle" position="0,0" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
+                <widget name="subtitlesTime" position="0,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
+                <widget name="subtitlesPosition" position="0,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
+                <widget name="subtitlesFps" position="0,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#6F9EF5" shadowColor="#40101010" shadowOffset="2,2" />
+                <widget name="eventName" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
+                <widget name="eventTime" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
+                <widget name="eventDuration" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
+            </screen>""" % (windowPosition + windowSize + \
+                leftWidget + \
+                (leftWidget[1] + 10,) + leftWidget + \
+                ((leftWidget[1] + 10) * 2,) + leftWidget + \
+                ((leftWidget[1] + 10) * 3,) + leftWidget + \
+                xpos + (0,) + rightWidget + \
+                xpos + ((rightWidget[1] + 10) * 1,) + rightWidget + \
+                xpos + ((rightWidget[1] + 10) * 2,) + rightWidget)
+
         Screen.__init__(self, session)
         HelpableScreen.__init__(self)
         self.engine = engine
