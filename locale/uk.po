@@ -1,0 +1,772 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-21 09:29+0200\n"
+"PO-Revision-Date: 2016-07-12 15:24+0200\n"
+"Last-Translator: satdreamgr\n"
+"Language-Team: sety <tim1065@mail.ru>\n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Add subtitle's language to filename"
+msgstr "Добавить язык субтитров в имя файла"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Always ask before overwriting existing subtitles"
+msgstr "Запитати перед перезаписом існуючих субтитрів"
+
+msgid "Append language to filename"
+msgstr "Додати мову до імені файлу"
+
+msgid "Arabic"
+msgstr "Арабська"
+
+msgid "Ask on remove action"
+msgstr "Запитати перед акцією видалення"
+
+msgid "Auto sync to current event"
+msgstr "Автоматична синхронізація поточної події"
+
+msgid "Background"
+msgstr "Фон"
+
+msgid "Background X-offset"
+msgstr "Зміщення фону по горизонталі"
+
+msgid "Background Y-offset"
+msgstr "Зміщення фону по вертикалі "
+
+msgid "Background color"
+msgstr "Колір фону"
+
+msgid "Background transparency"
+msgstr "Прозорість фону"
+
+msgid "Background type"
+msgstr "Тип фону"
+
+msgid "Cancel"
+msgstr "Відміна"
+
+msgid "Cannot decode subtitles. Try another encoding group"
+msgstr "Неможливо декодувати субтитри. Спробуйте іншу групу кодування"
+
+msgid "Cannot load subtitles. Invalid path"
+msgstr "Неможливо завантажити субтитри. недійсний шлях"
+
+msgid "Cannot parse subtitles. Invalid subtitles format"
+msgstr "Не можу прочитати субтитри. Невідомий формат субтитрів"
+
+msgid "Cannot parse subtitles. Not supported subtitles format"
+msgstr "Не можу прочитати субтитри. Непідтримуваний формат субтитрів"
+
+msgid "Central and Eastern Europe"
+msgstr "Центральна та Східна Європа"
+
+msgid "Change encoding"
+msgstr "Зміна кодування"
+
+msgid "Change subssupport settings"
+msgstr "Зміна налаштувань субтитрів"
+
+msgid "Check search parameters before subtitles search"
+msgstr "Перевірка параметрів перед пошуком субтитрів"
+
+msgid "Choose Subtitles"
+msgstr "Вибір субтитрів"
+
+msgid "Choose from downloaded subtitles"
+msgstr "Вибір із завантажених субтитрів"
+
+msgid "Choose from embedded subtitles"
+msgstr "Вибір з вбудованих субтитрів"
+
+msgid "Choose from web subtitles"
+msgstr "Вибір з веб субтитрів"
+
+msgid "Choose subtitles"
+msgstr "Вибір субтитрів"
+
+msgid "Color"
+msgstr "Кольор"
+
+msgid "Currently choosed subtitles"
+msgstr "Поточні вибрані субтитри"
+
+msgid "DVB player settings"
+msgstr "Налаштування DVB плеєра"
+
+msgid "Default"
+msgstr "Дефолт"
+
+msgid "Do you want to proceed?"
+msgstr "Ви хочете продовжити?"
+
+msgid "Do you want to show this message again?"
+msgstr "Ви хочете бачити це повідомлення ще раз?"
+
+msgid "Download (more...)"
+msgstr "Завантаження (більше ...)"
+
+msgid "Download (next to video)"
+msgstr "Завантаження (разом з відео)"
+
+msgid "Download (user defined)"
+msgstr "Завантаження (визначено користувачем)"
+
+msgid "Download and Load (more...)"
+msgstr "Завантаження і застосування (більше ...)"
+
+msgid "Download and Load (next to video)"
+msgstr "Завантаження і застосування (разом з відео)"
+
+msgid "Download and Load (user defined) "
+msgstr "Завантаження і застосування (визначено користувачем)"
+
+msgid "Download date"
+msgstr "Дата завантаження"
+
+msgid "Download options"
+msgstr "Опції завантаження"
+
+msgid "Download subtitles for your videos"
+msgstr "Завантаження субтитрів для Вашого відео"
+
+msgid "Downloaded Subtitles"
+msgstr "Завантажені субтитри"
+
+msgid "Downloaded Subtitles - Settings"
+msgstr "Завантажені субтитри - настройки"
+
+msgid "Duration"
+msgstr "Тривалість"
+
+msgid "Edit Filename"
+msgstr "Редактор імені файлу"
+
+msgid "Edit download path"
+msgstr "Редактор каталогу завантаження"
+
+msgid "Embedded Subtitles"
+msgstr "Вбудовані субтитри"
+
+msgid "Embedded subtitles settings"
+msgstr "Налаштування вбудованих субтитрів"
+
+msgid "Encoding"
+msgstr "Кодування"
+
+msgid "Encoding:"
+msgstr "Кодування"
+
+msgid "Entries count:"
+msgstr "Всього записів:"
+
+msgid "Episode"
+msgstr "Епізод"
+
+msgid "Event Duration"
+msgstr "Тривалість події"
+
+msgid "Event Name"
+msgstr "Ім'я події"
+
+msgid "Event Time"
+msgstr "Час події"
+
+msgid "External Subtitles settings"
+msgstr "Налаштування зовнішніх субтитрів"
+
+msgid "External subtitles settings"
+msgstr "Налаштування зовнішніх субтитрів"
+
+msgid "Filename"
+msgstr "Ім'я файлу"
+
+msgid "Filename cannot be empty!"
+msgstr "Файл не може бути порожнім!"
+
+msgid "Font color (Bold)"
+msgstr "Колір шрифту (жирний)"
+
+msgid "Font color (Italic"
+msgstr "Колір шрифту (курсив)"
+
+msgid "Font color (Regular)"
+msgstr "Колір шрифту (регулярний)"
+
+msgid "Font size"
+msgstr "Розмір шрифту"
+
+msgid "Font transparency (Bold)"
+msgstr "Прозорість шрифту (жирний)"
+
+msgid "Font transparency (Italic)"
+msgstr "Прозорість шрифту (курсив)"
+
+msgid "Font transparency (Regular)"
+msgstr "Прозорість шрифту (регулярний)"
+
+msgid "Font type (Bold)"
+msgstr "Тип шрифту (жирний)"
+
+msgid "Font type (Italic)"
+msgstr "Тип шрифту (курсив)"
+
+msgid "Font type (Regular)"
+msgstr "Тип шрифту (регулярний)"
+
+msgid "For more details please check search settings"
+msgstr ""
+"Для більш докладної інформації, будь ласка, перевірте налаштування пошуку"
+
+msgid "General settings"
+msgstr "Генеральні налаштування"
+
+msgid "Greek"
+msgstr "Грецька"
+
+msgid "Hide delay"
+msgstr "Приховати затримку"
+
+msgid "History"
+msgstr "Історія"
+
+msgid "Language"
+msgstr "Мова"
+
+msgid "Language selection"
+msgstr "Вибір мови"
+
+msgid "List"
+msgstr "Список"
+
+msgid "List + File"
+msgstr "Список + файл"
+
+msgid "List of storage devices"
+msgstr "Список доступних пристроїв"
+
+msgid "Load subtitles after download"
+msgstr "Застосування субтитрів після завантаження"
+
+msgid "Load/Save download history directory"
+msgstr "Каталог історії завантаження"
+
+msgid "Manual search"
+msgstr "Ручний пошук"
+
+msgid "Max history entries"
+msgstr "Максимум записів історії"
+
+msgid "Movie"
+msgstr "Фільм"
+
+msgid "Name"
+msgstr "Ім'я"
+
+msgid "Next to video"
+msgstr "Разом з відео"
+
+msgid "No external subtitles are loaded"
+msgstr "Немає застосованих зовнішніх субтитрів"
+
+msgid "No subtitles found :("
+msgstr "Не знайдено субтитрів :("
+
+msgid "None"
+msgstr "Нічего"
+
+msgid "PTS check delay"
+msgstr "Перевірка затримки PTS"
+
+msgid "Parent directory"
+msgstr "Батьківський каталог"
+
+msgid "Path"
+msgstr "Каталог"
+
+msgid "Path doesn't exist!"
+msgstr "Каталог не існує!"
+
+msgid "Pause video on opening subtitles menu"
+msgstr "Пауза відео при відкритті меню субтитрів"
+
+msgid "Player delay"
+msgstr "Затримка плеєра"
+
+msgid "Position"
+msgstr "Позиція"
+
+msgid "Preferred Movie provider"
+msgstr "Пріоритетний постачальник фільмів"
+
+msgid "Preferred TV show provider"
+msgstr "Пріоритетний постачальник серіалів"
+
+msgid "Preferred languages"
+msgstr "Пріоритетні мови"
+
+msgid "Preferred subtitles language"
+msgstr "Пріоритетні мови субтитрів"
+
+msgid "Press OK to Stop"
+msgstr "Пріоритетні мови субтитрів"
+
+msgid "Press OK to confirm"
+msgstr "Пріорітетні мови субтітрів"
+
+msgid "Provider"
+msgstr "Поставщик"
+
+msgid "Provider name"
+msgstr "Ім'я постачальника"
+
+msgid "Refresh delay"
+msgstr "Затримка поновлення"
+
+msgid "Release"
+msgstr "Реліз"
+
+msgid "Remove (file)"
+msgstr "Видалити (файл)"
+
+msgid "Remove Entry (List)"
+msgstr "Видалити запис (список)"
+
+msgid "Remove Entry (List+File)"
+msgstr "Видалити запис (список + файл)"
+
+msgid "Remove action"
+msgstr "Акція видалення"
+
+msgid "Reset"
+msgstr "Скидання"
+
+msgid "Reset Defaults"
+msgstr "Скидання по дефолту"
+
+msgid "Russia"
+msgstr "Російська"
+
+msgid "S"
+msgstr "S"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "Save as"
+msgstr "Зберегти як"
+
+msgid "Save downloaded subtitles to history"
+msgstr "Зберігати завантажені субтитри в історію"
+
+msgid "Save subtitles as"
+msgstr "Зберегти субтитри як"
+
+msgid "Save subtitles as (fallback)"
+msgstr "Зберегти субтитри як (резерв)"
+
+msgid "Save subtitles to"
+msgstr "Зберегти субтитри в"
+
+msgid "Save to"
+msgstr "Зберегти в"
+
+msgid "Search"
+msgstr "Пошук"
+
+msgid "Search parameters"
+msgstr "Параметри пошуку"
+
+msgid "Search settings"
+msgstr "Налаштування пошуку"
+
+msgid "Search subtitles"
+msgstr "Пошук субтитрів"
+
+msgid "Season"
+msgstr "Сезон"
+
+msgid "Select Directory"
+msgstr "Вибір каталога"
+
+msgid "Settings"
+msgstr "Налаштування"
+
+msgid "Shadow"
+msgstr "Тінь"
+
+msgid "Shadow X-offset"
+msgstr "Тінь - зміщення по горизонталі"
+
+msgid "Shadow Y-offset"
+msgstr "Тінь - зміщення по вертикалі"
+
+msgid "Shadow color"
+msgstr "Колір тіні"
+
+msgid "Shadow size"
+msgstr "Розмір тіні"
+
+msgid "Shadow type"
+msgstr "Тип тіні"
+
+msgid "Show expert settings"
+msgstr "Показати експертні налаштування"
+
+msgid "Some subtitles providers are not working"
+msgstr "Деякі постачальники субтитрів не працюють"
+
+msgid "Sort subtitles list by"
+msgstr "Сортувати список субтитрів по"
+
+msgid "Source title"
+msgstr "Назва джерела"
+
+msgid "Source title not provided"
+msgstr "Назва джерела не представлено"
+
+msgid "State"
+msgstr "Стан"
+
+msgid "SubsSupport DVB player"
+msgstr "Субтитри - DVB плеєр"
+
+msgid "SubsSupport downloader"
+msgstr "Субтитри - завантаження"
+
+msgid "SubsSupport settings"
+msgstr "Субтитри - налаштування"
+
+msgid "Subtitle"
+msgstr "Субтитри"
+
+msgid "Subtitles Delay"
+msgstr "Затримка субтитрів"
+
+msgid "Subtitles FPS"
+msgstr "FPS субтитрів"
+
+msgid "Subtitles Position"
+msgstr "Позиція субтитрів"
+
+msgid "Subtitles Time"
+msgstr "Час субтитрів"
+
+msgid "Subtitles download path"
+msgstr "Каталог завантаження субтитрів"
+
+msgid "Subtitles provider timeout"
+msgstr "Тайм-аут постачальника субтитрів"
+
+msgid "Subtitles search"
+msgstr "Пошук субтитрів"
+
+msgid "Subtitles search settings"
+msgstr "Налаштування пошуку субтитрів"
+
+msgid "Subtitles setting"
+msgstr "Налаштування субтитрів"
+
+msgid "Subtitles settings"
+msgstr "Налаштування субтитрів"
+
+msgid "Subtitles settings (embedded)"
+msgstr "Налаштування субтитрів (вбудовані)"
+
+msgid "Subtitles temp path"
+msgstr "Тимчасовий каталог субтитрів"
+
+msgid "Subtitles will be downloaded in"
+msgstr "Субтитри будуть завантажені в"
+
+msgid "Suggestions"
+msgstr "Пропозиції"
+
+msgid "Supported languages"
+msgstr "Мови"
+
+msgid "Switch List"
+msgstr "Переключити список"
+
+msgid "Sync delay"
+msgstr "Затримка синхронізації"
+
+msgid "TV show"
+msgstr "Серіал"
+
+msgid ""
+"There are more subtitles in unpacked archive\n"
+"please select which one do you want to use"
+msgstr ""
+"В архіві знайдено кілька розпакованих файлів.\n"
+"Будь ласка виберіть потрібний для використання"
+
+msgid "There was an error while removing subtitle, please check log"
+msgstr ""
+"Були знайдені помилки при видаленні субтитрів, будь ласка, перевірте лог"
+
+msgid "Time"
+msgstr "Час"
+
+msgid "Title"
+msgstr "Назва"
+
+msgid "Try update(simplify) search expression and try again.."
+msgstr "Спробуйте оновити (спростити) вираз пошуку і пошукати ще раз ..."
+
+msgid "Turkish"
+msgstr "Турецька"
+
+msgid "Turn off subtitles"
+msgstr "Приховати субтитри"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Type text of picture"
+msgstr "Тип тексту на зображенні"
+
+msgid "Update"
+msgstr "Оновити"
+
+msgid "Update Search params"
+msgstr "Оновлення параметрів пошуку"
+
+msgid ""
+"Update search parameters if not correct\n"
+" and press green button for search"
+msgstr ""
+"Оновлення параметри пошуку, якщо вони не коректні\n"
+"І натисніть зелену кнопку для пошуку"
+
+msgid "Use File path"
+msgstr "Застосувати каталог"
+
+msgid "User defined"
+msgstr "Визначено користувачем"
+
+msgid "Video filename"
+msgstr "Ім'я відеофайлу"
+
+msgid "Western Europe"
+msgstr "Західна Європа"
+
+msgid "Year"
+msgstr "Год"
+
+msgid ""
+"You have OpenPli-based image, please change embedded subtitles settings in "
+"Settings / System / Subtitles settings"
+msgstr ""
+"Для іміджів на основі OpenPli, будь ласка, поміняйте налаштування вбудованих "
+"субтитрів в Налаштування / Система / Меню Налаштування субтитрів"
+
+msgid "black"
+msgstr "Чорний"
+
+msgid "blue"
+msgstr "синій"
+
+msgid "border"
+msgstr "кайомка"
+
+msgid "bottom"
+msgstr "низ"
+
+msgid "cannot decode"
+msgstr "неможливо декодувати"
+
+msgid "cannot sync to event, event is not available"
+msgstr "Неможливо синхронізувати з подією, подія недоступно"
+
+msgid "captcha doesn't match, try again..."
+msgstr "код не співпадає, спробуйте ще раз ..."
+
+msgid "change external subtitles status"
+msgstr "зміна статусу зовнішніх субтитрів"
+
+msgid "change subtitles fps"
+msgstr "зміна fps субтитрів"
+
+msgid "close plugin"
+msgstr "закрити плагін"
+
+msgid "decrease subtitles delay"
+msgstr "затримка зменшення субтитрів"
+
+msgid "disabled"
+msgstr "вимкнено"
+
+msgid "displays this menu"
+msgstr "показати це меню"
+
+msgid "downloading subtitles..."
+msgstr "завантаження субтитрів ..."
+
+msgid "dynamic"
+msgstr "динамічний"
+
+msgid "enabled"
+msgstr "увімкнено"
+
+msgid "error"
+msgstr "помилка"
+
+msgid "exit"
+msgstr "вихід"
+
+msgid "green"
+msgstr "зелений"
+
+msgid "grey"
+msgstr "сірий"
+
+msgid "increase subtitles delay"
+msgstr "затримка включення субтитрів"
+
+msgid "invalid credentials provided, correct them and try again"
+msgstr "недійсні дані для входу, будь ласка, виправте і спробуйте ще раз "
+
+msgid "jump to next subtitle"
+msgstr "перехід до наступних субтитрів"
+
+msgid "jump to previous subtitle"
+msgstr "перехід до попередніх субтитрів"
+
+msgid "library"
+msgstr "бібліотека"
+
+msgid "loading subtitles list"
+msgstr "завантаження списку субтитрів"
+
+msgid "missing"
+msgstr "відсутнє"
+
+msgid "no"
+msgstr "немає"
+
+msgid "no credentials provided, set them and try again"
+msgstr "ненадані облікові дані, встановіть їх та спробуйте знову"
+
+msgid "nothing connected"
+msgstr "нічого не підключено"
+
+msgid "offset"
+msgstr "зміщення"
+
+msgid "opaque"
+msgstr "непрозорий"
+
+msgid "original"
+msgstr "оригінал"
+
+msgid "pause subtitles playback"
+msgstr "пауза відтворення субтитрів"
+
+msgid "play/pause subtitles playback"
+msgstr "вкл/пауза відтворення субтитрів"
+
+msgid "press green"
+msgstr "натиснути зелену"
+
+msgid "press red"
+msgstr "натиснути червону"
+
+msgid "purple"
+msgstr "пурпурний"
+
+msgid "red"
+msgstr "червоний"
+
+msgid "reset subtitles delay/fps"
+msgstr "скидання затримки/fps субтитрів"
+
+msgid "restarts current subtitle"
+msgstr "рестарт поточних субтитрів"
+
+msgid "resumes subtitles playback"
+msgstr "відновити відтворення субтитрів"
+
+msgid "seconds"
+msgstr "секунд"
+
+msgid "settings"
+msgstr "налаштування"
+
+msgid "show subtitles menu"
+msgstr "показати меню субтитрів"
+
+msgid "show/hide subtitles status"
+msgstr "приховати/показати статус субтитрів"
+
+msgid "skip previous subtitle by setting time in minutes"
+msgstr "перехід до попередніх субтитрами за часом у хвилинах"
+
+msgid "skip subtitle to current event position"
+msgstr "переклад субтитрів до поточної позиції події"
+
+msgid "skip to next subtitle"
+msgstr "переход к следующим субтитрам"
+
+msgid "skip to next subtitle (minute jump)"
+msgstr "ерехід до наступних субтитрами (стрибок хвилина)"
+
+msgid "skip to next subtitle by setting time in minutes"
+msgstr "перехід до наступних субтитрів за часом у хвилинах"
+
+msgid "skip to previous subtitle"
+msgstr "перехід до попередніх субтитрами"
+
+msgid "skip to previous subtitle (minute jump)"
+msgstr "перехід до попередніх субтитрів (стрибок хвилина)"
+
+msgid "static"
+msgstr "статистичний"
+
+msgid "subtitles found"
+msgstr "знайдені субтитри"
+
+msgid "top"
+msgstr "уверх"
+
+msgid "transparent"
+msgstr "прозорий"
+
+msgid "unknown"
+msgstr "невідомий"
+
+msgid "unpack error: cannot get subname"
+msgstr "помилка розпакування: неможливо отримати внутрішнє ім'я"
+
+msgid "unpack error: cannot open archive"
+msgstr "помилка розпакування: неможливо відкрити архів"
+
+msgid "unsupported archive %s"
+msgstr "архів не підтримується %s"
+
+msgid "watch DVB broadcast with subtitles"
+msgstr "Перегляд DVB трансляцій з субтитрами"
+
+msgid "white"
+msgstr "білий"
+
+msgid "will be removed from file system"
+msgstr "буде видалено з файлової системи"
+
+msgid "will be removed from list"
+msgstr "буде видалено зі списку"
+
+msgid "yellow"
+msgstr "жевтий"
+
+msgid "yes"
+msgstr "так"
