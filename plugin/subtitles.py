@@ -36,7 +36,7 @@ from Components.Language import language
 from Components.MenuList import MenuList
 from Components.MultiContent import MultiContentEntryText, \
     MultiContentEntryPixmapAlphaTest
-from Components.ServiceEventTracker import ServiceEventTracker, InfoBarBase
+from Components.ServiceEventTracker import ServiceEventTracker
 from Components.Sources.Boolean import Boolean
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
@@ -526,7 +526,7 @@ class SubsSupportEmbedded(object):
         self.selected_subtitle = None
         self.subtitle_window = self.session.instantiateDialog(SubsEmbeddedScreen, self.subsSettings.embedded)
         self.subtitle_window.hide()
-        if isinstance(self, InfoBarBase):
+        if isinstance(self, Screen):
             self.__event_tracker = ServiceEventTracker(screen=self, eventmap=
                 {
                     iPlayableService.evStart: self.__serviceChanged,
@@ -690,7 +690,7 @@ class SubsSupportEmbedded(object):
 class SubsSupport(SubsSupportEmbedded):
     """Client class for subtitles
 
-        If this class is not subclass of InfoBarBase  you should  use public function of this class to
+        If this class is not subclass of Screen  you should  use public function of this class to
         to connect your media player (resume,pause,exit,after seeking, subtitles setup)
         functions with subtitles
 
@@ -725,7 +725,7 @@ class SubsSupport(SubsSupportEmbedded):
         self.__startDelay = int(self.subsSettings.engine.expert.startDelay.value)
         self.__defaultPath = None
         self.__isServiceSet = False
-        self.__subclassOfInfobarBase = isinstance(self, InfoBarBase)
+        self.__subclassOfScreen = isinstance(self, Screen)
         self.__forceDefaultPath = forceDefaultPath
         self.__showGUIInfoMessages = showGUIInfoMessages
         self.__checkTimer = eTimer()
@@ -738,7 +738,7 @@ class SubsSupport(SubsSupportEmbedded):
         except Exception:
             pass
 
-        if self.__subclassOfInfobarBase:
+        if self.__subclassOfScreen:
             self.__event_tracker = ServiceEventTracker(screen=self, eventmap=
             {
                 iPlayableService.evStart: self.__serviceStarted,
@@ -903,7 +903,7 @@ class SubsSupport(SubsSupportEmbedded):
         return self.__subsPath
 
     def subsMenu(self):
-        if not self.__working and not (self.__subclassOfInfobarBase and not self.__isServiceSet):
+        if not self.__working and not (self.__subclassOfScreen and not self.__isServiceSet):
             self.__alreadyPausedVideo = False
             if self.subsSettings.pauseVideoOnSubtitlesMenu.value:
                 print '[SubsSupport] stopVideoOnSubtitlesMenu: True'
@@ -1042,7 +1042,7 @@ class SubsSupport(SubsSupportEmbedded):
 
 
     def __processSubs(self, subsPath, subsEnc):
-        showMessages = self.__showGUIInfoMessages and not (self.__firstStart and self.__subclassOfInfobarBase)
+        showMessages = self.__showGUIInfoMessages and not (self.__firstStart and self.__subclassOfScreen)
         try:
             return self.__subsLoader.load(subsPath, subsEnc, getFps(self.session))
         except LoadError:
