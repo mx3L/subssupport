@@ -819,11 +819,12 @@ class SubsSupport(SubsSupportEmbedded):
 
     def getSubsFileFromSref(self):
         ref = self.session.nav.getCurrentlyPlayingServiceReference()
-        if os.path.isdir(os.path.dirname(ref.getPath())):
-            self.__subsDir = os.path.dirname(ref.getPath())
+        path = ref and ref.getPath()
+        if path and os.path.isdir(os.path.dirname(path)):
+            self.__subsDir = os.path.dirname(path)
             for parser in PARSERS:
                 for ext in parser.parsing:
-                    subsPath = os.path.splitext(ref.getPath())[0] + ext
+                    subsPath = os.path.splitext(path)[0] + ext
                     if os.path.isfile(subsPath):
                         return subsPath
         return None
