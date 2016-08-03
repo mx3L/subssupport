@@ -1111,6 +1111,8 @@ class SubsSupport(SubsSupportEmbedded):
                 startSubs()
 
     def __serviceStopped(self):
+        print '[SubsSupport] Service Stopped'
+        self.__starTimer.stop()
         self.resetSubs(True)
         self.__isServiceSet = False
 
