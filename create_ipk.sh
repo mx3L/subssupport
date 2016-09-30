@@ -119,6 +119,7 @@ chmod 755 ${P}/CONTROL/postrm
 mkdir -p ${P}${PLUGINPATH}
 cp -rp ${S}/plugin/* ${P}${PLUGINPATH}
 
+mkdir -p ${P}/var/lib/subssupport
 for lang in cs sk pl ru pt; do \
     mkdir -p ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES; \
     msgfmt ${D}/locale/${lang}.po -o ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/SubsSupport.mo; \

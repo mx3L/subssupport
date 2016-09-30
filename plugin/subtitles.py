@@ -64,7 +64,7 @@ from enigma import eTimer, eConsoleAppContainer, ePythonMessagePump, eSize, ePoi
     RT_HALIGN_RIGHT, RT_VALIGN_CENTER, eListboxPythonMultiContent, \
     getDesktop, eServiceCenter, eServiceReference, \
     iPlayableService, gFont, \
-    gRGB, loadPNG, eLabel
+    gRGB, loadPNG, eLabel, eEnv
 from parsers import SubRipParser, MicroDVDParser
 from process import SubsLoader, DecodeError, ParseError, ParserNotFoundError, \
     LoadError
@@ -291,7 +291,7 @@ def initSearchSettings(configsubsection):
     configsubsection.downloadHistory = ConfigSubsection()
     configsubsection.downloadHistory.enabled = ConfigYesNo(default=True)
     configsubsection.downloadHistory.limit = ConfigInteger(default=50, limits=(2, 200))
-    configsubsection.downloadHistory.path = ConfigDirectory(default = os.path.dirname(__file__), visible_width=30)
+    configsubsection.downloadHistory.path = ConfigDirectory(default = eEnv.resolve("$localstatedir/lib/subssupport"), visible_width=30)
     configsubsection.downloadHistory.removeAction = ConfigSelection(default='list', choices=[('list', _("List")), ('file', _("List + File"))])
     configsubsection.downloadHistory.removeActionAsk = ConfigYesNo(default = True)
     configsubsection.downloadPath = ConfigDirectory(default="/tmp/")
