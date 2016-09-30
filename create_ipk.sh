@@ -125,13 +125,9 @@ for lang in cs sk pl ru pt; do \
     cp -rp ${D}/locale/${lang}.po ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/;
 done
 
-#echo "compiling to python bytecode..."
-#python -O -m compileall ${P} 1> /dev/null
-
+python -O -m compileall ${P} > /dev/null
 #find ${P} -name "*.po" -exec rm {} \;
-find ${P} -name "Makefile.am" -print -exec rm {} \;
-find ${P} -name "*.pyo" -print -exec rm {} \;
-find ${P} -name "*.pyc" -print -exec rm {} \;
+find ${P} -name "Makefile.am" -exec rm {} \;
 
 mkdir -p ${P}/tmp/subssupport
 mkdir -p ${P}/tmp/subssupport/python2.6/
