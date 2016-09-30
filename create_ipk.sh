@@ -113,7 +113,7 @@ cp -rp ${D}/plugin/* ${P}${PLUGINPATH} 2> /dev/null
 rm ${P}${PLUGINPATH}/hsubtitles.json 2> /dev/null
 
 echo "creating locales..."
-for lang in cs sk pl ru; do \
+for lang in cs sk pl ru pt; do \
     mkdir -p ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES; \
     msgfmt ${D}/locale/${lang}.po -o ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/SubsSupport.mo; \
     cp -rp ${D}/locale/${lang}.po ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/;
