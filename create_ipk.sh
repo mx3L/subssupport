@@ -1,7 +1,9 @@
 #!/bin/bash
 # script taken from openwebif project
+set -e
 
 D=$(pushd $(dirname $0) &> /dev/null; pwd; popd &> /dev/null)
+S=${D}/ipkg.src$$
 P=${D}/ipkg.tmp.$$
 B=${D}/ipkg.build.$$
 DP=${D}/ipkg.deps
@@ -19,9 +21,15 @@ PKG=${D}/enigma2-plugin-extensions-subssupport_${VER}_all
 PLUGINPATH=/usr/lib/enigma2/python/Plugins/Extensions/SubsSupport
 popd &> /dev/null
 
+rm -rf ${D}/ipkg.src*
+rm -rf ${D}/ipkg.tmp*
+rm -rf ${D}/ipkg.build*
+
 mkdir -p ${P}/CONTROL
 mkdir -p ${B}
 mkdir -p ${DP}
+mkdir -p ${S}
+git archive --format=tar HEAD | (cd ${S} && tar xf -)
 
 if [ -d ${DP}/Python-2.6 ] && [ -d ${DP}/Python-2.7 ]; then
 	echo "python packages are already downloaded"
@@ -109,10 +117,8 @@ chmod 755 ${P}/CONTROL/postinst
 chmod 755 ${P}/CONTROL/postrm
 
 mkdir -p ${P}${PLUGINPATH}
-cp -rp ${D}/plugin/* ${P}${PLUGINPATH} 2> /dev/null
-rm ${P}${PLUGINPATH}/hsubtitles.json 2> /dev/null
+cp -rp ${S}/plugin/* ${P}${PLUGINPATH}
 
-echo "creating locales..."
 for lang in cs sk pl ru pt; do \
     mkdir -p ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES; \
     msgfmt ${D}/locale/${lang}.po -o ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/SubsSupport.mo; \
@@ -122,7 +128,6 @@ done
 #echo "compiling to python bytecode..."
 #python -O -m compileall ${P} 1> /dev/null
 
-echo "cleanup..."
 #find ${P} -name "*.po" -exec rm {} \;
 find ${P} -name "Makefile.am" -print -exec rm {} \;
 find ${P} -name "*.pyo" -print -exec rm {} \;
@@ -181,7 +186,8 @@ cd ${B}
 ls -la
 ar -r ${PKG}.ipk ./debian-binary ./control.tar.gz ./data.tar.gz
 ar -r ${PKG}.deb ./debian-binary ./control.tar.gz ./data.tar.gz
-cd -
 
 rm -rf ${P}
 rm -rf ${B}
+rm -rf ${S}
+
