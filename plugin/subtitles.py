@@ -4270,6 +4270,8 @@ class SubsSearch(Screen):
                 json.dump(subtitles, open(fpath,'w'))
             except Exception as e:
                 print '[SubsSearch] cannot save download history:', e
+                self.session.open(MessageBox, _("Cannot save download history, for details look in log"), 
+                        MessageBox.TYPE_ERROR, timeout = 3)
         self.__downloadedSubtitles.append(dsubtitle)
         self.afterDownloadSuccess(dsubtitle)
         self.message.hide()
