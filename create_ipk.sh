@@ -72,10 +72,12 @@ if [ -d /usr/lib/python2.6 ]
 	[ ! -e /usr/lib/python2.6/encodings/cp1252.py ] && cp /tmp/subssupport/python2.6/cp1252.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/cp1253.py ] && cp /tmp/subssupport/python2.6/cp1253.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/cp1254.py ] && cp /tmp/subssupport/python2.6/cp1254.py /usr/lib/python2.6/encodings/
+	[ ! -e /usr/lib/python2.6/encodings/cp1255.py ] && cp /tmp/subssupport/python2.6/cp1255.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/cp1256.py ] && cp /tmp/subssupport/python2.6/cp1256.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/iso8859_2.py ] && cp /tmp/subssupport/python2.6/iso8859_2.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/iso8859_6.py ] && cp /tmp/subssupport/python2.6/iso8859_6.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/iso8859_7.py ] && cp /tmp/subssupport/python2.6/iso8859_7.py /usr/lib/python2.6/encodings/
+	[ ! -e /usr/lib/python2.6/encodings/iso8859_8.py ] && cp /tmp/subssupport/python2.6/iso8859_8.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/iso8859_9.py ] && cp /tmp/subssupport/python2.6/iso8859_9.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/iso8859_15.py ] && cp /tmp/subssupport/python2.6/iso8859_15.py /usr/lib/python2.6/encodings/
 	[ ! -e /usr/lib/python2.6/encodings/koi8_r.py ] && cp /tmp/subssupport/python2.6/koi8_r.py /usr/lib/python2.6/encodings/
@@ -96,10 +98,12 @@ if [ -d /usr/lib/python2.7 ]
 	[ ! -e /usr/lib/python2.7/encodings/cp1252.py ] && cp /tmp/subssupport/python2.7/cp1252.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/cp1253.py ] && cp /tmp/subssupport/python2.7/cp1253.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/cp1254.py ] && cp /tmp/subssupport/python2.7/cp1254.py /usr/lib/python2.7/encodings/
+	[ ! -e /usr/lib/python2.7/encodings/cp1255.py ] && cp /tmp/subssupport/python2.7/cp1255.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/cp1256.py ] && cp /tmp/subssupport/python2.7/cp1256.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/iso8859_2.py ] && cp /tmp/subssupport/python2.7/iso8859_2.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/iso8859_6.py ] && cp /tmp/subssupport/python2.7/iso8859_6.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/iso8859_7.py ] && cp /tmp/subssupport/python2.7/iso8859_7.py /usr/lib/python2.7/encodings/
+	[ ! -e /usr/lib/python2.7/encodings/iso8859_8.py ] && cp /tmp/subssupport/python2.7/iso8859_8.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/iso8859_9.py ] && cp /tmp/subssupport/python2.7/iso8859_9.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/iso8859_15.py ] && cp /tmp/subssupport/python2.7/iso8859_15.py /usr/lib/python2.7/encodings/
 	[ ! -e /usr/lib/python2.7/encodings/koi8_r.py ] && cp /tmp/subssupport/python2.7/koi8_r.py /usr/lib/python2.7/encodings/
@@ -141,10 +145,12 @@ cp -p ${DP}/Python-2.6/Lib/encodings/cp1251.py ${P}/tmp/subssupport/python2.6/cp
 cp -p ${DP}/Python-2.6/Lib/encodings/cp1252.py ${P}/tmp/subssupport/python2.6/cp1252.py
 cp -p ${DP}/Python-2.6/Lib/encodings/cp1253.py ${P}/tmp/subssupport/python2.6/cp1253.py
 cp -p ${DP}/Python-2.6/Lib/encodings/cp1254.py ${P}/tmp/subssupport/python2.6/cp1254.py
+cp -p ${DP}/Python-2.6/Lib/encodings/cp1255.py ${P}/tmp/subssupport/python2.6/cp1255.py
 cp -p ${DP}/Python-2.6/Lib/encodings/cp1256.py ${P}/tmp/subssupport/python2.6/cp1256.py
 cp -p ${DP}/Python-2.6/Lib/encodings/iso8859_2.py ${P}/tmp/subssupport/python2.6/iso8859_2.py
 cp -p ${DP}/Python-2.6/Lib/encodings/iso8859_6.py ${P}/tmp/subssupport/python2.6/iso8859_6.py
 cp -p ${DP}/Python-2.6/Lib/encodings/iso8859_7.py ${P}/tmp/subssupport/python2.6/iso8859_7.py
+cp -p ${DP}/Python-2.6/Lib/encodings/iso8859_8.py ${P}/tmp/subssupport/python2.6/iso8859_8.py
 cp -p ${DP}/Python-2.6/Lib/encodings/iso8859_9.py ${P}/tmp/subssupport/python2.6/iso8859_9.py
 cp -p ${DP}/Python-2.6/Lib/encodings/iso8859_15.py ${P}/tmp/subssupport/python2.6/iso8859_15.py
 cp -p ${DP}/Python-2.6/Lib/encodings/koi8_r.py ${P}/tmp/subssupport/python2.6/koi8_r.py
@@ -161,10 +167,12 @@ cp -p ${DP}/Python-2.7/Lib/encodings/cp1251.py ${P}/tmp/subssupport/python2.7/cp
 cp -p ${DP}/Python-2.7/Lib/encodings/cp1252.py ${P}/tmp/subssupport/python2.7/cp1252.py
 cp -p ${DP}/Python-2.7/Lib/encodings/cp1253.py ${P}/tmp/subssupport/python2.7/cp1253.py
 cp -p ${DP}/Python-2.7/Lib/encodings/cp1254.py ${P}/tmp/subssupport/python2.7/cp1254.py
+cp -p ${DP}/Python-2.7/Lib/encodings/cp1255.py ${P}/tmp/subssupport/python2.7/cp1255.py
 cp -p ${DP}/Python-2.7/Lib/encodings/cp1256.py ${P}/tmp/subssupport/python2.7/cp1256.py
 cp -p ${DP}/Python-2.7/Lib/encodings/iso8859_2.py ${P}/tmp/subssupport/python2.7/iso8859_2.py
 cp -p ${DP}/Python-2.7/Lib/encodings/iso8859_6.py ${P}/tmp/subssupport/python2.7/iso8859_6.py
 cp -p ${DP}/Python-2.7/Lib/encodings/iso8859_7.py ${P}/tmp/subssupport/python2.7/iso8859_7.py
+cp -p ${DP}/Python-2.7/Lib/encodings/iso8859_8.py ${P}/tmp/subssupport/python2.7/iso8859_8.py
 cp -p ${DP}/Python-2.7/Lib/encodings/iso8859_9.py ${P}/tmp/subssupport/python2.7/iso8859_9.py
 cp -p ${DP}/Python-2.7/Lib/encodings/iso8859_15.py ${P}/tmp/subssupport/python2.7/iso8859_15.py
 cp -p ${DP}/Python-2.7/Lib/encodings/koi8_r.py ${P}/tmp/subssupport/python2.7/koi8_r.py
