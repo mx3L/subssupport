@@ -126,13 +126,15 @@ RUSSIAN_ENCODINGS = ['windows-1251', 'cyrillic', 'maccyrillic', 'koi8_r', 'IBM86
 ARABIC_ENCODINGS = ['windows-1256', 'iso-8859-6', 'IBM864']
 TURKISH_ENCODINGS = ['windows-1254', 'iso-8859-9', 'latin5', 'macturkish', 'ibm1026', 'IBM857']
 GREEK_ENCODINGS = ['windows-1253', 'iso-8859-7', 'macgreek']
+HEBREW_ENCODINGS = ['windows-1255', 'iso-8859-8', 'IBM862']
 
 ENCODINGS = {("Central and Eastern Europe") : CENTRAL_EASTERN_EUROPE_ENCODINGS,
             ("Western Europe"):WESTERN_EUROPE_ENCODINGS,
             ("Russia"):RUSSIAN_ENCODINGS,
             ("Arabic"): ARABIC_ENCODINGS,
             ("Turkish"):TURKISH_ENCODINGS,
-            ("Greek"):GREEK_ENCODINGS}
+            ("Greek"):GREEK_ENCODINGS,
+            ("Hebrew"):HEBREW_ENCODINGS}
 
 # initializing parsers
 PARSERS = [SubRipParser, MicroDVDParser]
