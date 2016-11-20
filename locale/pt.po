@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: BH_SubsSupport\n"
+"Project-Id-Version: SubsSupport _ enigma2-plugin by mx3L\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-18 08:15+0100\n"
-"PO-Revision-Date: 2016-09-30 00:03+0100\n"
-"Last-Translator: shimano\n"
-"Language-Team: Shimano <none>\n"
+"PO-Revision-Date: 2016-11-19 17:45+0000\n"
+"Last-Translator: nunigaia\n"
+"Language-Team: BH Team <none>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Language: pt_PT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -25,7 +25,7 @@ msgstr "Todos"
 
 #: subtitles.py:4438
 msgid "Always ask before overwriting existing subtitles"
-msgstr "Perguntar sempre antes de sobrescrever as legendas existentes"
+msgstr "Perguntar antes de sobrescrever as legendas existentes"
 
 #: subtitles.py:3609 subtitles.py:3639
 msgid "Append language to filename"
@@ -33,7 +33,7 @@ msgstr "Adicionar idioma ao nome do ficheiro"
 
 #: subtitles.py:2736
 msgid "Ask on remove action"
-msgstr "Pergunar ao remover ação"
+msgstr "Perguntar ao remover ação"
 
 #: subtitlesdvb.py:38
 msgid "Auto sync to current event"
@@ -139,7 +139,7 @@ msgstr "Cor"
 
 #: subtitles.py:1820
 msgid "Currently choosed subtitles"
-msgstr "Legendas escolhidas"
+msgstr "Legendas atualmente escolhidas"
 
 #: plugin.py:49 subtitlesdvb.py:34
 msgid "DVB player settings"
@@ -159,7 +159,7 @@ msgstr "Quer que esta mensagem seja exibida novamente?"
 
 #: subtitles.py:4296
 msgid "Download (more...)"
-msgstr "Descarga ( mais ... )"
+msgstr "Descarregar (mais...)"
 
 #: subtitles.py:4295
 msgid "Download (next to video)"
@@ -167,23 +167,19 @@ msgstr "Descarga (junto do vídeo)"
 
 #: subtitles.py:4294
 msgid "Download (user defined)"
-msgstr "Descarga ( definido pelo utilizador )"
+msgstr "Descarga (definido pelo utilizador)"
 
 #: subtitles.py:4301
 msgid "Download and Load (more...)"
-msgstr "Descarga e carregamento (mais...)"
+msgstr "Descarregar/Carregar (mais...)"
 
 #: subtitles.py:4300
 msgid "Download and Load (next to video)"
-msgstr ""
-"Descarga e carregamento\n"
-" ( junto do vídeo )"
+msgstr "Descarregar/Carregar (junto do vídeo)"
 
 #: subtitles.py:4299
 msgid "Download and Load (user defined) "
-msgstr ""
-"Descarga e carregamento\n"
-"( definido pelo utilizador )"
+msgstr "Descarregar/Carregar (definido pelo utilizador)"
 
 #: subtitles.py:2554
 msgid "Download date"
@@ -195,14 +191,14 @@ msgstr "Opções de descarga"
 
 #: plugin.py:101 plugin.py:102
 msgid "Download subtitles for your videos"
-msgstr "Descarga das legendas para os seus vídeos"
+msgstr "Descarga de legendas para os seus vídeos"
 
 #: subtitles.py:2594
 msgid "Downloaded Subtitles"
-msgstr "Descarga das legendas"
+msgstr "Legendas descarregadas"
 
 msgid "Downloaded Subtitles - Settings"
-msgstr "Descarga das legendas - Definições"
+msgstr "Definição das legendas descarregadas"
 
 #: subtitlesdvb.py:304
 msgid "Duration"
@@ -222,7 +218,7 @@ msgstr "Legendas embutidas"
 
 #: plugin.py:47 subtitles.py:2154
 msgid "Embedded subtitles settings"
-msgstr "Legendas embutidas - definições"
+msgstr "Definições das Legendas embutidas"
 
 #: subtitles.py:2080 subtitles.py:2176
 msgid "Encoding"
@@ -254,7 +250,7 @@ msgstr "Tempo do evento"
 
 #: subtitles.py:2037
 msgid "External Subtitles settings"
-msgstr "Definições das legendas externas"
+msgstr "Definições das Legendas externas"
 
 #: plugin.py:46
 msgid "External subtitles settings"
@@ -266,9 +262,7 @@ msgstr "Nome do ficheiro"
 
 #: subtitles.py:3693
 msgid "Filename cannot be empty!"
-msgstr ""
-"O nome do ficheiro tem de ser\n"
-" preenchido!"
+msgstr "O nome do ficheiro deve ser preenchido!"
 
 #: subtitles.py:2013
 msgid "Font color (Bold)"
@@ -352,7 +346,7 @@ msgstr "Carregar as legendas após descarga"
 
 #: subtitles.py:4443
 msgid "Load/Save download history directory"
-msgstr "Carregar/Salvar pasta do histórico de descarga"
+msgstr "Pasta do histórico de descarga"
 
 #: subtitles.py:4428
 msgid "Manual search"
@@ -360,7 +354,7 @@ msgstr "Procura manual"
 
 #: subtitles.py:2734
 msgid "Max history entries"
-msgstr "Entradas de histórico ( Máximo )"
+msgstr "Entradas no histórico ( Máximo )"
 
 #: subtitles.py:321
 msgid "Movie"
@@ -447,7 +441,7 @@ msgstr "Servidor"
 
 #: subtitles.py:4491
 msgid "Provider name"
-msgstr "Nome do Servidor"
+msgstr "Servidor"
 
 #: subtitles.py:2087
 msgid "Refresh delay"
@@ -463,7 +457,7 @@ msgstr "Remover ( arquivo )"
 
 #: subtitles.py:2629
 msgid "Remove Entry (List)"
-msgstr "Remover Entrada ( Lista )"
+msgstr "Remover Entrada"
 
 #: subtitles.py:2627
 msgid "Remove Entry (List+File)"
@@ -475,11 +469,11 @@ msgstr "Remover ação"
 
 #: subtitles.py:3619
 msgid "Reset"
-msgstr "Restabelecer"
+msgstr "Redefinir"
 
 #: e2_utils.py:497 subtitles.py:2723 subtitles.py:4496
 msgid "Reset Defaults"
-msgstr "Restabelecer as predefinições"
+msgstr "Repor predefinições"
 
 #: subtitles.py:3877
 msgid "S"
@@ -531,11 +525,11 @@ msgstr "Procura de legendas"
 
 #: subtitles.py:3987 subtitles.py:4770
 msgid "Season"
-msgstr "Série"
+msgstr "Temporada"
 
 #: subtitles.py:2747
 msgid "Select Directory"
-msgstr "Seleccione a pasta"
+msgstr "Selecionar a pasta"
 
 #: subtitles.py:2558 subtitles.py:3883 subtitles.py:4032
 msgid "Settings"
@@ -567,9 +561,7 @@ msgstr "Tipo de Sombra"
 
 #: subtitles.py:2081
 msgid "Show expert settings"
-msgstr ""
-"Mostrar definições:\n"
-" Especialistas"
+msgstr "Mostrar definições: Especialistas"
 
 #: subtitles.py:1956 subtitles.py:2475
 msgid "Some subtitles providers are not working"
@@ -632,7 +624,7 @@ msgstr "Legendas pasta de descarga"
 
 #: subtitles.py:4429
 msgid "Subtitles provider timeout"
-msgstr "tempo limite fornecedor de legendas"
+msgstr "Tempo limite fornecedor de legendas"
 
 #: subtitles.py:3962
 msgid "Subtitles search"
@@ -676,7 +668,7 @@ msgstr "Atraso de sincronização"
 
 #: subtitles.py:321
 msgid "TV show"
-msgstr "Série"
+msgstr "Programa de TV"
 
 #: subtitles.py:2947
 msgid ""
@@ -834,7 +826,7 @@ msgstr "Erro"
 
 #: subtitles.py:401
 msgid "exit"
-msgstr "Sair"
+msgstr "sair"
 
 #: subtitles.py:207
 msgid "green"
@@ -931,7 +923,7 @@ msgstr "reinicia a legenda atual"
 
 #: subtitlesdvb.py:135
 msgid "resumes subtitles playback"
-msgstr "reinicia a reprodução de legendas"
+msgstr "retoma a reprodução de legendas"
 
 #: subtitles.py:2379
 msgid "seconds"
