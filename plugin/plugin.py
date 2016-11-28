@@ -96,23 +96,23 @@ class SubsSupportSettings(Screen):
     def openDVBPlayerSettings(self):
         self.session.open(SubsSetupDVBPlayer, self.dvbSettings)
 
-    def Plugins(**kwargs):
-        from enigma import getDesktop	
-        screenwidth = getDesktop(0).size().width()
-        if screenwidth and screenwidth == 1920:
-            iconSET = 'ss_set_FHD.png'
-            iconDWN = 'ss_dwn_FHD.png'
-            iconPLY = 'ss_ply_FHD.png'
-        else:
-            iconSET = 'ss_set_HD.png'
-            iconDWN = 'ss_dwn_HD.png'
-            iconPLY = 'ss_ply_HD.png'
+def Plugins(**kwargs):
+    from enigma import getDesktop
+    screenwidth = getDesktop(0).size().width()
+    if screenwidth and screenwidth == 1920:
+        iconSET = 'ss_set_FHD.png'
+        iconDWN = 'ss_dwn_FHD.png'
+        iconPLY = 'ss_ply_FHD.png'
+    else:
+        iconSET = 'ss_set_HD.png'
+        iconDWN = 'ss_dwn_HD.png'
+        iconPLY = 'ss_ply_HD.png'
 
-        return [
-            PluginDescriptor(name=_('SubsSupport settings'), icon=iconSET, description=_('Change subssupport settings'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubsSupportSettings),
-            PluginDescriptor(name=_('SubsSupport downloader'), icon=iconDWN, description=_('Download subtitles for your videos'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubtitlesSearch),
-            PluginDescriptor(name=_('SubsSupport DVB player'), icon=iconPLY, description=_('watch DVB broadcast with subtitles'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubtitlesPlayer),     
-            PluginDescriptor(name=_('SubsSupport settings'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubsSupportSettings),
-            PluginDescriptor(name=_('SubsSupport downloader'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubtitlesSearch),
-            PluginDescriptor(name=_('SubsSupport DVB player'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubtitlesPlayer)
-               ]
+    return [
+        PluginDescriptor(name=_('SubsSupport settings'), icon=iconSET, description=_('Change subssupport settings'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubsSupportSettings),
+        PluginDescriptor(name=_('SubsSupport downloader'), icon=iconDWN, description=_('Download subtitles for your videos'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubtitlesSearch),
+        PluginDescriptor(name=_('SubsSupport DVB player'), icon=iconPLY, description=_('watch DVB broadcast with subtitles'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubtitlesPlayer),     
+        PluginDescriptor(name=_('SubsSupport settings'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubsSupportSettings),
+        PluginDescriptor(name=_('SubsSupport downloader'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubtitlesSearch),
+        PluginDescriptor(name=_('SubsSupport DVB player'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubtitlesPlayer)
+           ]
