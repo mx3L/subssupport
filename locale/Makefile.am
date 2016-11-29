@@ -3,7 +3,7 @@ installdir = ${libdir}/enigma2/python/Plugins/Extensions/$(DOMAIN)
 
 MSGFMT = msgfmt
 
-LANGS = cs pl sk ru et lt uk
+LANGS = cs pl sk ru et lt uk pt
 LANGPO = $(LANGS:=.po)
 LANGMO = $(LANGS:=.mo)
 
