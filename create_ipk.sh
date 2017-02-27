@@ -182,8 +182,8 @@ cp -p ${DP}/Python-2.7/Lib/encodings/mac_greek.py ${P}/tmp/subssupport/python2.7
 cp -p ${DP}/Python-2.7/Lib/encodings/mac_roman.py ${P}/tmp/subssupport/python2.7/mac_roman.py
 cp -p ${DP}/Python-2.7/Lib/encodings/mac_turkish.py ${P}/tmp/subssupport/python2.7/mac_turkish.py
 
-tar -C ${P} -czf ${B}/data.tar.gz . --exclude=CONTROL
-tar -C ${P}/CONTROL -czf ${B}/control.tar.gz .
+tar -C ${P} -cz --format=gnu -f ${B}/data.tar.gz . --exclude=CONTROL
+tar -C ${P}/CONTROL -cz --format=gnu -f ${B}/control.tar.gz .
 
 echo "2.0" > ${B}/debian-binary
 
