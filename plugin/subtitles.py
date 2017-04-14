@@ -27,7 +27,7 @@ import traceback
 from twisted.internet.defer import Deferred
 from twisted.web import client
 
-from Components.ActionMap import ActionMap, NumberActionMap, HelpableActionMap
+from Components.ActionMap import ActionMap, HelpableActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.GUIComponent import GUIComponent
 from Components.Harddisk import harddiskmanager
@@ -1858,7 +1858,7 @@ class SubsMenu(Screen):
         self["menu_list"] = PanelList([], 28)
         self["copyright"] = Label("")
         # self["copyright"] = Label("created by %s <%s>"%(__author__,__email__))
-        self["actions"] = ActionMap(["SetupActions", "DirectionActions"],
+        self["actions"] = ActionMap(["SetupActions"],
             {
                 "ok": self.ok,
                 "cancel": self.cancel,
@@ -2473,13 +2473,28 @@ class SubsChooser(Screen):
         self["filename"] = StaticText(videoName)
         self["file_list"] = SubFileList(defaultDir)
         self["menu_list"] = SubsChooserMenuList(self.embeddedList, searchSupport, historySupport)
-        self["actions"] = NumberActionMap(["OkCancelActions", "ColorActions"],
+        self["actions"] = ActionMap(["OkCancelActions", "ColorActions", "DirectionActions"],
             {
                 "ok": self.ok,
                 "cancel": self.close,
+
                 "red": self.embeddedSubsSelection,
-                "yellow":self.downloadedSubsSelection,
+                "green": lambda: None,
+                "yellow": self.downloadedSubsSelection,
                 "blue": self.webSubsSelection,
+
+                "up": self["file_list"].up,
+                "upRepeated": self["file_list"].up,
+                "upUp": lambda: None,
+                "left": self["file_list"].pageUp,
+                "leftRepeated": self["file_list"].pageUp,
+                "leftUp": lambda: None,
+                "down": self["file_list"].down,
+                "downRepeated": self["file_list"].down,
+                "downUp": lambda: None,
+                "right": self["file_list"].pageDown,
+                "rightRepeated": self["file_list"].pageDown,
+                "rightUp": lambda: None,
             }, -2)
 
         self.onLayoutFinish.append(self.updateTitle)
@@ -2496,7 +2511,6 @@ class SubsChooser(Screen):
             self['file_list'].descent()
         else:
             filePath = os.path.join(self['file_list'].current_directory, self['file_list'].getFilename())
-            print '[SubsFileChooser]' , filePath
             self.close(filePath, False)
             
     def checkEmbeddedSubsSelection(self, embeddedSubtitle=None):
@@ -4048,6 +4062,7 @@ class SubsSearch(Screen):
             "green":self.searchSubs,
             "yellow":self.openDownloadHistory,
             "blue":self.openSettings,
+
             "menu":self.openContextMenu,
          })
         
@@ -4055,12 +4070,16 @@ class SubsSearch(Screen):
         {
             "up": self.keyUp,
             "upRepeated": self.keyUp,
+            "upUp": lambda:None,
             "down": self.keyDown,
             "downRepeated": self.keyDown,
+            "downUp": lambda:None,
             "right":self.keyRight,
             "rightRepeated":self.keyRight,
+            "rightUp": lambda:None,
             "left":self.keyLeft,
             "leftRepeated":self.keyLeft,                                              
+            "leftUp": lambda:None,
         }, -2)
         
         self["searchActions"] = ActionMap(["OkCancelActions"],
@@ -4074,11 +4093,21 @@ class SubsSearch(Screen):
         self["contextMenuActions"] = ActionMap(["DirectionActions", "OkCancelActions", "MenuActions"],
         {
             "up":self.__contextMenu.up,
+            "upRepeated":self.__contextMenu.up,
+            "upUp": lambda:None,
             "down":self.__contextMenu.down,
+            "downRepeated":self.__contextMenu.down,
+            "downUp": lambda:None,
             "right":self.__contextMenu.right,
+            "rightRepeated":self.__contextMenu.right,
+            "rightUp": lambda:None,
             "left": self.__contextMenu.left,
+            "leftRepeated":self.__contextMenu.left,
+            "leftUp": lambda:None,
+
             "ok": self.contextMenuOk,
             "cancel":self.contextMenuCancel,
+
             "menu":self.contextMenuCancel,
          })
         self["contextMenuActions"].setEnabled(False)
@@ -4923,37 +4952,52 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
         else:
             self['sourceTitleInfo'] = StaticText("%s [%d/%d]" % (_("Source title"), 1, len(self.sourceTitleList)))
         self['sourceTitle'] = StaticText(self.sourceTitle)
-        self["suggestionActions"] = ActionMap(["DirectionActions", "ColorActions", "OkCancelActions"],
+        self["suggestionActions"] = ActionMap([ "OkCancelActions",  "ColorActions", "DirectionActions"],
             {
-                 "red": self.cancelToHistoryList,
-                 "green": self.cancelToSuggestionsList,
                  "ok": self.switchToConfigList,
                  "cancel":self.cancelToConfigList,
+
+                 "red": self.cancelToHistoryList,
+                 "green": self.cancelToSuggestionsList,
+                 "yellow": lambda: None,
+                 "blue": lambda: None,
+
                  "right": self.keyRight,
                  "rightRepeated": self.keyRight,
+                 "rightUp": lambda: None,
                  "left": self.keyLeft,
                  "leftRepeated": self.keyLeft,
+                 "leftUp": lambda: None,
                  "up": self.keyUp,
                  "upRepeated": self.keyUp,
+                 "upUp": lambda: None,
                  "down": self.keyDown,
-                 "downRepeated": self.keyDown
+                 "downRepeated": self.keyDown,
+                 "downUp": lambda: None,
              }, -2)
 
         self["configActions"] = ActionMap(["OkCancelActions", "ColorActions", "DirectionActions"],
             {
                 "ok": self.keyOK,
                 "cancel": self.keyCancel,
-                "green": self.switchToSuggestionsList,
+
                 "red": self.switchToHistoryList,
+                "green": self.switchToSuggestionsList,
+                "yellow": lambda: None,
                 "blue": self.toggleSourceTitle,
+
                 "right": self.keyRight,
                 "rightRepeated": self.keyRight,
+                "rightUp": lambda: None,
                 "left": self.keyLeft,
                 "leftRepeated": self.keyLeft,
+                "leftUp": lambda: None,
                 "up": self.keyUp,
                 "upRepeated": self.keyUp,
+                "upUp": lambda: None,
                 "down": self.keyDown,
-                "downRepeated": self.keyDown
+                "downRepeated": self.keyDown,
+                "downUp": lambda: None
             }, -2)
 
         self['suggestionActions'].setEnabled(False)
