@@ -2,10 +2,15 @@
 *.pyc
 *.mo
 *.ipk
+*.deb
+*.sw[po]
+*.diff
 ipkg.deps
+.install
 test/moviefiles
 test/subtmp
 test/*.cfg
+plugin/hsubtitles.json
 /autom4te.cache/
 /config/
 Makefile
