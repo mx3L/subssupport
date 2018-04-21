@@ -281,7 +281,7 @@ msgstr "FPS"
 
 #: subtitles.py:441 subtitles.py:2912 subtitlesdvb.py:268 subtitlesdvb.py:295
 msgid "unknown"
-msgstr "непознат"
+msgstr "неизвестен"
 
 #: subtitles.py:444 subtitlesdvb.py:273 subtitlesdvb.py:275
 #: subtitlesdvb.py:277 subtitlesdvb.py:281
@@ -877,7 +877,7 @@ msgstr "Помни историята на свалянията"
 
 #: subtitles.py:4629
 msgid "Load/Save download history directory"
-msgstr "Папка за съхранение историята на свалянията"
+msgstr "Папка за съхранение на историята"
 
 #: subtitles.py:4712
 msgid "Provider name"
