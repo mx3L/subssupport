@@ -1,0 +1,776 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SubsSupport _ enigma2-plugin by mx3L\n"
+"POT-Creation-Date: 2018-05-30 10:41+0200\n"
+"PO-Revision-Date: 2018-05-30 11:50+0200\n"
+"Language-Team: thawtes <thawtes@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Massimo Bambi <maxbambi@libero.it>\n"
+"Language: it\n"
+
+msgid "Add subtitle's language to filename"
+msgstr "Aggiungi la lingua dei sottotitoli al nome file"
+
+msgid "All"
+msgstr "Tutti"
+
+msgid "Always ask before overwriting existing subtitles"
+msgstr "Chiedi sempre prima di sovrascrivere i sottotitoli esistenti"
+
+msgid "Append language to filename"
+msgstr "Aggiungi lingua al nome file"
+
+msgid "Ask on remove action"
+msgstr "Chiedi all'eliminazione"
+
+msgid "Auto sync to current event"
+msgstr "Sincronizzazione automatica al programma attuale"
+
+msgid "Background"
+msgstr "Sfondo"
+
+msgid "Background color"
+msgstr "Colore sfondo"
+
+msgid "Background transparency"
+msgstr "Trasparenza dello sfondo"
+
+msgid "Background type"
+msgstr "Tipo di sfondo"
+
+msgid "Background X-offset"
+msgstr "Offset orizzontale dello sfondo"
+
+msgid "Background Y-offset"
+msgstr "Offset verticale dello sfondo"
+
+msgid "black"
+msgstr "nero"
+
+msgid "blue"
+msgstr "blu"
+
+msgid "border"
+msgstr "bordo"
+
+msgid "bottom"
+msgstr "basso"
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "cannot decode"
+msgstr "impossibile decodificare"
+
+msgid "Cannot decode subtitles. Try another encoding group"
+msgstr ""
+"Impossibile decodificare i sottotitoli. Prova un altro gruppo di codifica"
+
+msgid "Cannot load subtitles. Invalid path"
+msgstr "Impossibile caricare i sottotitoli. Percorso non valido"
+
+msgid "Cannot parse subtitles. Invalid subtitles format"
+msgstr ""
+"Impossibile interpretare i sottotitoli. Formato sottotitoli non valido"
+
+msgid "Cannot parse subtitles. Not supported subtitles format"
+msgstr ""
+"Impossibile interpretare i sottotitoli. Formato sottotitoli non supportato"
+
+msgid "Cannot save download history, for details look in log"
+msgstr ""
+"Impossibile salvare la cronologia dei download, per i dettagli leggi il log"
+
+msgid "cannot sync to event, event is not available"
+msgstr "Impossibile sincronizzarsi al programma, perché non è disponibile"
+
+msgid "captcha doesn't match, try again..."
+msgstr "Il captcha non coincide, riprova..."
+
+msgid "Change encoding"
+msgstr "Cambia codifica"
+
+msgid "change external subtitles status"
+msgstr "cambia lo stato dei sottotitoli esterni"
+
+msgid "Change subssupport settings"
+msgstr "Cambia le impostazioni di SubsSupport"
+
+msgid "change subtitles fps"
+msgstr "Cambia la frequenza dei sottotitoli"
+
+msgid "Check search parameters before subtitles search"
+msgstr "Controlla i parametri prima della ricerca dei sottotitoli"
+
+msgid "Choose from downloaded subtitles"
+msgstr "Scegli fra i sottotitoli scaricati"
+
+msgid "Choose from embedded subtitles"
+msgstr "Scegli fra i sottotitoli inclusi nel file"
+
+msgid "Choose from web subtitles"
+msgstr "Scegli fra i sottotitoli in rete"
+
+msgid "Choose Subtitles"
+msgstr "Scegli Sottotitoli"
+
+msgid "Choose subtitles"
+msgstr "Scegli sottotitoli"
+
+msgid "close plugin"
+msgstr "chiudi il plugin"
+
+msgid "Color"
+msgstr "Colore"
+
+msgid "Currently choosed subtitles"
+msgstr "Sottotitoli attualmente scelti"
+
+msgid "decrease subtitles delay"
+msgstr "Diminuisci il ritardo per sottotitoli"
+
+msgid "Default"
+msgstr "Predefinito"
+
+msgid "disabled"
+msgstr "Disabilitato"
+
+msgid "displays this menu"
+msgstr "Mostra questo menu"
+
+msgid "Do you want to proceed?"
+msgstr "Vuoi procedere?"
+
+msgid "Do you want to show this message again?"
+msgstr "Vuoi mostrare ancora questo messaggio?"
+
+msgid "Download (more...)"
+msgstr "Download (ancora...)"
+
+msgid "Download (next to video)"
+msgstr "Download (vicino al video)"
+
+msgid "Download (user defined)"
+msgstr "Download (definito dall'utente)"
+
+msgid "Download and Load (more...)"
+msgstr "Download e Caricamento (ancora...)"
+
+msgid "Download and Load (next to video)"
+msgstr "Download e Caricamento (vicino al video)"
+
+msgid "Download and Load (user defined) "
+msgstr "Download e Caricamento (definito dall'utente)"
+
+msgid "Download date"
+msgstr "Data di download"
+
+msgid "Download options"
+msgstr "Download opzioni"
+
+msgid "Download subtitles for your videos"
+msgstr "Download sottotitoli per i tuoi video"
+
+msgid "Downloaded Subtitles"
+msgstr "Sottotitoli scaricati"
+
+msgid "Downloaded Subtitles - Settings"
+msgstr "Impostazioni sottotitoli - Impostazioni"
+
+msgid "downloading subtitles..."
+msgstr "Download in corso dei sottotitoli..."
+
+msgid "Duration"
+msgstr "Durata"
+
+msgid "DVB player settings"
+msgstr "Impostazioni player DVB"
+
+msgid "dynamic"
+msgstr "dinamico"
+
+msgid "Edit download path"
+msgstr "Modifica la cartella di download"
+
+msgid "Edit Filename"
+msgstr "Modifica  il nome file"
+
+msgid "Embedded Subtitles"
+msgstr "Sottotitoli inclusi"
+
+msgid "Embedded subtitles settings"
+msgstr "Impostazioni sottotitoli inclusi"
+
+msgid "enabled"
+msgstr "abilitato"
+
+msgid "Encoding"
+msgstr "Codifica"
+
+msgid "Encoding:"
+msgstr "Codifica:"
+
+msgid "Entries count:"
+msgstr "Conteggio delle voci:"
+
+msgid "Episode"
+msgstr "Episodio"
+
+msgid "error"
+msgstr "errore"
+
+msgid "Event Duration"
+msgstr "Durata del programma"
+
+msgid "Event Name"
+msgstr "Nome del programma"
+
+msgid "Event Time"
+msgstr "Orario del programma"
+
+msgid "exit"
+msgstr "Esci"
+
+msgid "External Subtitles settings"
+msgstr "Impostazioni per sottotitoli esterni"
+
+msgid "Filename"
+msgstr "Nome file"
+
+msgid "Filename cannot be empty!"
+msgstr "Il nome di file non può essere vuoto !"
+
+msgid "Font color (Bold)"
+msgstr "Colore del testo (Grassetto)"
+
+msgid "Font color (Italic"
+msgstr "Colore del testo (Corsivo)"
+
+msgid "Font color (Regular)"
+msgstr "Colore del testo (Normale)"
+
+msgid "Font size"
+msgstr "Dimensione carattere "
+
+msgid "Font transparency (Bold)"
+msgstr "Trasparenza del testo (Grassetto)"
+
+msgid "Font transparency (Italic)"
+msgstr "Trasparenza del testo (Corsivo)"
+
+msgid "Font transparency (Regular)"
+msgstr "Trasparenza del testo (Normale)"
+
+msgid "Font type (Bold)"
+msgstr "Tipo di carattere (Grassetto)"
+
+msgid "Font type (Italic)"
+msgstr "Tipo di carattere (Corsivo)"
+
+msgid "Font type (Regular)"
+msgstr "Tipo di carattere (Normale)"
+
+msgid "For more details please check search settings"
+msgstr "Per maggiori dettagli, controlla le impostazioni di ricerca"
+
+msgid "General settings"
+msgstr "Impostazioni globali"
+
+msgid "green"
+msgstr "verde"
+
+msgid "grey"
+msgstr "grigio"
+
+msgid "Hide delay"
+msgstr "Nascodi il ritardo"
+
+msgid "History"
+msgstr "Cronologia"
+
+msgid "increase subtitles delay"
+msgstr "Aumenta il ritardo per sottotitoli"
+
+msgid "invalid credentials provided, correct them and try again"
+msgstr "Credenziali fornite non valide, correggile e prova ancora"
+
+msgid "jump to next subtitle"
+msgstr "salta al sottotitolo successivo"
+
+msgid "jump to previous subtitle"
+msgstr "salta al sottotitolo precedente"
+
+msgid "Language"
+msgstr "Lingua"
+
+msgid "Language selection"
+msgstr "Selezione lingua"
+
+msgid "library"
+msgstr "libreria"
+
+msgid "List"
+msgstr "Elenco"
+
+msgid "List + File"
+msgstr "Elenco + File"
+
+msgid "List of storage devices"
+msgstr "Elenco supporti memorizzazione"
+
+msgid "Load subtitles after download"
+msgstr "Carica i sottotitoli dopo il download"
+
+msgid "Load/Save download history directory"
+msgstr "Carica/Salva la cartella con la cronologia dei download"
+
+msgid "loading subtitles list"
+msgstr "caricamento elenco dei sottotitoli"
+
+msgid "Manual search"
+msgstr "Ricerca manuale"
+
+msgid "Max history entries"
+msgstr "Massimo numero di voci nella cronologia "
+
+msgid "missing"
+msgstr "mancante"
+
+msgid "Movie"
+msgstr "Film"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Next to video"
+msgstr "Passa al video"
+
+msgid "no"
+msgstr "no"
+
+msgid "no credentials provided, set them and try again"
+msgstr "non sono state fornite credenziali, impostale e riprova"
+
+msgid "No external subtitles are loaded"
+msgstr "Non sono stati caricati sottotitoli esterni"
+
+msgid "No subtitles found :("
+msgstr "Sottotitoli non trovati :("
+
+msgid "None"
+msgstr "Nessuno"
+
+msgid "nothing connected"
+msgstr "non collegato"
+
+msgid "offset"
+msgstr "offset"
+
+msgid "opaque"
+msgstr "opaco"
+
+msgid "original"
+msgstr "originale"
+
+msgid "Parent directory"
+msgstr "Directory padre"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Path"
+msgstr "Percorso"
+
+msgid "Path doesn't exist!"
+msgstr "La cartella non esiste!"
+
+msgid "pause subtitles playback"
+msgstr "Metti in pausa  la riproduzione dei sottotitoli"
+
+msgid "Pause video on opening subtitles menu"
+msgstr "Metti in pausa il video durante la visualizzazione del menu"
+
+msgid "play/pause subtitles playback"
+msgstr "Pausa/continua la riproduzione dei sottotitoli"
+
+msgid "Player delay"
+msgstr "Ritardo del player"
+
+msgid "Position"
+msgstr "Posizione"
+
+msgid "Preferred languages"
+msgstr "Lingue preferite"
+
+msgid "Preferred Movie provider"
+msgstr "Provider preferito di film "
+
+msgid "Preferred subtitles language"
+msgstr " Lingua preferita per i sottotitoli"
+
+msgid "Preferred TV show provider"
+msgstr "Provider preferito per spettacoli TV"
+
+msgid "press green"
+msgstr "premi il tasto verde"
+
+msgid "Press OK to confirm"
+msgstr "Premi 'Ok' per confermare"
+
+msgid "Press OK to Stop"
+msgstr "Premi 'Ok' per fermare"
+
+msgid "press red"
+msgstr "premi il tasto rosso"
+
+msgid "Provider"
+msgstr "Provider"
+
+msgid "Provider name"
+msgstr "Nome provider"
+
+msgid "PTS check delay"
+msgstr "Ritardo controllo PTS"
+
+msgid "purple"
+msgstr "viola"
+
+msgid "red"
+msgstr "rosso"
+
+msgid "Refresh delay"
+msgstr "Ritardo di aggiornamento"
+
+msgid "Release"
+msgstr "Rilascio"
+
+msgid "Remove (file)"
+msgstr "Elimina (file)"
+
+msgid "Remove action"
+msgstr "Elimina azione"
+
+msgid "Remove Entry (List)"
+msgstr "Elimina voce (Elenco)"
+
+msgid "Remove Entry (List+File)"
+msgstr "Elimina voce (Elenco + File)"
+
+msgid "Reset"
+msgstr "Reset"
+
+#, fuzzy
+msgid "Reset Defaults"
+msgstr "Predefiniti"
+
+msgid "reset subtitles delay/fps"
+msgstr "ripristina ritardo/frequenza dei sottotitoli"
+
+msgid "restarts current subtitle"
+msgstr "riavvia i sottotitoli attuali"
+
+msgid "resumes subtitles playback"
+msgstr "riprendi la riproduzione dei sottotitoli"
+
+msgid "S"
+msgstr "S"
+
+msgid "Save"
+msgstr "Salva"
+
+msgid "Save as"
+msgstr "Salva come"
+
+msgid "Save downloaded subtitles to history"
+msgstr "Salva i sottotitoli scaricati nella cronologia"
+
+msgid "Save subtitles as"
+msgstr "Salva i sottotitoli come"
+
+msgid "Save subtitles as (fallback)"
+msgstr "Salva i sottotitoli come (fallback)"
+
+msgid "Save subtitles to"
+msgstr "Salva i sottotitoli in"
+
+msgid "Save to"
+msgstr "Salvare in"
+
+msgid "Search"
+msgstr "Ricerca"
+
+msgid "Search parameters"
+msgstr "Parametri di ricerca"
+
+msgid "Search settings"
+msgstr "Impostazioni di ricerca"
+
+msgid "Search subtitles"
+msgstr "Ricerca sottotitoli"
+
+msgid "Season"
+msgstr "Stagione"
+
+msgid "seconds"
+msgstr "secondi"
+
+msgid "Select Directory"
+msgstr "Seleziona la cartella"
+
+msgid "Send and search movie hashes"
+msgstr "Invia e ricerca hash dei filmati"
+
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgid "settings"
+msgstr "impostazioni"
+
+msgid "Shadow"
+msgstr "Ombreggiatura"
+
+msgid "Shadow color"
+msgstr "Colore dell'ombra"
+
+msgid "Shadow size"
+msgstr "Dimensione dell'ombra"
+
+msgid "Shadow type"
+msgstr "Tipo di ombreggiatura"
+
+msgid "Shadow X-offset"
+msgstr "Offset orizzontale  dell'ombra"
+
+msgid "Shadow Y-offset"
+msgstr "Offset verticale dell'ombra"
+
+msgid "Show expert settings"
+msgstr "Mostra le impostazioni da esperto"
+
+msgid "show subtitles menu"
+msgstr "Mostra il menu dei sottotitoli"
+
+msgid "show/hide subtitles status"
+msgstr "Mostra/nascondi lo stato dei sottotitoli"
+
+msgid "skip previous subtitle by setting time in minutes"
+msgstr "salta il sottotitolo precedente impostando il tempo in minuti"
+
+msgid "skip subtitle to current event position"
+msgstr "salta il sottotitolo alla posizione attuale del programma"
+
+msgid "skip to next subtitle"
+msgstr "Passa al sottotitolo successivo"
+
+msgid "skip to next subtitle (minute jump)"
+msgstr "Passa al sottotitolo successivo (salto in minuti)"
+
+msgid "skip to next subtitle by setting time in minutes"
+msgstr "salta il sottotitolo successivo impostando il tempo in minuti"
+
+msgid "skip to previous subtitle"
+msgstr "Passa al sottotitolo precedente"
+
+msgid "skip to previous subtitle (minute jump)"
+msgstr "Passa al sottotitolo precedente (salto in minuti)"
+
+msgid "Some subtitles providers are not working"
+msgstr "Alcuni provider di sottotitoli non stanno funzionando"
+
+msgid "Sort subtitles list by"
+msgstr "Ordina l'elenco dei sottotitoli"
+
+#, fuzzy
+msgid "Source title"
+msgstr "Titolo della sorgente"
+
+#, fuzzy
+msgid "Source title not provided"
+msgstr "Titolo della sorgente non fornito"
+
+msgid "State"
+msgstr "Stato"
+
+msgid "static"
+msgstr "statico"
+
+msgid "SubsSupport downloader"
+msgstr "Downloader SubsSupport"
+
+msgid "SubsSupport DVB player"
+msgstr "Player DVB SubsSupport"
+
+msgid "SubsSupport settings"
+msgstr "Impostazioni SubsSupport"
+
+msgid "Subtitle"
+msgstr "Sottotitolo"
+
+msgid "Subtitles Delay"
+msgstr "Ritardo sottotitoli"
+
+msgid "Subtitles download path"
+msgstr "Percorso download sottotitoli"
+
+msgid "subtitles found"
+msgstr "sottotitoli trovati"
+
+msgid "Subtitles FPS"
+msgstr "Frequenza in fps per i sottotitoli"
+
+msgid "Subtitles Position"
+msgstr "Posizione dei sottotitoli"
+
+msgid "Subtitles provider timeout"
+msgstr "Timeout del provider dei sottotitoli"
+
+msgid "Subtitles search"
+msgstr "Ricerca sottotitoli"
+
+msgid "Subtitles search settings"
+msgstr "Impostazioni ricerca sottotitoli"
+
+msgid "Subtitles setting"
+msgstr "Impostazioni sottotitoli"
+
+msgid "Subtitles settings"
+msgstr "Impostazioni sottotitoli"
+
+msgid "Subtitles settings (embedded)"
+msgstr "Impostazioni sottotitoli (inclusi)"
+
+msgid "Subtitles temp path"
+msgstr "Cartella temporanea sottotitoli"
+
+msgid "Subtitles Time"
+msgstr "Tempo dei sottotitoli"
+
+msgid "Subtitles will be downloaded in"
+msgstr "I sottotitoli saranno scaricati in "
+
+msgid ""
+"Subtitles with this name already exist\n"
+"Do you want to overwrite them"
+msgstr ""
+"I sottotitoli con questi nome già esistono\n"
+"Vuoi sovrascriverli"
+
+msgid "Suggestions"
+msgstr "Suggerimenti"
+
+msgid "Supported languages"
+msgstr "Lingue supportate"
+
+msgid "Switch List"
+msgstr "Cambia elenco"
+
+msgid "Sync delay"
+msgstr "Ritardo di sincronizzazione"
+
+msgid ""
+"There are more subtitles in unpacked archive\n"
+" please select which one do you want to use"
+msgstr ""
+"Ci sono più file di sottotitoli nell'archivio scompattato\n"
+"Per favore, seleziona quale vuoi usare"
+
+msgid "There was an error while removing subtitle, please check log"
+msgstr ""
+"C'è stato un errore nell'eliminazione dei sottotitoli, per favore "
+"controlla il log"
+
+msgid "Time"
+msgstr "Ora"
+
+msgid "Title"
+msgstr "Titolo"
+
+msgid "top"
+msgstr "sopra"
+
+msgid "transparent"
+msgstr "trasparente"
+
+msgid "Try update(simplify) search expression and try again.."
+msgstr ""
+"Prova ad aggiornare o semplificare l'espressione di ricerca e prova "
+"ancora..."
+
+msgid "Turn off subtitles"
+msgstr "Disattiva i sottotitoli"
+
+msgid "TV show"
+msgstr "Spettacolo TV"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Type text of picture"
+msgstr "Tipo testo dell'immagine"
+
+msgid "unknown"
+msgstr "sconosciuto"
+
+msgid "unpack error: cannot get subname"
+msgstr "errore di estrazione dal pacchetto: sottonome non ottenuto"
+
+msgid "unpack error: cannot open archive"
+msgstr "errore di estrazione dal pacchetto: non si può aprire l'archivio"
+
+msgid "Update"
+msgstr "Aggiorna"
+
+msgid ""
+"Update search parameters if not correct\n"
+" and press green button for search"
+msgstr ""
+"Aggiorna i parametri di ricerca se non corretti\n"
+"e premi il tasto verde per la ricerca"
+
+msgid "Update Search params"
+msgstr "Aggiorna i parametri di ricerca"
+
+msgid "Use File path"
+msgstr "Usa la cartella file..."
+
+msgid "User defined"
+msgstr "Definito dall'utente"
+
+msgid "Username"
+msgstr "Nome utente"
+
+msgid "Video filename"
+msgstr "Nome file video"
+
+msgid "watch DVB broadcast with subtitles"
+msgstr "Mostra le trasmissioni DVB con i sottotitoli"
+
+msgid "white"
+msgstr "bianco"
+
+msgid "will be removed from file system"
+msgstr "sarà eliminato dal file system"
+
+msgid "will be removed from list"
+msgstr "sarà eliminato dall'elenco"
+
+msgid "Year"
+msgstr "Anno"
+
+msgid "yellow"
+msgstr "giallo"
+
+msgid "yes"
+msgstr "sì"
+
+msgid ""
+"You have OpenPli-based image, please change embedded subtitles settings in "
+"Settings / System / Subtitles settings"
+msgstr ""
+"Hai un'immagine basata su OpenPli, cambia i sottotitoli inclusi nel menu "
+"Configurazione/Audio/Configurazione sottotitoli"
