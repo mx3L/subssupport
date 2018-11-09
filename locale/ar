@@ -1,0 +1,770 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 Arab translation for SubsSupport Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-18 08:15+0100\n"
+"PO-Revision-Date: 2018-11-09 18:31+0000\n"
+"Last-Translator: mosad <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: ar_SA\n"
+
+msgid "Add subtitle's language to filename"
+msgstr "إضافة لغة الترجمة إلى اسم الملف"
+
+msgid "All"
+msgstr "الكل"
+
+msgid "Always ask before overwriting existing subtitles"
+msgstr "السؤال دوماً قبل الكتابة فوق الترجمة الموجودة"
+
+msgid "Append language to filename"
+msgstr "إلحاق اسم ملف اللغة"
+
+msgid "Arabic"
+msgstr "العربية"
+
+msgid "Ask on remove action"
+msgstr "اسأل عن إزالة الإجراءات"
+
+msgid "Auto sync to current event"
+msgstr "المزامنة التلقائية للحدث الحالي"
+
+msgid "Background"
+msgstr "الخلفيه"
+
+msgid "Background X-offset"
+msgstr "خلفية الموازنة"
+
+msgid "Background Y-offset"
+msgstr "توازن الخلفية"
+
+msgid "Background color"
+msgstr "لون الخلفية"
+
+msgid "Background transparency"
+msgstr "شفافية الخلفية"
+
+msgid "Background type"
+msgstr "نوع الخلفية"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Cannot decode subtitles. Try another encoding group"
+msgstr "لا يمكن فك ترميز الترجمة. حاول بترميز أخر مع المجموعة"
+
+msgid "Cannot load subtitles. Invalid path"
+msgstr "لا يمكن تحميل ملفات الترجمة. المسار غير صالح"
+
+msgid "Cannot parse subtitles. Invalid subtitles format"
+msgstr "لا يمكن تحليل ملفات الترجمة. تنسيق ملفات الترجمة غير صحيح"
+
+msgid "Cannot parse subtitles. Not supported subtitles format"
+msgstr "لا يمكن تحليل ملفات الترجمة. لا يدعم تنسيق الترجمة"
+
+msgid "Central and Eastern Europe"
+msgstr "أوروبا الوسطى والشرقية"
+
+msgid "Change encoding"
+msgstr "تغيير رمز التنسيق لملف الترجمة"
+
+msgid "Change subssupport settings"
+msgstr "تغيير إعدادات بلج إنز الترجمة"
+
+msgid "Check search parameters before subtitles search"
+msgstr "التحقق من معلمات البحث قبل البحث عن الترجمة"
+
+msgid "Choose Subtitles"
+msgstr "اختر الترجمة المصاحبة"
+
+msgid "Choose from downloaded subtitles"
+msgstr "اختر من ملفات الترجمة التي تم تحميلها"
+
+msgid "Choose from embedded subtitles"
+msgstr "اختر من ملفات الترجمة المدمجة"
+
+msgid "Choose from web subtitles"
+msgstr "اختر من ملفات ترجمة شبكة الإنترنت"
+
+msgid "Choose subtitles"
+msgstr "اختر ترجمات مصاحبة"
+
+msgid "Color"
+msgstr "اللون"
+
+msgid "Currently choosed subtitles"
+msgstr "ملف الترجمة المختار حاليا"
+
+msgid "DVB player settings"
+msgstr "إعدادات مشغل الدفيبي"
+
+msgid "Default"
+msgstr "الإفتراضي"
+
+msgid "Do you want to proceed?"
+msgstr "هل تريد المتابعة؟"
+
+msgid "Do you want to show this message again?"
+msgstr "هل تريد إظهار هذه الرسالة مرة أخرى؟"
+
+msgid "Download (more...)"
+msgstr "تحميل (المزيد...)"
+
+msgid "Download (next to video)"
+msgstr "تحميل (الفيديو التالي)"
+
+msgid "Download (user defined)"
+msgstr "تحميل (المعروف من قبل المستخدم)"
+
+msgid "Download and Load (more...)"
+msgstr "تنزيل وتحميل (المزيد...)"
+
+msgid "Download and Load (next to video)"
+msgstr "تنزيل وتحميل (الفيديو التالي)"
+
+msgid "Download and Load (user defined) "
+msgstr "تنزيل وتحميل (المعروف من قبل المستخدم)"
+
+msgid "Download date"
+msgstr "تاريخ التحميل"
+
+msgid "Download options"
+msgstr "تحميل الخيارات"
+
+msgid "Download subtitles for your videos"
+msgstr "تحميل ملفات الترجمة لمقاطع الفيديو الخاصة بك"
+
+msgid "Downloaded Subtitles"
+msgstr "تحميل ملفات الترجمة"
+
+msgid "Downloaded Subtitles - Settings"
+msgstr "إعدادات تحميل ملفات الترجمة"
+
+msgid "Duration"
+msgstr "المدة الزمنية"
+
+msgid "Edit Filename"
+msgstr "تعديل اسم الملف"
+
+msgid "Edit download path"
+msgstr "تعديل مسار التحميل"
+
+msgid "Embedded Subtitles"
+msgstr "تضمين ملفات الترجمة"
+
+msgid "Embedded subtitles settings"
+msgstr "إعدادات الترجمة المضمنة"
+
+msgid "Encoding"
+msgstr "رمز تنسيق ملف الترجمة"
+
+msgid "Encoding:"
+msgstr "رمز تنسيق ملف الترجمة:"
+
+msgid "Entries count:"
+msgstr "عدد المدخلات:"
+
+msgid "Episode"
+msgstr "الحلقة"
+
+msgid "Event Duration"
+msgstr "مدة الحدث"
+
+msgid "Event Name"
+msgstr "أسم الحدث"
+
+msgid "Event Time"
+msgstr "وقت الحدث"
+
+msgid "External Subtitles settings"
+msgstr "إعدادات الترجمة في الوسائط الخارجية"
+
+msgid "External subtitles settings"
+msgstr "إعدادات الترجمة في الوسائط الخارجية"
+
+msgid "Filename"
+msgstr "اسم الملف"
+
+msgid "Filename cannot be empty!"
+msgstr "لا يمكن ترك حقل اسم الملف فارغ"
+
+msgid "Font color (Bold)"
+msgstr "لون الخط (العريض)"
+
+msgid "Font color (Italic"
+msgstr "لون الخط (المائل)"
+
+msgid "Font color (Regular)"
+msgstr "لون الخط (العادي)"
+
+msgid "Font size"
+msgstr "حجم الخط"
+
+msgid "Font transparency (Bold)"
+msgstr "الخط الشفاف (العريض)"
+
+msgid "Font transparency (Italic)"
+msgstr "الخط الشفاف (الخط المائل)"
+
+msgid "Font transparency (Regular)"
+msgstr "الخط الشفاف (العادي)"
+
+msgid "Font type (Bold)"
+msgstr "نوع الخط (العريض)"
+
+msgid "Font type (Italic)"
+msgstr "نوع الخط (المائل)"
+
+msgid "Font type (Regular)"
+msgstr "نوع الخط (العادي)"
+
+msgid "For more details please check search settings"
+msgstr "لمزيد من التفاصيل يرجى التحقق من إعدادات البحث"
+
+msgid "General settings"
+msgstr "الإعدادات العامة"
+
+msgid "Greek"
+msgstr "اليونان"
+
+msgid "Hide delay"
+msgstr "إخفاء التأخير"
+
+msgid "History"
+msgstr "الأرشيف"
+
+msgid "Language"
+msgstr "اللغـة"
+
+msgid "Language selection"
+msgstr "إختيار اللغـة"
+
+msgid "List"
+msgstr "قائمة"
+
+msgid "List + File"
+msgstr "قائمة + ملف"
+
+msgid "List of storage devices"
+msgstr "قائمة أجهزة التخزين"
+
+msgid "Load subtitles after download"
+msgstr "تحميل ملفات الترجمة بعد تنزيلها"
+
+msgid "Load/Save download history directory"
+msgstr "تحميل/حفظ دليل تاريخ التحميل"
+
+msgid "Manual search"
+msgstr "البحث اليدوي"
+
+msgid "Max history entries"
+msgstr "أدخل التواريخ كأعلى حد"
+
+msgid "Movie"
+msgstr "فيلم"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Next to video"
+msgstr "الفديو التالي"
+
+msgid "No external subtitles are loaded"
+msgstr "لم يتم تحميل ملفات ترجمة للوسائط الخارجية"
+
+msgid "No subtitles found :("
+msgstr "لم يتم العثور على ترجمات مصاحبة :("
+
+msgid "None"
+msgstr "لاشيئ"
+
+msgid "PTS check delay"
+msgstr "التحقق من تأخير الوقت الزمني للعرض"
+
+msgid "Parent directory"
+msgstr "الدليل الرئيسي"
+
+msgid "Path"
+msgstr "المسار"
+
+msgid "Path doesn't exist!"
+msgstr "المسار غير موجود"
+
+msgid "Pause video on opening subtitles menu"
+msgstr "إيقاف الفيديو مؤقتاً على فتح قائمة الترجمة"
+
+msgid "Player delay"
+msgstr "تأخير المشغل"
+
+msgid "Position"
+msgstr "الموضع"
+
+msgid "Preferred Movie provider"
+msgstr "مزود الفيلم المفضل"
+
+msgid "Preferred TV show provider"
+msgstr "مزود خدمة المسلسلات المفضل"
+
+msgid "Preferred languages"
+msgstr "اللغات المفضلة"
+
+msgid "Preferred subtitles language"
+msgstr "لغة الترجمة المفضلة"
+
+msgid "Press OK to Stop"
+msgstr "اضغط موافق لإيقاف"
+
+msgid "Press OK to confirm"
+msgstr "اضغط موافق للتأكيد"
+
+msgid "Provider"
+msgstr "المزود"
+
+msgid "Provider name"
+msgstr "اسم المزود"
+
+msgid "Refresh delay"
+msgstr "تحديث التأخير"
+
+msgid "Release"
+msgstr "يحرر"
+
+msgid "Remove (file)"
+msgstr "إزالة (ملف)"
+
+msgid "Remove Entry (List)"
+msgstr "إزالة المدخل(قائمة)"
+
+msgid "Remove Entry (List+File)"
+msgstr "إزالة المدخل(قائمة + ملف)"
+
+msgid "Remove action"
+msgstr "إزالة الإجراء"
+
+msgid "Reset"
+msgstr "إعاده الضبط"
+
+msgid "Reset Defaults"
+msgstr "إعادة تعيين الإعدادات الافتراضية"
+
+msgid "Russia"
+msgstr "روسيا"
+
+msgid "S"
+msgstr "S"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Save as"
+msgstr "حفظ باسم"
+
+msgid "Save downloaded subtitles to history"
+msgstr "حفظ ملفات الترجمة التي تم تنزيلها إلى التاريخ"
+
+msgid "Save subtitles as"
+msgstr "حفظ ملفات الترجمة في"
+
+msgid "Save subtitles as (fallback)"
+msgstr "حفظ الترجمة (تراجع)"
+
+msgid "Save subtitles to"
+msgstr "حفظ ملفات الترجمة في"
+
+msgid "Save to"
+msgstr "حفظ إلى:"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search parameters"
+msgstr "معايير البحث"
+
+msgid "Search settings"
+msgstr "اعدادات البحث"
+
+msgid "Search subtitles"
+msgstr "البحث في ملفات الترجمة"
+
+msgid "Season"
+msgstr "الموسم"
+
+msgid "Select Directory"
+msgstr "تحديد الدليل"
+
+msgid "Settings"
+msgstr "إعدادات"
+
+msgid "Shadow"
+msgstr "الظل"
+
+msgid "Shadow X-offset"
+msgstr "توازن الظل"
+
+msgid "Shadow Y-offset"
+msgstr "توازن الظل"
+
+msgid "Shadow color"
+msgstr "لون الظل"
+
+msgid "Shadow size"
+msgstr "حجم الظل"
+
+msgid "Shadow type"
+msgstr "نوع الظل"
+
+msgid "Show expert settings"
+msgstr "عرض إعدادات الخبراء"
+
+msgid "Some subtitles providers are not working"
+msgstr "لا تعمل بعض مزودي خدمات الترجمة"
+
+msgid "Sort subtitles list by"
+msgstr "قائمة فرز ملفات الترجمة حسب"
+
+msgid "Source title"
+msgstr "عنوان المصدر"
+
+msgid "Source title not provided"
+msgstr "عنوان المصدر غير مزود"
+
+msgid "State"
+msgstr "الحالة"
+
+msgid "SubsSupport DVB player"
+msgstr "مشغل بلج إنز الترجمة النصية على القنوات"
+
+msgid "SubsSupport downloader"
+msgstr "تحميلات بلج إنز الترجمة"
+
+msgid "SubsSupport settings"
+msgstr "إعدادات بلج إنز الترجمة"
+
+msgid "Subtitle"
+msgstr "الترجمة"
+
+msgid "Subtitles Delay"
+msgstr "تأخير الترجمة"
+
+msgid "Subtitles FPS"
+msgstr "ملفات الترجمة"
+
+msgid "Subtitles Position"
+msgstr "مكان الترجمة"
+
+msgid "Subtitles Time"
+msgstr "وقت الترجمة"
+
+msgid "Subtitles download path"
+msgstr "مسار تحميل ملفات الترجمة"
+
+msgid "Subtitles provider timeout"
+msgstr "مهلة مزود الترجمة"
+
+msgid "Subtitles search"
+msgstr "البحث عن الترجمة"
+
+msgid "Subtitles search settings"
+msgstr "إعدادات البحث في الترجمة"
+
+msgid "Subtitles setting"
+msgstr "إعدادات الترجمة"
+
+msgid "Subtitles settings"
+msgstr "إعدادات الترجمات المصاحبة"
+
+msgid "Subtitles settings (embedded)"
+msgstr "إعدادات ملفات الترجمة (المضمونة)"
+
+msgid "Subtitles temp path"
+msgstr "مسار مؤقت لملفات الترجمة"
+
+msgid "Subtitles will be downloaded in"
+msgstr "سيتم تحميل ملفات الترجمة في"
+
+msgid "Suggestions"
+msgstr "الاقتراحات"
+
+msgid "Supported languages"
+msgstr "اللغات المدعومة"
+
+msgid "Switch List"
+msgstr "قائمة التبديل"
+
+msgid "Sync delay"
+msgstr "مزامنة التأخير"
+
+msgid "TV show"
+msgstr "عرض تلفزيوني"
+
+msgid ""
+"There are more subtitles in unpacked archive\n"
+" please select which one do you want to use"
+msgstr ""
+"هناك ملفات ترجمة كثيرة في الأرشيف لم يفتح الضغط عنها \n"
+"يرجى اختيار واحد من الذي تريد إستخدامه"
+
+msgid "There was an error while removing subtitle, please check log"
+msgstr "حدث خطأ أثناء إزالة ملف الترجمة، الرجاء التحقق من سجل العطب"
+
+msgid "Time"
+msgstr "الوقت"
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "Try update(simplify) search expression and try again.."
+msgstr "حاول البحث عن تحديث (بسيط) التعبير والمحاولة مرة أخرى..."
+
+msgid "Turkish"
+msgstr "التركية"
+
+msgid "Turn off subtitles"
+msgstr "إيقاف الترجمات المصاحبة"
+
+msgid "Type"
+msgstr "نوع"
+
+msgid "Type text of picture"
+msgstr "اكتب نص الصورة"
+
+msgid "Update"
+msgstr "التحديث"
+
+msgid "Update Search params"
+msgstr "تحديث البحث"
+
+msgid ""
+"Update search parameters if not correct\n"
+" and press green button for search"
+msgstr ""
+"تحديث معلمات البحث إذا لم يكن صحيح\n"
+" واضغط الزر الأخضر للبحث"
+
+msgid "Use File path"
+msgstr "استخدام مسار الملف"
+
+msgid "User defined"
+msgstr "يحددها المستخدم"
+
+msgid "Video filename"
+msgstr "اسم ملف الفيديو"
+
+msgid "Western Europe"
+msgstr "أوروبا الغربية"
+
+msgid "Year"
+msgstr "عام"
+
+msgid ""
+"You have OpenPli-based image, please change embedded subtitles settings in "
+"Settings / System / Subtitles settings"
+msgstr ""
+"لديك صورة تستند إلى صورة أوبن بلاي، الرجاء تغيير إعدادات الترجمة المضمنة في "
+"إعدادات/النظام/إعدادات الترجمة"
+
+msgid "black"
+msgstr "أسود"
+
+msgid "blue"
+msgstr "أزرق"
+
+msgid "border"
+msgstr "الجوانب"
+
+msgid "bottom"
+msgstr "أسفل"
+
+msgid "cannot decode"
+msgstr "لايمكن فك الترميز"
+
+msgid "cannot sync to event, event is not available"
+msgstr "لا يمكن مزامنة وقت الحدث، الحدث غير متوفر"
+
+msgid "captcha doesn't match, try again..."
+msgstr "لا تتطابق مع كلمة التحقق، حاول مرة أخرى..."
+
+msgid "change external subtitles status"
+msgstr "تغيير حالة ترجمة الوسائط الخارجية"
+
+msgid "change subtitles fps"
+msgstr "تغيير توقيت الترجمة بالثانية"
+
+msgid "close plugin"
+msgstr "إغلاق البلج إنز"
+
+msgid "decrease subtitles delay"
+msgstr "تقليل وقت تأخير الترجمة"
+
+msgid "disabled"
+msgstr "تعطيل"
+
+msgid "displays this menu"
+msgstr "قائمة العرض"
+
+msgid "downloading subtitles..."
+msgstr "تحميل ملفات الترجمة..."
+
+msgid "dynamic"
+msgstr "مقاربةً"
+
+msgid "enabled"
+msgstr "تفعيل"
+
+msgid "error"
+msgstr "خطا"
+
+msgid "exit"
+msgstr "خروج"
+
+msgid "green"
+msgstr "أخضر"
+
+msgid "grey"
+msgstr "رمادي"
+
+msgid "increase subtitles delay"
+msgstr "زيادة تأخير وقت الترجمة"
+
+msgid "invalid credentials provided, correct them and try again"
+msgstr "توفير بيانات الاعتماد غير صالحة، يرجى تصحيح الأخطاء والمحاولة مرة أخرى"
+
+msgid "jump to next subtitle"
+msgstr "الانتقال إلى الترجمة التالية"
+
+msgid "jump to previous subtitle"
+msgstr "الانتقال إلى الترجمة السابقة"
+
+msgid "library"
+msgstr "المكتبة"
+
+msgid "loading subtitles list"
+msgstr "تحميل قائمة ملفات الترجمة"
+
+msgid "missing"
+msgstr "مفقود"
+
+msgid "no"
+msgstr "لا"
+
+msgid "no credentials provided, set them and try again"
+msgstr "لم يتم تقديم أية أوراق اعتماد، ثم أعدها وحاول مرة أخرى"
+
+msgid "nothing connected"
+msgstr "لا شيئ متصل"
+
+msgid "offset"
+msgstr "التوازن"
+
+msgid "opaque"
+msgstr "مُعْتِمٌ"
+
+msgid "original"
+msgstr "الأصلي"
+
+msgid "pause subtitles playback"
+msgstr "تشغيل/إيقاف مشغل الترجمة"
+
+msgid "play/pause subtitles playback"
+msgstr "تشغيل/إيقاف مشغل الترجمة"
+
+msgid "press green"
+msgstr "أضغط الأخضر"
+
+msgid "press red"
+msgstr "اضغط الأحمر"
+
+msgid "purple"
+msgstr "أُرْجُواني"
+
+msgid "red"
+msgstr "red (أحمر)"
+
+msgid "reset subtitles delay/fps"
+msgstr "إعادة تعيين تأخير الترجمة /fps"
+
+msgid "restarts current subtitle"
+msgstr "إعادة تشغيل الترجمة الحالية"
+
+msgid "resumes subtitles playback"
+msgstr "استئناف تشغيل الترجمة"
+
+msgid "seconds"
+msgstr "ثواني"
+
+msgid "settings"
+msgstr "الإعدادات"
+
+msgid "show subtitles menu"
+msgstr "عرض قائمة ملفات الترجمة"
+
+msgid "show/hide subtitles status"
+msgstr "عرض/إخفاء حالة الترجمة"
+
+msgid "skip previous subtitle by setting time in minutes"
+msgstr "تخطي الترجمة السابقة بتعيين الوقت بالدقائق"
+
+msgid "skip subtitle to current event position"
+msgstr "تخطي الترجمة إلى موضع الحدث الحالي"
+
+msgid "skip to next subtitle"
+msgstr "انتقل إلى الترجمة التالية"
+
+msgid "skip to next subtitle (minute jump)"
+msgstr "انتقل إلى الترجمة التالية (القفز بالدقيقة)"
+
+msgid "skip to next subtitle by setting time in minutes"
+msgstr "انتقل إلى الترجمة التالية بتعيين الوقت بالدقائق"
+
+msgid "skip to previous subtitle"
+msgstr "انتقل إلى الترجمة السابقة"
+
+msgid "skip to previous subtitle (minute jump)"
+msgstr "تخطي إلى الترجمة السابقة (القفزة الدقيقة)"
+
+msgid "static"
+msgstr "ثابت"
+
+msgid "subtitles found"
+msgstr "لم يتم العثور على ملفات الترجمة"
+
+msgid "top"
+msgstr "أعلى"
+
+msgid "transparent"
+msgstr "خط شفاف"
+
+msgid "unknown"
+msgstr "غير معروف"
+
+msgid "unpack error: cannot get subname"
+msgstr "خطأ فتح الضغط: لا يمكن الحصول على أسم الترجمة"
+
+msgid "unpack error: cannot open archive"
+msgstr "خطأ فتح الضغط: لا يمكن فتح الأرشيف"
+
+msgid "unsupported archive %s"
+msgstr "أرشيف غير معتمد %s"
+
+msgid "watch DVB broadcast with subtitles"
+msgstr "مشاهدة الترجمة النصية على القنوات"
+
+msgid "white"
+msgstr "أبيض"
+
+msgid "will be removed from file system"
+msgstr "سيتم إزالتها من نظام الملفات"
+
+msgid "will be removed from list"
+msgstr "سيتم إزالته من القائمة"
+
+msgid "yellow"
+msgstr "أصفر"
+
+msgid "yes"
+msgstr "نعم"
