@@ -51,7 +51,7 @@ Priority: optional
 Maintainer: mxfitsat@gmail.com
 Recommends: python-xmlrpc, unrar, python-compression, python-codecs, python-zlib, python-difflib
 Homepage: https://code.google.com/p/mediaplayer2-for-sh4/
-Description: Enigma2 subtitles support library  $VER"
+Description: Enigma2 subtitles support library  $VER
 EOF
 
 cat > ${P}/CONTROL/postrm << EOF
@@ -124,7 +124,13 @@ mkdir -p ${P}${PLUGINPATH}
 cp -rp ${S}/plugin/* ${P}${PLUGINPATH}
 
 mkdir -p ${P}/var/lib/subssupport
-for lang in cs sk pl ru pt; do \
+
+cd ./locale/
+languages=($(ls *.po | gsed 's/\.po//'))
+cd ..
+
+for lang in "${languages[@]}" ; do \
+	printf "generating mo file for [%s]\n" $lang
     mkdir -p ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES; \
     msgfmt ${D}/locale/${lang}.po -o ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/SubsSupport.mo; \
     cp -rp ${D}/locale/${lang}.po ${P}${PLUGINPATH}/locale/${lang}/LC_MESSAGES/;
