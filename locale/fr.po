@@ -1,604 +1,605 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# French translations for PACKAGE package.
+# Copyright (C) 2018 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-31 16:02+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2018-12-31 15:59+0100\n"
+"PO-Revision-Date: 2018-12-31 16:26+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.2\n"
 
 #: ../plugin//subtitles.py:4620
 msgid "Add subtitle's language to filename"
-msgstr ""
+msgstr "Ajouter la langue du sous-titre au nom du fichier"
 
 #: ../plugin//subtitles.py:306 ../plugin//subtitles.py:307
 #: ../plugin//subtitles.py:324 ../plugin//subtitles.py:3634
 #: ../plugin//subtitles.py:3644 ../plugin//subtitles.py:3649
 msgid "All"
-msgstr ""
+msgstr "Toutes"
 
 #: ../plugin//subtitles.py:4624
 msgid "Always ask before overwriting existing subtitles"
-msgstr ""
+msgstr "Toujours demander avant d'écraser les sous-titres existants"
 
 #: ../plugin//subtitles.py:3712 ../plugin//subtitles.py:3742
 msgid "Append language to filename"
-msgstr ""
+msgstr "Ajouter une langue au nom de fichier"
 
 #: ../plugin//subtitles.py:2818
 msgid "Ask on remove action"
-msgstr ""
+msgstr "Demandez sur l'action supprimer"
 
 #: ../plugin//subtitlesdvb.py:37
 msgid "Auto sync to current event"
-msgstr ""
+msgstr "Synchronisation auto avec l'événement actuel"
 
 #: ../plugin//subtitles.py:2061
 msgid "Background"
-msgstr ""
+msgstr "Arrière-plan"
 
 #: ../plugin//subtitles.py:2065
 msgid "Background X-offset"
-msgstr ""
+msgstr "Arrière-plan décalage-X"
 
 #: ../plugin//subtitles.py:2066
 msgid "Background Y-offset"
-msgstr ""
+msgstr "Arrière-plan décalage-Y"
 
 #: ../plugin//subtitles.py:2067
 msgid "Background color"
-msgstr ""
+msgstr "Couleur de fond"
 
 #: ../plugin//subtitles.py:2068
 msgid "Background transparency"
-msgstr ""
+msgstr "Arrière-plan transparent"
 
 #: ../plugin//subtitles.py:2063
 msgid "Background type"
-msgstr ""
+msgstr "Type de fond"
 
 #: ../plugin//e2_utils.py:516 ../plugin//subtitles.py:4716
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: ../plugin//subtitles.py:1070 ../plugin//subtitlesdvb.py:63
 msgid "Cannot decode subtitles. Try another encoding group"
-msgstr ""
+msgstr "Impossible de décoder les sous-titres. Essayez un autre groupe d'encodage"
 
 #: ../plugin//subtitles.py:1066 ../plugin//subtitlesdvb.py:61
 msgid "Cannot load subtitles. Invalid path"
-msgstr ""
+msgstr "Impossible de charger les sous-titres. Chemin d'accès non valide"
 
 #: ../plugin//subtitles.py:1078 ../plugin//subtitlesdvb.py:67
 msgid "Cannot parse subtitles. Invalid subtitles format"
-msgstr ""
+msgstr "Impossible d'analyser les sous-titres. Format de sous-titres non valides"
 
 #: ../plugin//subtitles.py:1074 ../plugin//subtitlesdvb.py:65
 msgid "Cannot parse subtitles. Not supported subtitles format"
-msgstr ""
+msgstr "Impossible d'analyser les sous-titres. Format de sous-titres non pris en charge"
 
 #: ../plugin//subtitles.py:4433
 msgid "Cannot save download history, for details look in log"
-msgstr ""
+msgstr "Impossible d'enregistrer l'historique de téléchargement, pour plus de détails regarder dans le journal"
 
 #: ../plugin//subtitles.py:1910
 msgid "Change encoding"
-msgstr ""
+msgstr "Modifier l’encodage"
 
 #: ../plugin//plugin.py:142
 msgid "Change subssupport settings"
-msgstr ""
+msgstr "Modifier les paramètres de SubsSupport"
 
 #: ../plugin//subtitles.py:4616
 msgid "Check search parameters before subtitles search"
-msgstr ""
+msgstr "Vérifier les paramètres de recherche avant la recherche des sous-titres"
 
 #: ../plugin//subtitles.py:2504
 msgid "Choose Subtitles"
-msgstr ""
+msgstr "Choisissez sous-titres"
 
 #: ../plugin//subtitles.py:2358
 msgid "Choose from downloaded subtitles"
-msgstr ""
+msgstr "Choisissez parmi les sous-titres téléchargés"
 
 #: ../plugin//subtitles.py:2353
 msgid "Choose from embedded subtitles"
-msgstr ""
+msgstr "Choisissez parmi les sous-titres incorporés"
 
 #: ../plugin//subtitles.py:2363
 msgid "Choose from web subtitles"
-msgstr ""
+msgstr "Choisissez parmi les sous-titres Web"
 
 #: ../plugin//subtitles.py:1905 ../plugin//subtitles.py:2878
 msgid "Choose subtitles"
-msgstr ""
+msgstr "Choisissez sous-titres"
 
 #: ../plugin//subtitles.py:2183
 msgid "Color"
-msgstr ""
+msgstr "Couleur"
 
 #: ../plugin//subtitles.py:1855
 msgid "Currently choosed subtitles"
-msgstr ""
+msgstr "Sous-titres actuellement choisi"
 
 #: ../plugin//plugin.py:81 ../plugin//subtitlesdvb.py:33
 msgid "DVB player settings"
-msgstr ""
+msgstr "Paramètres du lecteur DVB"
 
 #: ../plugin//subtitles.py:310 ../plugin//subtitles.py:311
 msgid "Default"
-msgstr ""
+msgstr "Par défaut"
 
 #: ../plugin//subtitles.py:2767 ../plugin//subtitles.py:2774
 msgid "Do you want to proceed?"
-msgstr ""
+msgstr "Voulez-vous poursuivre?"
 
 #: ../plugin//subtitles.py:1994 ../plugin//subtitles.py:2548
 msgid "Do you want to show this message again?"
-msgstr ""
+msgstr "Voulez-vous afficher à nouveau ce message?"
 
 #: ../plugin//subtitles.py:4482
 msgid "Download (more...)"
-msgstr ""
+msgstr "Télécharger (suite...)"
 
 #: ../plugin//subtitles.py:4481
 msgid "Download (next to video)"
-msgstr ""
+msgstr "Télécharger (à côté de la vidéo)"
 
 #: ../plugin//subtitles.py:4480
 msgid "Download (user defined)"
-msgstr ""
+msgstr "Télécharger (défini par l'utilisateur)"
 
 #: ../plugin//subtitles.py:4487
 msgid "Download and Load (more...)"
-msgstr ""
+msgstr "Télécharger et charger (plus...)"
 
 #: ../plugin//subtitles.py:4486
 msgid "Download and Load (next to video)"
-msgstr ""
+msgstr "Télécharger et charger (à côté de la vidéo)"
 
 #: ../plugin//subtitles.py:4485
 msgid "Download and Load (user defined) "
-msgstr ""
+msgstr "Télécharger et charger (défini par l'utilisateur) "
 
 #: ../plugin//subtitles.py:2663
 msgid "Download date"
-msgstr ""
+msgstr "Date de téléchargement"
 
 #: ../plugin//subtitles.py:3746
 msgid "Download options"
-msgstr ""
+msgstr "Options téléchargement"
 
 #: ../plugin//plugin.py:143
 msgid "Download subtitles for your videos"
-msgstr ""
+msgstr "Télécharger les sous-titres pour vos vidéos"
 
 #: ../plugin//subtitles.py:2703
 msgid "Downloaded Subtitles"
-msgstr ""
+msgstr "Sous-titres téléchargés"
 
 #: ../plugin//subtitles.py:2811
 msgid "Downloaded Subtitles - Settings"
-msgstr ""
+msgstr "Sous-titres téléchargés - Paramètres"
 
 #: ../plugin//subtitlesdvb.py:312
 msgid "Duration"
-msgstr ""
+msgstr "Durée"
 
 #: ../plugin//subtitles.py:3783
 msgid "Edit Filename"
-msgstr ""
+msgstr "Modifier le nom de fichier"
 
 #: ../plugin//subtitles.py:3791
 msgid "Edit download path"
-msgstr ""
+msgstr "Modifier le chemin de téléchargement"
 
 #: ../plugin//subtitles.py:1884
 msgid "Embedded Subtitles"
-msgstr ""
+msgstr "Sous-titres embarqués"
 
 #: ../plugin//plugin.py:79 ../plugin//subtitles.py:2189
 msgid "Embedded subtitles settings"
-msgstr ""
+msgstr "Paramètres des sous-titres incorporés"
 
 #: ../plugin//subtitles.py:2115 ../plugin//subtitles.py:2211
 msgid "Encoding"
-msgstr ""
+msgstr "Encodage"
 
 #: ../plugin//subtitles.py:1895 ../plugin//subtitles.py:1898
 msgid "Encoding:"
-msgstr ""
+msgstr "Encodage:"
 
 #: ../plugin//subtitles.py:2732
 msgid "Entries count:"
-msgstr ""
+msgstr "Nombre d'entrées:"
 
 #: ../plugin//subtitles.py:4172 ../plugin//subtitles.py:5024
 msgid "Episode"
-msgstr ""
+msgstr "Épisode"
 
 #: ../plugin//subtitlesdvb.py:136 ../plugin//subtitlesdvb.py:314
 msgid "Event Duration"
-msgstr ""
+msgstr "Durée de l'événement"
 
 #: ../plugin//subtitlesdvb.py:134
 msgid "Event Name"
-msgstr ""
+msgstr "Nom de l’évènement"
 
 #: ../plugin//subtitlesdvb.py:135 ../plugin//subtitlesdvb.py:301
 msgid "Event Time"
-msgstr ""
+msgstr "Heure de l’évènement"
 
 #: ../plugin//subtitles.py:2072
 msgid "External Subtitles settings"
-msgstr ""
+msgstr "Paramètres des sous-titres externes"
 
 #: ../plugin//plugin.py:78
 msgid "External subtitles settings"
-msgstr ""
+msgstr "Paramètres des sous-titres externes"
 
 #: ../plugin//subtitles.py:3720
 msgid "Filename"
-msgstr ""
+msgstr "Nom de fichier"
 
 #: ../plugin//subtitles.py:3796
 msgid "Filename cannot be empty!"
-msgstr ""
+msgstr "Le nom de fichier ne peut pas être vide!"
 
 #: ../plugin//subtitles.py:2048
 msgid "Font color (Bold)"
-msgstr ""
+msgstr "Couleur de police (gras)"
 
 #: ../plugin//subtitles.py:2045
 msgid "Font color (Italic"
-msgstr ""
+msgstr "Couleur de police (italique)"
 
 #: ../plugin//subtitles.py:2042
 msgid "Font color (Regular)"
-msgstr ""
+msgstr "Couleur de police (normale)"
 
 #: ../plugin//subtitles.py:2050 ../plugin//subtitles.py:2181
 msgid "Font size"
-msgstr ""
+msgstr "Taille de la police"
 
 #: ../plugin//subtitles.py:2049
 msgid "Font transparency (Bold)"
-msgstr ""
+msgstr "Transparence des polices (gras)"
 
 #: ../plugin//subtitles.py:2046
 msgid "Font transparency (Italic)"
-msgstr ""
+msgstr "Transparence des polices (italique)"
 
 #: ../plugin//subtitles.py:2043
 msgid "Font transparency (Regular)"
-msgstr ""
+msgstr "Transparence des polices (normale)"
 
 #: ../plugin//subtitles.py:2047 ../plugin//subtitles.py:2180
 msgid "Font type (Bold)"
-msgstr ""
+msgstr "Type de police (gras)"
 
 #: ../plugin//subtitles.py:2044 ../plugin//subtitles.py:2179
 msgid "Font type (Italic)"
-msgstr ""
+msgstr "Type de police (italique)"
 
 #: ../plugin//subtitles.py:2041 ../plugin//subtitles.py:2178
 msgid "Font type (Regular)"
-msgstr ""
+msgstr "Type de police (normale)"
 
 #: ../plugin//subtitles.py:1992 ../plugin//subtitles.py:2546
 msgid "For more details please check search settings"
-msgstr ""
+msgstr "Pour plus de détails, veuillez vérifier les paramètres de recherche"
 
 #: ../plugin//plugin.py:77 ../plugin//subtitles.py:2205
 msgid "General settings"
-msgstr ""
+msgstr "Réglages généraux"
 
 #: ../plugin//subtitles.py:2119
 msgid "Hide delay"
-msgstr ""
+msgstr "Masquer le délai"
 
 #: ../plugin//subtitles.py:3392 ../plugin//subtitles.py:4052
 #: ../plugin//subtitles.py:4215
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
 #: ../plugin//subtitles.py:309 ../plugin//subtitles.py:4044
 msgid "Language"
-msgstr ""
+msgstr "Langue"
 
 #: ../plugin//e2_utils.py:116
 msgid "Language selection"
-msgstr ""
+msgstr "Sélection de la langue"
 
 #: ../plugin//subtitles.py:297
 msgid "List"
-msgstr ""
+msgstr "Liste"
 
 #: ../plugin//subtitles.py:297
 msgid "List + File"
-msgstr ""
+msgstr "Liste + fichier"
 
 #: ../plugin//compat.py:211 ../plugin//subtitles.py:2306
 msgid "List of storage devices"
-msgstr ""
+msgstr "Liste des périphériques de stockage"
 
 #: ../plugin//subtitles.py:4625
 msgid "Load subtitles after download"
-msgstr ""
+msgstr "Charger les sous-titres après le téléchargement"
 
 #: ../plugin//subtitles.py:4629
 msgid "Load/Save download history directory"
-msgstr ""
+msgstr "Charger/enregistrer le répertoire de l'historique de téléchargement"
 
 #: ../plugin//subtitles.py:4614
 msgid "Manual search"
-msgstr ""
+msgstr "Recherche manuelle"
 
 #: ../plugin//subtitles.py:2816
 msgid "Max history entries"
-msgstr ""
+msgstr "Entrées d'historique Max"
 
 #: ../plugin//subtitles.py:320
 msgid "Movie"
-msgstr ""
+msgstr "Film"
 
 #: ../plugin//subtitles.py:2661
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../plugin//subtitles.py:312 ../plugin//subtitles.py:3698
 msgid "Next to video"
-msgstr ""
+msgstr "À côté de la vidéo"
 
 #: ../plugin//subtitles.py:532 ../plugin//subtitles.py:534
 msgid "No external subtitles are loaded"
-msgstr ""
+msgstr "Aucun sous-titre externe n'est chargé"
 
 #: ../plugin//subtitles.py:4356
 msgid "No subtitles found :("
-msgstr ""
+msgstr "Pas de sous-titres trouvés:("
 
 #: ../plugin//subtitles.py:1900
 msgid "None"
-msgstr ""
+msgstr "Aucun"
 
 #: ../plugin//subtitles.py:2123
 msgid "PTS check delay"
-msgstr ""
+msgstr "Retard de contrôle PTS"
 
 #: ../plugin//compat.py:213 ../plugin//subtitles.py:2308
 msgid "Parent directory"
-msgstr ""
+msgstr "Répertoire parent"
 
 #: ../plugin//seekers/xbmc_subtitles.py:124
 #: ../plugin//seekers/xbmc_subtitles.py:302
 #: ../plugin//seekers/xbmc_subtitles.py:398
 msgid "Password"
-msgstr ""
+msgstr "Mot de passe"
 
 #: ../plugin//subtitles.py:3721
 msgid "Path"
-msgstr ""
+msgstr "Chemin"
 
 #: ../plugin//subtitles.py:3800
 msgid "Path doesn't exist!"
-msgstr ""
+msgstr "Le chemin n'existe pas!"
 
 #: ../plugin//subtitles.py:2112 ../plugin//subtitles.py:2210
 msgid "Pause video on opening subtitles menu"
-msgstr ""
+msgstr "Pause vidéo sur l'ouverture du menu sous-titres"
 
 #: ../plugin//subtitles.py:2121
 msgid "Player delay"
-msgstr ""
+msgstr "Retard du lecteur"
 
 #: ../plugin//subtitles.py:2051 ../plugin//subtitles.py:2182
 msgid "Position"
-msgstr ""
+msgstr "Position"
 
 #: ../plugin//subtitles.py:4612
 msgid "Preferred Movie provider"
-msgstr ""
+msgstr "Fournisseur de films préférés"
 
 #: ../plugin//subtitles.py:4613
 msgid "Preferred TV show provider"
-msgstr ""
+msgstr "Fournisseur d'émission de télévision préféré"
 
 #: ../plugin//subtitles.py:4174
 msgid "Preferred languages"
-msgstr ""
+msgstr "Langues préférées"
 
 #: ../plugin//subtitles.py:4609 ../plugin//subtitles.py:4610
 #: ../plugin//subtitles.py:4611
 msgid "Preferred subtitles language"
-msgstr ""
+msgstr "Langue préférée des sous-titres"
 
 #: ../plugin//subtitles.py:4292 ../plugin//subtitles.py:4324
 msgid "Press OK to Stop"
-msgstr ""
+msgstr "Appuyez sur OK pour arrêter"
 
 #: ../plugin//subtitles.py:309 ../plugin//subtitles.py:2662
 #: ../plugin//subtitles.py:4046 ../plugin//subtitles.py:4173
 #: ../plugin//subtitles.py:5025
 msgid "Provider"
-msgstr ""
+msgstr "Opérateur"
 
 #: ../plugin//subtitles.py:4712
 msgid "Provider name"
-msgstr ""
+msgstr "Nom du fournisseur"
 
 #: ../plugin//subtitles.py:2122
 msgid "Refresh delay"
-msgstr ""
+msgstr "Délai d'actualisation"
 
 #: ../plugin//subtitles.py:310 ../plugin//subtitles.py:311
 #: ../plugin//subtitles.py:3691 ../plugin//subtitles.py:4045
 msgid "Release"
-msgstr ""
+msgstr "Distribution"
 
 #: ../plugin//subtitles.py:2666
 msgid "Remove (file)"
-msgstr ""
+msgstr "Supprimer (fichier)"
 
 #: ../plugin//subtitles.py:2738
 msgid "Remove Entry (List)"
-msgstr ""
+msgstr "Supprimer l'entrée (liste)"
 
 #: ../plugin//subtitles.py:2736
 msgid "Remove Entry (List+File)"
-msgstr ""
+msgstr "Supprimer l'entrée (Liste + fichier)"
 
 #: ../plugin//subtitles.py:2817
 msgid "Remove action"
-msgstr ""
+msgstr "Retirer l’action"
 
 #: ../plugin//subtitles.py:3722
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: ../plugin//e2_utils.py:517 ../plugin//subtitles.py:4717
 msgid "Reset Defaults"
-msgstr ""
+msgstr "Réinitialiser par défaut"
 
 #: ../plugin//subtitles.py:4047
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: ../plugin//e2_utils.py:515 ../plugin//subtitles.py:4715
 msgid "Save"
-msgstr ""
+msgstr "Sauver"
 
 #: ../plugin//subtitles.py:3711 ../plugin//subtitles.py:3740
 msgid "Save as"
-msgstr ""
+msgstr "Enregistrer sous"
 
 #: ../plugin//subtitles.py:4627
 msgid "Save downloaded subtitles to history"
-msgstr ""
+msgstr "Enregistrer les sous-titres téléchargés à l'historique"
 
 #: ../plugin//subtitles.py:4618
 msgid "Save subtitles as"
-msgstr ""
+msgstr "Enregistrer sous-titres en tant que"
 
 #: ../plugin//subtitles.py:4619
 msgid "Save subtitles as (fallback)"
-msgstr ""
+msgstr "Enregistrer sous-titres comme (de secours)"
 
 #: ../plugin//subtitles.py:4621
 msgid "Save subtitles to"
-msgstr ""
+msgstr "Enregistrer les sous-titres sur"
 
 #: ../plugin//subtitles.py:3710 ../plugin//subtitles.py:3739
 msgid "Save to"
-msgstr ""
+msgstr "Enregistrer sous"
 
 #: ../plugin//subtitles.py:4051 ../plugin//subtitles.py:4214
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: ../plugin//plugin.py:80
 msgid "Search settings"
-msgstr ""
+msgstr "Paramètres de recherche"
 
 #: ../plugin//subtitles.py:1907
 msgid "Search subtitles"
-msgstr ""
+msgstr "Rechercher sous-titres"
 
 #: ../plugin//subtitles.py:4171 ../plugin//subtitles.py:5023
 msgid "Season"
-msgstr ""
+msgstr "Saison"
 
 #: ../plugin//subtitles.py:2824
 msgid "Select Directory"
-msgstr ""
+msgstr "Sélectionner une annonce"
 
 #: ../plugin//seekers/xbmc_subtitles.py:303
 msgid "Send and search movie hashes"
-msgstr ""
+msgstr "Envoyer et rechercher des hachages de film"
 
 #: ../plugin//subtitles.py:2667 ../plugin//subtitles.py:4053
 #: ../plugin//subtitles.py:4216
 msgid "Settings"
-msgstr ""
+msgstr "Réglages"
 
 #: ../plugin//subtitles.py:2052
 msgid "Shadow"
-msgstr ""
+msgstr "Ombre"
 
 #: ../plugin//subtitles.py:2056 ../plugin//subtitles.py:2184
 msgid "Shadow X-offset"
-msgstr ""
+msgstr "Ombre décalage X"
 
 #: ../plugin//subtitles.py:2057 ../plugin//subtitles.py:2185
 msgid "Shadow Y-offset"
-msgstr ""
+msgstr "Ombre décalage Y"
 
 #: ../plugin//subtitles.py:2060
 msgid "Shadow color"
-msgstr ""
+msgstr "Couleur d'ombre"
 
 #: ../plugin//subtitles.py:2059
 msgid "Shadow size"
-msgstr ""
+msgstr "Taille de l'ombre"
 
 #: ../plugin//subtitles.py:2054
 msgid "Shadow type"
-msgstr ""
+msgstr "Type d'ombre"
 
 #: ../plugin//subtitles.py:2116
 msgid "Show expert settings"
-msgstr ""
+msgstr "Afficher les paramètres experts"
 
 #: ../plugin//subtitles.py:1991 ../plugin//subtitles.py:2545
 msgid "Some subtitles providers are not working"
-msgstr ""
+msgstr "Certains fournisseurs de sous-titres ne fonctionnent pas"
 
 #: ../plugin//subtitles.py:4617
 msgid "Sort subtitles list by"
-msgstr ""
+msgstr "Trier la liste des sous-titres par"
 
 #: ../plugin//subtitles.py:4953 ../plugin//subtitles.py:5043
 msgid "Source title"
-msgstr ""
+msgstr "Titre de la source"
 
 #: ../plugin//subtitles.py:4951
 msgid "Source title not provided"
-msgstr ""
+msgstr "Titre de la source non fourni"
 
 #: ../plugin//subtitles.py:4714
 msgid "State"
-msgstr ""
+msgstr "État"
 
 #: ../plugin//plugin.py:144 ../plugin//plugin.py:147
 msgid "SubsSupport DVB player"
-msgstr ""
+msgstr "SubsSupport lecteur DVB"
 
 #: ../plugin//plugin.py:143 ../plugin//plugin.py:146
 msgid "SubsSupport downloader"
-msgstr ""
+msgstr "Téléchargeur de SubsSupport"
 
 #: ../plugin//plugin.py:92 ../plugin//plugin.py:142 ../plugin//plugin.py:145
 msgid "SubsSupport settings"
-msgstr ""
+msgstr "Paramètres SubsSupport"
 
 #: ../plugin//subtitles.py:2766 ../plugin//subtitles.py:2773
 msgid "Subtitle"
-msgstr ""
+msgstr "Sous-titre"
 
 #: ../plugin//subtitles.py:452 ../plugin//subtitles.py:454
 #: ../plugin//subtitles.py:457 ../plugin//subtitles.py:459
 msgid "Subtitles Delay"
-msgstr ""
+msgstr "Retard sous-titres"
 
 #: ../plugin//subtitles.py:441 ../plugin//subtitles.py:444
 #: ../plugin//subtitles.py:446 ../plugin//subtitlesdvb.py:133
@@ -607,421 +608,427 @@ msgstr ""
 #: ../plugin//subtitlesdvb.py:281 ../plugin//subtitlesdvb.py:283
 #: ../plugin//subtitlesdvb.py:285
 msgid "Subtitles FPS"
-msgstr ""
+msgstr "Sous-titres FPS"
 
 #: ../plugin//subtitlesdvb.py:131 ../plugin//subtitlesdvb.py:248
 msgid "Subtitles Position"
-msgstr ""
+msgstr "Position des sous-titres"
 
 #: ../plugin//subtitlesdvb.py:132 ../plugin//subtitlesdvb.py:262
 msgid "Subtitles Time"
-msgstr ""
+msgstr "Sous-titres temps"
 
 #: ../plugin//subtitles.py:4622
 msgid "Subtitles download path"
-msgstr ""
+msgstr "Chemin de téléchargement des sous-titres"
 
 #: ../plugin//subtitles.py:4615
 msgid "Subtitles provider timeout"
-msgstr ""
+msgstr "Délai d'expiration du fournisseur de sous-titres"
 
 #: ../plugin//subtitles.py:4146
 msgid "Subtitles search"
-msgstr ""
+msgstr "Recherche sous-titres"
 
 #: ../plugin//subtitles.py:4739
 msgid "Subtitles search settings"
-msgstr ""
+msgstr "Paramètres de recherche sous-titres"
 
 #: ../plugin//subtitles.py:2106
 msgid "Subtitles setting"
-msgstr ""
+msgstr "Réglage des sous-titres"
 
 #: ../plugin//subtitles.py:1911
 msgid "Subtitles settings"
-msgstr ""
+msgstr "Paramètres des sous-titres"
 
 #: ../plugin//subtitles.py:1913 ../plugin//subtitles.py:1915
 msgid "Subtitles settings (embedded)"
-msgstr ""
+msgstr "Paramètres des sous-titres (incorporés)"
 
 #: ../plugin//subtitles.py:4623
 msgid "Subtitles temp path"
-msgstr ""
+msgstr "Chemin temporaire des sous-titres"
 
 #: ../plugin//subtitles.py:2428
 msgid "Subtitles will be downloaded in"
-msgstr ""
+msgstr "Les sous-titres seront téléchargés dans"
 
 #: ../plugin//subtitles.py:3036
 msgid ""
 "Subtitles with this name already exist\n"
 "Do you want to overwrite them"
 msgstr ""
+"Les sous-titres avec ce nom existent déjà.\n"
+"Voulez-vous les écraser"
 
 #: ../plugin//subtitles.py:3385
 msgid "Suggestions"
-msgstr ""
+msgstr "Suggestions"
 
 #: ../plugin//subtitles.py:4713
 msgid "Supported languages"
-msgstr ""
+msgstr "Langues supportées"
 
 #: ../plugin//subtitles.py:4718
 msgid "Switch List"
-msgstr ""
+msgstr "Liste des commutateurs"
 
 #: ../plugin//subtitles.py:2120
 msgid "Sync delay"
-msgstr ""
+msgstr "Délai de synchronisation"
 
 #: ../plugin//subtitles.py:320
 msgid "TV show"
-msgstr ""
+msgstr "Émission TV"
 
 #: ../plugin//subtitles.py:3032
 msgid ""
 "There are more subtitles in unpacked archive\n"
 " please select which one do you want to use"
 msgstr ""
+"Il y a plus de sous-titres dans les archives décompressé\n"
+"s'il vous plaît sélectionner celui que vous voulez utiliser"
 
 #: ../plugin//subtitles.py:2748
 msgid "There was an error while removing subtitle, please check log"
-msgstr ""
+msgstr "Il y avait une erreur lors de la suppression des sous-titres, s'il vous plaît vérifier le journal"
 
 #: ../plugin//subtitlesdvb.py:299
 msgid "Time"
-msgstr ""
+msgstr "Heure"
 
 #: ../plugin//subtitles.py:4166 ../plugin//subtitles.py:5018
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #: ../plugin//subtitles.py:4357
 msgid "Try update(simplify) search expression and try again.."
-msgstr ""
+msgstr "Essayez de mettre à jour (simplifier) l'expression de recherche et réessayez.."
 
 #: ../plugin//subtitles.py:1917
 msgid "Turn off subtitles"
-msgstr ""
+msgstr "Désactiver les sous-titres"
 
 #: ../plugin//subtitles.py:4167 ../plugin//subtitles.py:5019
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: ../plugin//e2_utils.py:245
 msgid "Type text of picture"
-msgstr ""
+msgstr "Tapez le texte de l'image"
 
 #: ../plugin//subtitles.py:4050 ../plugin//subtitles.py:4213
 msgid "Update"
-msgstr ""
+msgstr "Mise à jour"
 
 #: ../plugin//subtitles.py:5014
 msgid "Update Search params"
-msgstr ""
+msgstr "Mise à jour des paramètres de recherche"
 
 #: ../plugin//subtitles.py:4281
 msgid ""
 "Update search parameters if not correct\n"
 " and press green button for search"
 msgstr ""
+"Mettre à jour les paramètres de recherche si non correct\n"
+"et appuyez sur le bouton vert pour la recherche"
 
 #: ../plugin//subtitles.py:4175 ../plugin//subtitles.py:5026
 msgid "Use File path"
-msgstr ""
+msgstr "Utiliser le chemin d'accès au fichier"
 
 #: ../plugin//subtitles.py:312 ../plugin//subtitles.py:3694
 #: ../plugin//subtitles.py:3696
 msgid "User defined"
-msgstr ""
+msgstr "Défini par l'utilisateur"
 
 #: ../plugin//seekers/xbmc_subtitles.py:123
 #: ../plugin//seekers/xbmc_subtitles.py:301
 #: ../plugin//seekers/xbmc_subtitles.py:397
 msgid "Username"
-msgstr ""
+msgstr "Nom d'utilisateur"
 
 #: ../plugin//subtitles.py:310 ../plugin//subtitles.py:3693
 msgid "Video filename"
-msgstr ""
+msgstr "Nom du fichier vidéo"
 
 #: ../plugin//subtitles.py:4169 ../plugin//subtitles.py:5021
 msgid "Year"
-msgstr ""
+msgstr "Année"
 
 #: ../plugin//plugin.py:124
 msgid "You have OpenPli-based image, please change embedded subtitles settings in Settings / System / Subtitles settings"
-msgstr ""
+msgstr "Vous avez une image basée sur OpenPli, s'il vous plaît modifier les paramètres sous-titres incorporés dans paramètres/système/sous-titres paramètres"
 
 #: ../plugin//subtitles.py:211
 msgid "black"
-msgstr ""
+msgstr "noir"
 
 #: ../plugin//subtitles.py:210
 msgid "blue"
-msgstr ""
+msgstr "bleu"
 
 #: ../plugin//subtitles.py:252
 msgid "border"
-msgstr ""
+msgstr "bordure"
 
 #: ../plugin//subtitles.py:199
 msgid "bottom"
-msgstr ""
+msgstr "bas"
 
 #: ../plugin//subtitles.py:1898
 msgid "cannot decode"
-msgstr ""
+msgstr "ne peut pas décoder"
 
 #: ../plugin//subtitlesdvb.py:351
 msgid "cannot sync to event, event is not available"
-msgstr ""
+msgstr "impossible de synchroniser l'événement, l'événement n'est pas disponible"
 
 #: ../plugin//subtitles.py:4452
 msgid "captcha doesn't match, try again..."
-msgstr ""
+msgstr "captcha ne correspond pas, essayez à nouveau..."
 
 #: ../plugin//subtitles.py:504
 msgid "change external subtitles status"
-msgstr ""
+msgstr "modifier l'état des sous-titres externes"
 
 #: ../plugin//subtitles.py:409 ../plugin//subtitlesdvb.py:152
 msgid "change subtitles fps"
-msgstr ""
+msgstr "modifier les sous-titres fps"
 
 #: ../plugin//subtitlesdvb.py:139
 msgid "close plugin"
-msgstr ""
+msgstr "fermer le plugin"
 
 #: ../plugin//subtitles.py:404
 msgid "decrease subtitles delay"
-msgstr ""
+msgstr "diminuer retard sous-titres"
 
 #: ../plugin//subtitles.py:4756
 msgid "disabled"
-msgstr ""
+msgstr "désactivé"
 
 #: ../plugin//subtitles.py:413
 msgid "displays this menu"
-msgstr ""
+msgstr "affiche ce menu"
 
 #: ../plugin//subtitles.py:4398
 msgid "downloading subtitles..."
-msgstr ""
+msgstr "téléchargement de sous-titres..."
 
 #: ../plugin//subtitles.py:259
 msgid "dynamic"
-msgstr ""
+msgstr "dynamique"
 
 #: ../plugin//subtitles.py:4753
 msgid "enabled"
-msgstr ""
+msgstr "activé"
 
 #: ../plugin//subtitles.py:4750
 msgid "error"
-msgstr ""
+msgstr "erreur"
 
 #: ../plugin//subtitles.py:414
 msgid "exit"
-msgstr ""
+msgstr "sortir"
 
 #: ../plugin//subtitles.py:206
 msgid "green"
-msgstr ""
+msgstr "vert"
 
 #: ../plugin//subtitles.py:205
 msgid "grey"
-msgstr ""
+msgstr "gris"
 
 #: ../plugin//subtitles.py:403
 msgid "increase subtitles delay"
-msgstr ""
+msgstr "augmenter retard sous-titres"
 
 #: ../plugin//subtitles.py:4454
 msgid "invalid credentials provided, correct them and try again"
-msgstr ""
+msgstr "informations d'identification non valides fournies, corrigez-les et réessayez"
 
 #: ../plugin//subtitles.py:401
 msgid "jump to next subtitle"
-msgstr ""
+msgstr "passer au sous-titre suivant"
 
 #: ../plugin//subtitles.py:402
 msgid "jump to previous subtitle"
-msgstr ""
+msgstr "passer au sous-titre précédent"
 
 #: ../plugin//subtitles.py:4878
 msgid "library"
-msgstr ""
+msgstr "bibliothèque"
 
 #: ../plugin//subtitles.py:4290 ../plugin//subtitles.py:4322
 msgid "loading subtitles list"
-msgstr ""
+msgstr "charger la liste des sous-titres"
 
 #: ../plugin//subtitles.py:4878
 msgid "missing"
-msgstr ""
+msgstr "manquant"
 
 #: ../plugin//subtitles.py:4165
 msgid "no"
-msgstr ""
+msgstr "non"
 
 #: ../plugin//subtitles.py:4456
 msgid "no credentials provided, set them and try again"
-msgstr ""
+msgstr "pas d'informations d'identification fournies, réglez-les et réessayez"
 
 #: ../plugin//compat.py:232 ../plugin//subtitles.py:2327
 msgid "nothing connected"
-msgstr ""
+msgstr "rien n'est connecté"
 
 #: ../plugin//subtitles.py:252
 msgid "offset"
-msgstr ""
+msgstr "décalage"
 
 #: ../plugin//subtitles.py:226
 msgid "opaque"
-msgstr ""
+msgstr "opaque"
 
 #: ../plugin//subtitles.py:444 ../plugin//subtitlesdvb.py:273
 #: ../plugin//subtitlesdvb.py:275 ../plugin//subtitlesdvb.py:277
 #: ../plugin//subtitlesdvb.py:281
 msgid "original"
-msgstr ""
+msgstr "original"
 
 #: ../plugin//subtitlesdvb.py:142
 msgid "pause subtitles playback"
-msgstr ""
+msgstr "suspendre la lecture des sous-titres"
 
 #: ../plugin//subtitlesdvb.py:141
 msgid "play/pause subtitles playback"
-msgstr ""
+msgstr "lecture/pause la lecture des sous-titres"
 
 #: ../plugin//subtitles.py:3385
 msgid "press green"
-msgstr ""
+msgstr "appuyez sur vert"
 
 #: ../plugin//subtitles.py:3392
 msgid "press red"
-msgstr ""
+msgstr "appuyez sur rouge"
 
 #: ../plugin//subtitles.py:207
 msgid "purple"
-msgstr ""
+msgstr "pourpre"
 
 #: ../plugin//subtitles.py:204
 msgid "red"
-msgstr ""
+msgstr "rouge"
 
 #: ../plugin//subtitles.py:408
 msgid "reset subtitles delay/fps"
-msgstr ""
+msgstr "réinitialiser les sous-titres délai/fps"
 
 #: ../plugin//subtitlesdvb.py:144
 msgid "restarts current subtitle"
-msgstr ""
+msgstr "redémarre le sous-titre actuel"
 
 #: ../plugin//subtitlesdvb.py:143
 msgid "resumes subtitles playback"
-msgstr ""
+msgstr "reprend la lecture des sous-titres"
 
 #: ../plugin//subtitles.py:2428
 msgid "seconds"
-msgstr ""
+msgstr "secondes"
 
 #: ../plugin//subtitles.py:5184
 msgid "settings"
-msgstr ""
+msgstr "paramètres"
 
 #: ../plugin//subtitles.py:766
 msgid "show subtitles menu"
-msgstr ""
+msgstr "afficher le menu sous-titres"
 
 #: ../plugin//subtitlesdvb.py:140
 msgid "show/hide subtitles status"
-msgstr ""
+msgstr "afficher/masquer l'état des sous-titres"
 
 #: ../plugin//subtitlesdvb.py:150
 msgid "skip previous subtitle by setting time in minutes"
-msgstr ""
+msgstr "ignorer le sous-titre précédent en réglant le temps en minutes"
 
 #: ../plugin//subtitlesdvb.py:151
 msgid "skip subtitle to current event position"
-msgstr ""
+msgstr "sauter sous-titre à la position actuelle de l'événement"
 
 #: ../plugin//subtitlesdvb.py:145
 msgid "skip to next subtitle"
-msgstr ""
+msgstr "passer au sous-titre suivant"
 
 #: ../plugin//subtitlesdvb.py:146
 msgid "skip to next subtitle (minute jump)"
-msgstr ""
+msgstr "passer au sous-titre suivant (saut de minute)"
 
 #: ../plugin//subtitlesdvb.py:147
 msgid "skip to next subtitle by setting time in minutes"
-msgstr ""
+msgstr "passer au sous-titre suivant en définissant le temps en minutes"
 
 #: ../plugin//subtitlesdvb.py:148
 msgid "skip to previous subtitle"
-msgstr ""
+msgstr "passer au sous-titre précédent"
 
 #: ../plugin//subtitlesdvb.py:149
 msgid "skip to previous subtitle (minute jump)"
-msgstr ""
+msgstr "passer au sous-titre précédent (saut de minute)"
 
 #: ../plugin//subtitles.py:259
 msgid "static"
-msgstr ""
+msgstr "statique"
 
 #: ../plugin//subtitles.py:4291 ../plugin//subtitles.py:4323
 msgid "subtitles found"
-msgstr ""
+msgstr "sous-titres trouvés"
 
 #: ../plugin//subtitles.py:197
 msgid "top"
-msgstr ""
+msgstr "haut"
 
 #: ../plugin//subtitles.py:228
 msgid "transparent"
-msgstr ""
+msgstr "transparent"
 
 #: ../plugin//subtitles.py:441 ../plugin//subtitles.py:2912
 #: ../plugin//subtitlesdvb.py:268 ../plugin//subtitlesdvb.py:295
 msgid "unknown"
-msgstr ""
+msgstr "inconnu"
 
 #: ../plugin//e2_utils.py:387
 msgid "unpack error: cannot get subname"
-msgstr ""
+msgstr "erreur de décompression: impossible d'obtenir le sous-nom"
 
 #: ../plugin//e2_utils.py:403
 msgid "unpack error: cannot open archive"
-msgstr ""
+msgstr "erreur de décompression: impossible d'ouvrir l'archive"
 
 #: ../plugin//seek.py:328
 #, python-format
 msgid "unsupported archive %s"
-msgstr ""
+msgstr "archive non prise en charge %s"
 
 #: ../plugin//plugin.py:144
 msgid "watch DVB broadcast with subtitles"
-msgstr ""
+msgstr "regarder la diffusion DVB avec sous-titres"
 
 #: ../plugin//subtitles.py:209
 msgid "white"
-msgstr ""
+msgstr "blanc"
 
 #: ../plugin//subtitles.py:2766
 msgid "will be removed from file system"
-msgstr ""
+msgstr "seront retirés du système de fichiers"
 
 #: ../plugin//subtitles.py:2773
 msgid "will be removed from list"
-msgstr ""
+msgstr "sera supprimée de la liste"
 
 #: ../plugin//subtitles.py:208
 msgid "yellow"
-msgstr ""
+msgstr "jaune"
 
 #: ../plugin//subtitles.py:4165
 msgid "yes"
-msgstr ""
+msgstr "oui"
