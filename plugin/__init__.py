@@ -4,7 +4,7 @@ __author__ = "mx3L"
 __email__ = "mx3Lmail@gmail.com"
 __copyright__ = 'Copyright (c) 2014 mx3L'
 __license__ = "GPL-v2"
-__version__ = "1.5.5"
+__version__ = "1.5.6"
 
 import gettext
 import os
