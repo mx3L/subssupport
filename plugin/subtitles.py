@@ -282,8 +282,8 @@ def initEmbeddedSettings(configsubsection):
 def initEngineSettings(configsubsection):
     configsubsection.expert = ConfigSubsection()
     configsubsection.expert.show = NoSave(ConfigYesNo(default=False))
-    configsubsection.expert.playerDelay = ConfigSelection(default="0", choices=[("%d" % i, "%d ms" % i) for i in range(0, 20000, 200)])
-    configsubsection.expert.startDelay = ConfigSelection(default="1200", choices=[("%d" % i, "%d ms" % i) for i in range(0, 100, 1500)])
+    configsubsection.expert.playerDelay = ConfigSelection(default="0", choices=[("%d" % i, "%d ms" % i) for i in range(-20000, 20000, 200)])
+    configsubsection.expert.startDelay = ConfigSelection(default="1200", choices=[("%d" % i, "%d ms" % i) for i in range(0, 1500, 100)])
     configsubsection.expert.hideDelay = ConfigSelection(default="200", choices=[("%d" % i, "%d ms" % i) for i in range(0, 1000, 50)])
     configsubsection.expert.ptsDelayCheck = ConfigSelection(default="200", choices=[("%d" % i, "%d ms" % i) for i in range(100, 1000, 100)])
     configsubsection.expert.syncDelay = ConfigSelection(default="300", choices=[("%d" % i, "%d ms" % i) for i in range(100, 1000, 100)])

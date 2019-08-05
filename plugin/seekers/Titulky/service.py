@@ -118,7 +118,7 @@ class TitulkyClient(object):
 
     def __init__(self):
         self.cookies = {}
-        self.server_url = 'http://www.titulky.com'
+        self.server_url = 'https://www.titulky.com'
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookielib.LWPCookieJar()))
         opener.addheaders = [('User-agent', 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729)')]
         urllib2.install_opener(opener)
