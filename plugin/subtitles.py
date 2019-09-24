@@ -51,7 +51,7 @@ from Screens.LocationBox import LocationBox
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Tools import Notifications
-from Tools.Directories import SCOPE_SKIN_IMAGE, SCOPE_SKIN, resolveFilename, \
+from Tools.Directories import SCOPE_CURRENT_SKIN, SCOPE_SKIN, resolveFilename, \
     fileExists
 from Tools.ISO639 import LanguageCodes
 from Tools.LoadPixmap import LoadPixmap
@@ -2218,7 +2218,7 @@ def FileEntryComponent(name, absolute=None, isDir=False):
     else:
         res.append((eListboxPythonMultiContent.TYPE_TEXT, 35, 1, 570, 30, 0, RT_HALIGN_LEFT, toString(name)))
     if isDir:
-        png = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "extensions/directory.png"))
+        png = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "extensions/directory.png"))
     else:
         png = LoadPixmap(os.path.join(os.path.dirname(__file__), 'img', 'subtitles.png'))
     if png is not None:
