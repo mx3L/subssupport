@@ -24,6 +24,7 @@ import re
 import sys
 from threading import Thread
 import traceback
+import urllib
 from twisted.internet.defer import Deferred
 from twisted.web import client
 
@@ -4026,7 +4027,7 @@ class SubsSearch(Screen):
         self.seeker = seeker
         self.searchExpression = searchTitles[0]
         self.searchTitles = searchTitles
-        self.filepath = filepath
+        self.filepath = urllib.unquote(filepath)
         self.isLocalFilepath = filepath and os.path.isfile(filepath) or False
         self.searchTitle = searchSettings.title
         self.searchType = searchSettings.type
