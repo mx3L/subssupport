@@ -4027,7 +4027,9 @@ class SubsSearch(Screen):
         self.seeker = seeker
         self.searchExpression = searchTitles[0]
         self.searchTitles = searchTitles
-        self.filepath = urllib.unquote(filepath)
+        self.filepath = filepath
+        if self.filepath:
+            self.filepath = urllib.unquote(self.filepath)
         self.isLocalFilepath = filepath and os.path.isfile(filepath) or False
         self.searchTitle = searchSettings.title
         self.searchType = searchSettings.type
