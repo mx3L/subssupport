@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
-import urllib2
+import urllib2, requests
 import re
 from ..utilities import log as _log
+
+ses = requests.Session()
 
 LANGUAGES = (
     ("Albanian", "29", "sq", "alb", "0", 30201),
@@ -88,18 +90,15 @@ def get_language_info(language):
 def log(module, msg):
     _log(module, msg.encode('utf-8'))
 
-
-def geturl(url):
-    log(__name__, "Getting url: %s" % url)
+def geturl(url1, headers =None, params = None): 
     try:
-        response = urllib2.urlopen(url)
-        content = response.read()
-        #Fix non-unicode characters in movie titles
-        strip_unicode = re.compile("([^-_a-zA-Z0-9!@#%&=,/'\";:~`\$\^\*\(\)\+\[\]\.\{\}\|\?<>\\]+|[^\s]+)")
-        content = strip_unicode.sub('', content)
-        return_url = response.geturl()
-    except:
-        log(__name__, "Failed to get url: %s" % url)
-        content = None
-        return_url = None
-    return content, return_url
+        res = ses.get(url1, headers=headers, verify=False, timeout=5)
+        print 'res.status_code',res.status_code
+        if res.status_code == 200:
+            return res.content
+        e = res.raise_for_status()
+        print('Download error', e)
+        return ''
+    except requests.exceptions.RequestException as e:
+        print('Download error', str(e))
+        return ''
