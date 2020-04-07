@@ -9,7 +9,7 @@ from SubsceneUtilities import geturl, get_language_info
 from ..utilities import log
 
 
-main_url = "http://subscene.com/"
+main_url = "https://subscene.com"
 debug_pretext = ""
 
 
@@ -24,6 +24,43 @@ seasons = seasons + ["Twenty-first", "Twenty-second", "Twenty-third", "Twenty-fo
 movie_season_pattern = ("<a href=\"(?P<link>/subtitles/[^\"]*)\">(?P<title>[^<]+)\((?P<year>\d{4})\)</a>\s+"
                         "</div>\s+<div class=\"subtle count\">\s+(?P<numsubtitles>\d+)")
 
+# Don't remove it we need it here
+subscene_languages = {
+    'Chinese BG code': 'Chinese',
+    'Brazillian Portuguese': 'Portuguese (Brazil)',
+    'Serbian': 'SerbianLatin',
+    'Ukranian': 'Ukrainian',
+    'Farsi/Persian': 'Persian'
+}
+
+def getSearchTitle(title,year=None): ## new Add
+    url='https://subscene.com/subtitles/searchbytitle?query=%s&l='%urllib.quote_plus(title)
+    data=geturl(url)
+    blocks=data.split('class="title"')
+    blocks.pop(0)
+    list1=[]
+    for block in blocks:
+        regx='''<a href="(.*?)">(.*?)</a>'''
+        try:
+            matches=re.findall(regx,block)
+            name=matches[0][1]
+            href=matches[0][0]
+            print "hrefxxx",href
+            print "yearxx",year
+            href='https://subscene.com'+href
+            if year and year=='':
+              if "/subtitles/" in href:
+                  return href
+            if not year:
+              if "/subtitles/" in href:
+                  return href
+            if year and str(year) in name:
+                if "/subtitles/" in href:
+                   print "href",href
+                   return href
+        except:
+            break
+    return 'https://subscene.com/subtitles/'+urllib.quote_plus(title) 
 
 def find_movie(content, title, year):
     url_found = None
@@ -85,7 +122,9 @@ def getallsubs(content, allowed_languages, filename="", search_string=""):
 
     subtitles = []
     h = HTMLParser.HTMLParser()
-
+    allmatches=re.finditer(subtitle_pattern, content, re.IGNORECASE | re.DOTALL)
+    print 'allmatches',allmatches
+    i=0
     for matches in re.finditer(subtitle_pattern, content, re.IGNORECASE | re.DOTALL):
         numfiles = 1
         if matches.group('numfiles') != "":
@@ -115,13 +154,16 @@ def getallsubs(content, allowed_languages, filename="", search_string=""):
                 if string.find(string.lower(subtitle_name), string.lower(search_string)) > -1:
                     subtitles.append({'rating': rating, 'filename': subtitle_name, 'sync': sync, 'link': link,
                                      'language_name':language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
+                    i=i+1
                 elif numfiles > 2:
                     subtitle_name = subtitle_name + ' ' + ("%d files" % int(matches.group('numfiles')))
                     subtitles.append({'rating': rating, 'filename': subtitle_name, 'sync': sync, 'link': link,
                                      'language_name':language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
+                    i=i+1
             else:
                 subtitles.append({'rating': rating, 'filename': subtitle_name, 'sync': sync, 'link': link,
                                  'language_name':language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
+                i=i+1
 
     subtitles.sort(key=lambda x: [not x['sync']])
     return subtitles
@@ -134,36 +176,21 @@ def prepare_search_string(s):
 
 
 def search_movie(title, year, languages, filename):
-    title = string.strip(title)
-    search_string = prepare_search_string(title)
-
-    log(__name__, "Search movie = %s" % search_string)
-    url = main_url + "/subtitles/title?q=" + urllib.quote_plus(search_string) + '&r=true'
-    content, response_url = geturl(url)
-
-    if content is not None:
-        log(__name__, "Multiple movies found, searching for the right one ...")
-        subspage_url = find_movie(content, title, year)
-        if subspage_url is not None:
-            log(__name__, "Movie found in list, getting subs ...")
-            url = main_url + subspage_url
-            content, response_url = geturl(url)
-            if content is not None:
-                return getallsubs(content, languages, filename)
-        else:
-            log(__name__, "Movie not found in list: %s" % title)
-            if string.find(string.lower(title), "&") > -1:
-                title = string.replace(title, "&", "and")
-                log(__name__, "Trying searching with replacing '&' to 'and': %s" % title)
-                subspage_url = find_movie(content, title, year)
-                if subspage_url is not None:
-                    log(__name__, "Movie found in list, getting subs ...")
-                    url = main_url + subspage_url
-                    content, response_url = geturl(url)
-                    if content is not None:
-                        return getallsubs(content, languages, filename)
-                else:
-                    log(__name__, "Movie not found in list: %s" % title)
+    try:
+        title = string.strip(title)
+        search_string = prepare_search_string(title)
+        url=getSearchTitle(search_string,year)
+        print "true url",url
+        content = geturl(url)
+        if content=='':
+           if content is None:
+               return []
+        print "content",content
+        if content !='':
+                    list=getallsubs(content, languages, filename)
+                    return list
+    except Exception as error:
+           print("error",error)
                     
 
 def search_tvshow(tvshow, season, episode, languages, filename):
@@ -195,23 +222,6 @@ def search_manual(searchstr, languages, filename):
     if content is not None:
         return getallsubs(content, languages, filename)
 
-def geturl(url):
-    log(__name__ , "%s Getting url:%s" % (debug_pretext, url))
-    try:
-        response = urllib2.urlopen(url)
-        content = response.read()
-        # Fix non-unicode charachters in movie titles
-        strip_unicode = re.compile("([^-_a-zA-Z0-9!@#%&=,/'\";:~`\$\^\*\(\)\+\[\]\.\{\}\|\?\<\>\\]+|[^\s]+)")
-        content = strip_unicode.sub('', content)
-        return_url = response.geturl()
-    except:
-        import traceback
-        traceback.print_exc()
-        log(__name__ , "%s Failed to get url:%s" % (debug_pretext, url))
-        content = None
-        return_url = None
-    return(content, return_url)
-
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack):  # standard input
     log(__name__ , "%s Search_subtitles = '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'" % 
          (debug_pretext, file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack))
@@ -223,17 +233,20 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
         lang3 = 'Persian'
     if tvshow:
         sublist = search_tvshow(tvshow, season, episode, [lang1, lang2, lang3], file_original_path)
-    elif title and year:
+    elif title:
         sublist = search_movie(title, year, [lang1, lang2, lang3], file_original_path)
     else:
-        sublist = search_manual(title, [lang1, lang2, lang3], file_original_path)
+        try:
+          sublist = search_manual(title, [lang1, lang2, lang3], file_original_path)
+        except:
+            print("error")
     return sublist, "", ""
 
 
 def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
     url = subtitles_list[pos][ "link" ]
     language = subtitles_list[pos][ "language_name" ]
-    content, response_url = geturl(url)
+    content = geturl(url)
     downloadlink_pattern = "...<a href=\"(.+?)\" rel=\"nofollow\" onclick=\"DownloadSubtitle"
     match = re.compile(downloadlink_pattern).findall(content)
     if match:
