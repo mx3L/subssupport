@@ -11,9 +11,10 @@ BASE_URL_XMLRPC = u"http://api.opensubtitles.org/xml-rpc"
 
 class OSDBServer:
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, user_agent=''):
         self.server = xmlrpclib.Server(BASE_URL_XMLRPC, verbose=0)
-        login = self.server.LogIn("", "", "en", "%s_v%s" % (__scriptname__.replace(" ", "_"), __version__))
+        #login = self.server.LogIn("", "", "en", "%s_v%s" % (__scriptname__.replace(" ", "_"), __version__))
+        login = self.server.LogIn('', '', 'en', user_agent)
         self.osdb_token = login[ "token" ]
 
     def mergesubtitles(self):
