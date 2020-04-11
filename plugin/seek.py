@@ -76,6 +76,8 @@ class SubsSeeker(object):
             provider_id = seeker.id
             default_settings = seeker.default_settings
             default_settings['enabled'] = {'type':'yesno', 'default':True, 'label':'Enabled', 'pos':-1}
+            if provider_id=='opensubtitles':
+                default_settings= {'user_agent': {'default': 'subssupportuseragent', 'type': 'text', 'pos': 0, 'label': 'User_agent'}, 'enabled': {'default': True, 'type': 'yesno', 'pos': -1, 'label': 'Enabled'}}
             if settings_provider_cls is not None:
                 settings = None
                 settings_provider = settings_provider_cls(provider_id, default_settings, settings_provider_args)

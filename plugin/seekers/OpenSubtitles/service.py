@@ -7,6 +7,8 @@ from os_utilities import OSDBServer
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack):  # standard input
     hash_search = False
+    enabled = settings_provider.getSetting("enabled")
+    user_agent = settings_provider.getSetting("user_agent")
     if len(tvshow) > 0:  # TvShow
         OS_search_string = ("%s S%.2dE%.2d" % (tvshow,
                                                int(season),
@@ -40,14 +42,14 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
         log(__name__ , "File Hash [%s]" % SubHash)
 
     log(__name__ , "Search by hash and name %s" % (os.path.basename(file_original_path),))
-    subtitles_list, msg = OSDBServer().searchsubtitles(OS_search_string, lang1, lang2, lang3, hash_search, SubHash, file_size)
+    subtitles_list, msg = OSDBServer(user_agent).searchsubtitles(OS_search_string, lang1, lang2, lang3, hash_search, SubHash, file_size)
 
     return subtitles_list, "", msg  # standard output
 
 def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
-
+    user_agent = settings_provider.getSetting("user_agent")
     destination = os.path.join(tmp_sub_dir, "%s.srt" % subtitles_list[pos][ "ID" ])
-    result = OSDBServer().download(subtitles_list[pos][ "ID" ], destination, session_id)
+    result = OSDBServer(user_agent).download(subtitles_list[pos][ "ID" ], destination, session_id)
     if not result:
         import urllib
         urllib.urlretrieve(subtitles_list[pos][ "link" ], zip_subs)
