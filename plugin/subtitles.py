@@ -2392,33 +2392,6 @@ class E2SubsSeeker(SubsSeeker):
             if p.error is not None:
                 self.providers_error = True
 
-    def downloadSubtitle(self, success_cb, error_cb, cancel_cb, selected_subtitle, subtitles_dict, settings, path=None, fname=None):
-        download_fnc = super(E2SubsSeeker, self).downloadSubtitle
-        if settings.get('ask_overwrite', True):
-            overwrite_cb = self.overwrite_cb
-        else:
-            overwrite_cb = None
-        params = (selected_subtitle, subtitles_dict, self.choice_cb, path, fname, overwrite_cb, settings)
-        download_thread = SubsDownloadThread(self.session, download_fnc, params, success_cb, error_cb, cancel_cb)
-        self.download_thread = download_thread
-        self.download_thread.start()
-
-    def _unpack_rarsub(self, rar_path, dest_dir):
-        assert self.download_thread is not None
-        assert self.download_thread.is_alive()
-        files = self.download_thread.getUnrar(rar_path, dest_dir)
-        return filter(lambda x:os.path.splitext(x)[1] in ('.srt', '.sub', 'txt'), files)
-
-    def overwrite_cb(self, subfile):
-        assert self.download_thread is not None
-        assert self.download_thread.is_alive()
-        return self.download_thread.getOverwrite(subfile)
-
-    def choice_cb(self, subfiles):
-        assert self.download_thread is not None
-        assert self.download_thread.is_alive()
-        return self.download_thread.getChoice(subfiles)
-
     def captcha_cb(self, image_path):
         assert self.download_thread is not None
         assert self.download_thread.is_alive()
@@ -2944,151 +2917,6 @@ class SubsEmbeddedSelection(Screen):
         cur = self["streams"].getCurrent()
         self.close(cur[0][:4])
 
-class SimpleObserverList(list):
-    def __init__(self, *args):
-        list.__init__(self, *args)
-        self.observer_fncs = list()
-
-    def add_observer(self, observer_fnc):
-        self.observer_fncs.append(observer_fnc)
-
-    def remove_observer(self, observer_fnc):
-        self.observer_fncs.remove(observer_fnc)
-
-    def append (self, value):
-        list.append(self, value)
-        for f in self.observer_fncs:
-            f()
-
-    def remove(self, value):
-        list.remove(self, value)
-        for f in self.observer_fncs:
-            f()
-
-class SubsDownloadThread(Thread):
-    THREADS = SimpleObserverList()
-
-    CAPTCHA_REQUEST = 0
-    DELAY_REQUEST = 1
-    FINISH_REQUEST_SUCCESS = 2
-    FINISH_REQUEST_ERROR = 3
-    OVERWRITE_REQUEST = 4
-    CHOICE_REQUEST = 5
-    UNRAR_REQUEST = 6
-
-    def __init__(self, session, fnc, params, callback, errorback, cancelback):
-        Thread.__init__(self)
-        self.session = session
-        self.fnc = fnc
-        self.params = params
-        self.callback = callback
-        self.errorback = errorback
-        self.cancelback = cancelback
-        self.cancelled = False
-        self.messageIn = Queue()
-        self.messageOut = Queue()
-        self.messagePump = ePythonMessagePump()
-        self.messagePump_conn = eConnectCallback(self.messagePump.recv_msg, self._runInMainThread)
-
-    def start(self):
-        SubsDownloadThread.THREADS.append(self)
-        Thread.start(self)
-
-    def run(self):
-        try:
-            ret = self.fnc(*self.params)
-            self.messageOut.put((self.FINISH_REQUEST_SUCCESS, ret))
-            self.messagePump.send(0)
-        except Exception:
-            exc_value, exc_traceback = sys.exc_info()[1:]
-            exc_value.tb = exc_traceback
-            self.messageOut.put((self.FINISH_REQUEST_ERROR, exc_value))
-            self.messagePump.send(0)
-
-    def _runInMainThread(self, val):
-        ret = self.messageOut.get()
-        request = ret[0]
-        if request == self.CAPTCHA_REQUEST:
-            imagePath = ret[1]
-            Captcha(self.session, self.getCaptchaCB, imagePath)
-        elif request == self.DELAY_REQUEST:
-            seconds, message = ret[1], ret[2]
-            self.session.openWithCallback(self.getDelayCB, DelayMessageBox, seconds, message)
-        elif request == self.FINISH_REQUEST_SUCCESS:
-            subFile = ret[1]
-            if self.cancelled:
-                self.cancelback()
-            else:
-                self.callback(subFile)
-            SubsDownloadThread.THREADS.remove(self)
-            del self.messagePump_conn
-            self.messagePump.stop()
-        elif request == self.FINISH_REQUEST_ERROR:
-            error = ret[1]
-            self.errorback(error)
-            SubsDownloadThread.THREADS.remove(self)
-            del self.messagePump_conn
-            self.messagePump.stop()
-        elif request == self.CHOICE_REQUEST:
-            subFiles = ret[1]
-            choiceTitle = _("There are more subtitles in unpacked archive\n please select which one do you want to use")
-            choiceList = [(os.path.basename(subfile), subfile) for subfile in subFiles]
-            self.session.openWithCallback(self.getChoiceCB, ChoiceBox, choiceTitle, choiceList)
-        elif request == self.OVERWRITE_REQUEST:
-            overwriteText = _("Subtitles with this name already exist\nDo you want to overwrite them") + "?"
-            self.session.openWithCallback(self.getOverwriteCB, MessageBox, overwriteText, MessageBox.TYPE_YESNO)
-        elif request == self.UNRAR_REQUEST:
-            rarPath = ret[1]
-            destDir = ret[2]
-            unrar(rarPath, destDir, self.getUnrarCB, self.getUnrarCB)
-
-    def getUnrar(self, subFile, destPath):
-        self.messageOut.put((self.UNRAR_REQUEST, subFile, destPath))
-        self.messagePump.send(0)
-        ret = self.messageIn.get()
-        if isinstance(ret, str):
-            raise Exception(ret)
-        return ret
-
-    def getUnrarCB(self, callback):
-        self.messageIn.put(callback)
-
-    def getOverwrite(self, subFile):
-        self.messageOut.put((self.OVERWRITE_REQUEST, subFile))
-        self.messagePump.send(0)
-        return self.messageIn.get()
-
-    def getOverwriteCB(self, callback):
-        self.messageIn.put(callback)
-
-    def getChoice(self, files):
-        self.messageOut.put((self.CHOICE_REQUEST, files))
-        self.messagePump.send(0)
-        return self.messageIn.get()
-
-    def getChoiceCB(self, selfile):
-        if selfile:
-            selfile = selfile[1]
-        if selfile is None:
-            self.cancelled = True
-        return self.messageIn.put(selfile)
-
-    def getCaptcha(self, imagePath):
-        self.messageOut.put((self.CAPTCHA_REQUEST, imagePath))
-        self.messagePump.send(0)
-        return self.messageIn.get()
-
-    def getCaptchaCB(self, word):
-        word = word or ""
-        self.messageIn.put(word)
-
-    def getDelay(self, seconds, message):
-        self.messageOut.put((self.DELAY_REQUEST, seconds, message))
-        self.messagePump.send(0)
-        return self.messageIn.get()
-
-    def getDelayCB(self, callback=None):
-        return self.messageIn.put(None)
 
 class SubsSearchProcess(object):
     processes = []
@@ -3154,19 +2982,25 @@ class SubsSearchProcess(object):
     def handleMessage(self, data):
         self.log.debug('handleMessage "%s"', data)
         if data['message'] == Messages.MESSAGE_UPDATE_CALLBACK:
-            self.updateCB(data['value'])
+            self.callbacks['updateCB'](data['value'])
+        if data['message'] == Messages.MESSAGE_OVERWRITE_CALLBACK:
+            self.callbacks['overwriteCB'](data['value'], self.write)
+        if data['message'] == Messages.MESSAGE_CHOOSE_FILE_CALLBACK:
+            self.callbacks['choosefileCB'](data['value'], self.write)
+        if data['message'] == Messages.MESSAGE_CAPTCHA_CALLBACK:
+            self.callbacks['captchaCB'](data['value'], self.write)
+        if data['message'] == Messages.MESSAGE_DELAY_CALLBACK:
+            self.callbacks['delayCB'](data['value'], self.write)
         if data['message'] == Messages.MESSAGE_FINISHED_SCRIPT:
-            self.successCB(data['value'])
+            self.callbacks['successCB'](data['value'])
         if data['message'] == Messages.MESSAGE_CANCELLED_SCRIPT:
             print 'script successfully cancelled'
         if data['message'] == Messages.MESSAGE_ERROR_SCRIPT:
-            self.errorCB(data['value'])
+            self.callbacks['errorCB'](data['value'])
 
-    def start(self, params, updateCB, successCB, errorCB):
+    def start(self, params, callbacks):
         self.processes.append(self)
-        self.updateCB = updateCB
-        self.successCB = successCB
-        self.errorCB = errorCB
+        self.callbacks = callbacks
         cmd = "python %s" % self.process_path
         self.log.debug("start - '%s'", cmd)
         self.appContainer.execute(cmd)
@@ -4090,8 +3924,14 @@ class SubsSearch(Screen):
         {
             "ok":self.cancelSearchSubs,
             "cancel":self.close,
-         })
+        })
         self["searchActions"].setEnabled(False)
+        self["downloadActions"] = ActionMap(["OkCancelActions"],
+        {
+            "ok": lambda: None,
+            "cancel": self.cancelDownloadSubs
+        })
+        self["downloadActions"].setEnabled(False)
         
         self.__contextMenu = self.session.instantiateDialog(SubsSearchContextMenu)
         self["contextMenuActions"] = ActionMap(["DirectionActions", "OkCancelActions", "MenuActions"],
@@ -4227,24 +4067,28 @@ class SubsSearch(Screen):
             self["listActions"].setEnabled(False)
             self["menuActions"].setEnabled(False)
             self["searchActions"].setEnabled(True)
+            self["downloadActions"].setEnabled(False)
             self["contextMenuActions"].setEnabled(False)
         elif self.__downloading:
             self["okCancelActions"].setEnabled(False)
             self["listActions"].setEnabled(False)
             self["menuActions"].setEnabled(False)
             self["searchActions"].setEnabled(False)
+            self["downloadActions"].setEnabled(True)
             self["contextMenuActions"].setEnabled(False)
         elif self.__contextMenu.already_shown and self.__contextMenu.shown:
             self["okCancelActions"].setEnabled(False)
             self["listActions"].setEnabled(False)
             self["menuActions"].setEnabled(False)
             self["searchActions"].setEnabled(False)
+            self["downloadActions"].setEnabled(False)
             self["contextMenuActions"].setEnabled(True)
         else:
             self["okCancelActions"].setEnabled(True)
             self["listActions"].setEnabled(True)
             self["menuActions"].setEnabled(True)
             self["searchActions"].setEnabled(False)
+            self["downloadActions"].setEnabled(False)
             self["contextMenuActions"].setEnabled(False)
 
     def detectSearchParams(self):
@@ -4323,6 +4167,11 @@ class SubsSearch(Screen):
             },
             'settings': dict((s.id, s.settings_provider.getSettingsDict()) for s in self.seeker.seekers)
         }
+        callbacks = {
+            'updateCB': searchSubsUpdate,
+            'successCB': self.searchSubsSuccess,
+            'errorCB': self.searchSubsError
+        }
         progressMessage = "%s - %d%%" % (_("loading subtitles list"), 0)
         progressMessage +="\n" + _("subtitles found") + " (%d)"% 0
         progressMessage +="\n\n" + _("Press OK to Stop")
@@ -4331,7 +4180,7 @@ class SubsSearch(Screen):
         self.updateActionMaps()
         self.updateSubsList()
         self.updateBottomMenu()
-        SubsSearchProcess().start(params, searchSubsUpdate, self.searchSubsSuccess, self.searchSubsError)
+        SubsSearchProcess().start(params, callbacks)
         
     def cancelSearchSubs(self):
         self.stopSearchSubs()
@@ -4401,12 +4250,51 @@ class SubsSearch(Screen):
         self.updateBottomMenu()
         self.message.info(_('downloading subtitles...'))
         self.__closeOnSuccess = closeOnSuccess
+
         settings = {
             "save_as": saveAs,
             "lang_to_filename":langToFilename,
             "ask_overwrite":askOverwrite
         }
-        self.seeker.downloadSubtitle(self.downloadSubsSuccess, self.downloadSubsError, self.downloadSubsCancel, subtitle, self.subtitlesDict, settings, downloadDir, fName)
+        params = { 
+            'download':{
+                'selected_subtitle': subtitle,
+                'subtitles_dict': self.subtitlesDict,
+                'path': downloadDir,
+                'filename': fName,
+                'settings': settings
+            },
+            'download_path': self.searchSettings.downloadPath.value,
+            'tmp_path': self.searchSettings.tmpPath.value,
+
+            'settings': dict((s.id, s.settings_provider.getSettingsDict()) for s in self.seeker.seekers)
+        }
+
+        def choosefileCB(subFiles, resultCB):
+            choiceTitle = _("There are more subtitles in unpacked archive\n please select which one do you want to use")
+            choiceList = [(os.path.basename(subfile), subfile) for subfile in subFiles]
+            self.session.openWithCallback(resultCB, ChoiceBox, choiceTitle, choiceList)
+
+        def overwriteCB(subfile, resultCB):
+            overwriteText = _("Subtitles with this name already exist\nDo you want to overwrite them") + "?"
+            self.session.openWithCallback(resultCB, MessageBox, overwriteText, MessageBox.TYPE_YESNO)
+
+        def captchaCB(imagePath, resultCB):
+            Captcha(self.session, resultCB, imagePath)
+
+        def delayCB(seconds, resultCB):
+            message = _("Subtitles will be downloaded in") + " " + str(seconds) + " " + _("seconds")
+            self.session.openWithCallback(resultCB, DelayMessageBox, seconds, message)
+
+        callbacks = {
+            'choosefileCB': choosefileCB,
+            'captchaCB': captchaCB,
+            'overwriteCB': overwriteCB,
+            'delayCB': delayCB,
+            'successCB': self.downloadSubsSuccess,
+            'errorCB': self.downloadSubsError,
+        }
+        SubsSearchProcess().start(params, callbacks)
 
     def downloadSubsSuccess(self, subFile):
         print '[SubsSearch] download success %s' % toString(subFile)
@@ -4417,7 +4305,13 @@ class SubsSearch(Screen):
             "fpath": toUnicode(subFile),
         }
         if self.searchSettings.downloadHistory.enabled.value:
-            fpath = os.path.join(self.searchSettings.downloadHistory.path.value, 'hsubtitles.json')
+            downloadHistoryDir = self.searchSettings.downloadHistory.path.value
+            if not os.path.isdir(downloadHistoryDir):
+                try:
+                    os.makedirs(downloadHistoryDir)
+                except:
+                    pass
+            fpath = os.path.join(downloadHistoryDir, 'hsubtitles.json')
             try:
                 subtitles = json.load(open(fpath,"r"))
             except Exception as e:
@@ -4450,24 +4344,22 @@ class SubsSearch(Screen):
         del self.__downloadingSubtitle
         self.updateBottomMenu()
         self.updateActionMaps()
+
         errorMessageFormat = "[{0}]: {1}"
-        if isinstance(e, SubtitlesDownloadError):
-            if e.code == SubtitlesErrors.CAPTCHA_RETYPE_ERROR:
-                self.message.error(errorMessageFormat.format(e.provider, _("captcha doesn't match, try again...")), 4000)
-            elif e.code == SubtitlesErrors.INVALID_CREDENTIALS_ERROR:
-                self.message.error(errorMessageFormat.format(e.provider, _("invalid credentials provided, correct them and try again")), 4000)
-            elif e.code == SubtitlesErrors.NO_CREDENTIALS_ERROR:
-                self.message.error(errorMessageFormat.format(e.provider, _("no credentials provided, set them and try again")), 4000)
-            else:
-                self.message.error(str(e), 4000)
+        if e['error_code'] == SubtitlesErrors.CAPTCHA_RETYPE_ERROR:
+            self.message.error(errorMessageFormat.format(e['provider'], _("captcha doesn't match, try again...")), 4000)
+        elif e['error_code'] == SubtitlesErrors.INVALID_CREDENTIALS_ERROR:
+            self.message.error(errorMessageFormat.format(e.provider, _("invalid credentials provided, correct them and try again")), 4000)
+        elif e['error_code'] == SubtitlesErrors.NO_CREDENTIALS_ERROR:
+            self.message.error(errorMessageFormat.format(e.provider, _("no credentials provided, set them and try again")), 4000)
         else:
-            print "".join(traceback.format_tb(e.tb))
-            self.message.error(str(e), 4000)
+            self.message.error(_("download error ocurred, for details see /tmp/subssearch.log"), 4000)
             
-    def downloadSubsCancel(self):
+    def cancelDownloadSubs(self):
         print '[SubsSearch] download cancelled'
         self.__downloading = False
         del self.__downloadingSubtitle
+        self.stopSearchSubs()
         self.updateBottomMenu()
         self.updateActionMaps()
         self.message.hide()

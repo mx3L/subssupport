@@ -132,7 +132,7 @@ class BaseSeeker(object):
             self.log.error("timeout error occured: %s" % (str(e)))
             e = SubtitlesSearchError(SubtitlesErrors.TIMEOUT_ERROR, "timeout!")
             e.provider = self.id
-            raise e
+            raise 
         except SubtitlesSearchError as e:
             self.log.error("search error occured: %s" % str(e))
             e.provider = self.id
@@ -153,6 +153,7 @@ class BaseSeeker(object):
                 'tvshow':tvshow,
                 'season':season,
                 'episode':episode}
+        subtitles.setdefault('list', [])
         self.log.info("search finished, found %d subtitles in %.2fs" % (len(subtitles['list']), subtitles['time']))
         return subtitles
 
@@ -175,7 +176,7 @@ class BaseSeeker(object):
 
         raises SubtitlesDownloadError
         """
-        self.log.info("download - selected_subtitle: %s,  path: %s" % (toString(selected_subtitle['filename']), toString(path)))
+        self.log.info("download - selected_subtitle: %s, path: %s" % (toString(selected_subtitle['filename']), toString(path)))
         try:
             compressed, lang, filepath = self._download(subtitles, selected_subtitle, toString(path))
         except SubtitlesDownloadError as e:
@@ -191,7 +192,7 @@ class BaseSeeker(object):
             err.wrapped_error = exc_value
             raise err
 
-        self.log.info("download finished,  compressed: %s, lang: %s, filepath:%s" % (toString(compressed), toString(lang), toString(filepath)))
+        self.log.info("download finished, compressed: %s, lang: %s, filepath:%s" % (toString(compressed), toString(lang), toString(filepath)))
         return compressed, lang, filepath
 
 
