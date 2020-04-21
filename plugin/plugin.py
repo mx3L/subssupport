@@ -33,16 +33,16 @@ def openSubsSupportSettings(session, **kwargs):
 class SubsSupportSettings(Screen):
     if isFullHD():
         skin = """
-            <screen position="center,center" size="550,300">
-                <widget source="menuList" render="Listbox" scrollbarMode="showOnDemand" position="10,10" size="530,280" zPosition="3" transparent="1" >
+            <screen position="center,center" size="710,378">
+                <widget source="menuList" render="Listbox" scrollbarMode="showOnDemand" position="10,10" size="692,362" zPosition="3" transparent="1" >
                     <convert type="TemplatedMultiContent">
                         {"templates":
-                            {"default": (36, [
-                                MultiContentEntryText(pos=(0, 0), size=(530, 36), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=0, color=0xFFFFFF)
+                            {"default": (50, [
+                                MultiContentEntryText(pos=(0, 0), size=(530, 45), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=0, color=0xFFFFFF)
                             ], True, "showOnDemand"),
                             },
-                        "fonts": [gFont("Regular", 31)],
-                        "itemHeight": 36
+                        "fonts": [gFont("Regular", 38)],
+                        "itemHeight": 50
                         }
                     </convert>
                 </widget>
