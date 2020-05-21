@@ -49,7 +49,7 @@ Architecture: all
 Section: extra
 Priority: optional
 Maintainer: mxfitsat@gmail.com
-Recommends: python-xmlrpc, unrar, python-compression, python-codecs, python-zlib, python-difflib
+Recommends: python-xmlrpc, unrar, python-compression, python-codecs, python-zlib, python-difflib, python-requests
 Homepage: https://code.google.com/p/mediaplayer2-for-sh4/
 Description: Enigma2 subtitles support library  $VER
 EOF
@@ -126,7 +126,7 @@ cp -rp ${S}/plugin/* ${P}${PLUGINPATH}
 mkdir -p ${P}/var/lib/subssupport
 
 cd ./locale/
-languages=($(ls *.po | gsed 's/\.po//'))
+languages=($(ls *.po | sed 's/\.po//'))
 cd ..
 
 for lang in "${languages[@]}" ; do \
@@ -188,7 +188,7 @@ cp -p ${DP}/Python-2.7/Lib/encodings/mac_greek.py ${P}/tmp/subssupport/python2.7
 cp -p ${DP}/Python-2.7/Lib/encodings/mac_roman.py ${P}/tmp/subssupport/python2.7/mac_roman.py
 cp -p ${DP}/Python-2.7/Lib/encodings/mac_turkish.py ${P}/tmp/subssupport/python2.7/mac_turkish.py
 
-tar -C ${P} -cz --format=gnu -f ${B}/data.tar.gz . --exclude=CONTROL
+tar -C ${P} -cz --format=gnu --exclude=CONTROL -f ${B}/data.tar.gz .
 tar -C ${P}/CONTROL -cz --format=gnu -f ${B}/control.tar.gz .
 
 echo "2.0" > ${B}/debian-binary
