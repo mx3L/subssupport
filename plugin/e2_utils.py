@@ -37,7 +37,7 @@ from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Directories import fileExists, SCOPE_SKIN, resolveFilename
 
-from compat import LanguageEntryComponent
+from compat import LanguageEntryComponent, eConnectCallback
 from enigma import addFont, ePicLoad, eEnv, getDesktop
 from utils import toString
 
