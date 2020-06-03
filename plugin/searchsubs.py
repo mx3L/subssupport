@@ -53,7 +53,7 @@ def overwriteFileCB(*args):
     return recieve()
 
 def scriptError(e):
-    from seekers import SubtitlesErrors, BaseSubtitlesError
+    from seekers.seeker import SubtitlesErrors, BaseSubtitlesError
     if isinstance(e, BaseSubtitlesError):
         send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': e.code, 'provider': e.provider})
     else:
