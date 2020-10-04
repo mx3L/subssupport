@@ -1,0 +1,1045 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-31 16:02+0100\n"
+"PO-Revision-Date: 2020-10-02 15:59+0200\n"
+"Last-Translator: Frenske <voorzitter@openpli.org>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../plugin//subtitles.py:4620
+msgid "Add subtitle's language to filename"
+msgstr "Voeg de ondertiteltaal toe aan het bestand"
+
+#: ../plugin//subtitles.py:306 ../plugin//subtitles.py:307
+#: ../plugin//subtitles.py:324 ../plugin//subtitles.py:3634
+#: ../plugin//subtitles.py:3644 ../plugin//subtitles.py:3649
+msgid "All"
+msgstr "Alles"
+
+#: ../plugin//subtitles.py:4624
+msgid "Always ask before overwriting existing subtitles"
+msgstr "Mogen de huidige ondertitels overschreven worden"
+
+#: ../plugin//subtitles.py:3712 ../plugin//subtitles.py:3742
+msgid "Append language to filename"
+msgstr "Voeg de taal aan de bestandsnaam toe"
+
+#: ../plugin//subtitles.py:2818
+msgid "Ask on remove action"
+msgstr "Vraag om een verwijdering te bevestigen"
+
+#: ../plugin//subtitlesdvb.py:37
+msgid "Auto sync to current event"
+msgstr "Automatisch synchroniseren met het huidige programma"
+
+#: ../plugin//subtitles.py:2061
+msgid "Background"
+msgstr "Achtergrond"
+
+#: ../plugin//subtitles.py:2065
+msgid "Background X-offset"
+msgstr "Achtergrond X-offset"
+
+#: ../plugin//subtitles.py:2066
+msgid "Background Y-offset"
+msgstr "Achtergrond Y-offset"
+
+#: ../plugin//subtitles.py:2067
+msgid "Background color"
+msgstr "Achtergrondkleur"
+
+#: ../plugin//subtitles.py:2068
+msgid "Background transparency"
+msgstr "Transparantie van de achtergrond"
+
+#: ../plugin//subtitles.py:2063
+msgid "Background type"
+msgstr "Type achtergrond"
+
+#: ../plugin//e2_utils.py:516 ../plugin//subtitles.py:4716
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: ../plugin//subtitles.py:1070 ../plugin//subtitlesdvb.py:63
+msgid "Cannot decode subtitles. Try another encoding group"
+msgstr "Kan de ondertitels niet decoderen. Probeer een andere encoding"
+
+#: ../plugin//subtitles.py:1066 ../plugin//subtitlesdvb.py:61
+msgid "Cannot load subtitles. Invalid path"
+msgstr "De ondertitels kunnen niet worden geladen. Ongeldig pad"
+
+#: ../plugin//subtitles.py:1078 ../plugin//subtitlesdvb.py:67
+msgid "Cannot parse subtitles. Invalid subtitles format"
+msgstr "Kan ondertitels niet ontleden. Ongeldig ondertitelformaat"
+
+#: ../plugin//subtitles.py:1074 ../plugin//subtitlesdvb.py:65
+msgid "Cannot parse subtitles. Not supported subtitles format"
+msgstr ""
+"Kan de ondertitels niet ontleden. Ondertitelformaat is niet ondersteund"
+
+#: ../plugin//subtitles.py:4433
+msgid "Cannot save download history, for details look in log"
+msgstr "Kan de downloadgeschiedenis niet opslaan, kijk voor details in het log"
+
+#: ../plugin//subtitles.py:1910
+msgid "Change encoding"
+msgstr "Wijzig de codering"
+
+#: ../plugin//plugin.py:142
+msgid "Change subssupport settings"
+msgstr "Wijzig de instellingen van de applicatie"
+
+#: ../plugin//subtitles.py:4616
+msgid "Check search parameters before subtitles search"
+msgstr "Check de zoekparameters voordat u gaat zoeken"
+
+#: ../plugin//subtitles.py:2504
+msgid "Choose Subtitles"
+msgstr "Kies de gewenste ondertitel vanuit de lijst."
+
+#: ../plugin//subtitles.py:2358
+msgid "Choose from downloaded subtitles"
+msgstr "Kies uit de gedownloade ondertitels"
+
+#: ../plugin//subtitles.py:2353
+msgid "Choose from embedded subtitles"
+msgstr "Kies vanuit de ingebakken ondertitels"
+
+#: ../plugin//subtitles.py:2363
+msgid "Choose from web subtitles"
+msgstr "Zoek direct vanaf het internet"
+
+#: ../plugin//subtitles.py:1905 ../plugin//subtitles.py:2878
+msgid "Choose subtitles"
+msgstr "Kies de ondertitels"
+
+#: ../plugin//subtitles.py:2183
+msgid "Color"
+msgstr "Kleur"
+
+#: ../plugin//subtitles.py:1855
+msgid "Currently choosed subtitles"
+msgstr "Huidig gekozen ondertitels"
+
+#: ../plugin//plugin.py:81 ../plugin//subtitlesdvb.py:33
+msgid "DVB player settings"
+msgstr "Instellingen DVD player"
+
+#: ../plugin//subtitles.py:310 ../plugin//subtitles.py:311
+msgid "Default"
+msgstr "Standaard"
+
+#: ../plugin//subtitles.py:2767 ../plugin//subtitles.py:2774
+msgid "Do you want to proceed?"
+msgstr "Wilt u verdergaan?"
+
+#: ../plugin//subtitles.py:1994 ../plugin//subtitles.py:2548
+msgid "Do you want to show this message again?"
+msgstr "Wilt u deze opmerking opnieuw zien?"
+
+#: ../plugin//subtitles.py:4482
+msgid "Download (more...)"
+msgstr "Downloaden (meer...)"
+
+#: ../plugin//subtitles.py:4481
+msgid "Download (next to video)"
+msgstr "Downloaden (naast de video)"
+
+#: ../plugin//subtitles.py:4480
+msgid "Download (user defined)"
+msgstr "Download (gebruiker gedefinieerd)"
+
+#: ../plugin//subtitles.py:4487
+msgid "Download and Load (more...)"
+msgstr "Downloaden en Laden (meer...)"
+
+#: ../plugin//subtitles.py:4486
+msgid "Download and Load (next to video)"
+msgstr "Downloaden en Laden (naast de video)"
+
+#: ../plugin//subtitles.py:4485
+msgid "Download and Load (user defined) "
+msgstr "Download en Laad (gebruiker gedefinieerd) "
+
+#: ../plugin//subtitles.py:2663
+msgid "Download date"
+msgstr "Download datum"
+
+#: ../plugin//subtitles.py:3746
+msgid "Download options"
+msgstr "Download opties"
+
+#: ../plugin//plugin.py:143
+msgid "Download subtitles for your videos"
+msgstr "Download ondertitels voor uw video's"
+
+#: ../plugin//subtitles.py:2703
+msgid "Downloaded Subtitles"
+msgstr "Download Ondertitels"
+
+#: ../plugin//subtitles.py:2811
+msgid "Downloaded Subtitles - Settings"
+msgstr "Download Ondertitels - Instellingen"
+
+#: ../plugin//subtitlesdvb.py:312
+msgid "Duration"
+msgstr "Duur"
+
+#: ../plugin//subtitles.py:3783
+msgid "Edit Filename"
+msgstr "Wijzig de bestandsnaam"
+
+#: ../plugin//subtitles.py:3791
+msgid "Edit download path"
+msgstr "Wijzig het download path"
+
+#: ../plugin//subtitles.py:1884
+msgid "Embedded Subtitles"
+msgstr "Ingebakken Ondertitels"
+
+#: ../plugin//plugin.py:79 ../plugin//subtitles.py:2189
+msgid "Embedded subtitles settings"
+msgstr "Instellingen embedded ondertitels"
+
+#: ../plugin//subtitles.py:2115 ../plugin//subtitles.py:2211
+msgid "Encoding"
+msgstr "Codering"
+
+#: ../plugin//subtitles.py:1895 ../plugin//subtitles.py:1898
+msgid "Encoding:"
+msgstr "Codering:"
+
+#: ../plugin//subtitles.py:2732
+msgid "Entries count:"
+msgstr "Tel het aantal:"
+
+#: ../plugin//subtitles.py:4172 ../plugin//subtitles.py:5024
+msgid "Episode"
+msgstr "Episode"
+
+#: ../plugin//subtitlesdvb.py:136 ../plugin//subtitlesdvb.py:314
+msgid "Event Duration"
+msgstr "Duur van het programma"
+
+#: ../plugin//subtitlesdvb.py:134
+msgid "Event Name"
+msgstr "Naam van het programma"
+
+#: ../plugin//subtitlesdvb.py:135 ../plugin//subtitlesdvb.py:301
+msgid "Event Time"
+msgstr "Programmatijd"
+
+#: ../plugin//subtitles.py:2072
+msgid "External Subtitles settings"
+msgstr "Instellingen externe Ondertitels"
+
+#: ../plugin//plugin.py:78
+msgid "External subtitles settings"
+msgstr "Instellingen externe ondertitels"
+
+#: ../plugin//subtitles.py:3720
+msgid "Filename"
+msgstr "Bestandsnaam"
+
+#: ../plugin//subtitles.py:3796
+msgid "Filename cannot be empty!"
+msgstr "Bestandsnaam kan niet leeg zijn!"
+
+#: ../plugin//subtitles.py:2048
+msgid "Font color (Bold)"
+msgstr "Lettertype, kleur (Bold)"
+
+#: ../plugin//subtitles.py:2045
+msgid "Font color (Italic"
+msgstr "Lettertype, kleur (Italic)"
+
+#: ../plugin//subtitles.py:2042
+msgid "Font color (Regular)"
+msgstr "Lettertype, kleur (Standaard)"
+
+#: ../plugin//subtitles.py:2050 ../plugin//subtitles.py:2181
+msgid "Font size"
+msgstr "Grootte van het lettertype"
+
+#: ../plugin//subtitles.py:2049
+msgid "Font transparency (Bold)"
+msgstr "Lettertype, transparantie (Bold)"
+
+#: ../plugin//subtitles.py:2046
+msgid "Font transparency (Italic)"
+msgstr "Lettertype, transparantie (Italic)"
+
+#: ../plugin//subtitles.py:2043
+msgid "Font transparency (Regular)"
+msgstr "Lettertype, transparantie (Standaard)"
+
+#: ../plugin//subtitles.py:2047 ../plugin//subtitles.py:2180
+msgid "Font type (Bold)"
+msgstr "Lettertype (Bold)"
+
+#: ../plugin//subtitles.py:2044 ../plugin//subtitles.py:2179
+msgid "Font type (Italic)"
+msgstr "Lettertype (Italic)"
+
+#: ../plugin//subtitles.py:2041 ../plugin//subtitles.py:2178
+msgid "Font type (Regular)"
+msgstr "Lettertype (Standaard)"
+
+#: ../plugin//subtitles.py:1992 ../plugin//subtitles.py:2546
+msgid "For more details please check search settings"
+msgstr "Raadpleeg de zoekinstellingen voor meer informatie"
+
+#: ../plugin//plugin.py:77 ../plugin//subtitles.py:2205
+msgid "General settings"
+msgstr "Standaardinstellingen"
+
+#: ../plugin//subtitles.py:2119
+msgid "Hide delay"
+msgstr "Verberg de vertraging"
+
+#: ../plugin//subtitles.py:3392 ../plugin//subtitles.py:4052
+#: ../plugin//subtitles.py:4215
+msgid "History"
+msgstr "Historie"
+
+#: ../plugin//subtitles.py:309 ../plugin//subtitles.py:4044
+msgid "Language"
+msgstr "Taal"
+
+#: ../plugin//e2_utils.py:116
+msgid "Language selection"
+msgstr "Taal selectie"
+
+#: ../plugin//subtitles.py:297
+msgid "List"
+msgstr "Lijst"
+
+#: ../plugin//subtitles.py:297
+msgid "List + File"
+msgstr "Lijst + Bestand"
+
+#: ../plugin//compat.py:211 ../plugin//subtitles.py:2306
+msgid "List of storage devices"
+msgstr "Overzicht van opslagmedia"
+
+#: ../plugin//subtitles.py:4625
+msgid "Load subtitles after download"
+msgstr "Laad de ondertitels na het downloaden"
+
+#: ../plugin//subtitles.py:4629
+msgid "Load/Save download history directory"
+msgstr "Locatie van de gedownloade bestanden"
+
+#: ../plugin//subtitles.py:4614
+msgid "Manual search"
+msgstr "Handmatig zoeken"
+
+#: ../plugin//subtitles.py:2816
+msgid "Max history entries"
+msgstr "Max. aantal opgeslagen opdrachten"
+
+#: ../plugin//subtitles.py:320
+msgid "Movie"
+msgstr "Film"
+
+#: ../plugin//subtitles.py:2661
+msgid "Name"
+msgstr "Naam"
+
+#: ../plugin//subtitles.py:312 ../plugin//subtitles.py:3698
+msgid "Next to video"
+msgstr "Naast de video"
+
+#: ../plugin//subtitles.py:532 ../plugin//subtitles.py:534
+msgid "No external subtitles are loaded"
+msgstr "Er zijn geen externe ondertitels geladen"
+
+#: ../plugin//subtitles.py:4356
+msgid "No subtitles found :("
+msgstr "Er zijn geen ondertitels gevonden."
+
+#: ../plugin//subtitles.py:1900
+msgid "None"
+msgstr "Geen"
+
+#: ../plugin//subtitles.py:2123
+msgid "PTS check delay"
+msgstr "Vertraging van de PTS check"
+
+#: ../plugin//compat.py:213 ../plugin//subtitles.py:2308
+msgid "Parent directory"
+msgstr "Hoofddirectory"
+
+#: ../plugin//seekers/xbmc_subtitles.py:124
+#: ../plugin//seekers/xbmc_subtitles.py:302
+#: ../plugin//seekers/xbmc_subtitles.py:398
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: ../plugin//subtitles.py:3721
+msgid "Path"
+msgstr "Path"
+
+#: ../plugin//subtitles.py:3800
+msgid "Path doesn't exist!"
+msgstr "Path bestaat niet!"
+
+#: ../plugin//subtitles.py:2112 ../plugin//subtitles.py:2210
+msgid "Pause video on opening subtitles menu"
+msgstr "Pauzeer de film bij het openen van het ondertitelmenu"
+
+#: ../plugin//subtitles.py:2121
+msgid "Player delay"
+msgstr "Vertraging van de speler"
+
+#: ../plugin//subtitles.py:2051 ../plugin//subtitles.py:2182
+msgid "Position"
+msgstr "Positie"
+
+#: ../plugin//subtitles.py:4612
+msgid "Preferred Movie provider"
+msgstr "Voorkeur Filmprovider"
+
+#: ../plugin//subtitles.py:4613
+msgid "Preferred TV show provider"
+msgstr "Voorkeursprovider TV programma's"
+
+#: ../plugin//subtitles.py:4174
+msgid "Preferred languages"
+msgstr "Voorkeurstalen"
+
+#: ../plugin//subtitles.py:4609 ../plugin//subtitles.py:4610
+#: ../plugin//subtitles.py:4611
+msgid "Preferred subtitles language"
+msgstr "Voorkeurstaal ondertitels"
+
+#: ../plugin//subtitles.py:4292 ../plugin//subtitles.py:4324
+msgid "Press OK to Stop"
+msgstr "Druk Ok om te stoppen"
+
+#: ../plugin//subtitles.py:309 ../plugin//subtitles.py:2662
+#: ../plugin//subtitles.py:4046 ../plugin//subtitles.py:4173
+#: ../plugin//subtitles.py:5025
+msgid "Provider"
+msgstr "Provider"
+
+#: ../plugin//subtitles.py:4712
+msgid "Provider name"
+msgstr "Naam van de Provider"
+
+#: ../plugin//subtitles.py:2122
+msgid "Refresh delay"
+msgstr "Verversingsvertraging"
+
+#: ../plugin//subtitles.py:310 ../plugin//subtitles.py:311
+#: ../plugin//subtitles.py:3691 ../plugin//subtitles.py:4045
+msgid "Release"
+msgstr "Release"
+
+#: ../plugin//subtitles.py:2666
+msgid "Remove (file)"
+msgstr "Verwijder (bestand)"
+
+#: ../plugin//subtitles.py:2738
+msgid "Remove Entry (List)"
+msgstr "Verwijder item (Lijst)"
+
+#: ../plugin//subtitles.py:2736
+msgid "Remove Entry (List+File)"
+msgstr "Verwijder item (Lijst + Bestand)"
+
+#: ../plugin//subtitles.py:2817
+msgid "Remove action"
+msgstr "Verwijder de actie"
+
+#: ../plugin//subtitles.py:3722
+msgid "Reset"
+msgstr "Reset"
+
+#: ../plugin//e2_utils.py:517 ../plugin//subtitles.py:4717
+msgid "Reset Defaults"
+msgstr "Reset naar standaard"
+
+#: ../plugin//subtitles.py:4047
+msgid "S"
+msgstr "S"
+
+#: ../plugin//e2_utils.py:515 ../plugin//subtitles.py:4715
+msgid "Save"
+msgstr "Sla op"
+
+#: ../plugin//subtitles.py:3711 ../plugin//subtitles.py:3740
+msgid "Save as"
+msgstr "Sla op als"
+
+#: ../plugin//subtitles.py:4627
+msgid "Save downloaded subtitles to history"
+msgstr "Sla de gedownloade ondertitels in de historie op"
+
+#: ../plugin//subtitles.py:4618
+msgid "Save subtitles as"
+msgstr "Sla de ondertitels op als"
+
+#: ../plugin//subtitles.py:4619
+msgid "Save subtitles as (fallback)"
+msgstr "Sla de ondertitels op als (reserve)"
+
+#: ../plugin//subtitles.py:4621
+msgid "Save subtitles to"
+msgstr "Sla de ondertitels op naar"
+
+#: ../plugin//subtitles.py:3710 ../plugin//subtitles.py:3739
+msgid "Save to"
+msgstr "Sla op naar"
+
+#: ../plugin//subtitles.py:4051 ../plugin//subtitles.py:4214
+msgid "Search"
+msgstr "Zoeken"
+
+#: ../plugin//plugin.py:80
+msgid "Search settings"
+msgstr "Zoekinstellingen"
+
+#: ../plugin//subtitles.py:1907
+msgid "Search subtitles"
+msgstr "Zoek ondertitels"
+
+#: ../plugin//subtitles.py:4171 ../plugin//subtitles.py:5023
+msgid "Season"
+msgstr "Seizoen"
+
+#: ../plugin//subtitles.py:2824
+msgid "Select Directory"
+msgstr "Kies de directory"
+
+#: ../plugin//seekers/xbmc_subtitles.py:303
+msgid "Send and search movie hashes"
+msgstr "Verzend en stuur de filmhashes"
+
+#: ../plugin//subtitles.py:2667 ../plugin//subtitles.py:4053
+#: ../plugin//subtitles.py:4216
+msgid "Settings"
+msgstr "Instellingen"
+
+#: ../plugin//subtitles.py:2052
+msgid "Shadow"
+msgstr "Schaduw"
+
+#: ../plugin//subtitles.py:2056 ../plugin//subtitles.py:2184
+msgid "Shadow X-offset"
+msgstr "Schaduw X-offset"
+
+#: ../plugin//subtitles.py:2057 ../plugin//subtitles.py:2185
+msgid "Shadow Y-offset"
+msgstr "Schaduw Y-offset"
+
+#: ../plugin//subtitles.py:2060
+msgid "Shadow color"
+msgstr "Schaduw, kleur"
+
+#: ../plugin//subtitles.py:2059
+msgid "Shadow size"
+msgstr "Schaduw, grootte"
+
+#: ../plugin//subtitles.py:2054
+msgid "Shadow type"
+msgstr "Schaduw, type"
+
+#: ../plugin//subtitles.py:2116
+msgid "Show expert settings"
+msgstr "Toon de uitgebreide instellingen"
+
+#: ../plugin//subtitles.py:1991 ../plugin//subtitles.py:2545
+msgid "Some subtitles providers are not working"
+msgstr "Enkele providers van ondertitels functioneren niet"
+
+#: ../plugin//subtitles.py:4617
+msgid "Sort subtitles list by"
+msgstr "Sorteer de list van ondertitels op"
+
+#: ../plugin//subtitles.py:4953 ../plugin//subtitles.py:5043
+msgid "Source title"
+msgstr "Bron van de titel"
+
+#: ../plugin//subtitles.py:4951
+msgid "Source title not provided"
+msgstr "Bron van de titel niet bekend"
+
+#: ../plugin//subtitles.py:4714
+msgid "State"
+msgstr "Status"
+
+#: ../plugin//plugin.py:144 ../plugin//plugin.py:147
+msgid "SubsSupport DVB player"
+msgstr "SubsSupport DVD speler"
+
+#: ../plugin//plugin.py:143 ../plugin//plugin.py:146
+msgid "SubsSupport downloader"
+msgstr "SubsSupport downloader"
+
+#: ../plugin//plugin.py:92 ../plugin//plugin.py:142 ../plugin//plugin.py:145
+msgid "SubsSupport settings"
+msgstr "SubsSupport instellingen"
+
+#: ../plugin//subtitles.py:2766 ../plugin//subtitles.py:2773
+msgid "Subtitle"
+msgstr "Ondertitel"
+
+#: ../plugin//subtitles.py:452 ../plugin//subtitles.py:454
+#: ../plugin//subtitles.py:457 ../plugin//subtitles.py:459
+msgid "Subtitles Delay"
+msgstr "Vertraging van de ondertitels"
+
+#: ../plugin//subtitles.py:441 ../plugin//subtitles.py:444
+#: ../plugin//subtitles.py:446 ../plugin//subtitlesdvb.py:133
+#: ../plugin//subtitlesdvb.py:268 ../plugin//subtitlesdvb.py:273
+#: ../plugin//subtitlesdvb.py:275 ../plugin//subtitlesdvb.py:277
+#: ../plugin//subtitlesdvb.py:281 ../plugin//subtitlesdvb.py:283
+#: ../plugin//subtitlesdvb.py:285
+msgid "Subtitles FPS"
+msgstr "FPS van de ondertitels"
+
+#: ../plugin//subtitlesdvb.py:131 ../plugin//subtitlesdvb.py:248
+msgid "Subtitles Position"
+msgstr "Positie van de ondertitels"
+
+#: ../plugin//subtitlesdvb.py:132 ../plugin//subtitlesdvb.py:262
+msgid "Subtitles Time"
+msgstr "Tijd van de ondertitels"
+
+#: ../plugin//subtitles.py:4622
+msgid "Subtitles download path"
+msgstr "Ondertitels download path"
+
+#: ../plugin//subtitles.py:4615
+msgid "Subtitles provider timeout"
+msgstr "Ondertitels aanbieder time-out"
+
+#: ../plugin//subtitles.py:4146
+msgid "Subtitles search"
+msgstr "Zoek de ondertitels"
+
+#: ../plugin//subtitles.py:4739
+msgid "Subtitles search settings"
+msgstr "Zoekinstellingen van de ondertitels"
+
+#: ../plugin//subtitles.py:2106
+msgid "Subtitles setting"
+msgstr "Ondertitels instelling"
+
+#: ../plugin//subtitles.py:1911
+msgid "Subtitles settings"
+msgstr "Ondertitels instellingen"
+
+#: ../plugin//subtitles.py:1913 ../plugin//subtitles.py:1915
+msgid "Subtitles settings (embedded)"
+msgstr "Ondertitels instellingen (ingebakken)"
+
+#: ../plugin//subtitles.py:4623
+msgid "Subtitles temp path"
+msgstr "Ondertitels tijdelijk path"
+
+#: ../plugin//subtitles.py:2428
+msgid "Subtitles will be downloaded in"
+msgstr "Ondertitels worden gedownload in"
+
+#: ../plugin//subtitles.py:3036
+msgid ""
+"Subtitles with this name already exist\n"
+"Do you want to overwrite them"
+msgstr ""
+"Er bestaan ​​al ondertitels met deze naam\n"
+"Wilt u deze overschrijven"
+
+#: ../plugin//subtitles.py:3385
+msgid "Suggestions"
+msgstr "Suggesties"
+
+#: ../plugin//subtitles.py:4713
+msgid "Supported languages"
+msgstr "Ondersteunde talen"
+
+#: ../plugin//subtitles.py:4718
+msgid "Switch List"
+msgstr "Verander van lijst"
+
+#: ../plugin//subtitles.py:2120
+msgid "Sync delay"
+msgstr "Vertraging van de sync"
+
+#: ../plugin//subtitles.py:320
+msgid "TV show"
+msgstr "TV show"
+
+#: ../plugin//subtitles.py:3032
+msgid ""
+"There are more subtitles in unpacked archive\n"
+" please select which one do you want to use"
+msgstr ""
+"Er zitten meerdere ondertitels in het uitgepakte bestand\n"
+" selecteer welke u wilt gebruiken"
+
+#: ../plugin//subtitles.py:2748
+msgid "There was an error while removing subtitle, please check log"
+msgstr ""
+"Er is een fout opgetreden bij het verwijderen van de ondertitel. Controleer "
+"het log"
+
+#: ../plugin//subtitlesdvb.py:299
+msgid "Time"
+msgstr "Tijd"
+
+#: ../plugin//subtitles.py:4166 ../plugin//subtitles.py:5018
+msgid "Title"
+msgstr "Titel"
+
+#: ../plugin//subtitles.py:4357
+msgid "Try update(simplify) search expression and try again.."
+msgstr "Pas de gegevens aan (vereenvoudigen) en probeer het opnieuw."
+
+#: ../plugin//subtitles.py:1917
+msgid "Turn off subtitles"
+msgstr "Schakel de ondertitels uit"
+
+#: ../plugin//subtitles.py:4167 ../plugin//subtitles.py:5019
+msgid "Type"
+msgstr "Type"
+
+#: ../plugin//e2_utils.py:245
+#, fuzzy
+msgid "Type text of picture"
+msgstr "Typ de tekst van de afbeelding"
+
+#: ../plugin//subtitles.py:4050 ../plugin//subtitles.py:4213
+msgid "Update"
+msgstr "Update"
+
+#: ../plugin//subtitles.py:5014
+msgid "Update Search params"
+msgstr "Update de zoekparameters"
+
+#: ../plugin//subtitles.py:4281
+msgid ""
+"Update search parameters if not correct\n"
+" and press green button for search"
+msgstr ""
+"Pas de zoekparameters aan als deze niet juist zijn\n"
+" en druk op de groene knop om te zoeken"
+
+#: ../plugin//subtitles.py:4175 ../plugin//subtitles.py:5026
+msgid "Use File path"
+msgstr "Bestandslocatie?"
+
+#: ../plugin//subtitles.py:312 ../plugin//subtitles.py:3694
+#: ../plugin//subtitles.py:3696
+msgid "User defined"
+msgstr "Gebruikergedefinieerd"
+
+#: ../plugin//seekers/xbmc_subtitles.py:123
+#: ../plugin//seekers/xbmc_subtitles.py:301
+#: ../plugin//seekers/xbmc_subtitles.py:397
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: ../plugin//subtitles.py:310 ../plugin//subtitles.py:3693
+msgid "Video filename"
+msgstr "Video bestandsnaam"
+
+#: ../plugin//subtitles.py:4169 ../plugin//subtitles.py:5021
+msgid "Year"
+msgstr "Jaar"
+
+#: ../plugin//plugin.py:124
+msgid ""
+"You have OpenPli-based image, please change embedded subtitles settings in "
+"Settings / System / Subtitles settings"
+msgstr ""
+"U gebruikt een op OpenPLi gebaseerde image!\n"
+"\n"
+"Wijzig de instellingen voor de ingesloten ondertitels via Menu - "
+"Instellingen - Systeem - Audio / Video - Ondertitelinstellingen"
+
+#: ../plugin//subtitles.py:211
+msgid "black"
+msgstr "Zwart"
+
+#: ../plugin//subtitles.py:210
+msgid "blue"
+msgstr "blauw"
+
+#: ../plugin//subtitles.py:252
+msgid "border"
+msgstr "Rand"
+
+#: ../plugin//subtitles.py:199
+msgid "bottom"
+msgstr "onderzijde"
+
+#: ../plugin//subtitles.py:1898
+msgid "cannot decode"
+msgstr "kan niet decoderen"
+
+#: ../plugin//subtitlesdvb.py:351
+msgid "cannot sync to event, event is not available"
+msgstr ""
+"kan niet synchroniseren met het programma omdat deze niet beschikbaar is"
+
+#: ../plugin//subtitles.py:4452
+msgid "captcha doesn't match, try again..."
+msgstr "captcha komt niet overeen, probeer het opnieuw..."
+
+#: ../plugin//subtitles.py:504
+msgid "change external subtitles status"
+msgstr "wijzig de staus van de externe ondertitels"
+
+#: ../plugin//subtitles.py:409 ../plugin//subtitlesdvb.py:152
+msgid "change subtitles fps"
+msgstr "wijzig de FPS van de ondertitels"
+
+#: ../plugin//subtitlesdvb.py:139
+msgid "close plugin"
+msgstr "sluit de applicatie af"
+
+#: ../plugin//subtitles.py:404
+msgid "decrease subtitles delay"
+msgstr "verminder de vertraging van de ondertitels"
+
+#: ../plugin//subtitles.py:4756
+msgid "disabled"
+msgstr "uitgeschakeld"
+
+#: ../plugin//subtitles.py:413
+msgid "displays this menu"
+msgstr "toon dit menu"
+
+#: ../plugin//subtitles.py:4398
+msgid "downloading subtitles..."
+msgstr "download ondertitels..."
+
+#: ../plugin//subtitles.py:259
+msgid "dynamic"
+msgstr "Dynamisch"
+
+#: ../plugin//subtitles.py:4753
+msgid "enabled"
+msgstr "geactiveerd"
+
+#: ../plugin//subtitles.py:4750
+msgid "error"
+msgstr "fout"
+
+#: ../plugin//subtitles.py:414
+msgid "exit"
+msgstr "beëindigen"
+
+#: ../plugin//subtitles.py:206
+msgid "green"
+msgstr "Groen"
+
+#: ../plugin//subtitles.py:205
+msgid "grey"
+msgstr "Grijs"
+
+#: ../plugin//subtitles.py:403
+msgid "increase subtitles delay"
+msgstr "verhoog de vertraging van de ondertitels"
+
+#: ../plugin//subtitles.py:4454
+msgid "invalid credentials provided, correct them and try again"
+msgstr "ongeldige inloggegevens, wijzig deze en probeer het opnieuw"
+
+#: ../plugin//subtitles.py:401
+msgid "jump to next subtitle"
+msgstr "ga naar de volgende ondertitel"
+
+#: ../plugin//subtitles.py:402
+msgid "jump to previous subtitle"
+msgstr "naar de vorige ondertitel"
+
+#: ../plugin//subtitles.py:4878
+msgid "library"
+msgstr "library"
+
+#: ../plugin//subtitles.py:4290 ../plugin//subtitles.py:4322
+msgid "loading subtitles list"
+msgstr "De lijst met ondertitels wordt gedownload."
+
+#: ../plugin//subtitles.py:4878
+msgid "missing"
+msgstr "mist"
+
+#: ../plugin//subtitles.py:4165
+msgid "no"
+msgstr "Nee"
+
+#: ../plugin//subtitles.py:4456
+msgid "no credentials provided, set them and try again"
+msgstr "geen inloggegevens aangegeven, voer deze in en probeer het opnieuw"
+
+#: ../plugin//compat.py:232 ../plugin//subtitles.py:2327
+msgid "nothing connected"
+msgstr "nergens mee verbonden"
+
+#: ../plugin//subtitles.py:252
+msgid "offset"
+msgstr "Offset"
+
+#: ../plugin//subtitles.py:226
+msgid "opaque"
+msgstr "Ondoorzichtig"
+
+#: ../plugin//subtitles.py:444 ../plugin//subtitlesdvb.py:273
+#: ../plugin//subtitlesdvb.py:275 ../plugin//subtitlesdvb.py:277
+#: ../plugin//subtitlesdvb.py:281
+msgid "original"
+msgstr "origineel"
+
+#: ../plugin//subtitlesdvb.py:142
+msgid "pause subtitles playback"
+msgstr "pauzeer het afspelen van de ondertitels"
+
+#: ../plugin//subtitlesdvb.py:141
+msgid "play/pause subtitles playback"
+msgstr "pauzeer / speel de ondertitels af"
+
+#: ../plugin//subtitles.py:3385
+msgid "press green"
+msgstr "druk groen"
+
+#: ../plugin//subtitles.py:3392
+msgid "press red"
+msgstr "druk rood"
+
+#: ../plugin//subtitles.py:207
+msgid "purple"
+msgstr "Paars"
+
+#: ../plugin//subtitles.py:204
+msgid "red"
+msgstr "Rood"
+
+#: ../plugin//subtitles.py:408
+msgid "reset subtitles delay/fps"
+msgstr "herstel de ondertitels vertraging/fps"
+
+#: ../plugin//subtitlesdvb.py:144
+msgid "restarts current subtitle"
+msgstr "herstart de huidige ondertitel"
+
+#: ../plugin//subtitlesdvb.py:143
+msgid "resumes subtitles playback"
+msgstr "hervat het afspelen van de ondertitels"
+
+#: ../plugin//subtitles.py:2428
+msgid "seconds"
+msgstr "seconden"
+
+#: ../plugin//subtitles.py:5184
+msgid "settings"
+msgstr "instellingen"
+
+#: ../plugin//subtitles.py:766
+msgid "show subtitles menu"
+msgstr "toon het ondertitelmenu"
+
+#: ../plugin//subtitlesdvb.py:140
+msgid "show/hide subtitles status"
+msgstr "toon / verberg de status van de ondertitel"
+
+#: ../plugin//subtitlesdvb.py:150
+msgid "skip previous subtitle by setting time in minutes"
+msgstr "ga naar de vorige ondertitel door een tijd in minuten op te geven"
+
+#: ../plugin//subtitlesdvb.py:151
+msgid "skip subtitle to current event position"
+msgstr "sla de ondertitel over naar de huidige positie van het evenement"
+
+#: ../plugin//subtitlesdvb.py:145
+msgid "skip to next subtitle"
+msgstr "ga naar de volgende ondertitel"
+
+#: ../plugin//subtitlesdvb.py:146
+msgid "skip to next subtitle (minute jump)"
+msgstr "ga naar de volgende ondertitel (1 min. vooruit)"
+
+#: ../plugin//subtitlesdvb.py:147
+msgid "skip to next subtitle by setting time in minutes"
+msgstr "ga naar de volgende ondertitel door een tijd in minuten op te geven"
+
+#: ../plugin//subtitlesdvb.py:148
+msgid "skip to previous subtitle"
+msgstr "ga terug naar de vorige ondertitel"
+
+#: ../plugin//subtitlesdvb.py:149
+msgid "skip to previous subtitle (minute jump)"
+msgstr "ga terug naar de vorige ondertitel (1 min. terug)"
+
+#: ../plugin//subtitles.py:259
+msgid "static"
+msgstr "Statisch"
+
+#: ../plugin//subtitles.py:4291 ../plugin//subtitles.py:4323
+msgid "subtitles found"
+msgstr "Er zijn ondertitels gevonden"
+
+#: ../plugin//subtitles.py:197
+msgid "top"
+msgstr "bovenzijde"
+
+#: ../plugin//subtitles.py:228
+msgid "transparent"
+msgstr "Transparant"
+
+#: ../plugin//subtitles.py:441 ../plugin//subtitles.py:2912
+#: ../plugin//subtitlesdvb.py:268 ../plugin//subtitlesdvb.py:295
+msgid "unknown"
+msgstr "onbekend"
+
+#: ../plugin//e2_utils.py:387
+msgid "unpack error: cannot get subname"
+msgstr "fout met uitpakken: kan de naam niet finden"
+
+#: ../plugin//e2_utils.py:403
+msgid "unpack error: cannot open archive"
+msgstr "fout met uitpakken: kan het archief niet openen"
+
+#: ../plugin//seek.py:328
+#, python-format
+msgid "unsupported archive %s"
+msgstr "niet ondersteund archief %s"
+
+#: ../plugin//plugin.py:144
+msgid "watch DVB broadcast with subtitles"
+msgstr "kijk dvb uitzending met ondertitels"
+
+#: ../plugin//subtitles.py:209
+msgid "white"
+msgstr "wit"
+
+#: ../plugin//subtitles.py:2766
+msgid "will be removed from file system"
+msgstr "zal uit het bestand verwijderd worden"
+
+#: ../plugin//subtitles.py:2773
+msgid "will be removed from list"
+msgstr "zal van de lijst verwijderd worden"
+
+#: ../plugin//subtitles.py:208
+msgid "yellow"
+msgstr "Geel"
+
+#: ../plugin//subtitles.py:4165
+msgid "yes"
+msgstr "Ja"
