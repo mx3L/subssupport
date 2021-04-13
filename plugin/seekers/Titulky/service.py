@@ -5,8 +5,12 @@
 
 import os
 
-import time,calendar
-import urllib2,urllib,re,cookielib
+import time
+import calendar
+import urllib2
+import urllib
+import re
+import cookielib
 from ..utilities import languageTranslate, log, getFileSize
 
 from ..seeker import SubtitlesDownloadError, SubtitlesErrors

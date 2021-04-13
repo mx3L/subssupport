@@ -1,5 +1,8 @@
 # -*- coding: UTF-8 -*-
-import os, re, urllib, urllib2
+import os
+import re
+import urllib
+import urllib2
 
 from ..utilities import log
 

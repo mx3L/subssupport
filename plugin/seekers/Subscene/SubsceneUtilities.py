@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import urllib2, requests
+import urllib2
+import requests
 import re
 from ..utilities import log as _log
 

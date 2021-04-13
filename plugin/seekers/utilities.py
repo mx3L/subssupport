@@ -6,7 +6,8 @@ import unicodedata
 try: from hashlib import md5
 except: from md5 import new as md5
 
-import os, urllib2
+import os
+import urllib2
 
 SUPRESS_LOG = True
 

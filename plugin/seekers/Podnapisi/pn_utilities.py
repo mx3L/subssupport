@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import os
-import urllib, zlib
+import urllib
+import zlib
 from xml.dom import minidom
 import xmlrpclib
 

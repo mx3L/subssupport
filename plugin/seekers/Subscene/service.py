@@ -2,7 +2,11 @@
 
 import HTMLParser
 import difflib
-import os, re, string, urllib, urllib2
+import os
+import re
+import string
+import urllib
+import urllib2
 
 from SubsceneUtilities import geturl, get_language_info
 

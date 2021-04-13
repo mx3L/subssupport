@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 import time
 import unittest
 test = os.path.dirname(os.path.realpath(__file__))

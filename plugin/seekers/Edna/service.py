@@ -2,7 +2,8 @@
 
 import os
 
-import urllib,re
+import urllib
+import re
 from ..utilities import log,  languageTranslate
 
 

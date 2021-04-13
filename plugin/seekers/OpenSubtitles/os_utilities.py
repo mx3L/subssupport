@@ -84,7 +84,8 @@ class OSDBServer:
 
     def download(self, ID, dest, token):
         try:
-            import zlib, base64
+            import zlib
+            import base64
             down_id = [ID, ]
             result = self.server.DownloadSubtitles(self.osdb_token, down_id)
             if result["data"]:
