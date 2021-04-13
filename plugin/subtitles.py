@@ -4907,7 +4907,8 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
     def setWindowTitle(self):
         if self.windowTitle is not None:
             self.setTitle(self.windowTitle)
-        else: self.setTitle(_("Update Search params"))
+        else:
+            self.setTitle(_("Update Search params"))
 
     def buildMenu(self):
         menuList = []
@@ -4933,7 +4934,8 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
         currIdx = self.sourceTitleList.index(self.sourceTitle)
         if self.sourceTitle == self.sourceTitleList[-1]:
             currIdx = 0
-        else: currIdx += 1
+        else:
+            currIdx += 1
         self.sourceTitle = self.sourceTitleList[currIdx]
         self['sourceTitle'].text = self.sourceTitle
         self['sourceTitleInfo'].text = "%s [%d/%d]" % (_("Source title"), currIdx + 1, len(self.sourceTitleList))

@@ -114,7 +114,8 @@ def get_subtitles_list(searchstring, languageshort, languagelong, subtitles_list
             try:
                 uploader = re.compile('class="link_from">(.+?)</a>').findall(subtitle)[0]
                 uploader = uploader.strip()
-                if uploader == 'movieplace': uploader = 'GreekSubtitles'
+                if uploader == 'movieplace':
+                    uploader = 'GreekSubtitles'
                 filename = '[%s] %s' % (uploader, filename)
             except:
                 pass

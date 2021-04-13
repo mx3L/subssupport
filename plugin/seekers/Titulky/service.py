@@ -97,13 +97,17 @@ def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, 
     return True,subtitles_list[pos]['language_name'], "zip" #standard output
 
 def lang_titulky2xbmclang(lang):
-    if lang == 'CZ': return 'Czech'
-    if lang == 'SK': return 'Slovak'
+    if lang == 'CZ':
+        return 'Czech'
+    if lang == 'SK':
+        return 'Slovak'
     return 'English'
 
 def lang_xbmclang2titulky(lang):
-    if lang == 'Czech': return 'CZ'
-    if lang == 'Slovak': return 'SK'
+    if lang == 'Czech':
+        return 'CZ'
+    if lang == 'Slovak':
+        return 'SK'
     return 'EN'
 
 def get_episode_season(episode,season):

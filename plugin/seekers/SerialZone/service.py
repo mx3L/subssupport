@@ -107,13 +107,17 @@ def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, 
 	return True, selected_subtitles['lang'],""
 
 def lng_short2long(lang):
-	if lang == 'CZ': return 'Czech'
-	if lang == 'SK': return 'Slovak'
+	if lang == 'CZ':
+		return 'Czech'
+	if lang == 'SK':
+		return 'Slovak'
 	return 'English'
 
 def lng_long2short(lang):
-	if lang == 'Czech': return 'CZ'
-	if lang == 'Slovak': return 'SK'
+	if lang == 'Czech':
+		return 'CZ'
+	if lang == 'Slovak':
+		return 'SK'
 	return 'EN'
 
 def lng_short2flag(lang):
@@ -145,7 +149,8 @@ class SerialZoneClient(object):
 
 	def list_show_subtitles(self, show_url, show_series):
 		res = urllib.urlopen(show_url + "titulky/" + show_series + "-rada/")
-		if not res.getcode() == 200: return []
+		if not res.getcode() == 200:
+			return []
 		subtitles = []
 		for html_episode in re.findall('<div .+? class=\"sub\-line .+?>(.+?)</div></div></div></div>',res.read(), re.IGNORECASE | re.DOTALL):
 			subtitle = {}

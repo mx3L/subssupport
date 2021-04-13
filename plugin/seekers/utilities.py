@@ -3,8 +3,10 @@ import re
 import struct
 import unicodedata
 
-try: from hashlib import md5
-except: from md5 import new as md5
+try:
+    from hashlib import md5
+except:
+    from md5 import new as md5
 
 import os
 import urllib2
@@ -16,7 +18,8 @@ def log(module,msg):
         return
     if isinstance(msg, unicode):
         print module, msg.encode('utf-8')
-    else: print module, msg
+    else:
+        print module, msg
 
 LANGUAGES      = (
 
@@ -182,7 +185,8 @@ def regex_tvshow(compare, file, sub=""):
                 title = re.split(regex, file)[0]
                 for char in ['[', ']', '_', '(', ')', '.', '-']:
                     title = title.replace(char, ' ')
-                if title.endswith(" "): title = title[:-1]
+                if title.endswith(" "):
+                    title = title[:-1]
                 return title, response_file[0][0], response_file[0][1]
             else:
                 break
@@ -195,7 +199,8 @@ def regex_tvshow(compare, file, sub=""):
                     sub_info = "Regex Subtitle Ep: %s," % (str(response_sub[0][1]),)
                     if (int(response_sub[0][1]) == int(response_file[0][1])):
                         return True
-                except: pass
+                except:
+                    pass
         return False
     if compare :
         return True
@@ -292,8 +297,8 @@ def hashFileMD5(file_path, buff_size=1048576):
     buff = f.read(buff_size)    # size=1M
     f.close()
     # calculate MD5 key from file
-    m = md5();
-    m.update(buff);
+    m = md5()
+    m.update(buff)
     return m.hexdigest()
 
 def langToCountry(lang):

@@ -96,13 +96,17 @@ def download_subtitles (subtitles_list, pos, extract_subs, tmp_sub_dir, sub_fold
 	return compressed, selected_subtitles['lang'], subtitles_file
 
 def lng_short2long(lang):
-	if lang == 'CZ': return 'Czech'
-	if lang == 'SK': return 'Slovak'
+	if lang == 'CZ':
+		return 'Czech'
+	if lang == 'SK':
+		return 'Slovak'
 	return 'English'
 
 def lng_long2short(lang):
-	if lang == 'Czech': return 'CZ'
-	if lang == 'Slovak': return 'SK'
+	if lang == 'Czech':
+		return 'CZ'
+	if lang == 'Slovak':
+		return 'SK'
 	return 'EN'
 
 def lng_short2flag(lang):
@@ -137,10 +141,12 @@ class EdnaClient(object):
 
 	def list_show_subtitles(self, show_url, show_series):
 		res = urllib.urlopen(self.server_url + show_url + "titulky/?season=" + show_series)
-		if not res.getcode() == 200: return []
+		if not res.getcode() == 200:
+			return []
 		subtitles = []
 		html_subtitle_table = re.search("<table class=\"episodes\">.+<tbody>(.+?)</tbody>.+</table>",res.read(), re.IGNORECASE | re.DOTALL)
-		if html_subtitle_table == None: return []
+		if html_subtitle_table == None:
+			return []
 		for html_episode in re.findall("<tr>(.+?)</tr>", html_subtitle_table.group(1), re.IGNORECASE | re.DOTALL):
 			subtitle = {}
 			show_title_with_numbers = re.sub("<[^<]+?>", "",re.search("<h3>(.+?)</h3>", html_episode).group(1))
@@ -155,5 +161,6 @@ class EdnaClient(object):
 				subtitle_version['link'] = re.sub("/titulky/#content","/titulky/?direct=1",subs_url)
 				subtitle_version['lang'] = subs_lang.upper()
 				subtitle['versions'].append(subtitle_version)
-			if subtitle['versions'].__len__() > 0: subtitles.append(subtitle)
+			if subtitle['versions'].__len__() > 0:
+				subtitles.append(subtitle)
 		return subtitles

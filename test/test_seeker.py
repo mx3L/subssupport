@@ -147,10 +147,14 @@ class TestSeekerDownload(unittest.TestCase):
         remove_files_in_dir(self.custom_path)
         remove_files_in_dir(self.temp_path)
         remove_files_in_dir(self.video_path)
-        try: shutil.copyfile(os.path.join(test, 'utilsfiles', 'rarfile'), ArchiveDownloadSeeker.subpath)
-        except:pass
-        try: shutil.copyfile(os.path.join(test, 'subfiles', 'test_microdvd.txt'), NotArchiveDownloadSeeker.subpath)
-        except:pass
+        try:
+            shutil.copyfile(os.path.join(test, 'utilsfiles', 'rarfile'), ArchiveDownloadSeeker.subpath)
+        except:
+            pass
+        try:
+            shutil.copyfile(os.path.join(test, 'subfiles', 'test_microdvd.txt'), NotArchiveDownloadSeeker.subpath)
+        except:
+            pass
         providers = [ArchiveDownloadSeeker, NotArchiveDownloadSeeker]
         self.seeker = SubsSeeker(self.download_path, self.temp_path, captcha_cb, delay_cb, message_cb, debug=True, providers=providers)
 

@@ -96,13 +96,13 @@ class SubsControllerDVB(Screen, HelpableScreen):
                 <widget name="eventName" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
                 <widget name="eventTime" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
                 <widget name="eventDuration" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-            </screen>""" % (windowPosition + windowSize + \
-                leftWidget + \
-                (leftWidget[1] + 10,) + leftWidget + \
-                ((leftWidget[1] + 10) * 2,) + leftWidget + \
-                ((leftWidget[1] + 10) * 3,) + leftWidget + \
-                xpos + (0,) + rightWidget + \
-                xpos + ((rightWidget[1] + 10) * 1,) + rightWidget + \
+            </screen>""" % (windowPosition + windowSize +
+                leftWidget +
+                (leftWidget[1] + 10,) + leftWidget +
+                ((leftWidget[1] + 10) * 2,) + leftWidget +
+                ((leftWidget[1] + 10) * 3,) + leftWidget +
+                xpos + (0,) + rightWidget +
+                xpos + ((rightWidget[1] + 10) * 1,) + rightWidget +
                 xpos + ((rightWidget[1] + 10) * 2,) + rightWidget)
 
         Screen.__init__(self, session)

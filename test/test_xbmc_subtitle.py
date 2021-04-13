@@ -132,8 +132,10 @@ class TestXBMCSubtitleProviderWithCredentials(TestXBMCSubtitleProvider):
             TestXBMCSubtitleProvider.test_download(self)
         except SubtitlesDownloadError as e:
             self.assertEqual(e.code, SubtitlesErrors.NO_CREDENTIALS_ERROR)
-        except:self.fail("invalid error code")
-        else: self.fail("no error code, maybe no credentials necessary?")
+        except:
+            self.fail("invalid error code")
+        else:
+            self.fail("no error code, maybe no credentials necessary?")
 
     def test_download_with_credentials(self):
         assert self.login != ""
