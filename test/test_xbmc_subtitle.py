@@ -16,7 +16,7 @@ MOVIE_PATH = os.path.join(test, 'moviefiles')
 
 from seekers import SubtitlesDownloadError, SubtitlesSearchError, \
     SubtitlesErrors
-    
+
 import seekers.utilities as u
 u.SUPRESS_LOG = False
 
@@ -73,7 +73,7 @@ class TestXBMCSubtitleProvider(object):
                 title, year, langs = movie[0], movie[1], movie[2]
             result = self.provider.search(title=title, year=year, langs=langs)
             self.assertTrue(len(result['list']) > 0, 'There should be at least 1 subtitle found')
-        
+
     def test_hash_search(self):
         for h in self.hash_list:
             if len(h) == 1:
@@ -262,7 +262,7 @@ class TestPodnapisi(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
                                                                         self.captcha_cb,
                                                                         self.delay_cb,
                                                                         self.message_cb)
-        
+
     def test_hash_search(self):
         self.provider.settings_provider.setSetting('PNmatch', 'true')
         TestXBMCSubtitleProviderWithCredentials.test_hash_search(self)

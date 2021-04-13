@@ -22,11 +22,11 @@ def openSubtitlesSearch(session, **kwargs):
     if eventNext:
         eventList.append(eventNext.getEventName())
     session.open(SubsSearch, E2SubsSeeker(session, settings), settings, searchTitles=eventList, standAlone=True)
-    
+
 
 def openSubtitlesPlayer(session, **kwargs):
     SubsSupportDVB(session)
-    
+
 
 def openSubsSupportSettings(session, **kwargs):
     settings = initSubsSettings()
@@ -82,7 +82,7 @@ class SubsSupportSettings(Screen):
             (_("Embedded subtitles settings"), "embedded"),
             (_("Search settings"), "search"),
             (_("DVB player settings"), "dvb")])
-        self["actionmap"] = ActionMap(["OkCancelActions", "DirectionActions"], 
+        self["actionmap"] = ActionMap(["OkCancelActions", "DirectionActions"],
         {
             "up": self["menuList"].selectNext,
             "down": self["menuList"].selectPrevious,
@@ -107,17 +107,17 @@ class SubsSupportSettings(Screen):
             self.openSearchSettings()
         elif selection == "dvb":
             self.openDVBPlayerSettings()
-        
+
     def openGeneralSettings(self):
         self.session.open(SubsSetupGeneral, self.generalSettings)
-        
+
     def openSearchSettings(self):
         seeker = E2SubsSeeker(self.session, self.searchSettings, True)
         self.session.open(SubsSearchSettings, self.searchSettings, seeker, True)
-        
+
     def openExternalSettings(self):
         self.session.open(SubsSetupExternal, self.externalSettings)
-        
+
     def openEmbeddedSettings(self):
         try:
             from Screens.AudioSelection import QuickSubtitlesConfigMenu
@@ -125,7 +125,7 @@ class SubsSupportSettings(Screen):
             self.session.open(SubsSetupEmbedded, self.embeddedSettings)
         else:
             self.session.open(MessageBox, _("You have OpenPli-based image, please change embedded subtitles settings in Settings / System / Subtitles settings"), MessageBox.TYPE_INFO)
-        
+
     def openDVBPlayerSettings(self):
         self.session.open(SubsSetupDVBPlayer, self.dvbSettings)
 
@@ -145,7 +145,7 @@ def Plugins(**kwargs):
     return [
         PluginDescriptor(name=_('SubsSupport settings'), icon=iconSET, description=_('Change subssupport settings'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubsSupportSettings),
         PluginDescriptor(name=_('SubsSupport downloader'), icon=iconDWN, description=_('Download subtitles for your videos'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubtitlesSearch),
-        PluginDescriptor(name=_('SubsSupport DVB player'), icon=iconPLY, description=_('watch DVB broadcast with subtitles'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubtitlesPlayer),     
+        PluginDescriptor(name=_('SubsSupport DVB player'), icon=iconPLY, description=_('watch DVB broadcast with subtitles'), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=openSubtitlesPlayer),
         PluginDescriptor(name=_('SubsSupport settings'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubsSupportSettings),
         PluginDescriptor(name=_('SubsSupport downloader'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubtitlesSearch),
         PluginDescriptor(name=_('SubsSupport DVB player'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=openSubtitlesPlayer)

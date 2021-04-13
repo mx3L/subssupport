@@ -99,7 +99,7 @@ def downloadSubtitles(seeker, options):
     return seeker.downloadSubtitle(
         options.get("selected_subtitle"),
         options.get("subtitles_dict"),
-        chooseFileCB, 
+        chooseFileCB,
         options.get("path"),
         options.get("filename"),
         overwriteFileCBTmp,

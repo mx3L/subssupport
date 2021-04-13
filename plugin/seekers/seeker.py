@@ -133,7 +133,7 @@ class BaseSeeker(object):
             self.log.error("timeout error occured: %s" % (str(e)))
             e = SubtitlesSearchError(SubtitlesErrors.TIMEOUT_ERROR, "timeout!")
             e.provider = self.id
-            raise 
+            raise
         except SubtitlesSearchError as e:
             self.log.error("search error occured: %s" % str(e))
             e.provider = self.id
@@ -199,4 +199,3 @@ class BaseSeeker(object):
         implement your download logic
         """
         return False, "", ""
-    

@@ -57,7 +57,7 @@ class ErrorSeeker(BaseSeeker):
         self.movie_search = getattr(wseeker_cls, 'movie_search', True)
         self.default_settings = getattr(wseeker_cls, 'default_settings', dict())
         BaseSeeker.__init__(self, *args, **kwargs)
-        
+
     def close(self):
         pass
 
@@ -230,7 +230,7 @@ class SubsSeeker(object):
                 self.log.debug('filename creating by "video" setting')
                 videopath = toString(subtitles_dict[seeker.id]['params'].get('filepath'))
                 filename = os.path.splitext(os.path.basename(videopath))[0] + ext
-    
+
             if settings.get('lang_to_filename', False):
                 lang_iso639_1_2 = toString(languageTranslate(lang, 0, 2))
                 self.log.debug('appending language "%s" to filename', lang_iso639_1_2)
@@ -260,7 +260,7 @@ class SubsSeeker(object):
                     return download_path
                 except Exception as e:
                     self.log.error('moving "%s" to "%s" - %s' % (
-                        os.path.split(subfile)[-2:], 
+                        os.path.split(subfile)[-2:],
                         os.path.split(download_path)[-2:]), str(e))
                     return subfile
         try:
@@ -365,5 +365,3 @@ class SubsSeeker(object):
                 outfile.close()
                 subsfiles.append(os.path.join(dest_dir, filename))
         return subsfiles
-
-

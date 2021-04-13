@@ -147,7 +147,7 @@ class EdnaSeeker(XBMCSubtitlesAdapter):
 try:
     from SerialZone import serialzone
 except ImportError as e:
-    serialzone = e 
+    serialzone = e
 
 
 class SerialZoneSeeker(XBMCSubtitlesAdapter):
@@ -381,7 +381,7 @@ class SubsceneSeeker(XBMCSubtitlesAdapter):
 try:
     from SubtitlesGR import subtitlesgr
 except ImportError as e:
-    subtitlesgr = e 
+    subtitlesgr = e
 
 
 class SubtitlesGRSeeker(XBMCSubtitlesAdapter):
@@ -431,4 +431,3 @@ class TitloviSeeker(XBMCSubtitlesAdapter):
     default_settings = {}
     movie_search = True
     tvshow_search = True
-

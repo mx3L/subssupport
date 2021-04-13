@@ -65,7 +65,7 @@ def getSearchTitle(title, year=None): ## new Add
                    return href
         except:
             break
-    return 'https://subscene.com/subtitles/' + urllib.quote_plus(title) 
+    return 'https://subscene.com/subtitles/' + urllib.quote_plus(title)
 
 
 def find_movie(content, title, year):
@@ -198,7 +198,7 @@ def search_movie(title, year, languages, filename):
                     return list
     except Exception as error:
            print("error", error)
-                    
+
 
 def search_tvshow(tvshow, season, episode, languages, filename):
     tvshow = string.strip(tvshow)
@@ -231,7 +231,7 @@ def search_manual(searchstr, languages, filename):
 
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack):  # standard input
-    log(__name__, "%s Search_subtitles = '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'" % 
+    log(__name__, "%s Search_subtitles = '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'" %
          (debug_pretext, file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack))
     if lang1 == 'Farsi':
         lang1 = 'Persian'

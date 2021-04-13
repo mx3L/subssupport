@@ -218,7 +218,7 @@ class TestSeekerDownload(unittest.TestCase):
         settings = {'save_as': 'version', 'lang_to_filename': False}
         output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings, path=self.custom_path)
         self._test_download(expected_output, output)
-        
+
     def test_save_custom_fname(self):
         expected_output = os.path.join(self.download_path, 'custom.srt')
         provider = NotArchiveDownloadSeeker

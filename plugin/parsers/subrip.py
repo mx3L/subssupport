@@ -32,7 +32,7 @@ class SubRipParser(BaseParser):
             colorMatch = re.search('<[Ff]ont [Cc]olor=(.+?)>', text, re.DOTALL)
             colorText = colorMatch and colorMatch.group(1) or color
             colorText = colorText.replace("'", "").replace('"', '')
-            
+
         if colorText:
             hexColor = re.search("(\#[0-9,a-f,A-F]{6})", colorText)
             if hexColor:

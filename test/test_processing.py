@@ -73,4 +73,3 @@ class LoaderTestCase(unittest.TestCase):
 
     def test_not_supported_size(self):
         self.assertRaises(LoadError, self.subsloader.load, os.path.join(SUBS_PATH, 'test_vobsub.sub'))
-

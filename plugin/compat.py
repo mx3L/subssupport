@@ -24,7 +24,7 @@ class eConnectCallbackObj:
     def __init__(self, obj=None, connectHandler=None):
         self.connectHandler = connectHandler
         self.obj = obj
-    
+
     def __del__(self):
         if 'connect' not in dir(self.obj):
             if 'get' in dir(self.obj):

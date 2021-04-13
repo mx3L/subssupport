@@ -103,5 +103,3 @@ class BaseParser(object):
 
     def _parse(self, text, fps):
         return []
-
-

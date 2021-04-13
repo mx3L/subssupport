@@ -47,7 +47,7 @@ class SubsLoader(object):
             self._encodings = encodings
         self._row_parsing = False
         self.log = SimpleLogger('SubsLoader',)
-        
+
     def toggle_row_parsing(self):
         if self._row_parsing:
             self.set_row_parsing(False)
