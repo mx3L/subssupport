@@ -55,7 +55,7 @@ class sha256(object):
             s1 = self._rotr(w[i - 2], 17) ^ self._rotr(w[i - 2], 19) ^ (w[i - 2] >> 10)
             w[i] = (w[i - 16] + s0 + w[i - 7] + s1) & 0xFFFFFFFF
 
-        a,b,c,d,e,f,g,h = self._h
+        a, b, c, d, e, f, g, h = self._h
 
         for i in range(64):
             s0 = self._rotr(a, 2) ^ self._rotr(a, 13) ^ self._rotr(a, 22)
@@ -74,7 +74,7 @@ class sha256(object):
             b = a
             a = (t1 + t2) & 0xFFFFFFFF
 
-        self._h = [(x + y) & 0xFFFFFFFF for x,y in zip(self._h, [a,b,c,d,e,f,g,h])]
+        self._h = [(x + y) & 0xFFFFFFFF for x, y in zip(self._h, [a, b, c, d, e, f, g, h])]
 
     def update(self, m):
         if not m:

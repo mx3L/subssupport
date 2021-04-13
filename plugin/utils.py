@@ -21,15 +21,15 @@ def load(subpath):
             return ""
 
 def toString(text):
-    if isinstance(text,basestring):
+    if isinstance(text, basestring):
         if isinstance(text, unicode):
             return text.encode('utf-8')
     return text
 
 def toUnicode(text):
-    if isinstance(text,basestring):
+    if isinstance(text, basestring):
         if isinstance(text, str):
-            return text.decode('utf-8','ignore')
+            return text.decode('utf-8', 'ignore')
     return text
 
 def decode(text, encodings, current_encoding=None, decode_from_start=False):
@@ -50,7 +50,7 @@ def decode(text, encodings, current_encoding=None, decode_from_start=False):
     while current_idx != current_encoding_idx:
         enc = encodings[current_idx]
         try:
-            print '[decode] trying encoding', enc,'...'
+            print '[decode] trying encoding', enc, '...'
             utext = unicode(text, enc)
             print '[decode] decoded with', enc, 'encoding'
             used_encoding = enc

@@ -22,7 +22,7 @@ class Messages(object):
     MESSAGE_OVERWRITE_CALLBACK = 8
 
 def send(mtype, m):
-    dump = json.dumps({'message':mtype, 'value':m})
+    dump = json.dumps({'message': mtype, 'value': m})
     dump = "%07d%s" % (len(dump) + 7, dump)
     stdout.write(dump)
     stdout.flush()
@@ -57,7 +57,7 @@ def scriptError(e):
     if isinstance(e, BaseSubtitlesError):
         send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': e.code, 'provider': e.provider})
     else:
-        send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': SubtitlesErrors.UNKNOWN_ERROR, 'provider':''})
+        send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': SubtitlesErrors.UNKNOWN_ERROR, 'provider': ''})
 
 def scriptFinished(subtitlesDict):
     send(Messages.MESSAGE_FINISHED_SCRIPT, subtitlesDict)
@@ -95,13 +95,13 @@ def downloadSubtitles(seeker, options):
 def main():
     global stdout
     stdout = sys.stdout
-    sys.stdout = open('/tmp/subssupport.log','w')
+    sys.stdout = open('/tmp/subssupport.log', 'w')
     sys.stderr = sys.stdout
     options = recieve()
     print 'recieved options: %r' % options
     from seek import SubsSeeker
-    seeker = SubsSeeker(options.get('download_path','/tmp/'),
-                        options.get('tmp_path','/tmp/'),
+    seeker = SubsSeeker(options.get('download_path', '/tmp/'),
+                        options.get('tmp_path', '/tmp/'),
                         captchaCB, delayCB, messageCB,
                         options.get('settings'))
     if options.get('search'):

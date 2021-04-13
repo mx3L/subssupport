@@ -13,7 +13,7 @@ import urllib2
 
 SUPRESS_LOG = True
 
-def log(module,msg):
+def log(module, msg):
     if SUPRESS_LOG:
         return
     if isinstance(msg, unicode):
@@ -102,48 +102,48 @@ REGEX_EXPRESSIONS = ['[Ss]([0-9]+)[][._-]*[Ee]([0-9]+)([^\\\\/]*)$',
                       '[\\\\/\\._ \\[\\(-]([0-9]+)x([0-9]+)([^\\\\/]*)$'
                      ]
 
-LANG_COUNTRY = {"ar":"AE",
-                "bg":"BG",
-                "ca":"AD",
-                "cs":"CZ",
-                "da":"DK",
-                "de":"DE",
-                "el":"GR",
-                "en":"GB",
-                "es":"ES",
-                "et":"EE",
-                "fa":"IR",
-                "fi":"FI",
-                "fr":"FR",
-                "fy":"NL",
-                "he":"IL",
-                "hr":"HR",
-                "hu":"HU",
-                "is":"IS",
-                "it":"IT",
-                "ku":"KU",
-                "lt":"LT",
-                "lv":"LV",
-                "nl":"NL",
-                "nb":"NO",
-                "no":"NO",
-                "pl":"PL",
-                "pt":"PT",
-                "pt":"BR",
-                "ro":"RO",
-                "ru":"RU",
-                "sk":"SK",
-                "sl":"SI",
-                "sr":"RS",
-                "sv":"SE",
-                "th":"TH",
-                "tr":"TR",
-                "uk":"UA"}
+LANG_COUNTRY = {"ar": "AE",
+                "bg": "BG",
+                "ca": "AD",
+                "cs": "CZ",
+                "da": "DK",
+                "de": "DE",
+                "el": "GR",
+                "en": "GB",
+                "es": "ES",
+                "et": "EE",
+                "fa": "IR",
+                "fi": "FI",
+                "fr": "FR",
+                "fy": "NL",
+                "he": "IL",
+                "hr": "HR",
+                "hu": "HU",
+                "is": "IS",
+                "it": "IT",
+                "ku": "KU",
+                "lt": "LT",
+                "lv": "LV",
+                "nl": "NL",
+                "nb": "NO",
+                "no": "NO",
+                "pl": "PL",
+                "pt": "PT",
+                "pt": "BR",
+                "ro": "RO",
+                "ru": "RU",
+                "sk": "SK",
+                "sl": "SI",
+                "sr": "RS",
+                "sv": "SE",
+                "th": "TH",
+                "tr": "TR",
+                "uk": "UA"}
 
-LANGNAME_ISO6391 = dict(map(lambda lang:(lang[0], lang[2]),LANGUAGES))
-LANGNAME_ISO6392 = dict(map(lambda lang:(lang[0], lang[3]),LANGUAGES))
-ISO6391_LANGNAME = dict(map(lambda lang:(lang[2], lang[0]),LANGUAGES))
-ISO6392_LANGNAME = dict(map(lambda lang:(lang[3], lang[0]),LANGUAGES))
+LANGNAME_ISO6391 = dict(map(lambda lang: (lang[0], lang[2]), LANGUAGES))
+LANGNAME_ISO6392 = dict(map(lambda lang: (lang[0], lang[3]), LANGUAGES))
+ISO6391_LANGNAME = dict(map(lambda lang: (lang[2], lang[0]), LANGUAGES))
+ISO6392_LANGNAME = dict(map(lambda lang: (lang[3], lang[0]), LANGUAGES))
 
 def languageTranslate(lang, lang_from, lang_to):
     if lang_from == 0 and lang_to == 2:
@@ -167,10 +167,10 @@ def regex_movie(title):
     # from periscope
     movie_regexes = ['(?P<movie>.*)[\.|\[|\(| ]{1}(?P<year>(?:(?:19|20)[0-9]{2}))(?P<teams>.*)']
     for regex in movie_regexes:
-        match = re.search(regex,title, re.IGNORECASE)
+        match = re.search(regex, title, re.IGNORECASE)
         if match:
             return match.group('movie'), match.group('year')
-    return '',''
+    return '', ''
 
 def regex_tvshow(compare, file, sub=""):
     sub_info = ""
@@ -212,10 +212,10 @@ def hashFile(file_path, rar):
     if rar:
         return OpensubtitlesHashRar(file_path)
 
-    log(__name__,"Hash Standard file")
+    log(__name__, "Hash Standard file")
     longlongformat = 'q'  # long long
     bytesize = struct.calcsize(longlongformat)
-    f = open(file_path,'r')
+    f = open(file_path, 'r')
 
     filesize = getFileSize(file_path)
     hash = filesize
@@ -224,7 +224,7 @@ def hashFile(file_path, rar):
         return "SizeError"
 
     buffer = f.read(65536)
-    f.seek(max(0,filesize - 65536),0)
+    f.seek(max(0, filesize - 65536), 0)
     buffer += f.read(65536)
     f.close()
     for x in range((65536 / bytesize) * 2):
@@ -234,43 +234,43 @@ def hashFile(file_path, rar):
         hash = hash & 0xFFFFFFFFFFFFFFFF
 
     returnHash = "%016x" % hash
-    return filesize,returnHash
+    return filesize, returnHash
 
 
 def normalizeString(str):
     return unicodedata.normalize(
            'NFKD', unicode(unicode(str, 'utf-8'))
-           ).encode('ascii','ignore')
+           ).encode('ascii', 'ignore')
 
 
 def OpensubtitlesHashRar(firsrarfile):
-    log(__name__,"Hash Rar file")
-    f = open(firsrarfile,'r')
+    log(__name__, "Hash Rar file")
+    f = open(firsrarfile, 'r')
     a = f.read(4)
     if a != 'Rar!':
         raise Exception('ERROR: This is not rar file.')
     seek = 0
     for i in range(4):
-        f.seek(max(0,seek),0)
+        f.seek(max(0, seek), 0)
         a = f.read(100)
-        type,flag,size = struct.unpack('<BHH', a[2:2 + 5])
+        type, flag, size = struct.unpack('<BHH', a[2:2 + 5])
         if 0x74 == type:
             if 0x30 != struct.unpack('<B', a[25:25 + 1])[0]:
                 raise Exception('Bad compression method! Work only for "store".')
             s_partiizebodystart = seek + size
-            s_partiizebody,s_unpacksize = struct.unpack('<II', a[7:7 + 2 * 4])
+            s_partiizebody, s_unpacksize = struct.unpack('<II', a[7:7 + 2 * 4])
             if (flag & 0x0100):
                 s_unpacksize = (struct.unpack('<I', a[36:36 + 4])[0] << 32) + s_unpacksize
                 log(__name__, 'Hash untested for files biger that 2gb. May work or may generate bad hash.')
-            lastrarfile = getlastsplit(firsrarfile,(s_unpacksize - 1) / s_partiizebody)
-            hash = addfilehash(firsrarfile,s_unpacksize,s_partiizebodystart)
-            hash = addfilehash(lastrarfile,hash,(s_unpacksize % s_partiizebody) + s_partiizebodystart - 65536)
+            lastrarfile = getlastsplit(firsrarfile, (s_unpacksize - 1) / s_partiizebody)
+            hash = addfilehash(firsrarfile, s_unpacksize, s_partiizebodystart)
+            hash = addfilehash(lastrarfile, hash, (s_unpacksize % s_partiizebody) + s_partiizebodystart - 65536)
             f.close()
-            return (s_unpacksize,"%016x" % hash)
+            return (s_unpacksize, "%016x" % hash)
         seek += size
     raise Exception('ERROR: Not Body part in rar file.')
 
-def getlastsplit(firsrarfile,x):
+def getlastsplit(firsrarfile, x):
     if firsrarfile[-3:] == '001':
         return firsrarfile[:-3] + ('%03d' % (x + 1))
     if firsrarfile[-11:-6] == '.part':
@@ -279,9 +279,9 @@ def getlastsplit(firsrarfile,x):
         return firsrarfile[0:-5] + ('%1d' % (x + 1)) + firsrarfile[-4:]
     return firsrarfile[0:-2] + ('%02d' % (x - 1))
 
-def addfilehash(name,hash,seek):
-    f = open(name,'r')
-    f.seek(max(0,seek),0)
+def addfilehash(name, hash, seek):
+    f = open(name, 'r')
+    f.seek(max(0, seek), 0)
     for i in range(8192):
         hash += struct.unpack('<q', f.read(8))[0]
         hash = hash & 0xffffffffffffffff
@@ -290,10 +290,10 @@ def addfilehash(name,hash,seek):
 
 def hashFileMD5(file_path, buff_size=1048576):
     # calculate MD5 key from file
-    f = open(file_path,'r')
+    f = open(file_path, 'r')
     if f.size() < buff_size:
         return None
-    f.seek(0,0)
+    f.seek(0, 0)
     buff = f.read(buff_size)    # size=1M
     f.close()
     # calculate MD5 key from file
@@ -330,8 +330,8 @@ def getFileSize(filepath):
 # http://www.garykessler.net/library/file_sigs.html
 def getCompressedFileType(filepath):
     signature_dict = {
-                         "\x50\x4b\x03\x04":"zip",
-                         "\x52\x61\x72\x21\x1A":"rar"
+                         "\x50\x4b\x03\x04": "zip",
+                         "\x52\x61\x72\x21\x1A": "rar"
     }
     max_len = max(len(x) for x in signature_dict)
     with open(filepath) as f:
@@ -413,7 +413,7 @@ class SimpleLogger(object):
         print text
 
 def toString(text):
-    if isinstance(text,basestring):
+    if isinstance(text, basestring):
         if isinstance(text, unicode):
             return text.encode('utf-8')
     return text

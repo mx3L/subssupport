@@ -125,7 +125,7 @@ class BaseSeeker(object):
         for l in langs:
             if l not in self.supported_langs:
                 valid_langs.remove(l)
-                self.log.info('this language is not supported by this provider - "%s"!' % languageTranslate(l,2,0))
+                self.log.info('this language is not supported by this provider - "%s"!' % languageTranslate(l, 2, 0))
         try:
             subtitles = self._search(title, filepath, valid_langs, season, episode, tvshow, year)
         except socket.timeout as e:
@@ -146,13 +146,13 @@ class BaseSeeker(object):
         subtitles['id'] = self.id
         subtitles['time'] = time.time() - start_time
         subtitles['params'] = {
-                'title':title,
-                'filepath':filepath,
-                'langs':langs,
-                'year':year,
-                'tvshow':tvshow,
-                'season':season,
-                'episode':episode}
+                'title': title,
+                'filepath': filepath,
+                'langs': langs,
+                'year': year,
+                'tvshow': tvshow,
+                'season': season,
+                'episode': episode}
         subtitles.setdefault('list', [])
         self.log.info("search finished, found %d subtitles in %.2fs" % (len(subtitles['list']), subtitles['time']))
         return subtitles
@@ -162,7 +162,7 @@ class BaseSeeker(object):
         """
         implement your search logic
         """
-        return {'list':[{'filename':'', 'language_name':'', 'size':'', 'sync':''}, ]}
+        return {'list': [{'filename': '', 'language_name': '', 'size': '', 'sync': ''}, ]}
 
 
     def download(self, subtitles, selected_subtitle, path=None):

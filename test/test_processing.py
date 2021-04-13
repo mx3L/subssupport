@@ -3,7 +3,7 @@ import sys
 import unittest
 
 test = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(test, '..','plugin'))
+sys.path.append(os.path.join(test, '..', 'plugin'))
 
 from process import SubsLoader, DecodeError, LoadError, \
     ParseError, ParserNotFoundError
@@ -32,11 +32,11 @@ ENCODINGS = ['utf-8',
 
 SUBS_PATH = os.path.join(os.path.dirname(__file__), 'subfiles')
 TESTFILES = [os.path.join(SUBS_PATH, 'test_arabic.srt'),
-             os.path.join(SUBS_PATH,'test_random.srt'),
-             os.path.join(SUBS_PATH,'test_tags.srt'),
-             os.path.join(SUBS_PATH,'test_null_chars.srt'),
-             os.path.join(SUBS_PATH,'test_utf16.srt'),
-             os.path.join(SUBS_PATH,'test_microdvd.txt')]
+             os.path.join(SUBS_PATH, 'test_random.srt'),
+             os.path.join(SUBS_PATH, 'test_tags.srt'),
+             os.path.join(SUBS_PATH, 'test_null_chars.srt'),
+             os.path.join(SUBS_PATH, 'test_utf16.srt'),
+             os.path.join(SUBS_PATH, 'test_microdvd.txt')]
 
 class LoaderTestCase(unittest.TestCase):
     def setUp(self):
@@ -50,8 +50,8 @@ class LoaderTestCase(unittest.TestCase):
             print '\n'
 
     def test_utf16(self):
-        self.subsloader.change_encodings(['utf-8','utf-16'])
-        sublist, encoding = self.subsloader.load(os.path.join(SUBS_PATH,'test_utf16.srt'))
+        self.subsloader.change_encodings(['utf-8', 'utf-16'])
+        sublist, encoding = self.subsloader.load(os.path.join(SUBS_PATH, 'test_utf16.srt'))
         self.assertTrue(len(sublist) > 1, 'parsed subtitle list has to have at least 2 entries')
         self.assertTrue(encoding != '', 'cannot detect encoding')
         self.assertTrue(encoding == 'utf-16', 'utf-16 file has to be decoded with utf-16 encoding')
@@ -64,12 +64,12 @@ class LoaderTestCase(unittest.TestCase):
 
     def test_invalid_encoding(self):
         self.subsloader.change_encodings(['utf-8'])
-        self.assertRaises(DecodeError, self.subsloader.load, os.path.join(SUBS_PATH,'test_arabic.srt'))
+        self.assertRaises(DecodeError, self.subsloader.load, os.path.join(SUBS_PATH, 'test_arabic.srt'))
 
     def test_invalid_subtitles(self):
         #self.assertRaises((ParseError,ParserNotFoundError), self.subsloader.load, os.path.join(SUBS_PATH,'test_invalid_file.srt'))
-        self.assertRaises((ParseError,ParserNotFoundError), self.subsloader.load, os.path.join(SUBS_PATH,'test_vobsub.idx'))
+        self.assertRaises((ParseError, ParserNotFoundError), self.subsloader.load, os.path.join(SUBS_PATH, 'test_vobsub.idx'))
 
     def test_not_supported_size(self):
-        self.assertRaises(LoadError, self.subsloader.load, os.path.join(SUBS_PATH,'test_vobsub.sub'))
+        self.assertRaises(LoadError, self.subsloader.load, os.path.join(SUBS_PATH, 'test_vobsub.sub'))
 

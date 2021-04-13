@@ -172,53 +172,53 @@ class TestSeekerDownload(unittest.TestCase):
     def test_choose_file(self):
         expected_output = os.path.join(self.download_path, 'subfile1.srt')
         provider = ArchiveDownloadSeeker
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
-        settings = {'save_as':'default', 'lang_to_filename':False}
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
+        settings = {'save_as': 'default', 'lang_to_filename': False}
         output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings)
         self._test_download(expected_output, output)
 
     def test_save_as_version(self):
         expected_output = os.path.join(self.download_path, 'subfile.srt')
         provider = NotArchiveDownloadSeeker
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
-        settings = {'save_as':'version', 'lang_to_filename':False}
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
+        settings = {'save_as': 'version', 'lang_to_filename': False}
         output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings)
         self._test_download(expected_output, output)
 
     def test_save_as_video(self):
         expected_output = os.path.join(self.download_path, 'vsubfile.srt')
         provider = NotArchiveDownloadSeeker
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
-        settings = {'save_as':'video', 'lang_to_filename':False}
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
+        settings = {'save_as': 'video', 'lang_to_filename': False}
         output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings)
         self._test_download(expected_output, output)
 
     def test_lang_to_filename(self):
         expected_output = os.path.join(self.download_path, 'subfile.cs.srt')
         provider = NotArchiveDownloadSeeker
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
-        settings = {'save_as':'version', 'lang_to_filename':True}
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
+        settings = {'save_as': 'version', 'lang_to_filename': True}
         output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings)
         self._test_download(expected_output, output)
 
     def test_save_to_custom_dir(self):
         expected_output = os.path.join(self.custom_path, 'subfile.srt')
         provider = NotArchiveDownloadSeeker
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
-        settings = {'save_as':'version', 'lang_to_filename':False}
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
+        settings = {'save_as': 'version', 'lang_to_filename': False}
         output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings, path=self.custom_path)
         self._test_download(expected_output, output)
         
     def test_save_custom_fname(self):
         expected_output = os.path.join(self.download_path, 'custom.srt')
         provider = NotArchiveDownloadSeeker
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
         output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, fname="custom")
         self._test_download(expected_output, output)
 
@@ -226,11 +226,11 @@ class TestSeekerDownload(unittest.TestCase):
         expected_output = os.path.join(self.download_path, 'subfile.srt')
         provider = NotArchiveDownloadSeeker
         open(expected_output, 'w').close()
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
-        settings = {'save_as':'version', 'lang_to_filename':False}
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
+        settings = {'save_as': 'version', 'lang_to_filename': False}
         original_size = os.path.getsize(provider.subpath)
-        output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings, overwrite_cb=lambda x:True)
+        output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings, overwrite_cb=lambda x: True)
         downloaded_size = os.path.getsize(expected_output)
         self.assertTrue(original_size == downloaded_size, 'original size != downloaded size: "%d != %d"' % (original_size, downloaded_size))
         self._test_download(expected_output, output)
@@ -240,10 +240,10 @@ class TestSeekerDownload(unittest.TestCase):
         expected_output = provider.subpath
         overwrite_path = os.path.join(self.download_path, 'subfile.srt')
         open(overwrite_path, 'w').close()
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
-        settings = {'save_as':'version', 'lang_to_filename':False}
-        output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings, overwrite_cb=lambda x:False)
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
+        settings = {'save_as': 'version', 'lang_to_filename': False}
+        output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings, overwrite_cb=lambda x: False)
         self.assertTrue(os.path.getsize(overwrite_path) == 0)
         self._test_download(expected_output, output)
 
@@ -252,10 +252,10 @@ class TestSeekerDownload(unittest.TestCase):
         expected_output = provider.subpath
         overwrite_path = os.path.join(self.download_path, 'subfile.srt')
         open(overwrite_path, 'w').close()
-        selected_subtitle = {'filename':'subfile.srt'}
-        subtitles_dict = {provider.id:{'list':[selected_subtitle], 'params':{'filepath':os.path.join(self.video_path, 'vsubfile.avi')}}}
-        settings = {'save_as':'version', 'lang_to_filename':False}
-        output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings, overwrite_cb=lambda x:None)
+        selected_subtitle = {'filename': 'subfile.srt'}
+        subtitles_dict = {provider.id: {'list': [selected_subtitle], 'params': {'filepath': os.path.join(self.video_path, 'vsubfile.avi')}}}
+        settings = {'save_as': 'version', 'lang_to_filename': False}
+        output = self.seeker.downloadSubtitle(selected_subtitle, subtitles_dict, choosefile_cb, settings=settings, overwrite_cb=lambda x: None)
         self.assertTrue(os.path.getsize(overwrite_path) == 0)
         self._test_download(expected_output, output)
 
@@ -269,7 +269,7 @@ class TestSeeker(unittest.TestCase):
 
     def setUp(self):
         download_path = tmp_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'subtmp')
-        settings = {'Titulky.com':{'Titulkypass':'', 'Titulkyuser':''}}
+        settings = {'Titulky.com': {'Titulkypass': '', 'Titulkyuser': ''}}
         self.seeker = SubsSeeker(download_path, tmp_path, captcha_cb, delay_cb, message_cb, settings=settings, debug=True)
 
     def test_get_tvshow_providers(self):

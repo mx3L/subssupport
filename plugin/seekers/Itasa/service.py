@@ -64,7 +64,7 @@ def login(username, password):
                 my_opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
                 my_opener.addheaders = [('Referer', main_url)]
                 urllib2.install_opener(my_opener)
-                request = urllib2.Request(main_url + 'index.php',login_postdata)
+                request = urllib2.Request(main_url + 'index.php', login_postdata)
                 response = urllib2.urlopen(request).read()
                 match = re.search('logouticon.png', response, re.IGNORECASE | re.DOTALL)
                 if match:
@@ -84,16 +84,16 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
         if content is not None:
             match = re.search(show_pattern % tvshow, content, re.IGNORECASE | re.DOTALL)
             if match is None and tvshow[-1] == ")":
-                log(__name__," Year Bug? '%s'" % tvshow)
+                log(__name__, " Year Bug? '%s'" % tvshow)
                 tvshow = tvshow[:-7]
                 match = re.search(show_pattern % tvshow, content, re.IGNORECASE | re.DOTALL)
             if match:
-                log(__name__," Tv show '%s' found" % tvshow)
+                log(__name__, " Tv show '%s' found" % tvshow)
                 content = geturl(main_url + match.group(1))
                 if content is not None:
                     match = re.search(season_pattern % season, content, re.IGNORECASE | re.DOTALL)
                     if match:
-                        log(__name__," Season %s of tv show '%s' found" % (season, tvshow))
+                        log(__name__, " Season %s of tv show '%s' found" % (season, tvshow))
                         category = 'normal'
                         categorypage = match.group(1)
                         content = geturl(main_url + categorypage)
@@ -101,24 +101,24 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
                             for matches in re.finditer(subtitle_pattern % (tvshow, int(season), int(episode)), content, re.IGNORECASE | re.DOTALL):
                                 filename = matches.group(3)
                                 id = matches.group(2)
-                                log(__name__," Adding '%s' to list of subtitles" % filename)
+                                log(__name__, " Adding '%s' to list of subtitles" % filename)
                                 subtitles_list.append({'rating': '0', 'no_files': 1, 'filename': filename, 'sync': False, 'id': id, 'link': categorypage, 'language_flag': 'flags/it.gif', 'language_name': 'Italian'})
                             for matches in re.finditer(category_pattern, content, re.IGNORECASE | re.DOTALL):
                                 categorypage = matches.group(1)
                                 category = matches.group(2)
-                                log(__name__," Page for category '%s' found" % category)
+                                log(__name__, " Page for category '%s' found" % category)
                                 content = geturl(main_url + categorypage)
                                 if content is not None:
                                     for matches in re.finditer(subtitle_pattern % (tvshow, int(season), int(episode)), content, re.IGNORECASE | re.DOTALL):
                                         id = matches.group(2)
                                         filename = matches.group(3)
-                                        log(__name__," Adding '%s (%s)' to list of subtitles" % (filename, category))
+                                        log(__name__, " Adding '%s (%s)' to list of subtitles" % (filename, category))
                                         subtitles_list.append({'rating': '0', 'no_files': 1, 'filename': "%s (%s)" % (filename, category), 'sync': False, 'id': id, 'link': categorypage, 'language_flag': 'flags/it.gif', 'language_name': 'Italian'})
                     else:
-                        log(__name__," Season %s of tv show '%s' not found" % (season, tvshow))
+                        log(__name__, " Season %s of tv show '%s' not found" % (season, tvshow))
                         msg = "Season %s of tv show '%s' not found" % (season, tvshow)
             else:
-                log(__name__," Tv show '%s' not found." % tvshow)
+                log(__name__, " Tv show '%s' not found." % tvshow)
                 msg = "Tv show '%s' not found" % tvshow
     else:
         msg = "Won't work, Itasa is only for tv shows."
@@ -138,7 +138,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
         match = re.search(subtitle_download_pattern % id, content, re.IGNORECASE | re.DOTALL)
         if match:
             language = subtitles_list[pos]["language_name"]
-            log(__name__," Fetching subtitles using url %s" % (main_url + match.group(1)))
+            log(__name__, " Fetching subtitles using url %s" % (main_url + match.group(1)))
             content = geturl(main_url + match.group(1))
             if content is not None:
                 header = content[:4]
@@ -152,13 +152,13 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
                     local_tmp_file = os.path.join(tmp_sub_dir, "undertexter.srt") # assume unpacked subtitels file is an '.srt'
                     packed = False
                 subs_file = local_tmp_file
-                log(__name__," Saving subtitles to '%s'" % (local_tmp_file))
+                log(__name__, " Saving subtitles to '%s'" % (local_tmp_file))
                 try:
                     local_file_handle = open(local_tmp_file, "wb")
                     local_file_handle.write(content)
                     local_file_handle.close()
                 except:
-                    log(__name__," Failed to save subtitles to '%s'" % (local_tmp_file))
+                    log(__name__, " Failed to save subtitles to '%s'" % (local_tmp_file))
                 return packed, language, subs_file #standard output
-    log(__name__," Login to Itasa failed. Check your username/password at the addon configuration.")
+    log(__name__, " Login to Itasa failed. Check your username/password at the addon configuration.")
     raise SubtitlesDownloadError(SubtitlesErrors.INVALID_CREDENTIALS_ERROR, "provided invalid credentials")

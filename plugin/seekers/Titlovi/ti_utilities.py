@@ -154,7 +154,7 @@ class OSDBServer:
                         if (checkEpisode in filename) or (checkSeasonPack in filename):
                             subtitles_list.append({'filename': filename,
                                                         'link': link,
-                                                        'language_name': languageTranslate((lang_name),2,0),
+                                                        'language_name': languageTranslate((lang_name), 2, 0),
                                                         'language_id': lang_id,
                                                         'language_flag': flag_image,
                                                         'movie': movie,
@@ -167,7 +167,7 @@ class OSDBServer:
                     else:
                         subtitles_list.append({'filename': filename,
                                                         'link': link,
-                                                        'language_name': languageTranslate((lang_name),2,0),
+                                                        'language_name': languageTranslate((lang_name), 2, 0),
                                                         'language_id': lang_id,
                                                         'language_flag': flag_image,
                                                         'movie': movie,

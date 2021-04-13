@@ -42,8 +42,8 @@ class OSDBServer:
         try:
             if (self.osdb_token):
                 if hash_search:
-                    searchlist.append({'sublanguageid':language, 'moviehash':_hash, 'moviebytesize':str(size)})
-                searchlist.append({'sublanguageid':language, 'query':srch_string})
+                    searchlist.append({'sublanguageid': language, 'moviehash': _hash, 'moviebytesize': str(size)})
+                searchlist.append({'sublanguageid': language, 'query': srch_string})
                 search = self.server.SearchSubtitles(self.osdb_token, searchlist)
                 if search["data"]:
                     for item in search["data"]:
@@ -62,18 +62,18 @@ class OSDBServer:
                         else:
                             sync = False
                         self.subtitles_hash_list.append({
-                            'lang_index':lang_index,
-                            'filename':item["SubFileName"],
-                            'link':item["ZipDownloadLink"],
-                            'language_name':item["LanguageName"],
-                            'language_flag':flag_image,
-                            'language_id':item["SubLanguageID"],
-                            'ID':item["IDSubtitleFile"],
-                            'rating':str(int(item["SubRating"][0])),
-                            'format':item["SubFormat"],
-                            'sync':sync,
-                            'hearing_imp':int(item["SubHearingImpaired"]) != 0,
-                            'fps':item.get('MovieFPS')
+                            'lang_index': lang_index,
+                            'filename': item["SubFileName"],
+                            'link': item["ZipDownloadLink"],
+                            'language_name': item["LanguageName"],
+                            'language_flag': flag_image,
+                            'language_id': item["SubLanguageID"],
+                            'ID': item["IDSubtitleFile"],
+                            'rating': str(int(item["SubRating"][0])),
+                            'format': item["SubFormat"],
+                            'sync': sync,
+                            'hearing_imp': int(item["SubHearingImpaired"]) != 0,
+                            'fps': item.get('MovieFPS')
                         })
 
         except Exception as e:

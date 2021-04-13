@@ -28,15 +28,15 @@ class XBMCSubtitlesAdapter(BaseSeeker):
         # gets first three languages in supported_langs list, so most of the time its
         # best to pass languages which will be used for searching
         if len(self.supported_langs) == 1:
-            self.lang1 = self.lang2 = self.lang3 = languageTranslate(self.supported_langs[0],2,0)
+            self.lang1 = self.lang2 = self.lang3 = languageTranslate(self.supported_langs[0], 2, 0)
         elif len(self.supported_langs) == 2:
-            self.lang1 = languageTranslate(self.supported_langs[0],2,0)
-            self.lang2 = languageTranslate(self.supported_langs[1],2,0)
+            self.lang1 = languageTranslate(self.supported_langs[0], 2, 0)
+            self.lang2 = languageTranslate(self.supported_langs[1], 2, 0)
             self.lang3 = self.lang1
         else:
-            self.lang1 = languageTranslate(self.supported_langs[0],2,0)
-            self.lang2 = languageTranslate(self.supported_langs[1],2,0)
-            self.lang3 = languageTranslate(self.supported_langs[2],2,0)
+            self.lang1 = languageTranslate(self.supported_langs[0], 2, 0)
+            self.lang2 = languageTranslate(self.supported_langs[1], 2, 0)
+            self.lang3 = languageTranslate(self.supported_langs[2], 2, 0)
 
     def _search(self, title, filepath, langs, season, episode, tvshow, year):
         file_original_path = filepath and filepath or ""
@@ -53,14 +53,14 @@ class XBMCSubtitlesAdapter(BaseSeeker):
             lang2 = self.lang2
             lang3 = self.lang3
         elif len(langs) == 1:
-            lang1 = lang2 = lang3 = languageTranslate(langs[0],2,0)
+            lang1 = lang2 = lang3 = languageTranslate(langs[0], 2, 0)
         elif len(langs) == 2:
-            lang1 = lang3 = languageTranslate(langs[0],2,0)
-            lang2 = languageTranslate(langs[1],2,0)
+            lang1 = lang3 = languageTranslate(langs[0], 2, 0)
+            lang2 = languageTranslate(langs[1], 2, 0)
         elif len(langs) == 3:
-            lang1 = languageTranslate(langs[0],2,0)
-            lang2 = languageTranslate(langs[1],2,0)
-            lang3 = languageTranslate(langs[2],2,0)
+            lang1 = languageTranslate(langs[0], 2, 0)
+            lang2 = languageTranslate(langs[1], 2, 0)
+            lang3 = languageTranslate(langs[2], 2, 0)
         self.log.info('using langs %s %s %s' % (toString(lang1), toString(lang2), toString(lang3)))
         self.module.settings_provider = self.settings_provider
         # Standard output -
@@ -69,7 +69,7 @@ class XBMCSubtitlesAdapter(BaseSeeker):
         # message to print back to the user
         # return subtitlesList, "", msg
         subtitles_list, session_id, msg = self.module.search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp=False, rar=False, lang1=lang1, lang2=lang2, lang3=lang3, stack=None)
-        return {'list':subtitles_list, 'session_id':session_id, 'msg':msg}
+        return {'list': subtitles_list, 'session_id': session_id, 'msg': msg}
 
     def _download(self, subtitles, selected_subtitle, path=None):
         subtitles_list = subtitles['list']
@@ -120,8 +120,8 @@ class TitulkyComSeeker(XBMCSubtitlesAdapter):
     id = 'titulky.com'
     provider_name = 'Titulky.com'
     supported_langs = ['sk', 'cs']
-    default_settings = {'Titulkyuser':{'label':_("Username"), 'type':'text', 'default':"", 'pos':0},
-                                       'Titulkypass':{'label':_("Password"), 'type':'password', 'default':"", 'pos':1}, }
+    default_settings = {'Titulkyuser': {'label': _("Username"), 'type': 'text', 'default': "", 'pos': 0},
+                                       'Titulkypass': {'label': _("Password"), 'type': 'password', 'default': "", 'pos': 1}, }
 
 try:
     from Edna import edna
@@ -298,9 +298,9 @@ class PodnapisiSeeker(XBMCSubtitlesAdapter):
                                             "tr",
                                             "uk",
                                             "vi"]
-    default_settings = {'PNuser':{'label':_("Username"), 'type':'text', 'default':"", 'pos':0},
-                                       'PNpass':{'label':_("Password"), 'type':'password', 'default':"", 'pos':1},
-                                       'PNmatch':{'label':_("Send and search movie hashes"), 'type':'yesno', 'default':'false', 'pos':2}}
+    default_settings = {'PNuser': {'label': _("Username"), 'type': 'text', 'default': "", 'pos': 0},
+                                       'PNpass': {'label': _("Password"), 'type': 'password', 'default': "", 'pos': 1},
+                                       'PNmatch': {'label': _("Send and search movie hashes"), 'type': 'yesno', 'default': 'false', 'pos': 2}}
 try:
     from Subscene import subscene
 except ImportError as e:
@@ -394,8 +394,8 @@ class ItasaSeeker(XBMCSubtitlesAdapter):
     id = 'itasa'
     provider_name = 'Itasa'
     supported_langs = ['it']
-    default_settings = {'ITuser':{'label':_("Username"), 'type':'text', 'default':"", 'pos':0},
-                                       'ITpass':{'label':_("Password"), 'type':'password', 'default':"", 'pos':1}, }
+    default_settings = {'ITuser': {'label': _("Username"), 'type': 'text', 'default': "", 'pos': 0},
+                                       'ITpass': {'label': _("Password"), 'type': 'password', 'default': "", 'pos': 1}, }
     movie_search = False
     tvshow_search = True
 
@@ -410,7 +410,7 @@ class TitloviSeeker(XBMCSubtitlesAdapter):
         error, module = module, None
     id = 'titlovi.com'
     provider_name = 'Titlovi'
-    supported_langs = ['bs','hr','en','mk','sr','sl']
+    supported_langs = ['bs', 'hr', 'en', 'mk', 'sr', 'sl']
     default_settings = {}
     movie_search = True
     tvshow_search = True

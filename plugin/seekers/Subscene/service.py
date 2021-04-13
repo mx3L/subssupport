@@ -37,7 +37,7 @@ subscene_languages = {
     'Farsi/Persian': 'Persian'
 }
 
-def getSearchTitle(title,year=None): ## new Add
+def getSearchTitle(title, year=None): ## new Add
     url = 'https://subscene.com/subtitles/searchbytitle?query=%s&l=' % urllib.quote_plus(title)
     data = geturl(url)
     blocks = data.split('class="title"')
@@ -46,11 +46,11 @@ def getSearchTitle(title,year=None): ## new Add
     for block in blocks:
         regx = '''<a href="(.*?)">(.*?)</a>'''
         try:
-            matches = re.findall(regx,block)
+            matches = re.findall(regx, block)
             name = matches[0][1]
             href = matches[0][0]
-            print "hrefxxx",href
-            print "yearxx",year
+            print "hrefxxx", href
+            print "yearxx", year
             href = 'https://subscene.com' + href
             if year and year == '':
               if "/subtitles/" in href:
@@ -60,7 +60,7 @@ def getSearchTitle(title,year=None): ## new Add
                   return href
             if year and str(year) in name:
                 if "/subtitles/" in href:
-                   print "href",href
+                   print "href", href
                    return href
         except:
             break
@@ -100,13 +100,13 @@ def find_tv_show_season(content, tvshow, season):
                 possible_matches.append(matches.groups())
 
     if len(possible_matches) > 0:
-        possible_matches = sorted(possible_matches, key=lambda x:-int(x[3]))
+        possible_matches = sorted(possible_matches, key=lambda x: -int(x[3]))
         url_found = possible_matches[0][0]
         log(__name__, "Selecting matching tv show with most subtitles: %s (%s)" % (
             possible_matches[0][1], possible_matches[0][3]))
     else:
         if len(all_tvshows) > 0:
-            all_tvshows = sorted(all_tvshows, key=lambda x:-int(x[4]))
+            all_tvshows = sorted(all_tvshows, key=lambda x: -int(x[4]))
             url_found = all_tvshows[0][0]
             log(__name__, "Selecting tv show with highest fuzzy string score: %s (score: %s subtitles: %s)" % (
                 all_tvshows[0][1], all_tvshows[0][4], all_tvshows[0][3]))
@@ -127,7 +127,7 @@ def getallsubs(content, allowed_languages, filename="", search_string=""):
     subtitles = []
     h = HTMLParser.HTMLParser()
     allmatches = re.finditer(subtitle_pattern, content, re.IGNORECASE | re.DOTALL)
-    print 'allmatches',allmatches
+    print 'allmatches', allmatches
     i = 0
     for matches in re.finditer(subtitle_pattern, content, re.IGNORECASE | re.DOTALL):
         numfiles = 1
@@ -157,16 +157,16 @@ def getallsubs(content, allowed_languages, filename="", search_string=""):
             if search_string != "":
                 if string.find(string.lower(subtitle_name), string.lower(search_string)) > -1:
                     subtitles.append({'rating': rating, 'filename': subtitle_name, 'sync': sync, 'link': link,
-                                     'language_name':language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
+                                     'language_name': language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
                     i = i + 1
                 elif numfiles > 2:
                     subtitle_name = subtitle_name + ' ' + ("%d files" % int(matches.group('numfiles')))
                     subtitles.append({'rating': rating, 'filename': subtitle_name, 'sync': sync, 'link': link,
-                                     'language_name':language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
+                                     'language_name': language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
                     i = i + 1
             else:
                 subtitles.append({'rating': rating, 'filename': subtitle_name, 'sync': sync, 'link': link,
-                                 'language_name':language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
+                                 'language_name': language_info['name'], 'lang': language_info, 'hearing_imp': hearing_imp, 'comment': comment})
                 i = i + 1
 
     subtitles.sort(key=lambda x: [not x['sync']])
@@ -183,18 +183,18 @@ def search_movie(title, year, languages, filename):
     try:
         title = string.strip(title)
         search_string = prepare_search_string(title)
-        url = getSearchTitle(search_string,year)
-        print "true url",url
+        url = getSearchTitle(search_string, year)
+        print "true url", url
         content = geturl(url)
         if content == '':
            if content is None:
                return []
-        print "content",content
+        print "content", content
         if content != '':
                     list = getallsubs(content, languages, filename)
                     return list
     except Exception as error:
-           print("error",error)
+           print("error", error)
                     
 
 def search_tvshow(tvshow, season, episode, languages, filename):

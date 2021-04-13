@@ -10,9 +10,9 @@ import unittest
 import ConfigParser
 
 test = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(test, '..','plugin'))
+sys.path.append(os.path.join(test, '..', 'plugin'))
 
-MOVIE_PATH = os.path.join(test,'moviefiles')
+MOVIE_PATH = os.path.join(test, 'moviefiles')
 
 from seekers import SubtitlesDownloadError, SubtitlesSearchError, \
     SubtitlesErrors
@@ -66,7 +66,7 @@ class TestXBMCSubtitleProvider(object):
     def test_search_movie(self):
         for movie in self.movie_list:
             if len(movie) == 1:
-                title, year, langs = movie[0], '',''
+                title, year, langs = movie[0], '', ''
             elif len(movie) == 2:
                 title, year, langs = movie[0], movie[1], ''
             elif len(movie) == 3:
@@ -79,7 +79,7 @@ class TestXBMCSubtitleProvider(object):
             if len(h) == 1:
                 path, langs = h[0], ''
             elif len(h) == 2:
-                path,langs = h[0],h[1]
+                path, langs = h[0], h[1]
             else:
                 continue
             if os.path.isfile(path):
@@ -106,10 +106,10 @@ class TestXBMCSubtitleProviderWithCredentials(TestXBMCSubtitleProvider):
     @classmethod
     def get_credentials(cls, filename):
         config = ConfigParser.RawConfigParser()
-        cfgpath = os.path.join(os.path.dirname(__file__),filename)
+        cfgpath = os.path.join(os.path.dirname(__file__), filename)
         try:
             config.read(cfgpath)
-            config.get('Credentials','username')
+            config.get('Credentials', 'username')
         except:
             print 'Cannot read config file ' + filename
             config.add_section('Credentials')
@@ -118,7 +118,7 @@ class TestXBMCSubtitleProviderWithCredentials(TestXBMCSubtitleProvider):
             with open(cfgpath, 'wb') as configfile:
                 config.write(configfile)
             print 'Wrote default values to config file'
-        return config.get('Credentials','username'), config.get('Credentials','password')
+        return config.get('Credentials', 'username'), config.get('Credentials', 'password')
 
     def test_download(self):
         pass
@@ -151,7 +151,7 @@ from seekers.xbmc_subtitles import TitulkyComSeeker
 class TestTitulkycom(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        super(TestTitulkycom,cls).setUpClass()
+        super(TestTitulkycom, cls).setUpClass()
         cls.login, cls.password = cls.get_credentials('titulkycom.cfg')
 
     def setUp(self):
@@ -176,7 +176,7 @@ class TestEdna(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
         self.search_list = []
-        self.tvshow_list = [('True Detective','1','1')]
+        self.tvshow_list = [('True Detective', '1', '1')]
         self.movie_list = []
         self.hash_list = []
         self.download_movie_list = []
@@ -193,7 +193,7 @@ from seekers.xbmc_subtitles import SerialZoneSeeker
 class TestSerialZone(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.search_list = []
-        self.tvshow_list = [('True Detective','1','1')]
+        self.tvshow_list = [('True Detective', '1', '1')]
         self.movie_list = []
         self.hash_list = []
         self.download_movie_list = []
@@ -211,11 +211,11 @@ class TestOpenSubtitles(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
         self.search_list = ['Dark Knight']
-        self.tvshow_list = [('True Detective','1','1')]
+        self.tvshow_list = [('True Detective', '1', '1')]
         self.movie_list = []
         self.hash_list = []
         self.download_movie_list = []
-        self.download_tvshow_list = [('True Detective','1','1')]
+        self.download_tvshow_list = [('True Detective', '1', '1')]
         self.provider = OpenSubtitlesSeeker(self.tmp_path,
                                                                         self.download_path,
                                                                         self.settings,
@@ -228,15 +228,15 @@ from seekers.xbmc_subtitles import PodnapisiSeeker
 class TestPodnapisi(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        super(TestPodnapisi,cls).setUpClass()
+        super(TestPodnapisi, cls).setUpClass()
         cls.login, cls.password = cls.get_credentials('podnapisi.cfg')
 
     def setUp(self):
         self.search_list = ['Dark Knight']
         self.tvshow_list = []
-        self.movie_list = [('The Hobbit','2012')]
+        self.movie_list = [('The Hobbit', '2012')]
         self.hash_list = []
-        self.download_movie_list = [('The Hobbit','2012')]
+        self.download_movie_list = [('The Hobbit', '2012')]
         self.download_tvshow_list = []
         self.login_setting_key = 'PNuser'
         self.password_setting_key = 'PNpass'
@@ -258,9 +258,9 @@ class TestSubscene(TestXBMCSubtitleProvider, unittest.TestCase):
         self.settings = {}
         self.search_list = []
         self.tvshow_list = []
-        self.movie_list = [('The Hobbit','2012'), ('Bad boys','',['fa'])]
+        self.movie_list = [('The Hobbit', '2012'), ('Bad boys', '', ['fa'])]
         self.hash_list = []
-        self.download_movie_list = [('The Hobbit','2012')]
+        self.download_movie_list = [('The Hobbit', '2012')]
         self.download_tvshow_list = []
         self.provider = SubsceneSeeker(self.tmp_path,
                                                                         self.download_path,
@@ -275,10 +275,10 @@ class TestSubtitlesGR(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
         self.search_list = []
-        self.tvshow_list = [('True Detective','1','1')]
-        self.movie_list = [('The Hobbit','2012')]
+        self.tvshow_list = [('True Detective', '1', '1')]
+        self.movie_list = [('The Hobbit', '2012')]
         self.hash_list = []
-        self.download_movie_list = [('The Hobbit','2012')]
+        self.download_movie_list = [('The Hobbit', '2012')]
         self.download_tvshow_list = []
         self.provider = SubtitlesGRSeeker(self.tmp_path,
                                                                         self.download_path,
@@ -292,15 +292,15 @@ from seekers.xbmc_subtitles import ItasaSeeker
 class TestItasa(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        super(TestItasa,cls).setUpClass()
+        super(TestItasa, cls).setUpClass()
         cls.login, cls.password = cls.get_credentials('itasa.cfg')
 
     def setUp(self):
         self.search_list = []
         self.movie_list = []
-        self.tvshow_list = [('True Detective','1','1')]
+        self.tvshow_list = [('True Detective', '1', '1')]
         self.hash_list = []
-        self.download_tvshow_list = [('True Detective','1','1')]
+        self.download_tvshow_list = [('True Detective', '1', '1')]
         self.download_movie_list = []
         self.login_setting_key = 'ITuser'
         self.password_setting_key = 'ITpass'
@@ -317,10 +317,10 @@ class TestTitlovi(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
         self.search_list = []
-        self.tvshow_list = [('True Detective','1','1')]
-        self.movie_list = [('The Hobbit','2012')]
+        self.tvshow_list = [('True Detective', '1', '1')]
+        self.movie_list = [('The Hobbit', '2012')]
         self.hash_list = []
-        self.download_movie_list = [('The Hobbit','2012')]
+        self.download_movie_list = [('The Hobbit', '2012')]
         self.download_tvshow_list = []
         self.provider = TitloviSeeker(self.tmp_path,
                                                                         self.download_path,

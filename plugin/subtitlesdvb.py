@@ -77,7 +77,7 @@ class SubsSupportDVB(object):
         self.session.deleteDialog(self.subsScreen)
 
 class SubsControllerDVB(Screen, HelpableScreen):
-    fpsChoices = ["23.976", "23.980","24.000", "25.000", "29.970", "30.000"]
+    fpsChoices = ["23.976", "23.980", "24.000", "25.000", "29.970", "30.000"]
 
     def __init__(self, session, engine, autoSync=False, setSubtitlesFps=False, subtitlesFps=None):
         desktopSize = getDesktopSize()
@@ -141,15 +141,15 @@ class SubsControllerDVB(Screen, HelpableScreen):
             "playPauseSub": (self.playPause, _("play/pause subtitles playback")),
             "pauseSub": (self.pause, _("pause subtitles playback")),
             "resumeSub": (self.resume, _("resumes subtitles playback")),
-            "restartSub":(self.restart, _("restarts current subtitle")),
+            "restartSub": (self.restart, _("restarts current subtitle")),
             "nextSub": (self.nextSkip, _("skip to next subtitle")),
             "nextSubMinute": (self.nextMinuteSkip, _("skip to next subtitle (minute jump)")),
-            "nextSubManual":(self.nextManual, _("skip to next subtitle by setting time in minutes")),
-            "prevSub":(self.previousSkip, _("skip to previous subtitle")),
-            "prevSubMinute":(self.previousMinuteSkip, _("skip to previous subtitle (minute jump)")),
-            "prevSubManual":(self.previousManual, _("skip previous subtitle by setting time in minutes")),
-            "eventSync":(self.eventSync, _("skip subtitle to current event position")),
-            "changeFps":(self.changeFps, _("change subtitles fps")),
+            "nextSubManual": (self.nextManual, _("skip to next subtitle by setting time in minutes")),
+            "prevSub": (self.previousSkip, _("skip to previous subtitle")),
+            "prevSubMinute": (self.previousMinuteSkip, _("skip to previous subtitle (minute jump)")),
+            "prevSubManual": (self.previousManual, _("skip previous subtitle by setting time in minutes")),
+            "eventSync": (self.eventSync, _("skip subtitle to current event position")),
+            "changeFps": (self.changeFps, _("change subtitles fps")),
         }, 0)
         try:
             from Screens.InfoBar import InfoBar

@@ -94,7 +94,7 @@ def log(module, msg):
 def geturl(url1, headers=None, params=None): 
     try:
         res = ses.get(url1, headers=headers, verify=False, timeout=5)
-        print 'res.status_code',res.status_code
+        print 'res.status_code', res.status_code
         if res.status_code == 200:
             return res.content
         e = res.raise_for_status()

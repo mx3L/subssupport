@@ -8,21 +8,21 @@ from ..utilities import log, languageTranslate
 
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack): #standard input
-	log(__name__,"Starting search by TV Show")
+	log(__name__, "Starting search by TV Show")
 	if (tvshow == None or tvshow == ''):
-		log(__name__,"No TVShow name, stop")
-		return [],"",""
+		log(__name__, "No TVShow name, stop")
+		return [], "", ""
 
 	cli = EdnaClient()
 	found_tv_shows = cli.search_show(tvshow)
 	if (found_tv_shows.__len__() == 0):
-		log(__name__,"TVShow not found, stop")
-		return [],"",""
+		log(__name__, "TVShow not found, stop")
+		return [], "", ""
 	elif (found_tv_shows.__len__() == 1):
-		log(__name__,"One TVShow found, auto select")
+		log(__name__, "One TVShow found, auto select")
 		tvshow_url = found_tv_shows[0]['url']
 	else:
-		log(__name__,"More TVShows found, user dialog for select")
+		log(__name__, "More TVShows found, user dialog for select")
 		menu_dialog = []
 # 		for found_tv_show in found_tv_shows:
 # 			menu_dialog.append(found_tv_show['title'])
@@ -31,9 +31,9 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 # 		if (found_tv_show_id == -1):
 # 			return [],"",""
 		tvshow_url = found_tv_shows[0]['url']
-	log(__name__,"Selected show URL: " + tvshow_url)
+	log(__name__, "Selected show URL: " + tvshow_url)
 
-	found_season_subtitles = cli.list_show_subtitles(tvshow_url,season)
+	found_season_subtitles = cli.list_show_subtitles(tvshow_url, season)
 
 	episode_subtitle_list = None
 
@@ -58,7 +58,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 			'language_name': lng_short2long(episode_subtitle['lang']),
 		})
 
-	log(__name__,result_subtitles)
+	log(__name__, result_subtitles)
 
 	# Standard output -
 	# subtitles list
@@ -70,14 +70,14 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 def download_subtitles(subtitles_list, pos, extract_subs, tmp_sub_dir, sub_folder, session_id): #standard input
 	selected_subtitles = subtitles_list[pos]
 
-	log(__name__,'Downloading subtitles')
+	log(__name__, 'Downloading subtitles')
 	res = urllib.urlopen(selected_subtitles['link'])
-	subtitles_filename = re.search("Content\-Disposition: attachment; filename=\"(.+?)\"",str(res.info())).group(1)
-	log(__name__,'Filename: %s' % subtitles_filename)
+	subtitles_filename = re.search("Content\-Disposition: attachment; filename=\"(.+?)\"", str(res.info())).group(1)
+	log(__name__, 'Filename: %s' % subtitles_filename)
 	# subs are in .zip or .rar
 	subtitles_format = re.search("\.(\w+?)$", subtitles_filename, re.IGNORECASE).group(1)
-	log(__name__,"Subs in %s" % subtitles_format)
-	if subtitles_format in ['srt','sub']:
+	log(__name__, "Subs in %s" % subtitles_format)
+	if subtitles_format in ['srt', 'sub']:
 		compressed = False
 		store_path = os.path.join(sub_folder, subtitles_filename)
 		subtitles_file = store_path
@@ -85,7 +85,7 @@ def download_subtitles(subtitles_list, pos, extract_subs, tmp_sub_dir, sub_folde
 		compressed = True
 		store_path = extract_subs
 		subtitles_file = subtitles_format
-	store_path_file = open(store_path,'wb')
+	store_path_file = open(store_path, 'wb')
 	store_path_file.write(res.read())
 	store_path_file.close()
 	# Standard output -
@@ -110,7 +110,7 @@ def lng_long2short(lang):
 	return 'EN'
 
 def lng_short2flag(lang):
-	return languageTranslate(lng_short2long(lang),0,2)
+	return languageTranslate(lng_short2long(lang), 0, 2)
 
 
 class EdnaClient(object):
@@ -118,23 +118,23 @@ class EdnaClient(object):
 	def __init__(self):
 		self.server_url = "http://www.edna.cz"
 
-	def search_show(self,title):
+	def search_show(self, title):
 		enc_title = urllib.urlencode({"q": title})
 		res = urllib.urlopen(self.server_url + "/vyhledavani/?" + enc_title)
 		shows = []
-		if re.search("/vyhledavani/\?q=",res.geturl()):
-			log(__name__,"Parsing search result")
-			res_body = re.search("<ul class=\"list serieslist\">(.+?)</ul>",res.read(),re.IGNORECASE | re.DOTALL)
+		if re.search("/vyhledavani/\?q=", res.geturl()):
+			log(__name__, "Parsing search result")
+			res_body = re.search("<ul class=\"list serieslist\">(.+?)</ul>", res.read(), re.IGNORECASE | re.DOTALL)
 			if res_body:
 				for row in re.findall("<li>(.+?)</li>", res_body.group(1), re.IGNORECASE | re.DOTALL):
 					show = {}
-					show_reg_exp = re.compile("<h3><a href=\"(.+?)\">(.+?)</a></h3>",re.IGNORECASE | re.DOTALL)
+					show_reg_exp = re.compile("<h3><a href=\"(.+?)\">(.+?)</a></h3>", re.IGNORECASE | re.DOTALL)
 					show['url'], show['title'] = re.search(show_reg_exp, row).groups()
 					shows.append(show)
 		else:
-			log(__name__,"Parsing redirect to show URL")
+			log(__name__, "Parsing redirect to show URL")
 			show = {}
-			show['url'] = re.search(self.server_url + "(.+)",res.geturl()).group(1)
+			show['url'] = re.search(self.server_url + "(.+)", res.geturl()).group(1)
 			show['title'] = title
 			shows.append(show)
 		return shows
@@ -144,21 +144,21 @@ class EdnaClient(object):
 		if not res.getcode() == 200:
 			return []
 		subtitles = []
-		html_subtitle_table = re.search("<table class=\"episodes\">.+<tbody>(.+?)</tbody>.+</table>",res.read(), re.IGNORECASE | re.DOTALL)
+		html_subtitle_table = re.search("<table class=\"episodes\">.+<tbody>(.+?)</tbody>.+</table>", res.read(), re.IGNORECASE | re.DOTALL)
 		if html_subtitle_table == None:
 			return []
 		for html_episode in re.findall("<tr>(.+?)</tr>", html_subtitle_table.group(1), re.IGNORECASE | re.DOTALL):
 			subtitle = {}
-			show_title_with_numbers = re.sub("<[^<]+?>", "",re.search("<h3>(.+?)</h3>", html_episode).group(1))
+			show_title_with_numbers = re.sub("<[^<]+?>", "", re.search("<h3>(.+?)</h3>", html_episode).group(1))
 			subtitle['full_title'] = show_title_with_numbers
-			show_title_with_numbers = re.search("S([0-9]+)E([0-9]+): (.+)",show_title_with_numbers).groups()
+			show_title_with_numbers = re.search("S([0-9]+)E([0-9]+): (.+)", show_title_with_numbers).groups()
 			subtitle['season'] = int(show_title_with_numbers[0])
 			subtitle['episode'] = int(show_title_with_numbers[1])
 			subtitle['title'] = show_title_with_numbers[2]
 			subtitle['versions'] = []
-			for subs_url, subs_lang in re.findall("a href=\"(.+?)\" class=\"flag\".+?><i class=\"flag\-.+?\">(cz|sk)</i>",html_episode):
+			for subs_url, subs_lang in re.findall("a href=\"(.+?)\" class=\"flag\".+?><i class=\"flag\-.+?\">(cz|sk)</i>", html_episode):
 				subtitle_version = {}
-				subtitle_version['link'] = re.sub("/titulky/#content","/titulky/?direct=1",subs_url)
+				subtitle_version['link'] = re.sub("/titulky/#content", "/titulky/?direct=1", subs_url)
 				subtitle_version['lang'] = subs_lang.upper()
 				subtitle['versions'].append(subtitle_version)
 			if subtitle['versions'].__len__() > 0:

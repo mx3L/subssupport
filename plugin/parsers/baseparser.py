@@ -5,25 +5,25 @@ class NoSubtitlesParseError(ParseError):
     pass
 
 HEX_COLORS = {
-            "red":"#FF0000",
-            "white":"#FFFFFF",
-            "cyan":"#00FFFF",
-            "silver":"#C0C0C0",
+            "red": "#FF0000",
+            "white": "#FFFFFF",
+            "cyan": "#00FFFF",
+            "silver": "#C0C0C0",
             "blue": "#0000FF",
-            "gray":"#808080",
+            "gray": "#808080",
             "grey": "#808080",
             "darkblue": "#0000A0",
             "black": "#000000",
-            "lightblue":"#ADD8E6",
-            "orange":"#FFA500",
-            "purple":"#800080",
-            "brown":"#A52A2A",
-            "yellow":"#FFFF00",
-            "maroon":"#800000",
-            "lime":"#00FF00",
-            "green":"#008000",
-            "magenta":"#FF00FF",
-            "olive":"#808000"}
+            "lightblue": "#ADD8E6",
+            "orange": "#FFA500",
+            "purple": "#800080",
+            "brown": "#A52A2A",
+            "yellow": "#FFFF00",
+            "maroon": "#800000",
+            "lime": "#00FF00",
+            "green": "#008000",
+            "magenta": "#FF00FF",
+            "olive": "#808000"}
 
 class BaseParser(object):
     parsing = ()
@@ -57,13 +57,13 @@ class BaseParser(object):
                 rowStyle, newStyle = self.getStyle(rowText, newStyle)
                 rowColor, newColor = self.getColor(rowText, newColor)
                 rowText = self.removeTags(rowText)
-                rows.append({"text":rowText, "style":rowStyle, 'color':rowColor})
-            return {'rows':rows, 'start':start, 'end':end, 'duration':duration}
+                rows.append({"text": rowText, "style": rowStyle, 'color': rowColor})
+            return {'rows': rows, 'start': start, 'end': end, 'duration': duration}
         else:
             style, newStyle = self.getStyle(text)
             color, newColor = self.getColor(text)
             text = self.removeTags(text)
-            return {'text':text, 'style':style, 'color':color, 'start':start, 'end':end, 'duration':duration}
+            return {'text': text, 'style': style, 'color': color, 'start': start, 'end': end, 'duration': duration}
 
     def parse(self, text, fps=None):
         """
@@ -72,7 +72,7 @@ class BaseParser(object):
 
         """
         text = text.strip()
-        text = text.replace('\x00','')
+        text = text.replace('\x00', '')
         sublist = self._parse(text, fps)
         if len(sublist) <= 1:
             raise NoSubtitlesParseError()
@@ -93,10 +93,10 @@ class BaseParser(object):
         return text
 
     def _getStyle(self, text, style):
-        return '',''
+        return '', ''
 
     def _getColor(self, text, color):
-        return '',''
+        return '', ''
 
     def _parse(self, text, fps):
         return []

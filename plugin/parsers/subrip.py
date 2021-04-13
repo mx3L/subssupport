@@ -88,7 +88,7 @@ class SubRipParser(BaseParser):
     def _srt_to_dict(self, srtText):
         subs = []
         idx = 0
-        srtText = srtText.replace('\r\n','\n').strip() + "\n\n"
+        srtText = srtText.replace('\r\n', '\n').strip() + "\n\n"
         for s in re.finditer(r'(^\d+)\s*\:\s*(\d+)\s*\:\s*(\d+)\s*\,\s*(\d+)\s*-->\s*(\d+)\s*\:\s*(\d+)\s*\:\s*(\d+)\s*\,\s*(\d+)\s*\n(.+?)(?:\n\n|\n\d+\s*\n)', srtText, re.DOTALL | re.MULTILINE):
             try:
                 idx += 1
