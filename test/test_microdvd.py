@@ -39,6 +39,7 @@ class TestMicroDVDBlockParser (unittest.TestCase):
         cleaned = self.parser.removeTags(text)
         self.assertTrue(cleaned == 'Hello!', "text == %s" % cleaned)
         
+
 class TestMicroDVDRowParser(unittest.TestCase):
     def setUp(self):
       self.parser = MicroDVDParser(True)

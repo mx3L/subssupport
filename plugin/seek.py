@@ -34,7 +34,6 @@ from seekers.utilities import languageTranslate, langToCountry, \
 from utils import SimpleLogger, toString
 
 
-
 SUBTITLES_SEEKERS = []
 SUBTITLES_SEEKERS.append(TitulkyComSeeker)
 SUBTITLES_SEEKERS.append(EdnaSeeker)

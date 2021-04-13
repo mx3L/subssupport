@@ -37,6 +37,7 @@ subscene_languages = {
     'Farsi/Persian': 'Persian'
 }
 
+
 def getSearchTitle(title, year=None): ## new Add
     url = 'https://subscene.com/subtitles/searchbytitle?query=%s&l=' % urllib.quote_plus(title)
     data = geturl(url)
@@ -65,6 +66,7 @@ def getSearchTitle(title, year=None): ## new Add
         except:
             break
     return 'https://subscene.com/subtitles/' + urllib.quote_plus(title) 
+
 
 def find_movie(content, title, year):
     url_found = None
@@ -172,6 +174,7 @@ def getallsubs(content, allowed_languages, filename="", search_string=""):
     subtitles.sort(key=lambda x: [not x['sync']])
     return subtitles
 
+
 def prepare_search_string(s):
     s = string.strip(s)
     s = re.sub(r'\(\d\d\d\d\)$', '', s)  # remove year from title
@@ -226,6 +229,7 @@ def search_manual(searchstr, languages, filename):
     if content is not None:
         return getallsubs(content, languages, filename)
 
+
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack):  # standard input
     log(__name__, "%s Search_subtitles = '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'" % 
          (debug_pretext, file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack))
@@ -262,6 +266,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
         typeid = "zip"
         filmid = 0
         postparams = urllib.urlencode({'__EVENTTARGET': 's$lc$bcr$downloadLink', '__EVENTARGUMENT': '', '__VIEWSTATE': viewstate, '__PREVIOUSPAGE': previouspage, 'subtitleId': subtitleid, 'typeId': typeid, 'filmId': filmid})
+
         class MyOpener(urllib.FancyURLopener):
             version = 'User-Agent=Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729)'
         my_urlopener = MyOpener()

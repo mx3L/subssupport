@@ -46,9 +46,11 @@ def getDesktopSize():
     s = getDesktop(0).size()
     return (s.width(), s.height())
 
+
 def isFullHD():
     desktopSize = getDesktopSize()
     return desktopSize[0] == 1920
+
 
 def isHD():
     desktopSize = getDesktopSize()
@@ -184,6 +186,7 @@ class MyLanguageSelection(Screen):
     def cancel(self):
         self.close()
 
+
 class ConfigFinalText(ConfigText):
     def __init__(self, default="", visible_width=60):
         ConfigText.__init__(self, default, fixed_size=True, visible_width=visible_width)
@@ -241,6 +244,7 @@ class CaptchaDialog(VirtualKeyBoard):
         <widget name="list" position="10,220" size="540,225" selectionDisabled="1" transparent="1" />
     </screen>
     """
+
     def __init__(self, session, captcha_file):
         VirtualKeyBoard.__init__(self, session, _('Type text of picture'))
         self["captcha"] = Pixmap()
@@ -269,13 +273,16 @@ class CaptchaDialog(VirtualKeyBoard):
         del self.picLoad_conn
         del self.picLoad
 
+
 class DelayMessageBox(MessageBox):
     def __init__(self, session, seconds, message):
         MessageBox.__init__(self, session, message, type=MessageBox.TYPE_INFO, timeout=seconds, close_on_any_key=False, enable_input=False)
         self.skinName = "MessageBox"
 
+
 def messageCB(text):
     print text.encode('utf-8')
+
 
 class E2SettingsProvider(dict):
     def __init__(self, providerName, configSubSection, defaults):
@@ -359,6 +366,7 @@ class E2SettingsProvider(dict):
         except Exception as e:
             print repr(self), e, 'cannot set setting:', key, ':', val
 
+
 def unrar(rarPath, destDir, successCB, errorCB):
     def rarSubNameCB(result, retval, extra_args):
         if retval == 0:
@@ -406,12 +414,14 @@ def unrar(rarPath, destDir, successCB, errorCB):
     extraArgs = (rarPath, destDir)
     Console().ePopen(toString(cmdRarSubName), rarSubNameCB, extraArgs)
 
+
 class fps_float(float):
     def __eq__(self, other):
         return "%.3f" % self == "%.3f" % other
 
     def __str__(self):
         return "%.3f" % (self)
+
 
 def getFps(session, validOnly=False):
     from enigma import iServiceInformation
@@ -431,7 +441,9 @@ def getFps(session, validOnly=False):
         return fps_float(fps)
     return None
 
+
 FONTS = {}
+
 
 def getFonts():
     global FONTS
@@ -478,6 +490,7 @@ def getFonts():
     if "Regular" not in FONTS:
         FONTS["Regular"] = ""
     return FONTS.keys()
+
 
 class BaseMenuScreen(Screen, ConfigListScreen):
     if isFullHD():

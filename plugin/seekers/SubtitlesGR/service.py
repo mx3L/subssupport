@@ -9,6 +9,7 @@ from ..utilities import log
 main_url = "http://www.subtitles.gr"
 debug_pretext = "subtitles.gr"
 
+
 def get_url(url, referer=None):
     if referer is None:
         headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'}
@@ -20,6 +21,7 @@ def get_url(url, referer=None):
     response.close()
     content = content.replace('\n', '')
     return content
+
 
 def get_rating(downloads):
     rating = int(downloads)
@@ -45,6 +47,7 @@ def get_rating(downloads):
         rating = 10
     return rating
 
+
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack): #standard input
     subtitles_list = []
     msg = ""
@@ -61,6 +64,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
     log(__name__, "%s Search string = %s" % (debug_pretext, searchstring))
     get_subtitles_list(searchstring, "el", "Greek", subtitles_list)
     return subtitles_list, "", msg #standard output
+
 
 def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id): #standard input
     language = subtitles_list[pos]["language_name"]
@@ -90,6 +94,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
     local_file_handle.write(content)
     local_file_handle.close()
     return True, language, local_tmp_file
+
 
 def get_subtitles_list(searchstring, languageshort, languagelong, subtitles_list):
     url = '%s/search.php?name=%s&sort=downloads+desc' % (main_url, urllib.quote_plus(searchstring))

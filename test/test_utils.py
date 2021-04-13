@@ -8,6 +8,7 @@ from seekers import utilities
 
 UTILS_PATH = os.path.join(os.path.dirname(__file__), 'utilsfiles')
 
+
 class TestSeekUtils(unittest.TestCase):
 
     def test_get_compressed_filetype(self):

@@ -9,6 +9,7 @@ __version__ = '3.9.18'
 
 BASE_URL_XMLRPC = u"http://api.opensubtitles.org/xml-rpc"
 
+
 class OSDBServer:
 
     def __init__(self, user_agent=''):

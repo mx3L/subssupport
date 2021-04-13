@@ -91,11 +91,11 @@ except ImportError:
     QuickSubtitlesConfigMenu = None
 
 
-
 # localization function
 
 def warningMessage(session, text):
     session.open(MessageBox, text, type=MessageBox.TYPE_WARNING, timeout=5)
+
 
 def debug(text, *args):
     if DEBUG:
@@ -141,6 +141,7 @@ ENCODINGS = {("Central and Eastern Europe"): CENTRAL_EASTERN_EUROPE_ENCODINGS,
 # initializing parsers
 PARSERS = [SubRipParser, MicroDVDParser]
 
+
 def getDefaultFont(fontType):
     ubuntu = None
     openpli = None
@@ -165,6 +166,7 @@ def getDefaultFont(fontType):
     if openpli:
         return openpli
     return "Regular"
+
 
 def getEmbeddedFontSizeCfg(defaultFontSizeCfg):
     CONFIG_SUBTITLES_OPENPLI = "subtitles"
@@ -191,6 +193,7 @@ def getEmbeddedFontSizeCfg(defaultFontSizeCfg):
         except KeyError:
             pass
     return defaultFontSizeCfg
+
 
 GLOBAL_CONFIG_INIT = False
 
@@ -229,9 +232,11 @@ alphaChoiceList = [("00", _("opaque"))]
 alphaChoiceList.extend([("%02x" % val, "%d %%" % (int(percent * 100 / float(32)))) for percent, val in enumerate(xrange(0, 256, 8)) if val != 0])
 alphaChoiceList.append(("ff", _("transparent")))
 
+
 def initGeneralSettings(configsubsection):
     configsubsection.pauseVideoOnSubtitlesMenu = ConfigYesNo(default=True)
     configsubsection.encodingsGroup = ConfigSelection(default="Central and Eastern Europe", choices=[(e, _(e)) for e in ENCODINGS.keys()])
+
 
 def initExternalSettings(configsubsection):
     configsubsection.position = ConfigSelection(default="94", choices=positionChoiceList)
@@ -264,6 +269,7 @@ def initExternalSettings(configsubsection):
     configsubsection.background.color = ConfigSelection(default="000000", choices=colorChoiceList)
     configsubsection.background.alpha = ConfigSelection(default="80", choices=alphaChoiceList)
     
+
 def initEmbeddedSettings(configsubsection):
     configsubsection.position = ConfigSelection(default="94", choices=positionChoiceList)
     configsubsection.font = ConfigSubsection()
@@ -281,6 +287,7 @@ def initEmbeddedSettings(configsubsection):
     configsubsection.shadow.xOffset = ConfigSelection(default="-3", choices=shadowOffsetChoiceList)
     configsubsection.shadow.yOffset = ConfigSelection(default="-3", choices=shadowOffsetChoiceList)
     
+
 def initEngineSettings(configsubsection):
     configsubsection.expert = ConfigSubsection()
     configsubsection.expert.show = NoSave(ConfigYesNo(default=False))
@@ -291,6 +298,7 @@ def initEngineSettings(configsubsection):
     configsubsection.expert.syncDelay = ConfigSelection(default="300", choices=[("%d" % i, "%d ms" % i) for i in range(100, 1000, 100)])
     configsubsection.expert.refreshDelay = ConfigSelection(default="1000", choices=[("%d" % i, "%d ms" % i) for i in range(200, 3000, 200)])
     
+
 def initSearchSettings(configsubsection):
     configsubsection.downloadHistory = ConfigSubsection()
     configsubsection.downloadHistory.enabled = ConfigYesNo(default=True)
@@ -533,6 +541,7 @@ class SubsSupportStatus(object):
                 self.__statusScreen.setStatus(_("No external subtitles are loaded"))
             elif isinstance(self, InfoBarNotifications):
                 Notifications.AddNotification(MessageBox, _("No external subtitles are loaded"), type=MessageBox.TYPE_INFO, timeout=2)
+
 
 class SubsSupportEmbedded(object):
 
@@ -820,7 +829,6 @@ class SubsSupport(SubsSupportEmbedded):
         self.__working = False
         return False
 
-
     def startSubs(self, time):
         """If subtitles are loaded then start to play them after time set in ms"""
         def wrapped():
@@ -971,7 +979,6 @@ class SubsSupport(SubsSupportEmbedded):
             self.__subsScreen.reloadSettings()
         self.__subsScreen.show()
 
-
     def exitSubs(self):
         """This method should be called at the end of usage of this class"""
         self.hideSubsDialog()
@@ -993,7 +1000,6 @@ class SubsSupport(SubsSupportEmbedded):
         del self.__checkTimer
 
         print '[SubsSupport] closing subtitleDisplay'
-
 
     def __subsMenuCB(self, subsPath, subsEmbedded, settingsChanged, changeEncoding,
                      changedEncodingGroup, changedShadowType, reloadEmbeddedScreen, turnOff, forceReload=False):
@@ -1055,7 +1061,6 @@ class SubsSupport(SubsSupportEmbedded):
             del self.__alreadyPausedVideo
             self.setSeekState(InfoBarSeek.SEEK_STATE_PLAY)
 
-
     def __processSubs(self, subsPath, subsEnc):
         showMessages = self.__showGUIInfoMessages and not (self.__firstStart and self.__subclassOfScreen)
         try:
@@ -1111,8 +1116,11 @@ class SubsSupport(SubsSupportEmbedded):
 
 
 ############ Methods triggered by videoEvents when SubsSupport is subclass of Screen ################
+
+
     def __serviceStarted(self):
         print '[SubsSupport] Service Started'
+
         def startSubs():
             self.__starTimer.start(self.__startDelay, True)
 
@@ -1150,6 +1158,7 @@ class SubsSupport(SubsSupportEmbedded):
             self.playAfterSeek()
         else:
             super(SubsSupport, self).doSeekRelative(pts)
+
     def doSeek(self, pts):
         if self.__loaded:
             super(SubsSupport, self).doSeek(pts)
@@ -1158,6 +1167,7 @@ class SubsSupport(SubsSupportEmbedded):
             super(SubsSupport, self).doSeek(pts)
 
 ############################################################
+
 
 class SubsEmbeddedScreen(Screen):
 
@@ -1330,6 +1340,7 @@ class SubtitlesWidget(GUIComponent):
             self.font = font
             self.update()
 
+
 class SubsScreen(Screen):
     def __init__(self, session, externalSettings):
         self.subShown = False
@@ -1464,6 +1475,7 @@ class SubsScreen(Screen):
             self["subtitles"].setText("")
             self.subShown = False
 
+
 class SubsEngine(object):
     def __init__(self, session, engineSettings, renderer):
         self.session = session
@@ -1504,12 +1516,16 @@ class SubsEngine(object):
     def addNotifiers(self):
         def hideInterval(configElement):
             self.hideInterval = int(configElement.value) * 90
+
         def playerDelay(configElement):
                 self.playerDelay = int(configElement.value) * 90
+
         def syncDelay(configElement):
             self.syncDelay = int(configElement.value)
+
         def getPlayPtsTimerDelay(configElement):
             self.getPlayPtsTimerDelay = int(configElement.value)
+
         def refreshTimerDelay(configElement):
             self.refreshTimerDelay = int(configElement.value)
 
@@ -1668,6 +1684,7 @@ class SubsEngine(object):
 
     def sync(self):
         self._oldPts = None
+
         def checkPts():
             if self._oldPts is None:
                 self._oldPts = self.__pts
@@ -1799,16 +1816,19 @@ class PanelList(MenuList):
         self.l.setFont(0, gFont("Regular", 20))
         self.l.setFont(1, gFont("Regular", 17))
 
+
 def PanelListEntry(name, mode):
     res = [(name, mode)]
     res.append(MultiContentEntryText(pos=(5, 5), size=(330, 25), font=0, flags=RT_VALIGN_CENTER, text=name))
     return res
+
 
 def PanelColorListEntry(name, value, colorName, colorValue, sizePanelX):
     res = [(name)]
     res.append(MultiContentEntryText(pos=(0, 5), size=(sizePanelX, 30), font=1, flags=RT_HALIGN_LEFT, text=name, color=colorName))
     res.append(MultiContentEntryText(pos=(0, 5), size=(sizePanelX, 30), font=1, flags=RT_HALIGN_RIGHT, text=value, color=colorValue))
     return res
+
 
 class SubsMenu(Screen):
     if isFullHD():
@@ -2028,6 +2048,7 @@ class SubsMenu(Screen):
 
 # rework
 
+
 class SubsSetupExternal(BaseMenuScreen):
     
     @staticmethod
@@ -2150,6 +2171,7 @@ class SubsSetupMainMisc(BaseMenuScreen):
                        self.subsSettings.external.background.type]:
             self.buildMenu()
 
+
 class SubsSetupEmbedded(BaseMenuScreen):
     
     @staticmethod
@@ -2199,6 +2221,7 @@ class SubsSetupEmbedded(BaseMenuScreen):
         configfile.save()
         self.close(reloadEmbeddedScreen)
         
+
 class SubsSetupGeneral(BaseMenuScreen):
     def __init__(self, session, generalSettings):
         BaseMenuScreen.__init__(self, session, _("General settings"))
@@ -2209,6 +2232,7 @@ class SubsSetupGeneral(BaseMenuScreen):
             getConfigListEntry(_("Pause video on opening subtitles menu"), self.generalSettings.pauseVideoOnSubtitlesMenu),
             getConfigListEntry(_("Encoding"), self.generalSettings.encodingsGroup),
         ])
+
 
 def FileEntryComponent(name, absolute=None, isDir=False):
     res = [(absolute, isDir)]
@@ -2223,7 +2247,6 @@ def FileEntryComponent(name, absolute=None, isDir=False):
     if png is not None:
         res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 10, 2, 20, 20, png))
     return res
-
 
 
 # TODO rework so there is one general SubtitlesChooser, where we can quickly
@@ -2242,7 +2265,6 @@ class SubFileList(FileList):
             self.l.setItemHeight(35)
         else:
             self.l.setItemHeight(23)
-
 
     def changeDir(self, directory, select=None):
         self.list = []
@@ -2340,6 +2362,7 @@ class SubFileList(FileList):
                     self.moveToIndex(i)
                 i += 1
 
+
 class SubsChooserMenuList(MenuList):
     def __init__(self, embeddedAvailable=False, searchSupport=False, historySupport=False):
         MenuList.__init__(self, [], False, eListboxPythonMultiContent)
@@ -2363,6 +2386,7 @@ class SubsChooserMenuList(MenuList):
             menulist.append(res)
         if embeddedAvailable or historySupport or searchSupport:
             self.l.setList(menulist)
+
 
 class E2SubsSeeker(SubsSeeker):
     def __init__(self, session, searchSettings, debug=False):
@@ -2525,7 +2549,6 @@ class SubsChooser(Screen):
         else:
             self.session.openWithCallback(checkDownloadedSubsSelection, SubsSearch, seeker, subsSettings.search, self.videoPath, self.titleList)
         
-                        
     def downloadedSubsSelectionCB(self, subtitles, downloadedSubtitle=None):
         fpath = os.path.join(self.subsSettings.search.downloadHistory.path.value, 'hsubtitles.json')
         try:
@@ -2561,6 +2584,7 @@ class SubsDownloadedSelection(Screen):
                 <widget source="path" render="Label" position="5,5" size="640,190" valign="center" halign="center" font="Regular;20"/>
             </screen>
             """
+
         def __init__(self, session, subtitle):
             Screen.__init__(self, session)
             self["path"] = StaticText(_(toString(subtitle['fpath'])))
@@ -2777,7 +2801,6 @@ class SubsDownloadedSelection(Screen):
         self.close(self.subtitles, None)
         
 
-
 class SubsDownloadedSubtitlesMenu(BaseMenuScreen):
     def __init__(self, session, historySettings):
         BaseMenuScreen.__init__(self, session, _("Downloaded Subtitles - Settings"))
@@ -2796,6 +2819,8 @@ class SubsDownloadedSubtitlesMenu(BaseMenuScreen):
                  _("Select Directory"), currDir=self.historySettings.path.value)
 
 # source from openpli
+
+
 class SubsEmbeddedSelection(Screen):
     if isFullHD():
         skin = """
@@ -2835,6 +2860,7 @@ class SubsEmbeddedSelection(Screen):
                 </convert>
             </widget>
         </screen>"""
+
     def __init__(self, session):
         Screen.__init__(self, session)
         self["streams"] = List([], enableWrapAround=True)
@@ -2887,7 +2913,6 @@ class SubsEmbeddedSelection(Screen):
             streams.append((x, "", number, description, language))
             idx += 1
         self["streams"].list = streams
-
 
     def getSubtitleList(self):
         service = self.session.nav.getCurrentService()
@@ -3103,6 +3128,7 @@ class OpenSubtitlesSuggestions(Suggestions):
     def _processResult(self, data):
         return json.loads(data)['result']
 
+
 class HistorySuggestions(Suggestions):
     def __init__(self, historyCfg):
         Suggestions.__init__(self)
@@ -3116,6 +3142,7 @@ class HistorySuggestions(Suggestions):
         d = Deferred()
         getHistory(queryString)
         return d
+
 
 class BaseSuggestionsListScreen(Screen):
     def __init__(self, session, title, configTextWithSuggestions, positionX, titleColor):
@@ -3212,6 +3239,7 @@ class BaseSuggestionsListScreen(Screen):
             self['suggestionslist'].style = 'default'
         else:
             self['suggestionslist'].style = 'notselected'
+
 
 class SuggestionsListScreen(BaseSuggestionsListScreen):
     def __init__(self, session, configTextWithSuggestions):
@@ -3372,6 +3400,7 @@ class ConfigTextWithSuggestionsAndHistory(ConfigText):
         self.enableSuggestions(False)
         self.enableHistory(False)
 
+
 class Message(object):
     def __init__(self, infowidget, errorwidget):
         self.infowidget = infowidget
@@ -3404,6 +3433,7 @@ class Message(object):
         self.hide()
         del self.timer_conn
         del self.timer
+
 
 class SearchParamsHelper(object):
     def __init__(self, seeker, searchSettings):
@@ -3483,6 +3513,7 @@ class SearchParamsHelper(object):
         choiceList.extend((p.id, p.provider_name) for p in movieProviders)
         self.searchSettings.movieProvider.setChoices(choiceList)
         
+
 class SubsSearchDownloadOptions(Screen, ConfigListScreen):
     if isFullHD():
         skin = """
@@ -3518,6 +3549,7 @@ class SubsSearchDownloadOptions(Screen, ConfigListScreen):
                 <widget source="key_blue" render="Label" position = "370, 315" size="480,25" font="Regular;20" halign="left" foregroundColor="white" />
             </screen>
         """
+
     def __init__(self, session, subtitle, saveAs, saveTo, addLang, dPath, vPath=None):
         Screen.__init__(self, session)
         saveAsOptions = []
@@ -4786,6 +4818,7 @@ class SubsSearchSettings(Screen, ConfigListScreen):
             self.buildMenu()
             self['config'].setCurrentIndex(configIndex)
             self['providers'].index = providersIndex
+
 
 class SubsSearchParamsMenu(Screen, ConfigListScreen):
     LIST_CONFIG = 0

@@ -15,6 +15,7 @@ from ..utilities import languageTranslate, log, getFileSize
 
 from ..seeker import SubtitlesDownloadError, SubtitlesErrors
 
+
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack): #standard input
     # need to filter titles like <Localized movie name> (<Movie name>)
     br_index = title.find('(')
@@ -96,12 +97,14 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
     zip_file.close()
     return True, subtitles_list[pos]['language_name'], "zip" #standard output
 
+
 def lang_titulky2xbmclang(lang):
     if lang == 'CZ':
         return 'Czech'
     if lang == 'SK':
         return 'Slovak'
     return 'English'
+
 
 def lang_xbmclang2titulky(lang):
     if lang == 'Czech':
@@ -110,17 +113,22 @@ def lang_xbmclang2titulky(lang):
         return 'SK'
     return 'EN'
 
+
 def get_episode_season(episode, season):
     return 'S%sE%s' % (get2DigitStr(int(season)), get2DigitStr(int(episode)))
+
+
 def get2DigitStr(number):
     if number > 9:
         return str(number)
     else:
         return '0' + str(number)
 
+
 def lang2_opensubtitles(lang):
     lang = lang_titulky2xbmclang(lang)
     return languageTranslate(lang, 0, 2)
+
 
 class TitulkyClient(object):
 

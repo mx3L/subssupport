@@ -23,12 +23,15 @@ def openSubtitlesSearch(session, **kwargs):
         eventList.append(eventNext.getEventName())
     session.open(SubsSearch, E2SubsSeeker(session, settings), settings, searchTitles=eventList, standAlone=True)
     
+
 def openSubtitlesPlayer(session, **kwargs):
     SubsSupportDVB(session)
     
+
 def openSubsSupportSettings(session, **kwargs):
     settings = initSubsSettings()
     session.open(SubsSupportSettings, settings, settings.search, settings.external, settings.embedded, config.plugins.subsSupport.dvb)
+
 
 class SubsSupportSettings(Screen):
     if isFullHD():
@@ -125,6 +128,7 @@ class SubsSupportSettings(Screen):
         
     def openDVBPlayerSettings(self):
         self.session.open(SubsSetupDVBPlayer, self.dvbSettings)
+
 
 def Plugins(**kwargs):
     from enigma import getDesktop

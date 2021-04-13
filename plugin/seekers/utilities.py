@@ -13,6 +13,7 @@ import urllib2
 
 SUPRESS_LOG = True
 
+
 def log(module, msg):
     if SUPRESS_LOG:
         return
@@ -20,6 +21,7 @@ def log(module, msg):
         print module, msg.encode('utf-8')
     else:
         print module, msg
+
 
 LANGUAGES = (
 
@@ -145,6 +147,7 @@ LANGNAME_ISO6392 = dict(map(lambda lang: (lang[0], lang[3]), LANGUAGES))
 ISO6391_LANGNAME = dict(map(lambda lang: (lang[2], lang[0]), LANGUAGES))
 ISO6392_LANGNAME = dict(map(lambda lang: (lang[3], lang[0]), LANGUAGES))
 
+
 def languageTranslate(lang, lang_from, lang_to):
     if lang_from == 0 and lang_to == 2:
         if lang in LANGNAME_ISO6391:
@@ -163,6 +166,7 @@ def languageTranslate(lang, lang_from, lang_to):
             if lang == x[lang_from]:
                 return x[lang_to]
 
+
 def regex_movie(title):
     # from periscope
     movie_regexes = ['(?P<movie>.*)[\.|\[|\(| ]{1}(?P<year>(?:(?:19|20)[0-9]{2}))(?P<teams>.*)']
@@ -171,6 +175,7 @@ def regex_movie(title):
         if match:
             return match.group('movie'), match.group('year')
     return '', ''
+
 
 def regex_tvshow(compare, file, sub=""):
     sub_info = ""
@@ -270,6 +275,7 @@ def OpensubtitlesHashRar(firsrarfile):
         seek += size
     raise Exception('ERROR: Not Body part in rar file.')
 
+
 def getlastsplit(firsrarfile, x):
     if firsrarfile[-3:] == '001':
         return firsrarfile[:-3] + ('%03d' % (x + 1))
@@ -279,6 +285,7 @@ def getlastsplit(firsrarfile, x):
         return firsrarfile[0:-5] + ('%1d' % (x + 1)) + firsrarfile[-4:]
     return firsrarfile[0:-2] + ('%02d' % (x - 1))
 
+
 def addfilehash(name, hash, seek):
     f = open(name, 'r')
     f.seek(max(0, seek), 0)
@@ -287,6 +294,7 @@ def addfilehash(name, hash, seek):
         hash = hash & 0xffffffffffffffff
     f.close()
     return hash
+
 
 def hashFileMD5(file_path, buff_size=1048576):
     # calculate MD5 key from file
@@ -301,14 +309,17 @@ def hashFileMD5(file_path, buff_size=1048576):
     m.update(buff)
     return m.hexdigest()
 
+
 def langToCountry(lang):
     if lang in LANG_COUNTRY:
         return LANG_COUNTRY[lang]
     return 'UNK'
 
+
 class HeadRequest(urllib2.Request):
     def get_method(self):
         return "HEAD"
+
 
 def getFileSize(filepath):
     try:
@@ -328,6 +339,8 @@ def getFileSize(filepath):
     return None
 
 # http://www.garykessler.net/library/file_sigs.html
+
+
 def getCompressedFileType(filepath):
     signature_dict = {
                          "\x50\x4b\x03\x04": "zip",
@@ -340,6 +353,7 @@ def getCompressedFileType(filepath):
         if file_start.startswith(signature):
             return filetype
     return None
+
 
 def detectSearchParams(title):
     print '[detectSearchParams] detecting parameters for - title: %s' % title
@@ -365,6 +379,7 @@ def detectSearchParams(title):
             year = ""
     print '[detectSearchParams] detected -  title: %s, year: %s, tvshow: %s, season: %s, episode: %s' % (title, year, tvshow, season, episode)
     return title, year, tvshow, season, episode
+
 
 class SimpleLogger(object):
 
@@ -411,6 +426,7 @@ class SimpleLogger(object):
 
     def _out_fnc(self, text):
         print text
+
 
 def toString(text):
     if isinstance(text, basestring):

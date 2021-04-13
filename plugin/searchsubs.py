@@ -11,6 +11,7 @@ import traceback
 
 stdout = None
 
+
 class Messages(object):
     MESSAGE_CAPTCHA_CALLBACK = 1
     MESSAGE_UPDATE_CALLBACK = 2
@@ -21,36 +22,45 @@ class Messages(object):
     MESSAGE_CHOOSE_FILE_CALLBACK = 7
     MESSAGE_OVERWRITE_CALLBACK = 8
 
+
 def send(mtype, m):
     dump = json.dumps({'message': mtype, 'value': m})
     dump = "%07d%s" % (len(dump) + 7, dump)
     stdout.write(dump)
     stdout.flush()
 
+
 def recieve():
     return json.loads(sys.stdin.read(int(sys.stdin.read(7))))
+
 
 def delayCB(seconds):
     send(Messages.MESSAGE_DELAY_CALLBACK, seconds)
     recieve()
 
+
 def captchaCB(image):
     send(Messages.MESSAGE_CAPTCHA_CALLBACK, image)
     return recieve()
 
+
 def messageCB(text):
     print 'messageCB:', text
 
+
 def updateCB(*args):
     send(Messages.MESSAGE_UPDATE_CALLBACK, args)
+
 
 def chooseFileCB(*args):
     send(Messages.MESSAGE_CHOOSE_FILE_CALLBACK, args)
     return recieve()
 
+
 def overwriteFileCB(*args):
     send(Messages.MESSAGE_OVERWRITE_CALLBACK, args)
     return recieve()
+
 
 def scriptError(e):
     from seekers.seeker import SubtitlesErrors, BaseSubtitlesError
@@ -59,8 +69,10 @@ def scriptError(e):
     else:
         send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': SubtitlesErrors.UNKNOWN_ERROR, 'provider': ''})
 
+
 def scriptFinished(subtitlesDict):
     send(Messages.MESSAGE_FINISHED_SCRIPT, subtitlesDict)
+
 
 def scriptCancelled(subtitlesDict):
     send(Messages.MESSAGE_CANCELLED_SCRIPT, subtitlesDict)
@@ -78,6 +90,7 @@ def searchSubtitles(seeker, options):
     timeout = options.get('timeout', 10)
     return seeker.getSubtitles(seekers, updateCB, title, filepath, langs, year, tvshow, season, episode, timeout)
 
+
 def downloadSubtitles(seeker, options):
     overwriteFileCBTmp = None
     if options.get('settings').get('ask_overwrite'):
@@ -91,6 +104,7 @@ def downloadSubtitles(seeker, options):
         options.get("filename"),
         overwriteFileCBTmp,
         options.get("settings"))
+
 
 def main():
     global stdout
@@ -108,6 +122,7 @@ def main():
         return searchSubtitles(seeker, options['search'])
     elif options.get('download'):
         return downloadSubtitles(seeker, options['download'])
+
 
 if __name__ == '__main__':
     try:

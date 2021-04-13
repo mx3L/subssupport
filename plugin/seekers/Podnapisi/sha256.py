@@ -6,8 +6,10 @@ import copy
 import struct
 import sys
 
+
 def new(m=None):
     return sha256(m)
+
 
 class sha256(object):
     _k = (0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,

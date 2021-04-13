@@ -12,25 +12,30 @@ sys.path.append(os.path.join(test, '..', 'plugin'))
 from seekers.seeker import BaseSeeker, SubtitlesSearchError, SubtitlesDownloadError, SubtitlesErrors
 from seek import SubsSeeker
 
+
 def remove_files_in_dir(dirpath):
     for f in os.listdir(dirpath):
         fpath = os.path.join(dirpath, f)
         if os.path.isfile(fpath):
             os.remove(fpath)
 
+
 def captcha_cb(self, url):
         print '[captcha_cb] visit url:"%s"\nre-type captcha:' % url
         print '[captcha_cb] not visiting just returning empty string'
         return ""
 
+
 def message_cb(self, text):
     print '[message_cb] %s' % text
+
 
 def delay_cb(self, seconds):
     print '[delay_cb] waiting for %d seconds' % seconds
     for i in xrange(seconds):
         print '[delay_cb] %d second'
         time.sleep(1)
+
 
 def choosefile_cb(files):
     print '[choosefile_cb]'
@@ -46,6 +51,7 @@ class TimeoutSeeker(BaseSeeker):
 
     def _search(self, title, filepath, langs, season, episode, tvshow, year):
         raise socket.timeout()
+
 
 class URLErrorSeeker(BaseSeeker):
     id = 'URLError'
@@ -122,7 +128,6 @@ class TestErrorSeeker(unittest.TestCase):
             self.urlerror_seeker.search("test")
         except SubtitlesSearchError as e:
             self.assertEqual(e.code, SubtitlesErrors.UNKNOWN_ERROR, "invalid error code")
-
 
 
 class TestSeekerDownload(unittest.TestCase):
@@ -259,6 +264,7 @@ class TestSeekerDownload(unittest.TestCase):
         self.assertTrue(os.path.getsize(overwrite_path) == 0)
         self._test_download(expected_output, output)
 
+
 class TestSeeker(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -306,6 +312,7 @@ class TestSeeker(unittest.TestCase):
         subtitlePath = self.seeker.downloadSubtitle(subtitle, subtitles, choosefile_cb)
         self.assertIsNotNone(subtitlePath)
         self.assertTrue(subtitlePath)
+
 
 if __name__ == "__main__":
     unittest.main()

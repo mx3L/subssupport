@@ -1,8 +1,10 @@
 class ParseError(Exception):
     pass
 
+
 class NoSubtitlesParseError(ParseError):
     pass
+
 
 HEX_COLORS = {
             "red": "#FF0000",
@@ -24,6 +26,7 @@ HEX_COLORS = {
             "green": "#008000",
             "magenta": "#FF00FF",
             "olive": "#808000"}
+
 
 class BaseParser(object):
     parsing = ()

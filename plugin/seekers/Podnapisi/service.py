@@ -25,11 +25,13 @@ def Search(item):
     subtitles_list = pn_server.SearchSubtitlesWeb(item)
     return subtitles_list
 
+
 def Download(params):
     pn_server = PNServer()
     pn_server.Create()
     url = pn_server.Download(params)
     return url
+
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack):  # standard input
     pn_utilities.settings_provider = settings_provider
@@ -64,6 +66,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
         item['file_original_path'] = stackPath[0][8:]
         
     return Search(item), "", ""
+
 
 def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
     pn_utilities.settings_provider = settings_provider

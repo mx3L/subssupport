@@ -101,6 +101,7 @@ class TestXBMCSubtitleProvider(object):
         self.assertTrue(isinstance(result, tuple))
         self.assertTrue(os.path.isfile(result[2]))
 
+
 class TestXBMCSubtitleProviderWithCredentials(TestXBMCSubtitleProvider):
 
     @classmethod
@@ -148,6 +149,8 @@ class TestXBMCSubtitleProviderWithCredentials(TestXBMCSubtitleProvider):
 
 
 from seekers.xbmc_subtitles import TitulkyComSeeker
+
+
 class TestTitulkycom(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -171,7 +174,10 @@ class TestTitulkycom(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase)
                                                                         self.delay_cb,
                                                                         self.message_cb)
 
+
 from seekers.xbmc_subtitles import EdnaSeeker
+
+
 class TestEdna(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
@@ -189,7 +195,10 @@ class TestEdna(TestXBMCSubtitleProvider, unittest.TestCase):
                                                                         self.delay_cb,
                                                                         self.message_cb)
 
+
 from seekers.xbmc_subtitles import SerialZoneSeeker
+
+
 class TestSerialZone(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.search_list = []
@@ -206,7 +215,10 @@ class TestSerialZone(TestXBMCSubtitleProvider, unittest.TestCase):
                                                                         self.delay_cb,
                                                                         self.message_cb)
 
+
 from seekers.xbmc_subtitles import OpenSubtitlesSeeker
+
+
 class TestOpenSubtitles(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
@@ -224,7 +236,10 @@ class TestOpenSubtitles(TestXBMCSubtitleProvider, unittest.TestCase):
                                                                         self.delay_cb,
                                                                         self.message_cb)
 
+
 from seekers.xbmc_subtitles import PodnapisiSeeker
+
+
 class TestPodnapisi(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -252,7 +267,10 @@ class TestPodnapisi(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
         self.provider.settings_provider.setSetting('PNmatch', 'true')
         TestXBMCSubtitleProviderWithCredentials.test_hash_search(self)
 
+
 from seekers.xbmc_subtitles import SubsceneSeeker
+
+
 class TestSubscene(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
@@ -270,7 +288,10 @@ class TestSubscene(TestXBMCSubtitleProvider, unittest.TestCase):
                                                                         self.delay_cb,
                                                                         self.message_cb)
 
+
 from seekers.xbmc_subtitles import SubtitlesGRSeeker
+
+
 class TestSubtitlesGR(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
@@ -288,7 +309,10 @@ class TestSubtitlesGR(TestXBMCSubtitleProvider, unittest.TestCase):
                                                                         self.delay_cb,
                                                                         self.message_cb)
 
+
 from seekers.xbmc_subtitles import ItasaSeeker
+
+
 class TestItasa(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -312,7 +336,10 @@ class TestItasa(TestXBMCSubtitleProviderWithCredentials, unittest.TestCase):
                                                                         self.delay_cb,
                                                                         self.message_cb)
 
+
 from seekers.xbmc_subtitles import TitloviSeeker
+
+
 class TestTitlovi(TestXBMCSubtitleProvider, unittest.TestCase):
     def setUp(self):
         self.settings = {}
@@ -329,6 +356,7 @@ class TestTitlovi(TestXBMCSubtitleProvider, unittest.TestCase):
                                                                         self.captcha_cb,
                                                                         self.delay_cb,
                                                                         self.message_cb)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,7 @@
 import urllib2
 import os
 
+
 def load(subpath):
     if subpath.startswith('http'):
         req = urllib2.Request(subpath)
@@ -20,17 +21,20 @@ def load(subpath):
         except Exception:
             return ""
 
+
 def toString(text):
     if isinstance(text, basestring):
         if isinstance(text, unicode):
             return text.encode('utf-8')
     return text
 
+
 def toUnicode(text):
     if isinstance(text, basestring):
         if isinstance(text, str):
             return text.decode('utf-8', 'ignore')
     return text
+
 
 def decode(text, encodings, current_encoding=None, decode_from_start=False):
     utext = None
@@ -66,6 +70,7 @@ def decode(text, encodings, current_encoding=None, decode_from_start=False):
                 current_idx += 1
                 continue
 
+
 class HeadRequest(urllib2.Request):
     def get_method(self):
         return "HEAD"
@@ -86,6 +91,7 @@ def which(program):
             if is_exe(exe_file):
                 return exe_file
     return None
+
 
 class SimpleLogger(object):
 

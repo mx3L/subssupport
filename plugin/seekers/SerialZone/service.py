@@ -4,6 +4,7 @@ import urllib
 import re
 from ..utilities import log, hashFile, languageTranslate
 
+
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack): #standard input
 	log(__name__, "Starting search by TV Show")
 	if (tvshow == None or tvshow == ''):
@@ -84,6 +85,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 	# return subtitlesList, "", msg
 	return result_subtitles, "", ""
 
+
 def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id): #standard input
 
 	selected_subtitles = subtitles_list[pos]
@@ -106,6 +108,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
 	# return False, language, subs_file
 	return True, selected_subtitles['lang'], ""
 
+
 def lng_short2long(lang):
 	if lang == 'CZ':
 		return 'Czech'
@@ -113,12 +116,14 @@ def lng_short2long(lang):
 		return 'Slovak'
 	return 'English'
 
+
 def lng_long2short(lang):
 	if lang == 'Czech':
 		return 'CZ'
 	if lang == 'Slovak':
 		return 'SK'
 	return 'EN'
+
 
 def lng_short2flag(lang):
 	return languageTranslate(lng_short2long(lang), 0, 2)

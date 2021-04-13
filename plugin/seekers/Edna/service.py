@@ -67,6 +67,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 	# return subtitlesList, "", msg
 	return result_subtitles, "", ""
 
+
 def download_subtitles(subtitles_list, pos, extract_subs, tmp_sub_dir, sub_folder, session_id): #standard input
 	selected_subtitles = subtitles_list[pos]
 
@@ -95,6 +96,7 @@ def download_subtitles(subtitles_list, pos, extract_subs, tmp_sub_dir, sub_folde
 	# return False, language, subs_file
 	return compressed, selected_subtitles['lang'], subtitles_file
 
+
 def lng_short2long(lang):
 	if lang == 'CZ':
 		return 'Czech'
@@ -102,12 +104,14 @@ def lng_short2long(lang):
 		return 'Slovak'
 	return 'English'
 
+
 def lng_long2short(lang):
 	if lang == 'Czech':
 		return 'CZ'
 	if lang == 'Slovak':
 		return 'SK'
 	return 'EN'
+
 
 def lng_short2flag(lang):
 	return languageTranslate(lng_short2long(lang), 0, 2)

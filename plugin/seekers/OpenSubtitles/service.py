@@ -46,6 +46,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 
     return subtitles_list, "", msg  # standard output
 
+
 def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
     user_agent = settings_provider.getSetting("user_agent")
     destination = os.path.join(tmp_sub_dir, "%s.srt" % subtitles_list[pos]["ID"])

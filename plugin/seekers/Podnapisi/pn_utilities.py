@@ -29,12 +29,14 @@ SEARCH_URL_HASH = "http://www.podnapisi.net/ppodnapisi/search?tbsl=1&sK=%s&sJ=%s
 
 DOWNLOAD_URL = "http://www.podnapisi.net/subtitles/%s/download"
 
+
 def OpensubtitlesHash(item):
     try:
         return hashFile(item["file_original_path"], item["rar"])[1]
     except Exception as e:
         log(__name__, "[OpensubtitlesHash] error: %s" % str(e))
         return "000000000000"
+
 
 def dec2hex(n, l=0):
     # return the hexadecimal string representation of integer n
@@ -44,11 +46,13 @@ def dec2hex(n, l=0):
             s = "0" + s
     return s
 
+
 def invert(basestring):
     asal = [basestring[i:i + 2]
             for i in range(0, len(basestring), 2)]
     asal.reverse()
     return ''.join(asal)
+
 
 def calculateSublightHash(filename):
 
@@ -94,6 +98,7 @@ def calculateSublightHash(filename):
     hash = hash + dec2hex(sum % 256, 2)
 
     return hash.lower()
+
 
 class PNServer:
     def Create(self):
