@@ -91,7 +91,7 @@ class SubsLoader(object):
             self.log.info("<%s> successfully loaded", filename)
             return sublist, encoding
 
-    def _process_path(self, subfile, current_encoding=None) :
+    def _process_path(self, subfile, current_encoding=None):
         filename = os.path.basename(subfile)
         size = getFileSize(subfile)
         if size and size > SUBTITLES_FILE_MAX_SIZE:

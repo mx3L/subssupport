@@ -130,7 +130,7 @@ TURKISH_ENCODINGS = ['windows-1254', 'iso-8859-9', 'latin5', 'macturkish', 'ibm1
 GREEK_ENCODINGS = ['windows-1253', 'iso-8859-7', 'macgreek']
 HEBREW_ENCODINGS = ['windows-1255', 'iso-8859-8', 'IBM862']
 
-ENCODINGS = {("Central and Eastern Europe") : CENTRAL_EASTERN_EUROPE_ENCODINGS,
+ENCODINGS = {("Central and Eastern Europe"): CENTRAL_EASTERN_EUROPE_ENCODINGS,
             ("Western Europe"):WESTERN_EUROPE_ENCODINGS,
             ("Russia"):RUSSIAN_ENCODINGS,
             ("Arabic"): ARABIC_ENCODINGS,
@@ -503,7 +503,7 @@ class SubsSupportStatus(object):
         self["SubsStatusActions"] = HelpableActionMap(self, "SubtitlesActions",
         {
             "subtitlesStatus": (self.subsStatus, _("change external subtitles status")),
-        } , -5)
+        }, -5)
         self.onClose.append(self.__closeSubsStatusScreen)
         
     def __serviceChanged(self):
@@ -678,7 +678,7 @@ class SubsSupportEmbedded(object):
             face = eSubtitleWidget.__dict__[faceName]
             font, haveColor, foregroundColor, borderColor, borderWidth, shadowColor, shadowOffset = s[0], s[1], s[2], s[3], s[4], s[5], s[6]
             try:
-                eSubtitleWidget.setFontStyle(face, font , haveColor, foregroundColor, borderColor, borderWidth)
+                eSubtitleWidget.setFontStyle(face, font, haveColor, foregroundColor, borderColor, borderWidth)
             except TypeError:
                 eSubtitleWidget.setFontStyle(face, font, haveColor, foregroundColor, shadowColor, shadowOffset)
 
@@ -763,7 +763,7 @@ class SubsSupport(SubsSupportEmbedded):
             self["SubsActions"] = HelpableActionMap(self, "SubtitlesActions",
                 {
                 "subtitles": (self.subsMenu, _("show subtitles menu")),
-                } , -5)
+                }, -5)
 
             self.onClose.append(self.exitSubs)
 
@@ -2211,7 +2211,7 @@ class SubsSetupGeneral(BaseMenuScreen):
         ])
 
 def FileEntryComponent(name, absolute=None, isDir=False):
-    res = [ (absolute, isDir) ]
+    res = [(absolute, isDir)]
     if isFullHD():
         res.append((eListboxPythonMultiContent.TYPE_TEXT, 35, 1, 770, 30, 1, RT_HALIGN_LEFT, toString(name)))
     else:
@@ -2262,11 +2262,11 @@ class SubFileList(FileList):
                 path = os.path.join(p.mountpoint, "")
                 if path not in self.inhibitMounts and not self.inParentDirs(path, self.inhibitDirs):
                     self.list.append(FileEntryComponent(name=p.description, absolute=path, isDir=True))
-            files = [ ]
-            directories = [ ]
+            files = []
+            directories = []
         elif directory is None:
-            files = [ ]
-            directories = [ ]
+            files = []
+            directories = []
         elif self.useServiceRef:
             # we should not use the 'eServiceReference(string)' constructor, because it doesn't allow ':' in the directoryname
             root = eServiceReference(2, 0, directory)
@@ -2320,7 +2320,7 @@ class SubFileList(FileList):
                     name = x
 
                 if (self.matchingPattern is None) or self.matchingPattern.search(path):
-                    self.list.append(FileEntryComponent(name=name, absolute=x , isDir=False))
+                    self.list.append(FileEntryComponent(name=name, absolute=x, isDir=False))
 
         if self.showMountpoints and len(self.list) == 0:
             self.list.append(FileEntryComponent(name=_("nothing connected"), absolute=None, isDir=False))
@@ -2661,7 +2661,7 @@ class SubsDownloadedSelection(Screen):
              "rightUp":self.closeInfoDialog,
              "left":self.closeInfoDialog,
              "leftUp":self.closeInfoDialog,
-        } )
+        })
         self["infoActions"].setEnabled(False)
         self.subtitles = subtitles
         self.historySettings = historySettings
@@ -2786,7 +2786,7 @@ class SubsDownloadedSubtitlesMenu(BaseMenuScreen):
     def buildMenu(self):
         menuList = []
         menuList.append(getConfigListEntry(_("Max history entries"), self.historySettings.limit))
-        menuList.append(getConfigListEntry(_("Remove action") , self.historySettings.removeAction))
+        menuList.append(getConfigListEntry(_("Remove action"), self.historySettings.removeAction))
         menuList.append(getConfigListEntry(_("Ask on remove action"), self.historySettings.removeActionAsk))
         self["config"].setList(menuList)
 
@@ -4845,7 +4845,7 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
         else:
             self['sourceTitleInfo'] = StaticText("%s [%d/%d]" % (_("Source title"), 1, len(self.sourceTitleList)))
         self['sourceTitle'] = StaticText(self.sourceTitle)
-        self["suggestionActions"] = ActionMap([ "OkCancelActions",  "ColorActions", "DirectionActions"],
+        self["suggestionActions"] = ActionMap(["OkCancelActions",  "ColorActions", "DirectionActions"],
             {
                  "ok": self.switchToConfigList,
                  "cancel":self.cancelToConfigList,
@@ -4909,14 +4909,14 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
 
     def buildMenu(self):
         menuList = []
-        menuList.append(getConfigListEntry(_("Title") , self.searchSettings.title))
-        menuList.append(getConfigListEntry(_("Type") , self.searchSettings.type))
+        menuList.append(getConfigListEntry(_("Title"), self.searchSettings.title))
+        menuList.append(getConfigListEntry(_("Type"), self.searchSettings.type))
         if self.searchSettings.type.value == "movie":
-            menuList.append(getConfigListEntry(_("Year") , self.searchSettings.year))
+            menuList.append(getConfigListEntry(_("Year"), self.searchSettings.year))
         else:
-            menuList.append(getConfigListEntry(_("Season") , self.searchSettings.season))
-            menuList.append(getConfigListEntry(_("Episode") , self.searchSettings.episode))
-        menuList.append(getConfigListEntry(_("Provider") , self.searchSettings.provider))
+            menuList.append(getConfigListEntry(_("Season"), self.searchSettings.season))
+            menuList.append(getConfigListEntry(_("Episode"), self.searchSettings.episode))
+        menuList.append(getConfigListEntry(_("Provider"), self.searchSettings.provider))
         menuList.append(getConfigListEntry(_("Use File path"), self.searchSettings.useFilePath))
         self["config"].list = menuList
         self["config"].setList(menuList)

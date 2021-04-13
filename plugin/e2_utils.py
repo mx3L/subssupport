@@ -173,9 +173,9 @@ class MyLanguageSelection(Screen):
     def updateList(self):
         languageList = self.getLanguageList()
         if not languageList:  # no language available => display only english
-            list = [ LanguageEntryComponent("en", "English", "en_EN") ]
+            list = [LanguageEntryComponent("en", "English", "en_EN")]
         else:
-            list = [ LanguageEntryComponent(file=x[1][2].lower(), name=x[1][0], index=x[0]) for x in languageList]
+            list = [LanguageEntryComponent(file=x[1][2].lower(), name=x[1][0], index=x[0]) for x in languageList]
         self["languages"].list = list
 
     def save(self):

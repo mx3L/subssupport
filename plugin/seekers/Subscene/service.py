@@ -227,7 +227,7 @@ def search_manual(searchstr, languages, filename):
         return getallsubs(content, languages, filename)
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack):  # standard input
-    log(__name__ , "%s Search_subtitles = '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'" % 
+    log(__name__, "%s Search_subtitles = '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s'" % 
          (debug_pretext, file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack))
     if lang1 == 'Farsi':
         lang1 = 'Persian'
@@ -247,30 +247,30 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
     return sublist, "", ""
 
 
-def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
-    url = subtitles_list[pos][ "link" ]
-    language = subtitles_list[pos][ "language_name" ]
+def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
+    url = subtitles_list[pos]["link"]
+    language = subtitles_list[pos]["language_name"]
     content = geturl(url)
     downloadlink_pattern = "...<a href=\"(.+?)\" rel=\"nofollow\" onclick=\"DownloadSubtitle"
     match = re.compile(downloadlink_pattern).findall(content)
     if match:
         downloadlink = "http://subscene.com" + match[0]
-        log(__name__ , "%s Downloadlink: %s " % (debug_pretext, downloadlink))
+        log(__name__, "%s Downloadlink: %s " % (debug_pretext, downloadlink))
         viewstate = 0
         previouspage = 0
         subtitleid = 0
         typeid = "zip"
         filmid = 0
-        postparams = urllib.urlencode({ '__EVENTTARGET': 's$lc$bcr$downloadLink', '__EVENTARGUMENT': '' , '__VIEWSTATE': viewstate, '__PREVIOUSPAGE': previouspage, 'subtitleId': subtitleid, 'typeId': typeid, 'filmId': filmid})
+        postparams = urllib.urlencode({'__EVENTTARGET': 's$lc$bcr$downloadLink', '__EVENTARGUMENT': '', '__VIEWSTATE': viewstate, '__PREVIOUSPAGE': previouspage, 'subtitleId': subtitleid, 'typeId': typeid, 'filmId': filmid})
         class MyOpener(urllib.FancyURLopener):
             version = 'User-Agent=Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3 ( .NET CLR 3.5.30729)'
         my_urlopener = MyOpener()
         my_urlopener.addheader('Referer', url)
-        log(__name__ , "%s Fetching subtitles using url '%s' with referer header '%s' and post parameters '%s'" % (debug_pretext, downloadlink, url, postparams))
+        log(__name__, "%s Fetching subtitles using url '%s' with referer header '%s' and post parameters '%s'" % (debug_pretext, downloadlink, url, postparams))
         response = my_urlopener.open(downloadlink, postparams)
         local_tmp_file = zip_subs
         try:
-            log(__name__ , "%s Saving subtitles to '%s'" % (debug_pretext, local_tmp_file))
+            log(__name__, "%s Saving subtitles to '%s'" % (debug_pretext, local_tmp_file))
             if not os.path.exists(tmp_sub_dir):
                 os.makedirs(tmp_sub_dir)
             local_file_handle = open(local_tmp_file, "w" + "b")
@@ -282,23 +282,23 @@ def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, 
             if (myfile.read(1) == 'R'):
                 typeid = "rar"
                 packed = True
-                log(__name__ , "Discovered RAR Archive")
+                log(__name__, "Discovered RAR Archive")
             else:
                 myfile.seek(0)
                 if (myfile.read(1) == 'P'):
                     typeid = "zip"
                     packed = True
-                    log(__name__ , "Discovered ZIP Archive")
+                    log(__name__, "Discovered ZIP Archive")
                 else:
                     typeid = "srt"
                     packed = False
                     subs_file = local_tmp_file
-                    log(__name__ , "Discovered a non-archive file")
+                    log(__name__, "Discovered a non-archive file")
             myfile.close()
-            log(__name__ , "%s Saving to %s" % (debug_pretext, local_tmp_file))
+            log(__name__, "%s Saving to %s" % (debug_pretext, local_tmp_file))
         except:
-            log(__name__ , "%s Failed to save subtitle to %s" % (debug_pretext, local_tmp_file))
+            log(__name__, "%s Failed to save subtitle to %s" % (debug_pretext, local_tmp_file))
         if packed:
             subs_file = typeid
-        log(__name__ , "%s Subtitles saved to '%s'" % (debug_pretext, local_tmp_file))
+        log(__name__, "%s Subtitles saved to '%s'" % (debug_pretext, local_tmp_file))
         return packed, language, subs_file  # standard output

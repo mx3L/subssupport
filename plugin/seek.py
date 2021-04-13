@@ -341,7 +341,7 @@ class SubsSeeker(object):
         for subsfn in namelist:
             if os.path.splitext(subsfn)[1] in self.SUBTILES_EXTENSIONS + ['.rar', '.zip']:
                 filename = os.path.basename(subsfn)
-                outfile = open(os.path.join(dest_dir, filename) , 'wb')
+                outfile = open(os.path.join(dest_dir, filename), 'wb')
                 outfile.write(zf.read(subsfn))
                 outfile.flush()
                 outfile.close()
@@ -360,7 +360,7 @@ class SubsSeeker(object):
         for subsfn in namelist:
             if os.path.splitext(subsfn)[1] in self.SUBTILES_EXTENSIONS + ['.rar', '.zip']:
                 filename = os.path.basename(subsfn)
-                outfile = open(os.path.join(dest_dir, filename) , 'wb')
+                outfile = open(os.path.join(dest_dir, filename), 'wb')
                 outfile.write(rf.read(subsfn))
                 outfile.flush()
                 outfile.close()

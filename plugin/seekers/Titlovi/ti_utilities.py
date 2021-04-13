@@ -13,13 +13,13 @@ LANGUAGES = (
     # ISO 639-1 Code[3]
     # Script Setting Language[4]
     # localized name id number[5]
-    ("Bosnian"      , "10",  "bs",   "bos",   "3",    30204),
-    ("Croatian"     , "38",  "hr",   "hrv",   "7",    30208),
-    ("English"      , "2",   "en",   "eng",   "11",   30212),
-    ("Macedonian"   , "35",  "mk",   "mac",   "28",   30229),
-    ("Serbian"      , "36",  "sr",   "scc",   "36",   30237),
-    ("Slovenian"    , "1",   "sl",   "slv",   "38",   30239),
-    ("SerbianLatin" , "36",  "sr",   "scc",   "100",  30237))
+    ("Bosnian", "10",  "bs",   "bos",   "3",    30204),
+    ("Croatian", "38",  "hr",   "hrv",   "7",    30208),
+    ("English", "2",   "en",   "eng",   "11",   30212),
+    ("Macedonian", "35",  "mk",   "mac",   "28",   30229),
+    ("Serbian", "36",  "sr",   "scc",   "36",   30237),
+    ("Slovenian", "1",   "sl",   "slv",   "38",   30239),
+    ("SerbianLatin", "36",  "sr",   "scc",   "100",  30237))
 
 
 def languageTranslate(lang, lang_from, lang_to):

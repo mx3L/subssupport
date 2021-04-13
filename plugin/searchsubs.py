@@ -57,7 +57,7 @@ def scriptError(e):
     if isinstance(e, BaseSubtitlesError):
         send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': e.code, 'provider': e.provider})
     else:
-        send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': SubtitlesErrors.UNKNOWN_ERROR, 'provider':'' })
+        send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': SubtitlesErrors.UNKNOWN_ERROR, 'provider':''})
 
 def scriptFinished(subtitlesDict):
     send(Messages.MESSAGE_FINISHED_SCRIPT, subtitlesDict)

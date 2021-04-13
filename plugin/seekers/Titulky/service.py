@@ -15,7 +15,7 @@ from ..utilities import languageTranslate, log, getFileSize
 
 from ..seeker import SubtitlesDownloadError, SubtitlesErrors
 
-def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack ): #standard input
+def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack): #standard input
     # need to filter titles like <Localized movie name> (<Movie name>)
     br_index = title.find('(')
     if br_index > -1:
@@ -23,13 +23,13 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
     title = title.strip()
     session_id = "0"
     client = TitulkyClient()
-    subtitles_list = client.search_subtitles( file_original_path, title, tvshow, year, season, episode, set_temp, rar,'Czech','Slovak','EN' )
+    subtitles_list = client.search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar,'Czech','Slovak','EN')
     return subtitles_list, session_id, ""  #standard output
 
 
-def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id): #standard input
+def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id): #standard input
 
-    subtitle_id =  subtitles_list[pos][ 'ID' ]
+    subtitle_id =  subtitles_list[pos]['ID']
     client = TitulkyClient()
     username = settings_provider.getSetting("Titulkyuser")
     password = settings_provider.getSetting("Titulkypass")
@@ -133,7 +133,7 @@ class TitulkyClient(object):
 
     def login(self,username,password):
             log(__name__,'Logging in to Titulky.com')
-            login_postdata = urllib.urlencode({'Login': username, 'Password': password, 'foreverlog': '1','Detail2':''} )
+            login_postdata = urllib.urlencode({'Login': username, 'Password': password, 'foreverlog': '1','Detail2':''})
             request = urllib2.Request(self.server_url + '/index.php',login_postdata)
             response = urllib2.urlopen(request)
             log(__name__,'Got response')
@@ -148,7 +148,7 @@ class TitulkyClient(object):
 
             return True
 
-    def search_subtitles(self, file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3 ):
+    def search_subtitles(self, file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3):
         url = self.server_url+'/index.php?'+urllib.urlencode({'Fulltext':title,'FindUser':''})
         if not (tvshow == None or tvshow == ''):
             title2 = tvshow+' '+get_episode_season(episode,season)
@@ -171,18 +171,18 @@ class TitulkyClient(object):
             item = {}
             log(__name__,'New subtitle found')
             try:
-                item['ID'] = re.search('[^<]+<td[^<]+<a href=\"[\w-]+-(?P<data>\d+).htm\"',row.group(1),re.IGNORECASE | re.DOTALL ).group('data')
-                item['title'] = re.search('[^<]+<td[^<]+<a[^>]+>(<div[^>]+>)?(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL ).group('data')
+                item['ID'] = re.search('[^<]+<td[^<]+<a href=\"[\w-]+-(?P<data>\d+).htm\"',row.group(1),re.IGNORECASE | re.DOTALL).group('data')
+                item['title'] = re.search('[^<]+<td[^<]+<a[^>]+>(<div[^>]+>)?(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL).group('data')
                 item['sync'] = ''
-                sync_found = re.search('((.+?)</td>)[^>]+>[^<]*<a(.+?)title=\"(?P<data>[^\"]+)',row.group(1),re.IGNORECASE | re.DOTALL )
+                sync_found = re.search('((.+?)</td>)[^>]+>[^<]*<a(.+?)title=\"(?P<data>[^\"]+)',row.group(1),re.IGNORECASE | re.DOTALL)
                 if sync_found:
                     item['sync'] = sync_found.group('data')
-                item['tvshow'] = re.search('((.+?)</td>){2}[^>]+>(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL ).group('data')
-                item['year'] = re.search('((.+?)</td>){3}[^>]+>(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL ).group('data')
-                item['downloads'] = re.search('((.+?)</td>){4}[^>]+>(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL ).group('data')
-                item['lang'] = re.search('((.+?)</td>){5}[^>]+><img alt=\"(?P<data>\w{2})\"',row.group(1),re.IGNORECASE | re.DOTALL ).group('data')
-                item['numberOfDiscs'] = re.search('((.+?)</td>){6}[^>]+>(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL ).group('data')
-                item['size'] = re.search('((.+?)</td>){7}[^>]+>(?P<data>[\d\.]+)',row.group(1),re.IGNORECASE | re.DOTALL ).group('data')
+                item['tvshow'] = re.search('((.+?)</td>){2}[^>]+>(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL).group('data')
+                item['year'] = re.search('((.+?)</td>){3}[^>]+>(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL).group('data')
+                item['downloads'] = re.search('((.+?)</td>){4}[^>]+>(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL).group('data')
+                item['lang'] = re.search('((.+?)</td>){5}[^>]+><img alt=\"(?P<data>\w{2})\"',row.group(1),re.IGNORECASE | re.DOTALL).group('data')
+                item['numberOfDiscs'] = re.search('((.+?)</td>){6}[^>]+>(?P<data>[^<]+)',row.group(1),re.IGNORECASE | re.DOTALL).group('data')
+                item['size'] = re.search('((.+?)</td>){7}[^>]+>(?P<data>[\d\.]+)',row.group(1),re.IGNORECASE | re.DOTALL).group('data')
             except:
                 log(__name__,'Exception when parsing subtitle, all I got is  %s' % str(item))
                 continue

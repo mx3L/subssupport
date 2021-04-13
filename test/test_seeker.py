@@ -7,7 +7,7 @@ import unittest
 import shutil
 
 test = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join (test, '..', 'plugin'))
+sys.path.append(os.path.join(test, '..', 'plugin'))
 
 from seekers.seeker import BaseSeeker, SubtitlesSearchError, SubtitlesDownloadError, SubtitlesErrors
 from seek import SubsSeeker

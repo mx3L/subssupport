@@ -10,7 +10,7 @@ import unittest
 import ConfigParser
 
 test = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join (test, '..','plugin'))
+sys.path.append(os.path.join(test, '..','plugin'))
 
 MOVIE_PATH = os.path.join(test,'moviefiles')
 

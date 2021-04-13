@@ -270,17 +270,17 @@ class SubsControllerDVB(Screen, HelpableScreen):
         if subsFps == videoFps:
             if self.providedSubtitlesFps is not None:
                 if self.providedSubtitlesFps == videoFps:
-                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), _("original"), _("original") ))
+                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), _("original"), _("original")))
                 else:
-                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), _("original"), str(self.providedSubtitlesFps) ))
+                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), _("original"), str(self.providedSubtitlesFps)))
             else:
                 self['subtitlesFps'].setText("%s: %s" % (_("Subtitles FPS"), _("original")))
         else:
             if self.providedSubtitlesFps is not None:
                 if self.providedSubtitlesFps == videoFps:
-                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), _("original") ))
+                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), _("original")))
                 else:
-                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), str(self.providedSubtitlesFps) ))
+                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), str(self.providedSubtitlesFps)))
             else:
                 self['subtitlesFps'].setText("%s: %s" % (_("Subtitles FPS"), str(subsFps)))
 

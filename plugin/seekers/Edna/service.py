@@ -7,7 +7,7 @@ import re
 from ..utilities import log,  languageTranslate
 
 
-def search_subtitles( file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack ): #standard input
+def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack): #standard input
 	log(__name__,"Starting search by TV Show")
 	if (tvshow == None or tvshow == ''):
 		log(__name__,"No TVShow name, stop")
@@ -67,7 +67,7 @@ def search_subtitles( file_original_path, title, tvshow, year, season, episode, 
 	# return subtitlesList, "", msg
 	return result_subtitles, "", ""
 
-def download_subtitles (subtitles_list, pos, extract_subs, tmp_sub_dir, sub_folder, session_id): #standard input
+def download_subtitles(subtitles_list, pos, extract_subs, tmp_sub_dir, sub_folder, session_id): #standard input
 	selected_subtitles = subtitles_list[pos]
 
 	log(__name__,'Downloading subtitles')
@@ -119,7 +119,7 @@ class EdnaClient(object):
 		self.server_url = "http://www.edna.cz"
 
 	def search_show(self,title):
-		enc_title = urllib.urlencode({ "q" : title})
+		enc_title = urllib.urlencode({"q": title})
 		res = urllib.urlopen(self.server_url + "/vyhledavani/?" + enc_title)
 		shows = []
 		if re.search("/vyhledavani/\?q=",res.geturl()):

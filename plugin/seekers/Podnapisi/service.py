@@ -13,15 +13,15 @@ from ..utilities import log, languageTranslate, normalizeString
 def Search(item):
     pn_server = PNServer()
     pn_server.Create()
-    if item['temp'] :
+    if item['temp']:
         item['OShash'] = "000000000000"
         item['SLhash'] = "000000000000"
     else:
         item['OShash'] = OpensubtitlesHash(item)
         item['SLhash'] = calculateSublightHash(item['file_original_path'])
-        log(__scriptid__ , "xbmc module OShash: %s, SLhash:%s"%(item['OShash'], item['SLhash']))
+        log(__scriptid__, "xbmc module OShash: %s, SLhash:%s"%(item['OShash'], item['SLhash']))
 
-    log(__scriptid__ , "Search for [%s] by name" % (os.path.basename(item['file_original_path']),))
+    log(__scriptid__, "Search for [%s] by name" % (os.path.basename(item['file_original_path']),))
     subtitles_list = pn_server.SearchSubtitlesWeb(item)
     return subtitles_list
 
@@ -65,7 +65,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
         
     return Search(item), "", ""
 
-def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
+def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
     pn_utilities.settings_provider = settings_provider
     params = subtitles_list[pos]
     # params["hash"] = params['OShash']
