@@ -69,7 +69,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 			'filename': print_out_filename,
 			'link': episode_subtitle['link'],
 			'lang': lng_short2long(episode_subtitle['lang']),
- 			'rating': str(episode_subtitle['down_count']*10/max_down_count),
+ 			'rating': str(episode_subtitle['down_count'] * 10 / max_down_count),
 			'sync': (episode_subtitle['file_size'] == file_size),
 			'language_flag': 'flags/' + lng_short2flag(episode_subtitle['lang']) + '.gif',
 			'language_name': lng_short2long(episode_subtitle['lang']),

@@ -29,7 +29,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 
 def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id): #standard input
 
-    subtitle_id =  subtitles_list[pos]['ID']
+    subtitle_id = subtitles_list[pos]['ID']
     client = TitulkyClient()
     username = settings_provider.getSetting("Titulkyuser")
     password = settings_provider.getSetting("Titulkypass")
@@ -42,7 +42,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
                                           "Login to Titulky.com failed. Check your username/password at the addon configuration")
             return True,subtitles_list[pos]['language_name'], ""
         log(__name__,'Login successfull')
-    log(__name__,'Get page with subtitle (id=%s)'%(subtitle_id))
+    log(__name__,'Get page with subtitle (id=%s)' % (subtitle_id))
     content = client.get_subtitle_page(subtitle_id)
     control_img = client.get_control_image(content)
     if not control_img == None:
@@ -57,7 +57,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
 
         solution = captcha_cb(os.path.join(tmp_sub_dir,'image.png'))
         if solution:
-            log(__name__,'Solution provided: %s' %solution)
+            log(__name__,'Solution provided: %s' % solution)
             content = client.get_subtitle_page2(content,solution,subtitle_id)
             control_img2 = client.get_control_image(content)
             if not control_img2 == None:
@@ -80,9 +80,9 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
     log(__name__,'Got the link, wait %i seconds before download' % (wait_time))
     delay = wait_time
     if 'delay_cb' in globals():
-        delay_cb(wait_time+2)
+        delay_cb(wait_time + 2)
     else:
-        for i in range(wait_time+1):
+        for i in range(wait_time + 1):
             line2 = 'Download will start in %i seconds' % (delay,)
             #xbmc.executebuiltin("XBMC.Notification(%s,%s,1000,%s)" % (__scriptname__,line2,os.path.join(__cwd__,'icon.png')))
             delay -= 1
@@ -113,10 +113,10 @@ def lang_xbmclang2titulky(lang):
 def get_episode_season(episode,season):
     return 'S%sE%s' % (get2DigitStr(int(season)),get2DigitStr(int(episode)))
 def get2DigitStr(number):
-    if number>9:
+    if number > 9:
         return str(number)
     else:
-        return '0'+str(number)
+        return '0' + str(number)
 
 def lang2_opensubtitles(lang):
     lang = lang_titulky2xbmclang(lang)
@@ -137,7 +137,7 @@ class TitulkyClient(object):
             request = urllib2.Request(self.server_url + '/index.php',login_postdata)
             response = urllib2.urlopen(request)
             log(__name__,'Got response')
-            if response.read().find('BadLogin')>-1:
+            if response.read().find('BadLogin') > -1:
                 return False
 
             log(__name__,'Storing Cookies')
@@ -149,23 +149,23 @@ class TitulkyClient(object):
             return True
 
     def search_subtitles(self, file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3):
-        url = self.server_url+'/index.php?'+urllib.urlencode({'Fulltext':title,'FindUser':''})
+        url = self.server_url + '/index.php?' + urllib.urlencode({'Fulltext':title,'FindUser':''})
         if not (tvshow == None or tvshow == ''):
-            title2 = tvshow+' '+get_episode_season(episode,season)
-            url = self.server_url+'/index.php?'+urllib.urlencode({'Fulltext':title2,'FindUser':''})
+            title2 = tvshow + ' ' + get_episode_season(episode,season)
+            url = self.server_url + '/index.php?' + urllib.urlencode({'Fulltext':title2,'FindUser':''})
         req = urllib2.Request(url)
         try:
             size = getFileSize(file_original_path)
-            file_size='%.2f' % (float(size)/(1024*1024))
+            file_size = '%.2f' % (float(size) / (1024 * 1024))
         except:
-            file_size='-1'
+            file_size = '-1'
         log(__name__,'Opening %s' % (url))
         response = urllib2.urlopen(req)
         content = response.read()
         response.close()
         log(__name__,'Done')
         subtitles_list = []
-        max_downloads=1
+        max_downloads = 1
         log(__name__,'Searching for subtitles')
         for row in re.finditer('<tr class=\"r(.+?)</tr>', content, re.IGNORECASE | re.DOTALL):
             item = {}
@@ -196,17 +196,17 @@ class TitulkyClient(object):
             if not item['sync'] == '' and file_original_path.find(item['sync']) > -1:
                 log(__name__,'found sync : filename match')
                 sync = True
-            if file_size==item['size']:
+            if file_size == item['size']:
                 log(__name__,'found sync : size match')
                 sync = True
             item['sync'] = sync
 
             try:
                 downloads = int(item['downloads'])
-                if downloads>max_downloads:
-                    max_downloads=downloads
+                if downloads > max_downloads:
+                    max_downloads = downloads
             except:
-                downloads=0
+                downloads = 0
             item['downloads'] = downloads
 
             if year:
@@ -225,7 +225,7 @@ class TitulkyClient(object):
                 log(__name__,'language does not match, ignoring %s' % str(item))
         # computing ratings is based on downloads
         for subtitle in subtitles_list:
-            subtitle['rating'] = str((subtitle['downloads']*10/max_downloads))
+            subtitle['rating'] = str((subtitle['downloads'] * 10 / max_downloads))
         return subtitles_list
 
     def get_cannot_download_error(self,content):
@@ -242,11 +242,11 @@ class TitulkyClient(object):
 
     def get_control_image(self,content):
         for matches in re.finditer('\.\/(captcha\/captcha\.php)', content, re.IGNORECASE | re.DOTALL):
-            return '/'+str(matches.group(1))
+            return '/' + str(matches.group(1))
         return None
 
     def get_file(self,link):
-        url = self.server_url+link
+        url = self.server_url + link
         log(__name__,'Downloading file %s' % (url))
         req = urllib2.Request(url)
         req = self.add_cookies_into_header(req)
@@ -262,7 +262,7 @@ class TitulkyClient(object):
         return content
 
     def get_subtitle_page2(self,content,code,id):
-        url = self.server_url+'/idown.php'
+        url = self.server_url + '/idown.php'
         post_data = {'downkod':code,'titulky':id,'zip':'z','securedown':'2','histstamp':''}
         req = urllib2.Request(url,urllib.urlencode(post_data))
         req = self.add_cookies_into_header(req)
@@ -275,7 +275,7 @@ class TitulkyClient(object):
 
     def get_subtitle_page(self,id):
         timestamp = str(calendar.timegm(time.gmtime()))
-        url = self.server_url+'/idown.php?'+urllib.urlencode({'R':timestamp,'titulky':id,'histstamp':'','zip':'z'})
+        url = self.server_url + '/idown.php?' + urllib.urlencode({'R':timestamp,'titulky':id,'histstamp':'','zip':'z'})
         log(__name__,'Opening %s' % (url))
         req = urllib2.Request(url)
         req = self.add_cookies_into_header(req)
@@ -286,7 +286,7 @@ class TitulkyClient(object):
         return content
 
     def add_cookies_into_header(self,request):
-        cookies_string=""
+        cookies_string = ""
         try:
             cookies_string = "LogonLogin=" + self.cookies['LogonLogin'] + "; "
             cookies_string += "LogonId=" + self.cookies['LogonId'] + "; "

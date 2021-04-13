@@ -15,20 +15,20 @@ class TestSeekUtils(unittest.TestCase):
         expected_filetype = "zip"
         filetype = utilities.getCompressedFileType(zipfile)
         self.assertIsNotNone(filetype, "cannot detect filetype!")
-        self.assertEqual(filetype, expected_filetype, "detected invalid filetype - %s"%filetype)
+        self.assertEqual(filetype, expected_filetype, "detected invalid filetype - %s" % filetype)
 
         rarfile = os.path.join(UTILS_PATH, 'rarfile')
         expected_filetype = "rar"
         filetype = utilities.getCompressedFileType(rarfile)
         self.assertIsNotNone(filetype, "cannot detect filetype!")
-        self.assertEqual(filetype, expected_filetype, "detected invalid filetype - %s"%filetype)
+        self.assertEqual(filetype, expected_filetype, "detected invalid filetype - %s" % filetype)
 
-    def  testTVShowDetection(self):
+    def testTVShowDetection(self):
         tv_shows = ["True.Detective.S01.E01","True Detective S01E01"]
-        expected_output=[("True Detective", '1', '1'),("True Detective",'1','1')]
+        expected_output = [("True Detective", '1', '1'),("True Detective",'1','1')]
         for i, tv_show in enumerate(tv_shows):
             ret = utilities.detectSearchParams(tv_show)
-            self.assertTrue((ret[2],ret[3],ret[4]) == expected_output[i], str((ret[2],ret[3],ret[4])) +" != "+str(expected_output[i]))
+            self.assertTrue((ret[2],ret[3],ret[4]) == expected_output[i], str((ret[2],ret[3],ret[4])) + " != " + str(expected_output[i]))
 
 
 if __name__ == "__main__":

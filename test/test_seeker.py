@@ -166,7 +166,7 @@ class TestSeekerDownload(unittest.TestCase):
         shutil.rmtree(cls.temp_path, True)
 
     def _test_download(self, expected_output, output):
-        self.assertTrue(output == expected_output, '"%s"!="%s"'%(expected_output, output))
+        self.assertTrue(output == expected_output, '"%s"!="%s"' % (expected_output, output))
         self.assertTrue(os.path.isfile(output))
 
     def test_choose_file(self):

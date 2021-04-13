@@ -148,17 +148,17 @@ def getDefaultFont(fontType):
         if fontType == "regular":
             if f == "Subs":
                 openpli = f
-            elif f== "Ubuntu-M":
+            elif f == "Ubuntu-M":
                 ubuntu = f 
         elif fontType == "italic":
             if f == "Subsi":
                 openpli = f
-            elif f=="Ubuntu-MI":
+            elif f == "Ubuntu-MI":
                 ubuntu = f
         elif fontType == "bold":
             if f == "Subsb":
                 openpli = f
-            elif f =="Ubuntu-B":
+            elif f == "Ubuntu-B":
                 ubuntu = f
     if ubuntu:
         return ubuntu
@@ -226,7 +226,7 @@ except IOError as e:
     print '[SubsSupport] error while loading custom colors', str(e)
 
 alphaChoiceList = [("00", _("opaque"))]
-alphaChoiceList.extend([("%02x" % val, "%d %%"%(int(percent * 100 / float(32)))) for percent, val in enumerate(xrange(0, 256, 8)) if val != 0])
+alphaChoiceList.extend([("%02x" % val, "%d %%" % (int(percent * 100 / float(32)))) for percent, val in enumerate(xrange(0, 256, 8)) if val != 0])
 alphaChoiceList.append(("ff", _("transparent")))
 
 def initGeneralSettings(configsubsection):
@@ -323,7 +323,7 @@ def initSearchSettings(configsubsection):
     configsubsection.year = ConfigInteger(default=0, limits=(0, 2100))
     configsubsection.season = ConfigInteger(default=0, limits=(0, 100))
     configsubsection.episode = ConfigInteger(default=0, limits=(0, 100))
-    configsubsection.provider= ConfigSelection(default="all", choices=[("all", _("All")), ])
+    configsubsection.provider = ConfigSelection(default="all", choices=[("all", _("All")), ])
     configsubsection.useFilePath = ConfigYesNo(default=True)
     
 
@@ -362,16 +362,16 @@ class SubsStatusScreen(Screen, HelpableScreen):
 
     def __init__(self, session, setSubsDelay, getSubsDelay, subscribeDelay, unsubscribeDelay, toNextSub, toPrevSub, setSubsFps, getSubsFps, subsDelayStepInMs=200, showDelayInMs=False):
 
-        ratio       = 1.5 if isFullHD() else 1
+        ratio = 1.5 if isFullHD() else 1
         desktopSize = getDesktopSize()
-        windowSize  = (0.9 * desktopSize[0], 0.15 * desktopSize[1])
-        fontSize    = 22 * ratio
-        delaySize   = (0.45 * windowSize[0], windowSize[1])
-        fpsSize     = (0.45 * windowSize[0], windowSize[1])
+        windowSize = (0.9 * desktopSize[0], 0.15 * desktopSize[1])
+        fontSize = 22 * ratio
+        delaySize = (0.45 * windowSize[0], windowSize[1])
+        fpsSize = (0.45 * windowSize[0], windowSize[1])
 
-        windowPos   = (0.05 * desktopSize[0], 0.05 * desktopSize[0])
-        delayPos    = (0, 0)
-        fpsPos      = (0.55 * windowSize[0], 0)
+        windowPos = (0.05 * desktopSize[0], 0.05 * desktopSize[0])
+        delayPos = (0, 0)
+        fpsPos = (0.55 * windowSize[0], 0)
 
         self.skin = """
         <screen position="%d,%d" size="%d,%d" zPosition="5" backgroundColor="transparent" flags="wfNoBorder">
@@ -440,25 +440,25 @@ class SubsStatusScreen(Screen, HelpableScreen):
         subsFps = self.getSubsFps()
         videoFps = getFps(self.session, True)
         if subsFps is None or videoFps is None:
-            self['fps'].text = "%s: %s"%(_("Subtitles FPS"), _("unknown"))
+            self['fps'].text = "%s: %s" % (_("Subtitles FPS"), _("unknown"))
             return
         if subsFps == videoFps:
-            self['fps'].text = "%s: %s"%(_("Subtitles FPS"), _("original"))
+            self['fps'].text = "%s: %s" % (_("Subtitles FPS"), _("original"))
         else:
-            self['fps'].text = "%s: %s"%(_("Subtitles FPS"), str(subsFps))
+            self['fps'].text = "%s: %s" % (_("Subtitles FPS"), str(subsFps))
         
     def updateSubsDelay(self):
         subsDelay = self._getSubsDelay()
         if self.showDelayInMs:
             if subsDelay > 0:
-                self["delay"].text = "%s: +%dms"%(_("Subtitles Delay"), subsDelay)
+                self["delay"].text = "%s: +%dms" % (_("Subtitles Delay"), subsDelay)
             else:
-                self["delay"].text = "%s: %dms"%(_("Subtitles Delay"), subsDelay)
+                self["delay"].text = "%s: %dms" % (_("Subtitles Delay"), subsDelay)
         else:
             if subsDelay > 0:
-                self["delay"].text = "%s: +%.2fs"%(_("Subtitles Delay"), subsDelay/float(1000))
+                self["delay"].text = "%s: +%.2fs" % (_("Subtitles Delay"), subsDelay / float(1000))
             else:
-                self["delay"].text = "%s: %.2fs"%(_("Subtitles Delay"), subsDelay/float(1000))
+                self["delay"].text = "%s: %.2fs" % (_("Subtitles Delay"), subsDelay / float(1000))
 
     def nextSubDelay(self):
         self.toNextSub()
@@ -477,10 +477,10 @@ class SubsStatusScreen(Screen, HelpableScreen):
         if subsFps is None:
             return
         currIdx = self.fpsChoices.index(str(subsFps))
-        if currIdx == len(self.fpsChoices) -1:
+        if currIdx == len(self.fpsChoices) - 1:
             nextIdx = 0
         else:
-            nextIdx = currIdx+1
+            nextIdx = currIdx + 1
         self.setSubsFps(fps_float(self.fpsChoices[nextIdx]))
         self.updateSubsFps()
         
@@ -1573,13 +1573,13 @@ class SubsEngine(object):
         self.resume()
         
     def setSubsFps(self, subsFps):
-        print "[SubsEngine] setSubsFps - setting fps to %s"% str(subsFps)
+        print "[SubsEngine] setSubsFps - setting fps to %s" % str(subsFps)
         videoFps = getFps(self.session, True)
         if videoFps is None:
             print "[SubsEngine] setSubsFps - cannot get video fps!"
         else:
             self.pause()
-            self.subsFpsRatio = subsFps/ float(videoFps)
+            self.subsFpsRatio = subsFps / float(videoFps)
             for f in self.onSubsFpsChanged:
                 f(self.getSubsFps())
             self.resume()
@@ -1591,7 +1591,7 @@ class SubsEngine(object):
         return fps_float(self.subsFpsRatio * videoFps)
 
     def setSubsDelay(self, delayInMs):
-        print "[SubsEngine] setSubsDelay - setting delay to %sms"% str(delayInMs)
+        print "[SubsEngine] setSubsDelay - setting delay to %sms" % str(delayInMs)
         self.pause()
         self.subsDelay = int(delayInMs) * 90
         for f in self.onSubsDelayChanged:
@@ -1607,16 +1607,16 @@ class SubsEngine(object):
     def setSubsDelayToNextSubtitle(self):
         def setDelay():
             if not self.renderer.subShown:
-                print '[SubsEngine] setDelayToNextSubtitle - next pos: %d of %d'%(self.position, len(self.subsList))
+                print '[SubsEngine] setDelayToNextSubtitle - next pos: %d of %d' % (self.position, len(self.subsList))
                 toSub = self.subsList[self.position]
                 # position is incremented right after subtitle is hidden so we don't do anything
-            elif self.renderer.subShown and self.position != len(self.subsList) -1:
-                print '[SubsEngine] setDelayToNextSubtitle - next pos: %d of %d'%(self.position+1, len(self.subsList))
-                toSub = self.subsList[self.position+1]
+            elif self.renderer.subShown and self.position != len(self.subsList) - 1:
+                print '[SubsEngine] setDelayToNextSubtitle - next pos: %d of %d' % (self.position + 1, len(self.subsList))
+                toSub = self.subsList[self.position + 1]
             else:
                 print '[SubsEngine] setDelayToNextSubtitle - we are on last subtitle'
                 return
-            toSubDelay = (self.__pts - (toSub['start'] * self.subsFpsRatio))/90
+            toSubDelay = (self.__pts - (toSub['start'] * self.subsFpsRatio)) / 90
             self.setSubsDelay(toSubDelay)
             
         self.stopTimers()
@@ -1627,14 +1627,14 @@ class SubsEngine(object):
             if not self.renderer.subShown:
                 print '[SubsEngine] setDelayToPrevSubtitle - skipping to start of current sub'
                 # position is incremented right after subtitle is hidden so we have to go one back
-                toSub = self.subsList[self.position-1]
+                toSub = self.subsList[self.position - 1]
             elif self.renderer.subShown and self.position != 0:
-                print '[SubsEngine] setDelayToPrevSubtitle - prev pos: %d of %d'%(self.position-1, len(self.subsList))
-                toSub = self.subsList[self.position -1]
+                print '[SubsEngine] setDelayToPrevSubtitle - prev pos: %d of %d' % (self.position - 1, len(self.subsList))
+                toSub = self.subsList[self.position - 1]
             else:
                 print '[SubsEngine] setDelayToPrevSubtitle - we are on first subtitle'
                 return
-            toSubDelay = (self.__pts - (toSub['start'] * self.subsFpsRatio))/90
+            toSubDelay = (self.__pts - (toSub['start'] * self.subsFpsRatio)) / 90
             self.setSubsDelay(toSubDelay)
             
         self.stopTimers()
@@ -1697,7 +1697,7 @@ class SubsEngine(object):
 
     def doPlay(self):
         if self.position == len(self.subsList):
-            print  '[SubsEngine] reached end of subtitle list'
+            print '[SubsEngine] reached end of subtitle list'
             self.position = len(self.subsList) - 1
             self.stopTimers()
         else:
@@ -1720,7 +1720,7 @@ class SubsEngine(object):
                 #print '[SubsEngine] sub should be already shown - %dms, skipping...'%((subsEndPts - self.__pts)/90)
                 self.getPlayPts(self.skipSubs, 100)
             else:
-                print '[SubsEngine] sub shown later by %dms' % ((self.__pts - subStartPts)/90)
+                print '[SubsEngine] sub shown later by %dms' % ((self.__pts - subStartPts) / 90)
                 self.renderSub()
 
     def skipSubs(self):
@@ -1754,7 +1754,7 @@ class SubsEngine(object):
         subStartEndPts = (self.subsList[self.position]['end'] * self.subsFpsRatio) + self.subsDelay
         # seek backwards
         if subStartPts > playPts:
-            subPrevEndPts = (self.subsList[self.position -1]['end'] * self.subsFpsRatio) + self.subsDelay
+            subPrevEndPts = (self.subsList[self.position - 1]['end'] * self.subsFpsRatio) + self.subsDelay
             while self.position > 0 and subPrevEndPts > playPts:
                 self.position -= 1
                 subPrevEndPts = (self.subsList[self.position - 1]['end'] * self.subsFpsRatio) + self.subsDelay
@@ -1921,7 +1921,7 @@ class SubsMenu(Screen):
         mode = self["menu_list"].getCurrent()[0][1]
         if mode == 'choose':
             self.session.openWithCallback(self.subsChooserCB, SubsChooser, self.infobar.subsSettings, self.subdir, self.embeddedSupport, False, True)
-        elif mode =='search':
+        elif mode == 'search':
             self.searchSubs()
         elif mode == 'settings':
             self.session.openWithCallback(self.subsSetupCB, SubsSetupMainMisc, self.infobar.subsSettings)
@@ -2109,7 +2109,7 @@ class SubsSetupMainMisc(BaseMenuScreen):
     def buildMenu(self):
         configList = []
         configList.append(getConfigListEntry(_("Pause video on opening subtitles menu"), self.subsSettings.pauseVideoOnSubtitlesMenu))
-        configList.append(getConfigListEntry("-"*200, ConfigNothing()))
+        configList.append(getConfigListEntry("-" * 200, ConfigNothing()))
         configList.extend(SubsSetupExternal.getConfigList(self.subsSettings.external))
         configList.append(getConfigListEntry(_("Encoding"), self.subsSettings.encodingsGroup))
         configList.append(getConfigListEntry(_("Show expert settings"), self.showExpertSettings))
@@ -2302,9 +2302,9 @@ class SubFileList(FileList):
         if self.showDirectories:
             if directory:
                 if self.showMountpoints and directory == self.current_mountpoint:
-                    self.list.append(FileEntryComponent(name="<" +_("List of storage devices") + ">", absolute=None, isDir=True))
+                    self.list.append(FileEntryComponent(name="<" + _("List of storage devices") + ">", absolute=None, isDir=True))
                 elif (directory != self.topDirectory) and not (self.inhibitMounts and self.getMountpoint(directory) in self.inhibitMounts):
-                    self.list.append(FileEntryComponent(name="<" +_("Parent directory") + ">", absolute='/'.join(directory.split('/')[:-2]) + '/', isDir=True))
+                    self.list.append(FileEntryComponent(name="<" + _("Parent directory") + ">", absolute='/'.join(directory.split('/')[:-2]) + '/', isDir=True))
             for x in directories:
                 if not (self.inhibitMounts and self.getMountpoint(x) in self.inhibitMounts) and not self.inParentDirs(x, self.inhibitDirs):
                     name = x.split('/')[-2]
@@ -2531,7 +2531,7 @@ class SubsChooser(Screen):
         try:
             json.dump(subtitles, open(fpath,"w"))
         except Exception as e:
-            print '[SubsFileChooser] downloadedSubsSelectionCB - %s'% str(e)
+            print '[SubsFileChooser] downloadedSubsSelectionCB - %s' % str(e)
         if downloadedSubtitle:
             self.close(downloadedSubtitle, False, True)
             
@@ -2542,7 +2542,7 @@ class SubsChooser(Screen):
         try:
             subtitles = json.load(open(fpath, "r"))
         except Exception as e:
-            print '[SubsFileChooser] downloadedSubsSelection - %s'% str(e)
+            print '[SubsFileChooser] downloadedSubsSelection - %s' % str(e)
             subtitles = []
         self.session.openWithCallback(self.downloadedSubsSelectionCB, SubsDownloadedSelection, subtitles, self.subsSettings.search.downloadHistory)
         
@@ -2675,7 +2675,7 @@ class SubsDownloadedSelection(Screen):
         self.setTitle(_("Downloaded Subtitles"))
             
     def updateSubsList(self):
-        imgDict = {'unk':loadPNG(os.path.join(os.path.dirname(__file__), 'img', 'countries',  'UNK.png'))}
+        imgDict = {'unk':loadPNG(os.path.join(os.path.dirname(__file__), 'img', 'countries', 'UNK.png'))}
         subtitleListGUI = []
         for sub in self.subtitles[:]:
             fpath = toString(sub['fpath'])
@@ -2716,33 +2716,33 @@ class SubsDownloadedSelection(Screen):
                     try:
                         os.unlink(subtitle['fpath'])
                     except OSError as e:
-                        print "[SubsDownloadedSelection] cannot remove - %s"%(str(e))
+                        print "[SubsDownloadedSelection] cannot remove - %s" % (str(e))
                         self.session.open(MessageBox, _("There was an error while removing subtitle, please check log"), type=MessageBox.TYPE_ERROR)
                     else:
                         self.subtitles.remove(subtitle)
                         curridx = self['subtitles'].index
                         self.updateSubsList()
-                        self['subtitles'].index = curridx -1
+                        self['subtitles'].index = curridx - 1
                         self.updateEntriesSum()
                 else:
                     self.subtitles.remove(subtitle)
                     curridx = self['subtitles'].index
                     self.updateSubsList()
-                    self['subtitles'].index = curridx -1
+                    self['subtitles'].index = curridx - 1
                     self.updateEntriesSum()
                 
         if self["subtitles"].count() > 0:
             subtitle = self.subtitles[self["subtitles"].index]
             if self.historySettings.removeAction.value == 'file':
                 if self.historySettings.removeActionAsk.value:
-                    message = _("Subtitle") + " '" + toString(subtitle['name'])+ "' " + _("will be removed from file system")
+                    message = _("Subtitle") + " '" + toString(subtitle['name']) + "' " + _("will be removed from file system")
                     message += "\n\n" + _("Do you want to proceed?")
                     self.session.openWithCallback(removeEntryCB, MessageBox, message, type=MessageBox.TYPE_YESNO)
                 else:
                     removeEntryCB(True)
             else:
                 if self.historySettings.removeActionAsk.value:
-                    message = _("Subtitle") + " '" + toString(subtitle['name'])+ "' " + _("will be removed from list")
+                    message = _("Subtitle") + " '" + toString(subtitle['name']) + "' " + _("will be removed from list")
                     message += "\n\n" + _("Do you want to proceed?")
                     self.session.openWithCallback(removeEntryCB, MessageBox, message, type=MessageBox.TYPE_YESNO)
                 else:
@@ -3485,7 +3485,7 @@ class SearchParamsHelper(object):
         
 class SubsSearchDownloadOptions(Screen, ConfigListScreen):
     if isFullHD():
-        skin="""
+        skin = """
             <screen position="center,center" size="735,525" zPosition="5" >
                 <widget name="config" position="15,15" size="705,165" font="Regular;27" itemHeight="37" zPosition="1" />
                 <eLabel position="12,192" size="711,118" backgroundColor="#ff0000" />
@@ -3502,7 +3502,7 @@ class SubsSearchDownloadOptions(Screen, ConfigListScreen):
             </screen>
         """
     else:
-        skin="""
+        skin = """
             <screen position="center,center" size="490,350" zPosition="5" >
                 <widget name="config" position="10, 10" size="470,110" zPosition="1" />
                 <eLabel position="8,128" size="474,79" backgroundColor="#ff0000" />
@@ -3585,7 +3585,7 @@ class SubsSearchDownloadOptions(Screen, ConfigListScreen):
         elif self.configSaveAs.value == "version":
             fname = os.path.splitext(self.subtitle['filename'])[0]
         if self.configAddLang.value and not self.configSaveAs.value == "custom":
-            fname = "%s.%s"%(fname, languageTranslate(self.subtitle['language_name'], 0, 2))
+            fname = "%s.%s" % (fname, languageTranslate(self.subtitle['language_name'], 0, 2))
         if fname:
             self["fname"].text = toString(fname)
         
@@ -3642,16 +3642,16 @@ class SubsSearchDownloadOptions(Screen, ConfigListScreen):
         if self['config'].getCurrent()[1] == self.configSaveAs:
             saveAsConfig = True
             currIdx = self.configSaveAs.choices.index(self.configSaveAs.value)
-            if currIdx == len(self.configSaveAs.choices) -1:
+            if currIdx == len(self.configSaveAs.choices) - 1:
                 nextChoice = self.configSaveAs.choices[0]
             else:
-                nextChoice = self.configSaveAs.choices[currIdx+1]
+                nextChoice = self.configSaveAs.choices[currIdx + 1]
             if nextChoice == 'custom':
                 self.configSaveAs.value = nextChoice
         ConfigListScreen.keyRight(self)
         if saveAsConfig:
             self.buildMenu()
-        if self['config'].getCurrent()[1]  in (self.configSaveAs, self.configAddLang):
+        if self['config'].getCurrent()[1] in (self.configSaveAs, self.configAddLang):
             self.updateFName()
         elif self['config'].getCurrent()[1] in (self.configSaveTo,):
             self.updateDPath()
@@ -3662,15 +3662,15 @@ class SubsSearchDownloadOptions(Screen, ConfigListScreen):
             saveAsConfig = True
             currIdx = self.configSaveAs.choices.index(self.configSaveAs.value)
             if currIdx == 0:
-                nextChoice = self.configSaveAs.choices[len(self.configSaveAs.choices)-1]
+                nextChoice = self.configSaveAs.choices[len(self.configSaveAs.choices) - 1]
             else:
-                nextChoice = self.configSaveAs.choices[currIdx-1]
+                nextChoice = self.configSaveAs.choices[currIdx - 1]
             if nextChoice == 'custom':
                 self.configSaveAs.value = nextChoice
         ConfigListScreen.keyLeft(self)
         if saveAsConfig:
             self.buildMenu()
-        if self['config'].getCurrent()[1]  in (self.configSaveAs, self.configAddLang):
+        if self['config'].getCurrent()[1] in (self.configSaveAs, self.configAddLang):
             self.updateFName()
         elif self['config'].getCurrent()[1] in (self.configSaveTo,):
             self.updateDPath()
@@ -4019,7 +4019,7 @@ class SubsSearch(Screen):
     def updateSubsList(self):
         imgDict = {
             'sync':loadPNG(os.path.join(os.path.dirname(__file__), 'img', 'check.png')),
-            'unk':loadPNG(os.path.join(os.path.dirname(__file__), 'img', 'countries',  'UNK.png'))
+            'unk':loadPNG(os.path.join(os.path.dirname(__file__), 'img', 'countries', 'UNK.png'))
         }
         subtitleListGUI = []
         for sub in self.subtitlesList:
@@ -4133,15 +4133,15 @@ class SubsSearch(Screen):
             else:
                 self.__finished[pfinished] = {'list':[], 'status':status,'message':str(value)}
             progressMessage = "%s - %d%%" % (_("loading subtitles list"), int(len(self.__finished.keys()) / float(len(provider)) * 100))
-            progressMessage +="\n" + _("subtitles found") + " (%d)"%(sum(len(self.__finished[p]['list']) for p in self.__finished.keys()))
-            progressMessage +="\n\n" + _("Press OK to Stop")
+            progressMessage += "\n" + _("subtitles found") + " (%d)" % (sum(len(self.__finished[p]['list']) for p in self.__finished.keys()))
+            progressMessage += "\n\n" + _("Press OK to Stop")
             self.message.info(progressMessage)
 
         self.stopSearchSubs()
         self.subtitlesList = []
         self.subtitlesDict = {}
         self.__finished = {}
-        p  = self.searchParamsHelper.getSearchParams()
+        p = self.searchParamsHelper.getSearchParams()
         langs, title, year, tvshow, season, episode = p[1], p[2], p[3], p[4], p[5], p[6]
         providers = self.seeker.getProviders(langs, not tvshow, tvshow)
         if self.searchProvider.value == "all":
@@ -4170,8 +4170,8 @@ class SubsSearch(Screen):
             'errorCB': self.searchSubsError
         }
         progressMessage = "%s - %d%%" % (_("loading subtitles list"), 0)
-        progressMessage +="\n" + _("subtitles found") + " (%d)"% 0
-        progressMessage +="\n\n" + _("Press OK to Stop")
+        progressMessage += "\n" + _("subtitles found") + " (%d)" % 0
+        progressMessage += "\n\n" + _("Press OK to Stop")
         self.message.info(progressMessage)
         self.__searching = True
         self.updateActionMaps()
@@ -4314,12 +4314,12 @@ class SubsSearch(Screen):
             except Exception as e:
                 print '[SubsSearch] cannot load download history:', e
                 subtitles = []
-            limit =  int(self.searchSettings.downloadHistory.limit.value)
+            limit = int(self.searchSettings.downloadHistory.limit.value)
             if dsubtitle in subtitles:
                 subtitles.remove(dsubtitle)
             if len(subtitles) >= limit:
                 print '[SubsSearch] download history limit reached!, removing oldest entries'
-                del subtitles[-(len(subtitles)-limit):]
+                del subtitles[-(len(subtitles) - limit):]
             subtitles.insert(0, dsubtitle)
             try:
                 json.dump(subtitles, open(fpath,'w'))
@@ -4735,7 +4735,7 @@ class SubsSearchSettings(Screen, ConfigListScreen):
         if self.focus == self.FOCUS_CONFIG:
             self['config'].instance.moveSelection(self["config"].instance.moveDown)
         else:
-            if self['providers'].index == len(self['providers'].list) -1:
+            if self['providers'].index == len(self['providers'].list) - 1:
                 self['providers'].index = 0
             else:
                 self['providers'].selectNext()
@@ -4768,10 +4768,10 @@ class SubsSearchSettings(Screen, ConfigListScreen):
             if isinstance(providerError,Exception):
                 if isinstance(providerError, ImportError):
                     # No module named ...
-                    err_msg= _("missing") + " python-%s "% (providerError.message.split()[-1]) + _("library")
+                    err_msg = _("missing") + " python-%s " % (providerError.message.split()[-1]) + _("library")
                 else:
                     err_msg = providerError.message
-        msg = "%s: %s"%(provider.provider_name, err_msg)
+        msg = "%s: %s" % (provider.provider_name, err_msg)
         self.session.open(MessageBox, msg, MessageBox.TYPE_WARNING, timeout=5)
     
     def openProviderSettings(self, provider):
@@ -4793,26 +4793,26 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
     LIST_HISTORY = 2
 
     def __init__(self, session, seeker, searchSettings, titleList=None, resetSearchParams=True, enabledList=True, windowTitle=None):
-        ratio               = 1.5 if isFullHD() else 1
-        xOffset             = 10
-        desktopSize         = getDesktopSize()
-        windowSize          = (desktopSize[0]/2, desktopSize[1]*2/5)
-        xFullSize           = (windowSize[0] - (2 * xOffset * ratio))
+        ratio = 1.5 if isFullHD() else 1
+        xOffset = 10
+        desktopSize = getDesktopSize()
+        windowSize = (desktopSize[0] / 2, desktopSize[1] * 2 / 5)
+        xFullSize = (windowSize[0] - (2 * xOffset * ratio))
         sourceTitleInfoFont = 22 * ratio
         sourceTitleInfoSize = (xFullSize, sourceTitleInfoFont + 10)
-        sourceTitleFont     = 21 * ratio
-        sourceTitleSize     = (xFullSize, sourceTitleFont * 2 + 10)
-        separatorSize       = (xFullSize, 2 * ratio)
-        configSize          = (xFullSize, windowSize[1] - (2 * 10 * ratio))
-        configFont          = 21 * ratio
-        configItemHeight    = configFont + 10
+        sourceTitleFont = 21 * ratio
+        sourceTitleSize = (xFullSize, sourceTitleFont * 2 + 10)
+        separatorSize = (xFullSize, 2 * ratio)
+        configSize = (xFullSize, windowSize[1] - (2 * 10 * ratio))
+        configFont = 21 * ratio
+        configItemHeight = configFont + 10
 
-        windowPos           = (desktopSize[0]/2 - windowSize[0]/2, desktopSize[1]/5 * 3 - windowSize[1]/2)
+        windowPos = (desktopSize[0] / 2 - windowSize[0] / 2, desktopSize[1] / 5 * 3 - windowSize[1] / 2)
 
-        sourceTitleInfoPos  = (xOffset * ratio, 10 * ratio)
-        sourceTitlePos      = (xOffset * ratio, sourceTitleInfoPos[1] + sourceTitleInfoSize[1] + 10 * ratio)
-        separatorPos        = (xOffset * ratio, sourceTitlePos[1] + sourceTitleSize[1] + 10 * ratio)
-        configPos           = (xOffset * ratio, separatorPos[1] + separatorSize[1] + 10 * ratio)
+        sourceTitleInfoPos = (xOffset * ratio, 10 * ratio)
+        sourceTitlePos = (xOffset * ratio, sourceTitleInfoPos[1] + sourceTitleInfoSize[1] + 10 * ratio)
+        separatorPos = (xOffset * ratio, sourceTitlePos[1] + sourceTitleSize[1] + 10 * ratio)
+        configPos = (xOffset * ratio, separatorPos[1] + separatorSize[1] + 10 * ratio)
 
         self.skin = """
             <screen position="%d,%d" size="%d,%d" >
@@ -4845,7 +4845,7 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
         else:
             self['sourceTitleInfo'] = StaticText("%s [%d/%d]" % (_("Source title"), 1, len(self.sourceTitleList)))
         self['sourceTitle'] = StaticText(self.sourceTitle)
-        self["suggestionActions"] = ActionMap(["OkCancelActions",  "ColorActions", "DirectionActions"],
+        self["suggestionActions"] = ActionMap(["OkCancelActions", "ColorActions", "DirectionActions"],
             {
                  "ok": self.switchToConfigList,
                  "cancel":self.cancelToConfigList,
@@ -5076,7 +5076,7 @@ class SubsSearchParamsMenu(Screen, ConfigListScreen):
 
 class SubsSearchProviderMenu(BaseMenuScreen):
     def __init__(self, session, provider):
-        title = toString(provider.provider_name) +" " + _("settings")
+        title = toString(provider.provider_name) + " " + _("settings")
         BaseMenuScreen.__init__(self, session, title)
         self.provider = provider
 

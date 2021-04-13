@@ -28,4 +28,4 @@ def _(txt):
 localeInit()
 language.addCallback(localeInit)
 
-from subtitles import SubsSupport, SubsSupportStatus,  initSubsSettings
+from subtitles import SubsSupport, SubsSupportStatus, initSubsSettings

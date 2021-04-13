@@ -202,7 +202,7 @@ class PNServer:
         return xmldoc.getElementsByTagName("subtitle")
 
     def compare_columns(self, b, a):
-        return cmp(b["language_name"], a["language_name"])  or cmp(a["sync"], b["sync"])
+        return cmp(b["language_name"], a["language_name"]) or cmp(a["sync"], b["sync"])
 
     def mergesubtitles(self):
         if(len(self.subtitles_list) > 0):

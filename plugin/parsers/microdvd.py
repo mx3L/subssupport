@@ -19,7 +19,7 @@ class MicroDVDParser(BaseParser):
                 colorbgrMatch = re.search("\$([0-9,a-f,A-F]{6})", colortext)
                 if colorbgrMatch:
                     colorbgr = colorbgrMatch.group(1)
-                    color = newColor =  colorbgr[4:6] + colorbgr[2:4] + colorbgr[:2]
+                    color = newColor = colorbgr[4:6] + colorbgr[2:4] + colorbgr[:2]
                 else:
                     try:
                         color = newColor = HEX_COLORS[colortext.lower()][1:]
@@ -31,7 +31,7 @@ class MicroDVDParser(BaseParser):
                 colorbgrMatch = re.search("\$([0-9,a-f,A-F]{6})", colortext)
                 if colorbgrMatch:
                     colorbgr = colorbgrMatch.group(1)
-                    color =  colorbgr[4:6] + colorbgr[2:4] + colorbgr[:2]
+                    color = colorbgr[4:6] + colorbgr[2:4] + colorbgr[:2]
                 else:
                     try:
                         color = HEX_COLORS[colortext.lower()][1:]
@@ -69,14 +69,14 @@ class MicroDVDParser(BaseParser):
      
     def _parse(self, text, fps):
         subs = []
-        idx= 0
+        idx = 0
         if fps is None:
             raise ParseError("cannot parse, FPS not provided")
 
         for m in re.finditer("\{(\d+)\}\{(\d+)\}(.*)", text):
             try:
-                startTime = float(long(m.group(1))/float(fps))*1000
-                endTime = float(long(m.group(2))/float(fps))*1000
+                startTime = float(long(m.group(1)) / float(fps)) * 1000
+                endTime = float(long(m.group(2)) / float(fps)) * 1000
                 text = '\n'.join(m.group(3).split('|'))
                 subs.append(self.createSub(text, startTime, endTime))
             except Exception as e:

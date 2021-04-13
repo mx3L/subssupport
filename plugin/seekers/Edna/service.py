@@ -4,7 +4,7 @@ import os
 
 import urllib
 import re
-from ..utilities import log,  languageTranslate
+from ..utilities import log, languageTranslate
 
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack): #standard input
@@ -83,7 +83,7 @@ def download_subtitles(subtitles_list, pos, extract_subs, tmp_sub_dir, sub_folde
 		subtitles_file = store_path
 	else:
 		compressed = True
-		store_path  = extract_subs
+		store_path = extract_subs
 		subtitles_file = subtitles_format
 	store_path_file = open(store_path,'wb')
 	store_path_file.write(res.read())

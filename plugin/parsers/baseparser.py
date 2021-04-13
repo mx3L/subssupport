@@ -74,7 +74,7 @@ class BaseParser(object):
         text = text.strip()
         text = text.replace('\x00','')
         sublist = self._parse(text, fps)
-        if len(sublist) <=1:
+        if len(sublist) <= 1:
             raise NoSubtitlesParseError()
         return sublist
 

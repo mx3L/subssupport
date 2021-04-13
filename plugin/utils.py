@@ -123,7 +123,7 @@ class SimpleLogger(object):
     def _eval_message(self, text, *args):
         if len(args) == 1 and isinstance(args[0], tuple):
                 text = text % toString(args[0])
-        elif len(args) >=1:
+        elif len(args) >= 1:
             text = text % tuple([toString(a) for a in args])
         return text
 

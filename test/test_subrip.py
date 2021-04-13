@@ -9,7 +9,7 @@ from parsers import SubRipParser, MicroDVDParser
 
 PARSERS = [SubRipParser, MicroDVDParser]
 
-cheers_text ="""
+cheers_text = """
 2
 00:00:04,604 --> 00:00:06,205
 Quite a night,                  

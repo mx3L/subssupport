@@ -145,7 +145,7 @@ class BaseSeeker(object):
             raise err
         subtitles['id'] = self.id
         subtitles['time'] = time.time() - start_time
-        subtitles['params'] ={
+        subtitles['params'] = {
                 'title':title,
                 'filepath':filepath,
                 'langs':langs,
@@ -186,7 +186,7 @@ class BaseSeeker(object):
         except Exception:
             exc_value, exc_traceback = sys.exc_info()[1:]
             self.log.error("unknown download error occured: %s" % str(exc_value))
-            self.log.error("traceback: \n%s"% "".join(traceback.format_tb(exc_traceback)))
+            self.log.error("traceback: \n%s" % "".join(traceback.format_tb(exc_traceback)))
             err = SubtitlesDownloadError(SubtitlesErrors.UNKNOWN_ERROR, str(exc_value))
             err.provider = self.id
             err.wrapped_error = exc_value

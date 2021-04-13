@@ -27,9 +27,9 @@ class XBMCSubtitlesAdapter(BaseSeeker):
         # were provided. If provider has more than 3 supported languages this just
         # gets first three languages in supported_langs list, so most of the time its
         # best to pass languages which will be used for searching
-        if len(self.supported_langs) ==1:
+        if len(self.supported_langs) == 1:
             self.lang1 = self.lang2 = self.lang3 = languageTranslate(self.supported_langs[0],2,0)
-        elif len(self.supported_langs) ==2:
+        elif len(self.supported_langs) == 2:
             self.lang1 = languageTranslate(self.supported_langs[0],2,0)
             self.lang2 = languageTranslate(self.supported_langs[1],2,0)
             self.lang3 = self.lang1
@@ -53,7 +53,7 @@ class XBMCSubtitlesAdapter(BaseSeeker):
             lang2 = self.lang2
             lang3 = self.lang3
         elif len(langs) == 1:
-            lang1 = lang2= lang3 = languageTranslate(langs[0],2,0)
+            lang1 = lang2 = lang3 = languageTranslate(langs[0],2,0)
         elif len(langs) == 2:
             lang1 = lang3 = languageTranslate(langs[0],2,0)
             lang2 = languageTranslate(langs[1],2,0)
@@ -61,7 +61,7 @@ class XBMCSubtitlesAdapter(BaseSeeker):
             lang1 = languageTranslate(langs[0],2,0)
             lang2 = languageTranslate(langs[1],2,0)
             lang3 = languageTranslate(langs[2],2,0)
-        self.log.info('using langs %s %s %s'%(toString(lang1), toString(lang2), toString(lang3)))
+        self.log.info('using langs %s %s %s' % (toString(lang1), toString(lang2), toString(lang3)))
         self.module.settings_provider = self.settings_provider
         # Standard output -
         # subtitles list
@@ -97,7 +97,7 @@ class XBMCSubtitlesAdapter(BaseSeeker):
                 filepath = zip_subs
         else:
             filepath = os.path.join(sub_folder, filepath)
-        return  compressed, language, filepath
+        return compressed, language, filepath
 
     def close(self):
         try:
@@ -166,7 +166,7 @@ class OpenSubtitlesSeeker(XBMCSubtitlesAdapter):
         error, module = module, None
     id = 'opensubtitles'
     provider_name = 'OpenSubtitles'
-    supported_langs  = ["en",
+    supported_langs = ["en",
                                             "fr",
                                             "hu",
                                             "cs",
@@ -246,7 +246,7 @@ class PodnapisiSeeker(XBMCSubtitlesAdapter):
     if isinstance(module, Exception):
         error, module = module, None
     provider_name = 'Podnapisi'
-    supported_langs  = ["en",
+    supported_langs = ["en",
                                             "fr",
                                             "hu",
                                             "cs",
@@ -312,7 +312,7 @@ class SubsceneSeeker(XBMCSubtitlesAdapter):
     if isinstance(module, Exception):
         error, module = module, None
     provider_name = 'Subscene'
-    supported_langs  = ["en",
+    supported_langs = ["en",
                                             "fr",
                                             "hu",
                                             "cs",

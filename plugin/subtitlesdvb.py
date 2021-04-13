@@ -80,13 +80,13 @@ class SubsControllerDVB(Screen, HelpableScreen):
     fpsChoices = ["23.976", "23.980","24.000", "25.000", "29.970", "30.000"]
 
     def __init__(self, session, engine, autoSync=False, setSubtitlesFps=False, subtitlesFps=None):
-        desktopSize    = getDesktopSize()
+        desktopSize = getDesktopSize()
         windowPosition = (int(0.03 * desktopSize[0]), int(0.05 * desktopSize[1]))
-        windowSize     = (int(0.9 * desktopSize[0]), int(0.4 * desktopSize[1]))
-        fontSize       = 33 if isFullHD() else 22
-        leftWidget     = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
-        rightWidget    = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
-        xpos           = (int(0.6 * windowSize[0]), )
+        windowSize = (int(0.9 * desktopSize[0]), int(0.4 * desktopSize[1]))
+        fontSize = 33 if isFullHD() else 22
+        leftWidget = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
+        rightWidget = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
+        xpos = (int(0.6 * windowSize[0]), )
         self.skin = """
             <screen position="%d,%d" size="%d,%d" zPosition="2" backgroundColor="transparent" flags="wfNoBorder">
                 <widget name="subtitle" position="0,0" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
@@ -382,7 +382,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
     def nextManual(self):
         def nextManualCB(minutes):
             if minutes > 0:
-                self.engine.seekRelative(minutes* 60 * 1000)
+                self.engine.seekRelative(minutes * 60 * 1000)
                 self.showStatus(True)
         self.session.openWithCallback(nextManualCB, MinuteInput)
 
@@ -397,7 +397,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
     def previousManual(self):
         def previousManualCB(minutes):
             if minutes > 0:
-                self.engine.seekRelative(-minutes* 60 * 1000)
+                self.engine.seekRelative(-minutes * 60 * 1000)
                 self.showStatus(True)
         self.session.openWithCallback(previousManualCB, MinuteInput)
 
@@ -511,12 +511,12 @@ class SubsEngineDVB(object):
         self.waitTimer.stop()
         if self.position == len(self.subsList) - 1:
             self.hideSub()
-        elif self.subsList[self.position]['end']*self.fpsRatio + (200 * 90) < self.subsList[self.position + 1]['start'] * self.fpsRatio:
+        elif self.subsList[self.position]['end'] * self.fpsRatio + (200 * 90) < self.subsList[self.position + 1]['start'] * self.fpsRatio:
             self.hideSub()
 
         if self.position < len(self.subsList) - 1:
             self.position += 1
-            self.toTime = self.reftime + ((self.subsList[self.position]['start'] - self.subsList[self.refposition]['start'])/90 * self.fpsRatio)
+            self.toTime = self.reftime + ((self.subsList[self.position]['start'] - self.subsList[self.refposition]['start']) / 90 * self.fpsRatio)
             timeout = ((self.subsList[self.position]['start'] - self.subsList[self.position - 1]['end']) / 90 * self.fpsRatio) + self.delay
             self.waitTimer.start(int(timeout), True)
 

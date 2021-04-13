@@ -93,7 +93,7 @@ class SubsSupportSettings(Screen):
         self.setTitle(self.setup_title)
 
     def confirmSelection(self):
-        selection  = self["menuList"].getCurrent()[1]
+        selection = self["menuList"].getCurrent()[1]
         if selection == "general":
             self.openGeneralSettings()
         elif selection == "external":

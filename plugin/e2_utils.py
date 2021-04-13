@@ -123,43 +123,43 @@ class MyLanguageSelection(Screen):
     def updateLanguageList(self):
         languageList = language.getLanguageList()
         languageCountryList = [x[0] for x in languageList]
-        for lang in [("Arabic",      "ar", "AE"),
-                ("Български",   "bg", "BG"),
-                ("Català",      "ca", "AD"),
-                ("Česky",       "cs", "CZ"),
-                ("Dansk",       "da", "DK"),
-                ("Deutsch",     "de", "DE"),
-                ("Ελληνικά",    "el", "GR"),
-                ("English",     "en", "EN"),
-                ("Español",     "es", "ES"),
-                ("Eesti",       "et", "EE"),
-                ("Persian",     "fa", "IR"),
-                ("Suomi",       "fi", "FI"),
-                ("Français",    "fr", "FR"),
-                ("Frysk",       "fy", "NL"),
-                ("Hebrew",      "he", "IL"),
-                ("Hrvatski",    "hr", "HR"),
-                ("Magyar",      "hu", "HU"),
-                ("Íslenska",    "is", "IS"),
-                ("Italiano",    "it", "IT"),
-                ("Kurdish",    "ku", "KU"),
-                ("Lietuvių",    "lt", "LT"),
-                ("Latviešu",    "lv", "LV"),
-                ("Nederlands",  "nl", "NL"),
+        for lang in [("Arabic", "ar", "AE"),
+                ("Български", "bg", "BG"),
+                ("Català", "ca", "AD"),
+                ("Česky", "cs", "CZ"),
+                ("Dansk", "da", "DK"),
+                ("Deutsch", "de", "DE"),
+                ("Ελληνικά", "el", "GR"),
+                ("English", "en", "EN"),
+                ("Español", "es", "ES"),
+                ("Eesti", "et", "EE"),
+                ("Persian", "fa", "IR"),
+                ("Suomi", "fi", "FI"),
+                ("Français", "fr", "FR"),
+                ("Frysk", "fy", "NL"),
+                ("Hebrew", "he", "IL"),
+                ("Hrvatski", "hr", "HR"),
+                ("Magyar", "hu", "HU"),
+                ("Íslenska", "is", "IS"),
+                ("Italiano", "it", "IT"),
+                ("Kurdish", "ku", "KU"),
+                ("Lietuvių", "lt", "LT"),
+                ("Latviešu", "lv", "LV"),
+                ("Nederlands", "nl", "NL"),
                 ("Norsk Bokmål","nb", "NO"),
-                ("Norsk",       "no", "NO"),
-                ("Polski",      "pl", "PL"),
-                ("Português",   "pt", "PT"),
-                ("Português do Brasil",  "pt", "BR"),
-                ("Romanian",    "ro", "RO"),
-                ("Русский",     "ru", "RU"),
-                ("Slovensky",   "sk", "SK"),
+                ("Norsk", "no", "NO"),
+                ("Polski", "pl", "PL"),
+                ("Português", "pt", "PT"),
+                ("Português do Brasil", "pt", "BR"),
+                ("Romanian", "ro", "RO"),
+                ("Русский", "ru", "RU"),
+                ("Slovensky", "sk", "SK"),
                 ("Slovenščina", "sl", "SI"),
-                ("Srpski",      "sr", "YU"),
-                ("Svenska",     "sv", "SE"),
-                ("ภาษาไทย",     "th", "TH"),
-                ("Türkçe",      "tr", "TR"),
-                ("Ukrainian",   "uk", "UA")]:
+                ("Srpski", "sr", "YU"),
+                ("Svenska", "sv", "SE"),
+                ("ภาษาไทย", "th", "TH"),
+                ("Türkçe", "tr", "TR"),
+                ("Ukrainian", "uk", "UA")]:
             if str(lang[1] + "_" + lang[2]) not in languageCountryList:
                 print 'adding', lang
                 languageList.append((str(lang[1] + "_" + lang[2]), lang))
@@ -408,10 +408,10 @@ def unrar(rarPath, destDir, successCB, errorCB):
 
 class fps_float(float):
     def __eq__(self, other):
-        return "%.3f"%self == "%.3f"%other
+        return "%.3f" % self == "%.3f" % other
 
     def __str__(self):
-        return "%.3f"%(self)
+        return "%.3f" % (self)
 
 def getFps(session, validOnly=False):
     from enigma import iServiceInformation
@@ -421,11 +421,11 @@ def getFps(session, validOnly=False):
         return None
     fps = info.getInfo(iServiceInformation.sFrameRate)
     if fps > 0:
-        fps = fps_float("%.3f"%(fps/float(1000)))
+        fps = fps_float("%.3f" % (fps / float(1000)))
         if validOnly:
-            validFps = min([23.976, 23.98, 24.0, 25.0, 29.97, 30.0], key=lambda x:abs(x-fps))
+            validFps = min([23.976, 23.98, 24.0, 25.0, 29.97, 30.0], key=lambda x:abs(x - fps))
             if fps != validFps and abs(fps - validFps) > 0.01:
-                print "[getFps] unsupported fps: %.4f!"%(fps)
+                print "[getFps] unsupported fps: %.4f!" % (fps)
                 return None
             return fps_float(validFps)
         return fps_float(fps)
@@ -439,7 +439,7 @@ def getFonts():
         return FONTS.keys()
     allFonts = []
     fontDir = eEnv.resolve("${datadir}/fonts/")
-    print '[getFonts] fontDir: %s'% fontDir
+    print '[getFonts] fontDir: %s' % fontDir
     for font in os.listdir(fontDir):
         fontPath = os.path.join(fontDir, font)
         if os.path.isdir(fontPath):
@@ -466,7 +466,7 @@ def getFonts():
                     filename = get_attr("filename", "<NONAME>")
                     name = get_attr("name", "Regular")
                     fonts[filename] = name
-                    print '[getFonts] find font %s in %s'%(name, skinFile)
+                    print '[getFonts] find font %s in %s' % (name, skinFile)
     for fontFilepath in allFonts:
         fontFilename = os.path.basename(fontFilepath)
         if fontFilename not in fonts.keys():
