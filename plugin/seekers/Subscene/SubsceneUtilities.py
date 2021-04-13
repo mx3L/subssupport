@@ -91,7 +91,7 @@ def get_language_info(language):
 def log(module, msg):
     _log(module, msg.encode('utf-8'))
 
-def geturl(url1, headers =None, params = None): 
+def geturl(url1, headers=None, params=None): 
     try:
         res = ses.get(url1, headers=headers, verify=False, timeout=5)
         print 'res.status_code',res.status_code

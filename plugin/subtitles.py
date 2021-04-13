@@ -295,9 +295,9 @@ def initSearchSettings(configsubsection):
     configsubsection.downloadHistory = ConfigSubsection()
     configsubsection.downloadHistory.enabled = ConfigYesNo(default=True)
     configsubsection.downloadHistory.limit = ConfigInteger(default=50, limits=(2, 200))
-    configsubsection.downloadHistory.path = ConfigDirectory(default = eEnv.resolve("$localstatedir/lib/subssupport"), visible_width=30)
+    configsubsection.downloadHistory.path = ConfigDirectory(default=eEnv.resolve("$localstatedir/lib/subssupport"), visible_width=30)
     configsubsection.downloadHistory.removeAction = ConfigSelection(default='list', choices=[('list', _("List")), ('file', _("List + File"))])
-    configsubsection.downloadHistory.removeActionAsk = ConfigYesNo(default = True)
+    configsubsection.downloadHistory.removeActionAsk = ConfigYesNo(default=True)
     configsubsection.downloadPath = ConfigDirectory(default="/tmp/")
     configsubsection.tmpPath = ConfigDirectory(default="/tmp/")
     configsubsection.lang1 = ConfigFinalText(default=language.getLanguage()[:2])
@@ -496,8 +496,7 @@ class SubsSupportStatus(object):
         self.__delayStepInMs = delayStepInMs
         self.__showDelayInMs = showDelayInMs
         self.__statusScreen = statusScreen
-        self.__event_tracker = ServiceEventTracker(screen=self, eventmap=
-        {
+        self.__event_tracker = ServiceEventTracker(screen=self, eventmap={
             iPlayableService.evStart: self.__serviceChanged,
             iPlayableService.evEnd: self.__serviceChanged,
         })
@@ -545,8 +544,7 @@ class SubsSupportEmbedded(object):
         self.subtitle_window = self.session.instantiateDialog(SubsEmbeddedScreen, self.subsSettings.embedded)
         self.subtitle_window.hide()
         if isinstance(self, Screen):
-            self.__event_tracker = ServiceEventTracker(screen=self, eventmap=
-                {
+            self.__event_tracker = ServiceEventTracker(screen=self, eventmap={
                     iPlayableService.evStart: self.__serviceChanged,
                     iPlayableService.evEnd: self.__serviceChanged,
                     # iPlayableService.evUpdatedInfo: self.__updatedInfo
@@ -757,8 +755,7 @@ class SubsSupport(SubsSupportEmbedded):
             pass
 
         if self.__subclassOfScreen:
-            self.__event_tracker = ServiceEventTracker(screen=self, eventmap=
-            {
+            self.__event_tracker = ServiceEventTracker(screen=self, eventmap={
                 iPlayableService.evStart: self.__serviceStarted,
                 iPlayableService.evEnd: self.__serviceStopped,
                 iPlayableService.evSeekableStatusChanged: self.__seekableStatusChanged,
@@ -2247,7 +2244,7 @@ class SubFileList(FileList):
             self.l.setItemHeight(23)
 
 
-    def changeDir(self, directory, select = None):
+    def changeDir(self, directory, select=None):
         self.list = []
 
         # if we are just entering from the list of mount points:
@@ -2264,7 +2261,7 @@ class SubFileList(FileList):
             for p in harddiskmanager.getMountedPartitions():
                 path = os.path.join(p.mountpoint, "")
                 if path not in self.inhibitMounts and not self.inParentDirs(path, self.inhibitDirs):
-                    self.list.append(FileEntryComponent(name = p.description, absolute = path, isDir = True))
+                    self.list.append(FileEntryComponent(name=p.description, absolute=path, isDir=True))
             files = [ ]
             directories = [ ]
         elif directory is None:
@@ -2305,13 +2302,13 @@ class SubFileList(FileList):
         if self.showDirectories:
             if directory:
                 if self.showMountpoints and directory == self.current_mountpoint:
-                    self.list.append(FileEntryComponent(name = "<" +_("List of storage devices") + ">", absolute = None, isDir = True))
+                    self.list.append(FileEntryComponent(name="<" +_("List of storage devices") + ">", absolute=None, isDir=True))
                 elif (directory != self.topDirectory) and not (self.inhibitMounts and self.getMountpoint(directory) in self.inhibitMounts):
-                    self.list.append(FileEntryComponent(name = "<" +_("Parent directory") + ">", absolute = '/'.join(directory.split('/')[:-2]) + '/', isDir = True))
+                    self.list.append(FileEntryComponent(name="<" +_("Parent directory") + ">", absolute='/'.join(directory.split('/')[:-2]) + '/', isDir=True))
             for x in directories:
                 if not (self.inhibitMounts and self.getMountpoint(x) in self.inhibitMounts) and not self.inParentDirs(x, self.inhibitDirs):
                     name = x.split('/')[-2]
-                    self.list.append(FileEntryComponent(name = name, absolute = x, isDir = True))
+                    self.list.append(FileEntryComponent(name=name, absolute=x, isDir=True))
 
         if self.showFiles:
             for x in files:
@@ -2323,10 +2320,10 @@ class SubFileList(FileList):
                     name = x
 
                 if (self.matchingPattern is None) or self.matchingPattern.search(path):
-                    self.list.append(FileEntryComponent(name = name, absolute = x , isDir = False))
+                    self.list.append(FileEntryComponent(name=name, absolute=x , isDir=False))
 
         if self.showMountpoints and len(self.list) == 0:
-            self.list.append(FileEntryComponent(name = _("nothing connected"), absolute = None, isDir = False))
+            self.list.append(FileEntryComponent(name=_("nothing connected"), absolute=None, isDir=False))
 
         self.l.setList(self.list)
 
@@ -3616,7 +3613,7 @@ class SubsSearchDownloadOptions(Screen, ConfigListScreen):
                 self.buildMenu()
                 self.updateFName()
         from Screens.VirtualKeyBoard import VirtualKeyBoard
-        self.session.openWithCallback(editFnameCB, VirtualKeyBoard, _("Edit Filename"), text= toString(self["fname"].text.strip()))
+        self.session.openWithCallback(editFnameCB, VirtualKeyBoard, _("Edit Filename"), text=toString(self["fname"].text.strip()))
         
     def editDPath(self):
         def editDPathCB(callback=None):
@@ -3624,7 +3621,7 @@ class SubsSearchDownloadOptions(Screen, ConfigListScreen):
                 self["dpath"].text = callback
                 self.configSaveTo.value = "custom"
                 self["config"].invalidate(self.configSaveTo)
-        self.session.openWithCallback(editDPathCB, LocationBox, _("Edit download path"), currDir = toString(self["dpath"].text.strip()))
+        self.session.openWithCallback(editDPathCB, LocationBox, _("Edit download path"), currDir=toString(self["dpath"].text.strip()))
         
     def confirm(self):
         fname = self["fname"].text.strip()
@@ -4225,7 +4222,7 @@ class SubsSearch(Screen):
         self.updateActionMaps()
 
     def downloadSubs(self, subtitle, downloadDir=None, fName=None, saveAs=None, 
-        saveTo=None, langToFilename=None, askOverwrite=None, closeOnSuccess = None):
+        saveTo=None, langToFilename=None, askOverwrite=None, closeOnSuccess=None):
         
         if saveAs is None:
             saveAs = self.searchSettings.saveAs.value
@@ -4329,7 +4326,7 @@ class SubsSearch(Screen):
             except Exception as e:
                 print '[SubsSearch] cannot save download history:', e
                 self.session.open(MessageBox, _("Cannot save download history, for details look in log"), 
-                        MessageBox.TYPE_ERROR, timeout = 3)
+                        MessageBox.TYPE_ERROR, timeout=3)
         self.__downloadedSubtitles.append(dsubtitle)
         self.afterDownloadSuccess(dsubtitle)
         self.message.hide()
@@ -4485,7 +4482,7 @@ class SubsSearch(Screen):
             subtitles, self.searchSettings.downloadHistory, self.__downloadedSubtitles)
 
     def openSettings(self):
-        def openSettingsCB(langChanged = False):
+        def openSettingsCB(langChanged=False):
             self.seeker.tmp_path = self.searchSettings.tmpPath.value
             self.seeker.download_path = self.searchSettings.downloadPath.value
             self.searchParamsHelper.updateProviders()
@@ -4775,7 +4772,7 @@ class SubsSearchSettings(Screen, ConfigListScreen):
                 else:
                     err_msg = providerError.message
         msg = "%s: %s"%(provider.provider_name, err_msg)
-        self.session.open(MessageBox, msg, MessageBox.TYPE_WARNING, timeout = 5)
+        self.session.open(MessageBox, msg, MessageBox.TYPE_WARNING, timeout=5)
     
     def openProviderSettings(self, provider):
         self.session.openWithCallback(self.openProviderSettingsCB, SubsSearchProviderMenu, provider)

@@ -83,16 +83,16 @@ class TestXBMCSubtitleProvider(object):
             else:
                 continue
             if os.path.isfile(path):
-                result = self.provider.search(filepath = path, langs=langs)
+                result = self.provider.search(filepath=path, langs=langs)
                 self.assertTrue(len(result['list']) > 0, 'There should be at least 1 subtitle found')
 
     def test_download(self):
         for title, year  in self.download_movie_list:
-            subtitles = self.provider.search(title = title, year = year)
+            subtitles = self.provider.search(title=title, year=year)
             self.assertTrue(len(subtitles['list']) > 0, 'There should be at least 1 subtitle found')
             self._test_download(self.provider.download(subtitles, subtitles['list'][0]))
         for title, season, episode in self.download_tvshow_list:
-            subtitles = self.provider.search(tvshow= title, season = season, episode = episode)
+            subtitles = self.provider.search(tvshow=title, season=season, episode=episode)
             self.assertTrue(len(subtitles['list']) > 0, 'There should be at least 1 subtitle found')
             self._test_download(self.provider.download(subtitles, subtitles['list'][0]))
 

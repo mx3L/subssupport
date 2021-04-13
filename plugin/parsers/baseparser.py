@@ -82,7 +82,7 @@ class BaseParser(object):
         color, newColor = self._getColor(text, color)
         return color or 'default', newColor or 'default'
 
-    def getStyle(self, text, style = None):
+    def getStyle(self, text, style=None):
         style, newStyle = self._getStyle(text, style)
         return style or 'regular', newStyle or 'regular'
 

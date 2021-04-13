@@ -92,7 +92,7 @@ class SimpleLogger(object):
     LOG_FORMAT = "[{0}]{1}"
     LOG_NONE, LOG_ERROR, LOG_INFO, LOG_DEBUG = range(4)
 
-    def __init__(self, prefix_name, log_level = LOG_INFO):
+    def __init__(self, prefix_name, log_level=LOG_INFO):
         self.prefix_name = prefix_name
         self.log_level = log_level
 
