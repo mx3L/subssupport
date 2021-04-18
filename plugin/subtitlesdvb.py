@@ -28,6 +28,7 @@ config.plugins.subsSupport = ConfigSubsection()
 config.plugins.subsSupport.dvb = ConfigSubsection()
 config.plugins.subsSupport.dvb.autoSync = ConfigOnOff(default=True)
 
+
 class SubsSetupDVBPlayer(BaseMenuScreen):
     def __init__(self, session, dvbSettings):
         BaseMenuScreen.__init__(self, session, _("DVB player settings"))
@@ -35,6 +36,7 @@ class SubsSetupDVBPlayer(BaseMenuScreen):
 
     def buildMenu(self):
         self['config'].setList([getConfigListEntry(_("Auto sync to current event"), self.dvbSettings.autoSync)])
+
 
 class SubsSupportDVB(object):
     def __init__(self, session):
@@ -76,17 +78,18 @@ class SubsSupportDVB(object):
     def subsControllerCB(self):
         self.session.deleteDialog(self.subsScreen)
 
+
 class SubsControllerDVB(Screen, HelpableScreen):
-    fpsChoices = ["23.976", "23.980","24.000", "25.000", "29.970", "30.000"]
+    fpsChoices = ["23.976", "23.980", "24.000", "25.000", "29.970", "30.000"]
 
     def __init__(self, session, engine, autoSync=False, setSubtitlesFps=False, subtitlesFps=None):
-        desktopSize    = getDesktopSize()
+        desktopSize = getDesktopSize()
         windowPosition = (int(0.03 * desktopSize[0]), int(0.05 * desktopSize[1]))
-        windowSize     = (int(0.9 * desktopSize[0]), int(0.4 * desktopSize[1]))
-        fontSize       = 33 if isFullHD() else 22
-        leftWidget     = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
-        rightWidget    = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
-        xpos           = (int(0.6 * windowSize[0]), )
+        windowSize = (int(0.9 * desktopSize[0]), int(0.4 * desktopSize[1]))
+        fontSize = 33 if isFullHD() else 22
+        leftWidget = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
+        rightWidget = (int(0.4 * windowSize[0]), fontSize + 10, fontSize)
+        xpos = (int(0.6 * windowSize[0]), )
         self.skin = """
             <screen position="%d,%d" size="%d,%d" zPosition="2" backgroundColor="transparent" flags="wfNoBorder">
                 <widget name="subtitle" position="0,0" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
@@ -96,13 +99,13 @@ class SubsControllerDVB(Screen, HelpableScreen):
                 <widget name="eventName" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
                 <widget name="eventTime" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
                 <widget name="eventDuration" position="%d,%d" size="%d,%d" valign="center" halign="left" font="Regular;%d" transparent="1" foregroundColor="#ffffff" shadowColor="#40101010" shadowOffset="2,2" />
-            </screen>""" % (windowPosition + windowSize + \
-                leftWidget + \
-                (leftWidget[1] + 10,) + leftWidget + \
-                ((leftWidget[1] + 10) * 2,) + leftWidget + \
-                ((leftWidget[1] + 10) * 3,) + leftWidget + \
-                xpos + (0,) + rightWidget + \
-                xpos + ((rightWidget[1] + 10) * 1,) + rightWidget + \
+            </screen>""" % (windowPosition + windowSize +
+                leftWidget +
+                (leftWidget[1] + 10,) + leftWidget +
+                ((leftWidget[1] + 10) * 2,) + leftWidget +
+                ((leftWidget[1] + 10) * 3,) + leftWidget +
+                xpos + (0,) + rightWidget +
+                xpos + ((rightWidget[1] + 10) * 1,) + rightWidget +
                 xpos + ((rightWidget[1] + 10) * 2,) + rightWidget)
 
         Screen.__init__(self, session)
@@ -141,15 +144,15 @@ class SubsControllerDVB(Screen, HelpableScreen):
             "playPauseSub": (self.playPause, _("play/pause subtitles playback")),
             "pauseSub": (self.pause, _("pause subtitles playback")),
             "resumeSub": (self.resume, _("resumes subtitles playback")),
-            "restartSub":(self.restart, _("restarts current subtitle")),
+            "restartSub": (self.restart, _("restarts current subtitle")),
             "nextSub": (self.nextSkip, _("skip to next subtitle")),
             "nextSubMinute": (self.nextMinuteSkip, _("skip to next subtitle (minute jump)")),
-            "nextSubManual":(self.nextManual, _("skip to next subtitle by setting time in minutes")),
-            "prevSub":(self.previousSkip, _("skip to previous subtitle")),
-            "prevSubMinute":(self.previousMinuteSkip, _("skip to previous subtitle (minute jump)")),
-            "prevSubManual":(self.previousManual, _("skip previous subtitle by setting time in minutes")),
-            "eventSync":(self.eventSync, _("skip subtitle to current event position")),
-            "changeFps":(self.changeFps, _("change subtitles fps")),
+            "nextSubManual": (self.nextManual, _("skip to next subtitle by setting time in minutes")),
+            "prevSub": (self.previousSkip, _("skip to previous subtitle")),
+            "prevSubMinute": (self.previousMinuteSkip, _("skip to previous subtitle (minute jump)")),
+            "prevSubManual": (self.previousManual, _("skip previous subtitle by setting time in minutes")),
+            "eventSync": (self.eventSync, _("skip subtitle to current event position")),
+            "changeFps": (self.changeFps, _("change subtitles fps")),
         }, 0)
         try:
             from Screens.InfoBar import InfoBar
@@ -270,17 +273,17 @@ class SubsControllerDVB(Screen, HelpableScreen):
         if subsFps == videoFps:
             if self.providedSubtitlesFps is not None:
                 if self.providedSubtitlesFps == videoFps:
-                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), _("original"), _("original") ))
+                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), _("original"), _("original")))
                 else:
-                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), _("original"), str(self.providedSubtitlesFps) ))
+                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), _("original"), str(self.providedSubtitlesFps)))
             else:
                 self['subtitlesFps'].setText("%s: %s" % (_("Subtitles FPS"), _("original")))
         else:
             if self.providedSubtitlesFps is not None:
                 if self.providedSubtitlesFps == videoFps:
-                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), _("original") ))
+                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), _("original")))
                 else:
-                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), str(self.providedSubtitlesFps) ))
+                    self['subtitlesFps'].setText("%s: %s (%s)" % (_("Subtitles FPS"), str(subsFps), str(self.providedSubtitlesFps)))
             else:
                 self['subtitlesFps'].setText("%s: %s" % (_("Subtitles FPS"), str(subsFps)))
 
@@ -382,7 +385,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
     def nextManual(self):
         def nextManualCB(minutes):
             if minutes > 0:
-                self.engine.seekRelative(minutes* 60 * 1000)
+                self.engine.seekRelative(minutes * 60 * 1000)
                 self.showStatus(True)
         self.session.openWithCallback(nextManualCB, MinuteInput)
 
@@ -397,7 +400,7 @@ class SubsControllerDVB(Screen, HelpableScreen):
     def previousManual(self):
         def previousManualCB(minutes):
             if minutes > 0:
-                self.engine.seekRelative(-minutes* 60 * 1000)
+                self.engine.seekRelative(-minutes * 60 * 1000)
                 self.showStatus(True)
         self.session.openWithCallback(previousManualCB, MinuteInput)
 
@@ -511,12 +514,12 @@ class SubsEngineDVB(object):
         self.waitTimer.stop()
         if self.position == len(self.subsList) - 1:
             self.hideSub()
-        elif self.subsList[self.position]['end']*self.fpsRatio + (200 * 90) < self.subsList[self.position + 1]['start'] * self.fpsRatio:
+        elif self.subsList[self.position]['end'] * self.fpsRatio + (200 * 90) < self.subsList[self.position + 1]['start'] * self.fpsRatio:
             self.hideSub()
 
         if self.position < len(self.subsList) - 1:
             self.position += 1
-            self.toTime = self.reftime + ((self.subsList[self.position]['start'] - self.subsList[self.refposition]['start'])/90 * self.fpsRatio)
+            self.toTime = self.reftime + ((self.subsList[self.position]['start'] - self.subsList[self.refposition]['start']) / 90 * self.fpsRatio)
             timeout = ((self.subsList[self.position]['start'] - self.subsList[self.position - 1]['end']) / 90 * self.fpsRatio) + self.delay
             self.waitTimer.start(int(timeout), True)
 

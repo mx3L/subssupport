@@ -1,6 +1,7 @@
 import urllib2
 import os
 
+
 def load(subpath):
     if subpath.startswith('http'):
         req = urllib2.Request(subpath)
@@ -20,17 +21,20 @@ def load(subpath):
         except Exception:
             return ""
 
+
 def toString(text):
-    if isinstance(text,basestring):
+    if isinstance(text, basestring):
         if isinstance(text, unicode):
             return text.encode('utf-8')
     return text
 
+
 def toUnicode(text):
-    if isinstance(text,basestring):
+    if isinstance(text, basestring):
         if isinstance(text, str):
-            return text.decode('utf-8','ignore')
+            return text.decode('utf-8', 'ignore')
     return text
+
 
 def decode(text, encodings, current_encoding=None, decode_from_start=False):
     utext = None
@@ -50,7 +54,7 @@ def decode(text, encodings, current_encoding=None, decode_from_start=False):
     while current_idx != current_encoding_idx:
         enc = encodings[current_idx]
         try:
-            print '[decode] trying encoding', enc,'...'
+            print '[decode] trying encoding', enc, '...'
             utext = unicode(text, enc)
             print '[decode] decoded with', enc, 'encoding'
             used_encoding = enc
@@ -65,6 +69,7 @@ def decode(text, encodings, current_encoding=None, decode_from_start=False):
             else:
                 current_idx += 1
                 continue
+
 
 class HeadRequest(urllib2.Request):
     def get_method(self):
@@ -87,12 +92,13 @@ def which(program):
                 return exe_file
     return None
 
+
 class SimpleLogger(object):
 
     LOG_FORMAT = "[{0}]{1}"
     LOG_NONE, LOG_ERROR, LOG_INFO, LOG_DEBUG = range(4)
 
-    def __init__(self, prefix_name, log_level = LOG_INFO):
+    def __init__(self, prefix_name, log_level=LOG_INFO):
         self.prefix_name = prefix_name
         self.log_level = log_level
 
@@ -123,7 +129,7 @@ class SimpleLogger(object):
     def _eval_message(self, text, *args):
         if len(args) == 1 and isinstance(args[0], tuple):
                 text = text % toString(args[0])
-        elif len(args) >=1:
+        elif len(args) >= 1:
             text = text % tuple([toString(a) for a in args])
         return text
 

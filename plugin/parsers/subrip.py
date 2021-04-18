@@ -32,7 +32,7 @@ class SubRipParser(BaseParser):
             colorMatch = re.search('<[Ff]ont [Cc]olor=(.+?)>', text, re.DOTALL)
             colorText = colorMatch and colorMatch.group(1) or color
             colorText = colorText.replace("'", "").replace('"', '')
-            
+
         if colorText:
             hexColor = re.search("(\#[0-9,a-f,A-F]{6})", colorText)
             if hexColor:
@@ -88,14 +88,14 @@ class SubRipParser(BaseParser):
     def _srt_to_dict(self, srtText):
         subs = []
         idx = 0
-        srtText = srtText.replace('\r\n','\n').strip() + "\n\n"
-        for s in re.finditer(r'(^\d+)\s*\:\s*(\d+)\s*\:\s*(\d+)\s*\,\s*(\d+)\s*-->\s*(\d+)\s*\:\s*(\d+)\s*\:\s*(\d+)\s*\,\s*(\d+)\s*\n(.+?)(?:\n\n|\n\d+\s*\n)', srtText, re.DOTALL|re.MULTILINE):
+        srtText = srtText.replace('\r\n', '\n').strip() + "\n\n"
+        for s in re.finditer(r'(^\d+)\s*\:\s*(\d+)\s*\:\s*(\d+)\s*\,\s*(\d+)\s*-->\s*(\d+)\s*\:\s*(\d+)\s*\:\s*(\d+)\s*\,\s*(\d+)\s*\n(.+?)(?:\n\n|\n\d+\s*\n)', srtText, re.DOTALL | re.MULTILINE):
             try:
                 idx += 1
                 shour, smin, ssec, smsec = int(s.group(1)), int(s.group(2)), int(s.group(3)), int(s.group(4))
                 start_time = long((shour * 3600 + smin * 60 + ssec) * 1000 + smsec)
                 ehour, emin, esec, emsec = int(s.group(5)), int(s.group(6)), int(s.group(7)), int(s.group(8))
-                end_time = long((ehour * 3600 + emin * 60 + esec)* 1000 + emsec)
+                end_time = long((ehour * 3600 + emin * 60 + esec) * 1000 + emsec)
                 subs.append(self.createSub(s.group(9), start_time, end_time))
             except Exception as e:
                 raise ParseError(str(e) + ', subtitle_index: %d' % idx)
@@ -118,5 +118,6 @@ class SubRipParser(BaseParser):
 
     def underlineEnd(self, text):
         return text.lower().find('</u>') != -1
+
 
 parserClass = SubRipParser

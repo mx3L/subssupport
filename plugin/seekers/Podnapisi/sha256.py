@@ -2,10 +2,14 @@
 __author__ = 'Thomas Dixon'
 __license__ = 'MIT'
 
-import copy, struct, sys
+import copy
+import struct
+import sys
+
 
 def new(m=None):
     return sha256(m)
+
 
 class sha256(object):
     _k = (0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,
@@ -42,18 +46,18 @@ class sha256(object):
             self.update(m)
 
     def _rotr(self, x, y):
-        return ((x >> y) | (x << (32-y))) & 0xFFFFFFFF
+        return ((x >> y) | (x << (32 - y))) & 0xFFFFFFFF
 
     def _sha256_process(self, c):
-        w = [0]*64
+        w = [0] * 64
         w[0:15] = struct.unpack('!16L', c)
 
         for i in range(16, 64):
-            s0 = self._rotr(w[i-15], 7) ^ self._rotr(w[i-15], 18) ^ (w[i-15] >> 3)
-            s1 = self._rotr(w[i-2], 17) ^ self._rotr(w[i-2], 19) ^ (w[i-2] >> 10)
-            w[i] = (w[i-16] + s0 + w[i-7] + s1) & 0xFFFFFFFF
+            s0 = self._rotr(w[i - 15], 7) ^ self._rotr(w[i - 15], 18) ^ (w[i - 15] >> 3)
+            s1 = self._rotr(w[i - 2], 17) ^ self._rotr(w[i - 2], 19) ^ (w[i - 2] >> 10)
+            w[i] = (w[i - 16] + s0 + w[i - 7] + s1) & 0xFFFFFFFF
 
-        a,b,c,d,e,f,g,h = self._h
+        a, b, c, d, e, f, g, h = self._h
 
         for i in range(64):
             s0 = self._rotr(a, 2) ^ self._rotr(a, 13) ^ self._rotr(a, 22)
@@ -72,7 +76,7 @@ class sha256(object):
             b = a
             a = (t1 + t2) & 0xFFFFFFFF
 
-        self._h = [(x+y) & 0xFFFFFFFF for x,y in zip(self._h, [a,b,c,d,e,f,g,h])]
+        self._h = [(x + y) & 0xFFFFFFFF for x, y in zip(self._h, [a, b, c, d, e, f, g, h])]
 
     def update(self, m):
         if not m:
@@ -89,15 +93,15 @@ class sha256(object):
 
     def digest(self):
         mdi = self._counter & 0x3F
-        length = struct.pack('!Q', self._counter<<3)
+        length = struct.pack('!Q', self._counter << 3)
 
         if mdi < 56:
-            padlen = 55-mdi
+            padlen = 55 - mdi
         else:
-            padlen = 119-mdi
+            padlen = 119 - mdi
 
         r = self.copy()
-        r.update('\x80'+('\x00'*padlen)+length)
+        r.update('\x80' + ('\x00' * padlen) + length)
         return ''.join([struct.pack('!L', i) for i in r._h[:self._output_size]])
 
     def hexdigest(self):

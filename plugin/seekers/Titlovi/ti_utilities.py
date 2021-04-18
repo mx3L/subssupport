@@ -13,13 +13,13 @@ LANGUAGES = (
     # ISO 639-1 Code[3]
     # Script Setting Language[4]
     # localized name id number[5]
-    ("Bosnian"      , "10",  "bs",   "bos",   "3",    30204),
-    ("Croatian"     , "38",  "hr",   "hrv",   "7",    30208),
-    ("English"      , "2",   "en",   "eng",   "11",   30212),
-    ("Macedonian"   , "35",  "mk",   "mac",   "28",   30229),
-    ("Serbian"      , "36",  "sr",   "scc",   "36",   30237),
-    ("Slovenian"    , "1",   "sl",   "slv",   "38",   30239),
-    ("SerbianLatin" , "36",  "sr",   "scc",   "100",  30237))
+    ("Bosnian", "10", "bs", "bos", "3", 30204),
+    ("Croatian", "38", "hr", "hrv", "7", 30208),
+    ("English", "2", "en", "eng", "11", 30212),
+    ("Macedonian", "35", "mk", "mac", "28", 30229),
+    ("Serbian", "36", "sr", "scc", "36", 30237),
+    ("Slovenian", "1", "sl", "slv", "38", 30239),
+    ("SerbianLatin", "36", "sr", "scc", "100", 30237))
 
 
 def languageTranslate(lang, lang_from, lang_to):
@@ -154,7 +154,7 @@ class OSDBServer:
                         if (checkEpisode in filename) or (checkSeasonPack in filename):
                             subtitles_list.append({'filename': filename,
                                                         'link': link,
-                                                        'language_name': languageTranslate((lang_name),2,0),
+                                                        'language_name': languageTranslate((lang_name), 2, 0),
                                                         'language_id': lang_id,
                                                         'language_flag': flag_image,
                                                         'movie': movie,
@@ -167,7 +167,7 @@ class OSDBServer:
                     else:
                         subtitles_list.append({'filename': filename,
                                                         'link': link,
-                                                        'language_name': languageTranslate((lang_name),2,0),
+                                                        'language_name': languageTranslate((lang_name), 2, 0),
                                                         'language_id': lang_id,
                                                         'language_flag': flag_image,
                                                         'movie': movie,
@@ -185,11 +185,11 @@ class OSDBServer:
             return subtitles_list
 
     def get_tvshow_info(self, subtitle):
-        if(len(subtitle.getElementsByTagName('TVShow'))!=0):
+        if(len(subtitle.getElementsByTagName('TVShow')) != 0):
             season = subtitle.getElementsByTagName("season")[0] \
                 .firstChild.data
             tvinfo = 'S%.2d' % int(season)
-            if(len(subtitle.getElementsByTagName('episode'))!=0):
+            if(len(subtitle.getElementsByTagName('episode')) != 0):
                 episode = subtitle.getElementsByTagName("episode")[0] \
                     .firstChild.data
                 tvinfo = '%sE%.2d' % (tvinfo, int(episode))

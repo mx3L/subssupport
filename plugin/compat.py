@@ -18,11 +18,13 @@ from enigma import eServiceReference, eListboxPythonMultiContent, eServiceCenter
 from . import _
 
 # taken from IPTVPlayer
+
+
 class eConnectCallbackObj:
     def __init__(self, obj=None, connectHandler=None):
         self.connectHandler = connectHandler
         self.obj = obj
-    
+
     def __del__(self):
         if 'connect' not in dir(self.obj):
             if 'get' in dir(self.obj):
@@ -35,6 +37,8 @@ class eConnectCallbackObj:
         self.obj = None
 
 # taken from IPTVPlayer
+
+
 def eConnectCallback(obj, callbackFun):
     if 'connect' in dir(obj):
         return eConnectCallbackObj(obj, obj.connect(callbackFun))
@@ -47,6 +51,8 @@ def eConnectCallback(obj, callbackFun):
     return eConnectCallbackObj()
 
 # this function is not the same accross different images
+
+
 def LanguageEntryComponent(file, name, index):
     from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
     from Tools.LoadPixmap import LoadPixmap
@@ -67,6 +73,7 @@ try:
 except TypeError:
     pass
 
+
 class MessageBox(OrigMessageBox):
     def __init__(self, *args, **kwargs):
         if kwargs.get('simple') is not None and not SimpleMessageBox:
@@ -74,6 +81,8 @@ class MessageBox(OrigMessageBox):
         OrigMessageBox.__init__(self, *args, **kwargs)
 
 # FileList is sometimes changing -> subclasses stop to work
+
+
 class FileList(MenuList):
     def __init__(self, directory, showDirectories=True, showFiles=True, showMountpoints=True, matchingPattern=None, useServiceRef=False, inhibitDirs=False, inhibitMounts=False, isTop=False, enableWrapAround=False, additionalExtensions=None):
         MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
@@ -168,11 +177,11 @@ class FileList(MenuList):
                 path = os.path.join(p.mountpoint, "")
                 if path not in self.inhibitMounts and not self.inParentDirs(path, self.inhibitDirs):
                     self.list.append(FileEntryComponent(name=p.description, absolute=path, isDir=True))
-            files = [ ]
-            directories = [ ]
+            files = []
+            directories = []
         elif directory is None:
-            files = [ ]
-            directories = [ ]
+            files = []
+            directories = []
         elif self.useServiceRef:
             # we should not use the 'eServiceReference(string)' constructor, because it doesn't allow ':' in the directoryname
             root = eServiceReference(2, 0, directory)
@@ -226,7 +235,7 @@ class FileList(MenuList):
                     name = x
 
                 if (self.matchingPattern is None) or self.matchingPattern.search(path):
-                    self.list.append(FileEntryComponent(name=name, absolute=x , isDir=False))
+                    self.list.append(FileEntryComponent(name=name, absolute=x, isDir=False))
 
         if self.showMountpoints and len(self.list) == 0:
             self.list.append(FileEntryComponent(name=_("nothing connected"), absolute=None, isDir=False))

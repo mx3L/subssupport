@@ -26,14 +26,18 @@ from utils import load, decode, toString
 
 SUBTITLES_FILE_MAX_SIZE = 400 * 1024  # 400KB
 
+
 class ParserNotFoundError(Exception):
     pass
+
 
 class DecodeError(Exception):
     pass
 
+
 class LoadError(Exception):
     pass
+
 
 class SubsLoader(object):
     def __init__(self, parsers_cls, encodings=None):
@@ -43,7 +47,7 @@ class SubsLoader(object):
             self._encodings = encodings
         self._row_parsing = False
         self.log = SimpleLogger('SubsLoader',)
-        
+
     def toggle_row_parsing(self):
         if self._row_parsing:
             self.set_row_parsing(False)
@@ -91,7 +95,7 @@ class SubsLoader(object):
             self.log.info("<%s> successfully loaded", filename)
             return sublist, encoding
 
-    def _process_path(self, subfile, current_encoding=None) :
+    def _process_path(self, subfile, current_encoding=None):
         filename = os.path.basename(subfile)
         size = getFileSize(subfile)
         if size and size > SUBTITLES_FILE_MAX_SIZE:

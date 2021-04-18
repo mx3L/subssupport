@@ -46,9 +46,11 @@ def getDesktopSize():
     s = getDesktop(0).size()
     return (s.width(), s.height())
 
+
 def isFullHD():
     desktopSize = getDesktopSize()
     return desktopSize[0] == 1920
+
 
 def isHD():
     desktopSize = getDesktopSize()
@@ -123,43 +125,43 @@ class MyLanguageSelection(Screen):
     def updateLanguageList(self):
         languageList = language.getLanguageList()
         languageCountryList = [x[0] for x in languageList]
-        for lang in [("Arabic",      "ar", "AE"),
-                ("Български",   "bg", "BG"),
-                ("Català",      "ca", "AD"),
-                ("Česky",       "cs", "CZ"),
-                ("Dansk",       "da", "DK"),
-                ("Deutsch",     "de", "DE"),
-                ("Ελληνικά",    "el", "GR"),
-                ("English",     "en", "EN"),
-                ("Español",     "es", "ES"),
-                ("Eesti",       "et", "EE"),
-                ("Persian",     "fa", "IR"),
-                ("Suomi",       "fi", "FI"),
-                ("Français",    "fr", "FR"),
-                ("Frysk",       "fy", "NL"),
-                ("Hebrew",      "he", "IL"),
-                ("Hrvatski",    "hr", "HR"),
-                ("Magyar",      "hu", "HU"),
-                ("Íslenska",    "is", "IS"),
-                ("Italiano",    "it", "IT"),
-                ("Kurdish",    "ku", "KU"),
-                ("Lietuvių",    "lt", "LT"),
-                ("Latviešu",    "lv", "LV"),
-                ("Nederlands",  "nl", "NL"),
-                ("Norsk Bokmål","nb", "NO"),
-                ("Norsk",       "no", "NO"),
-                ("Polski",      "pl", "PL"),
-                ("Português",   "pt", "PT"),
-                ("Português do Brasil",  "pt", "BR"),
-                ("Romanian",    "ro", "RO"),
-                ("Русский",     "ru", "RU"),
-                ("Slovensky",   "sk", "SK"),
+        for lang in [("Arabic", "ar", "AE"),
+                ("Български", "bg", "BG"),
+                ("Català", "ca", "AD"),
+                ("Česky", "cs", "CZ"),
+                ("Dansk", "da", "DK"),
+                ("Deutsch", "de", "DE"),
+                ("Ελληνικά", "el", "GR"),
+                ("English", "en", "EN"),
+                ("Español", "es", "ES"),
+                ("Eesti", "et", "EE"),
+                ("Persian", "fa", "IR"),
+                ("Suomi", "fi", "FI"),
+                ("Français", "fr", "FR"),
+                ("Frysk", "fy", "NL"),
+                ("Hebrew", "he", "IL"),
+                ("Hrvatski", "hr", "HR"),
+                ("Magyar", "hu", "HU"),
+                ("Íslenska", "is", "IS"),
+                ("Italiano", "it", "IT"),
+                ("Kurdish", "ku", "KU"),
+                ("Lietuvių", "lt", "LT"),
+                ("Latviešu", "lv", "LV"),
+                ("Nederlands", "nl", "NL"),
+                ("Norsk Bokmål", "nb", "NO"),
+                ("Norsk", "no", "NO"),
+                ("Polski", "pl", "PL"),
+                ("Português", "pt", "PT"),
+                ("Português do Brasil", "pt", "BR"),
+                ("Romanian", "ro", "RO"),
+                ("Русский", "ru", "RU"),
+                ("Slovensky", "sk", "SK"),
                 ("Slovenščina", "sl", "SI"),
-                ("Srpski",      "sr", "YU"),
-                ("Svenska",     "sv", "SE"),
-                ("ภาษาไทย",     "th", "TH"),
-                ("Türkçe",      "tr", "TR"),
-                ("Ukrainian",   "uk", "UA")]:
+                ("Srpski", "sr", "YU"),
+                ("Svenska", "sv", "SE"),
+                ("ภาษาไทย", "th", "TH"),
+                ("Türkçe", "tr", "TR"),
+                ("Ukrainian", "uk", "UA")]:
             if str(lang[1] + "_" + lang[2]) not in languageCountryList:
                 print 'adding', lang
                 languageList.append((str(lang[1] + "_" + lang[2]), lang))
@@ -173,9 +175,9 @@ class MyLanguageSelection(Screen):
     def updateList(self):
         languageList = self.getLanguageList()
         if not languageList:  # no language available => display only english
-            list = [ LanguageEntryComponent("en", "English", "en_EN") ]
+            list = [LanguageEntryComponent("en", "English", "en_EN")]
         else:
-            list = [ LanguageEntryComponent(file=x[1][2].lower(), name=x[1][0], index=x[0]) for x in languageList]
+            list = [LanguageEntryComponent(file=x[1][2].lower(), name=x[1][0], index=x[0]) for x in languageList]
         self["languages"].list = list
 
     def save(self):
@@ -183,6 +185,7 @@ class MyLanguageSelection(Screen):
 
     def cancel(self):
         self.close()
+
 
 class ConfigFinalText(ConfigText):
     def __init__(self, default="", visible_width=60):
@@ -241,6 +244,7 @@ class CaptchaDialog(VirtualKeyBoard):
         <widget name="list" position="10,220" size="540,225" selectionDisabled="1" transparent="1" />
     </screen>
     """
+
     def __init__(self, session, captcha_file):
         VirtualKeyBoard.__init__(self, session, _('Type text of picture'))
         self["captcha"] = Pixmap()
@@ -269,13 +273,16 @@ class CaptchaDialog(VirtualKeyBoard):
         del self.picLoad_conn
         del self.picLoad
 
+
 class DelayMessageBox(MessageBox):
     def __init__(self, session, seconds, message):
         MessageBox.__init__(self, session, message, type=MessageBox.TYPE_INFO, timeout=seconds, close_on_any_key=False, enable_input=False)
         self.skinName = "MessageBox"
 
+
 def messageCB(text):
     print text.encode('utf-8')
+
 
 class E2SettingsProvider(dict):
     def __init__(self, providerName, configSubSection, defaults):
@@ -341,7 +348,7 @@ class E2SettingsProvider(dict):
     def getE2Settings(self):
         settingList = []
         sortList = self.__defaults.items()
-        sortedList = sorted(sortList, key=lambda x:x[1]['pos'])
+        sortedList = sorted(sortList, key=lambda x: x[1]['pos'])
         for name, value in sortedList:
             settingList.append(getConfigListEntry(value['label'], self.getConfigEntry(name)))
         return settingList
@@ -358,6 +365,7 @@ class E2SettingsProvider(dict):
             self.getConfigEntry(key).value = val
         except Exception as e:
             print repr(self), e, 'cannot set setting:', key, ':', val
+
 
 def unrar(rarPath, destDir, successCB, errorCB):
     def rarSubNameCB(result, retval, extra_args):
@@ -406,12 +414,14 @@ def unrar(rarPath, destDir, successCB, errorCB):
     extraArgs = (rarPath, destDir)
     Console().ePopen(toString(cmdRarSubName), rarSubNameCB, extraArgs)
 
+
 class fps_float(float):
     def __eq__(self, other):
-        return "%.3f"%self == "%.3f"%other
+        return "%.3f" % self == "%.3f" % other
 
     def __str__(self):
-        return "%.3f"%(self)
+        return "%.3f" % (self)
+
 
 def getFps(session, validOnly=False):
     from enigma import iServiceInformation
@@ -421,17 +431,19 @@ def getFps(session, validOnly=False):
         return None
     fps = info.getInfo(iServiceInformation.sFrameRate)
     if fps > 0:
-        fps = fps_float("%.3f"%(fps/float(1000)))
+        fps = fps_float("%.3f" % (fps / float(1000)))
         if validOnly:
-            validFps = min([23.976, 23.98, 24.0, 25.0, 29.97, 30.0], key=lambda x:abs(x-fps))
+            validFps = min([23.976, 23.98, 24.0, 25.0, 29.97, 30.0], key=lambda x: abs(x - fps))
             if fps != validFps and abs(fps - validFps) > 0.01:
-                print "[getFps] unsupported fps: %.4f!"%(fps)
+                print "[getFps] unsupported fps: %.4f!" % (fps)
                 return None
             return fps_float(validFps)
         return fps_float(fps)
     return None
 
+
 FONTS = {}
+
 
 def getFonts():
     global FONTS
@@ -439,7 +451,7 @@ def getFonts():
         return FONTS.keys()
     allFonts = []
     fontDir = eEnv.resolve("${datadir}/fonts/")
-    print '[getFonts] fontDir: %s'% fontDir
+    print '[getFonts] fontDir: %s' % fontDir
     for font in os.listdir(fontDir):
         fontPath = os.path.join(fontDir, font)
         if os.path.isdir(fontPath):
@@ -466,7 +478,7 @@ def getFonts():
                     filename = get_attr("filename", "<NONAME>")
                     name = get_attr("name", "Regular")
                     fonts[filename] = name
-                    print '[getFonts] find font %s in %s'%(name, skinFile)
+                    print '[getFonts] find font %s in %s' % (name, skinFile)
     for fontFilepath in allFonts:
         fontFilename = os.path.basename(fontFilepath)
         if fontFilename not in fonts.keys():
@@ -478,6 +490,7 @@ def getFonts():
     if "Regular" not in FONTS:
         FONTS["Regular"] = ""
     return FONTS.keys()
+
 
 class BaseMenuScreen(Screen, ConfigListScreen):
     if isFullHD():

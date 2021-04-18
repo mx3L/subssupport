@@ -34,7 +34,6 @@ from seekers.utilities import languageTranslate, langToCountry, \
 from utils import SimpleLogger, toString
 
 
-
 SUBTITLES_SEEKERS = []
 SUBTITLES_SEEKERS.append(TitulkyComSeeker)
 SUBTITLES_SEEKERS.append(EdnaSeeker)
@@ -58,7 +57,7 @@ class ErrorSeeker(BaseSeeker):
         self.movie_search = getattr(wseeker_cls, 'movie_search', True)
         self.default_settings = getattr(wseeker_cls, 'default_settings', dict())
         BaseSeeker.__init__(self, *args, **kwargs)
-        
+
     def close(self):
         pass
 
@@ -75,9 +74,9 @@ class SubsSeeker(object):
         for seeker in providers:
             provider_id = seeker.id
             default_settings = seeker.default_settings
-            default_settings['enabled'] = {'type':'yesno', 'default':True, 'label':'Enabled', 'pos':-1}
-            if provider_id=='opensubtitles':
-                default_settings= {'user_agent': {'default': 'subssupportuseragent', 'type': 'text', 'pos': 0, 'label': 'User_agent'}, 'enabled': {'default': True, 'type': 'yesno', 'pos': -1, 'label': 'Enabled'}}
+            default_settings['enabled'] = {'type': 'yesno', 'default': True, 'label': 'Enabled', 'pos': -1}
+            if provider_id == 'opensubtitles':
+                default_settings = {'user_agent': {'default': 'subssupportuseragent', 'type': 'text', 'pos': 0, 'label': 'User_agent'}, 'enabled': {'default': True, 'type': 'yesno', 'pos': -1, 'label': 'Enabled'}}
             if settings_provider_cls is not None:
                 settings = None
                 settings_provider = settings_provider_cls(provider_id, default_settings, settings_provider_args)
@@ -160,11 +159,11 @@ class SubsSeeker(object):
                     if 'country' not in sub:
                         sub['country'] = langToCountry(languageTranslate(sub['language_name'], 0, 2))
         if synced:
-            subtitles_list = filter(lambda x:x['sync'], subtitles_list)
+            subtitles_list = filter(lambda x: x['sync'], subtitles_list)
         elif nonsynced:
-            subtitles_list = filter(lambda x:not x['sync'], subtitles_list)
+            subtitles_list = filter(lambda x: not x['sync'], subtitles_list)
         if langs:
-            subtitles_list = filter(lambda x:x['language_name'] in [languageTranslate(lang, 0, 2) for lang in langs])
+            subtitles_list = filter(lambda x: x['language_name'] in [languageTranslate(lang, 0, 2) for lang in langs])
         return subtitles_list
 
     def sortSubtitlesList(self, subtitles_list, langs=None, sort_langs=False, sort_rank=False, sort_sync=False, sort_provider=False):
@@ -176,11 +175,11 @@ class SubsSeeker(object):
         if langs and sort_langs:
             return sorted(subtitles_list, key=sortLangs)
         if sort_provider:
-            return sorted(subtitles_list, key=lambda x:x['provider'])
+            return sorted(subtitles_list, key=lambda x: x['provider'])
         if sort_rank:
             return subtitles_list
         if sort_sync:
-            return sorted(subtitles_list, key=lambda x:x['sync'], reverse=True)
+            return sorted(subtitles_list, key=lambda x: x['sync'], reverse=True)
         return subtitles_list
 
     def downloadSubtitle(self, selected_subtitle, subtitles_dict, choosefile_cb, path=None, fname=None, overwrite_cb=None, settings=None):
@@ -231,7 +230,7 @@ class SubsSeeker(object):
                 self.log.debug('filename creating by "video" setting')
                 videopath = toString(subtitles_dict[seeker.id]['params'].get('filepath'))
                 filename = os.path.splitext(os.path.basename(videopath))[0] + ext
-    
+
             if settings.get('lang_to_filename', False):
                 lang_iso639_1_2 = toString(languageTranslate(lang, 0, 2))
                 self.log.debug('appending language "%s" to filename', lang_iso639_1_2)
@@ -261,7 +260,7 @@ class SubsSeeker(object):
                     return download_path
                 except Exception as e:
                     self.log.error('moving "%s" to "%s" - %s' % (
-                        os.path.split(subfile)[-2:], 
+                        os.path.split(subfile)[-2:],
                         os.path.split(download_path)[-2:]), str(e))
                     return subfile
         try:
@@ -307,7 +306,7 @@ class SubsSeeker(object):
         except Exception as e:
             traceback.print_exc()
             with lock:
-                subtitlesDict[seeker.id] = {'message':str(e), 'status':False, 'list':[]}
+                subtitlesDict[seeker.id] = {'message': str(e), 'status': False, 'list': []}
                 if updateCB is not None:
                     updateCB(seeker.id, False, e)
         else:
@@ -331,7 +330,7 @@ class SubsSeeker(object):
         for s in subfiles:
             if os.path.splitext(s)[1] in ('.rar', '.zip') and max_recursion > 0:
                 subfiles.extend(self._unpack_subtitles(s, dest_dir, max_recursion - 1))
-        subfiles = filter(lambda x:os.path.splitext(x)[1] in self.SUBTILES_EXTENSIONS, subfiles)
+        subfiles = filter(lambda x: os.path.splitext(x)[1] in self.SUBTILES_EXTENSIONS, subfiles)
         return subfiles
 
     def _unpack_zipsub(self, zip_path, dest_dir):
@@ -341,7 +340,7 @@ class SubsSeeker(object):
         for subsfn in namelist:
             if os.path.splitext(subsfn)[1] in self.SUBTILES_EXTENSIONS + ['.rar', '.zip']:
                 filename = os.path.basename(subsfn)
-                outfile = open(os.path.join(dest_dir, filename) , 'wb')
+                outfile = open(os.path.join(dest_dir, filename), 'wb')
                 outfile.write(zf.read(subsfn))
                 outfile.flush()
                 outfile.close()
@@ -360,11 +359,9 @@ class SubsSeeker(object):
         for subsfn in namelist:
             if os.path.splitext(subsfn)[1] in self.SUBTILES_EXTENSIONS + ['.rar', '.zip']:
                 filename = os.path.basename(subsfn)
-                outfile = open(os.path.join(dest_dir, filename) , 'wb')
+                outfile = open(os.path.join(dest_dir, filename), 'wb')
                 outfile.write(rf.read(subsfn))
                 outfile.flush()
                 outfile.close()
                 subsfiles.append(os.path.join(dest_dir, filename))
         return subsfiles
-
-

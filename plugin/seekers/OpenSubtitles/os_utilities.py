@@ -9,25 +9,26 @@ __version__ = '3.9.18'
 
 BASE_URL_XMLRPC = u"http://api.opensubtitles.org/xml-rpc"
 
+
 class OSDBServer:
 
     def __init__(self, user_agent=''):
         self.server = xmlrpclib.Server(BASE_URL_XMLRPC, verbose=0)
         #login = self.server.LogIn("", "", "en", "%s_v%s" % (__scriptname__.replace(" ", "_"), __version__))
         login = self.server.LogIn('', '', 'en', user_agent)
-        self.osdb_token = login[ "token" ]
+        self.osdb_token = login["token"]
 
     def mergesubtitles(self):
         self.subtitles_list = []
-        if(len (self.subtitles_hash_list) > 0):
+        if(len(self.subtitles_hash_list) > 0):
             for item in self.subtitles_hash_list:
                 if item["format"].find("srt") == 0 or item["format"].find("sub") == 0:
                     self.subtitles_list.append(item)
 
-        if(len (self.subtitles_list) > 0):
+        if(len(self.subtitles_list) > 0):
             self.subtitles_list.sort(key=lambda x: [not x['sync'], x['lang_index']])
 
-    def searchsubtitles(self, srch_string , lang1, lang2, lang3, hash_search, _hash="000000000", size="000000000"):
+    def searchsubtitles(self, srch_string, lang1, lang2, lang3, hash_search, _hash="000000000", size="000000000"):
         msg = ""
         lang_index = 3
         searchlist = []
@@ -38,12 +39,12 @@ class OSDBServer:
             language += "," + languageTranslate(lang2, 0, 3)
         if lang3 != lang1 and lang3 != lang2:
             language += "," + languageTranslate(lang3, 0, 3)
-        log(__name__ , "Token:[%s]" % str(self.osdb_token))
+        log(__name__, "Token:[%s]" % str(self.osdb_token))
         try:
-            if (self.osdb_token) :
+            if (self.osdb_token):
                 if hash_search:
-                    searchlist.append({'sublanguageid':language, 'moviehash':_hash, 'moviebytesize':str(size) })
-                searchlist.append({'sublanguageid':language, 'query':srch_string })
+                    searchlist.append({'sublanguageid': language, 'moviehash': _hash, 'moviebytesize': str(size)})
+                searchlist.append({'sublanguageid': language, 'query': srch_string})
                 search = self.server.SearchSubtitles(self.osdb_token, searchlist)
                 if search["data"]:
                     for item in search["data"]:
@@ -62,18 +63,18 @@ class OSDBServer:
                         else:
                             sync = False
                         self.subtitles_hash_list.append({
-                            'lang_index':lang_index,
-                            'filename':item["SubFileName"],
-                            'link':item["ZipDownloadLink"],
-                            'language_name':item["LanguageName"],
-                            'language_flag':flag_image,
-                            'language_id':item["SubLanguageID"],
-                            'ID':item["IDSubtitleFile"],
-                            'rating':str(int(item["SubRating"][0])),
-                            'format':item["SubFormat"],
-                            'sync':sync,
-                            'hearing_imp':int(item["SubHearingImpaired"]) != 0,
-                            'fps':item.get('MovieFPS')
+                            'lang_index': lang_index,
+                            'filename': item["SubFileName"],
+                            'link': item["ZipDownloadLink"],
+                            'language_name': item["LanguageName"],
+                            'language_flag': flag_image,
+                            'language_id': item["SubLanguageID"],
+                            'ID': item["IDSubtitleFile"],
+                            'rating': str(int(item["SubRating"][0])),
+                            'format': item["SubFormat"],
+                            'sync': sync,
+                            'hearing_imp': int(item["SubHearingImpaired"]) != 0,
+                            'fps': item.get('MovieFPS')
                         })
 
         except Exception as e:
@@ -84,7 +85,8 @@ class OSDBServer:
 
     def download(self, ID, dest, token):
         try:
-            import zlib, base64
+            import zlib
+            import base64
             down_id = [ID, ]
             result = self.server.DownloadSubtitles(self.osdb_token, down_id)
             if result["data"]:

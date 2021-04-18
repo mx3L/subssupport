@@ -42,8 +42,10 @@ class BaseSubtitlesError(Exception):
             return "{0} - {1}".format(self.provider, self.msg)
         return "{0}".format(self.msg)
 
+
 class SubtitlesSearchError(BaseSubtitlesError):
     """Raised when subtitles search error occurs"""
+
 
 class SubtitlesDownloadError(BaseSubtitlesError):
     """Raised when subtitles download error occurs"""
@@ -104,7 +106,6 @@ class BaseSeeker(object):
         if not hasattr(self, 'error'):
             self.error = None
 
-
     def __str__(self):
         return "[" + self.id + "]"
 
@@ -125,14 +126,14 @@ class BaseSeeker(object):
         for l in langs:
             if l not in self.supported_langs:
                 valid_langs.remove(l)
-                self.log.info('this language is not supported by this provider - "%s"!' % languageTranslate(l,2,0))
+                self.log.info('this language is not supported by this provider - "%s"!' % languageTranslate(l, 2, 0))
         try:
             subtitles = self._search(title, filepath, valid_langs, season, episode, tvshow, year)
         except socket.timeout as e:
             self.log.error("timeout error occured: %s" % (str(e)))
             e = SubtitlesSearchError(SubtitlesErrors.TIMEOUT_ERROR, "timeout!")
             e.provider = self.id
-            raise 
+            raise
         except SubtitlesSearchError as e:
             self.log.error("search error occured: %s" % str(e))
             e.provider = self.id
@@ -145,25 +146,23 @@ class BaseSeeker(object):
             raise err
         subtitles['id'] = self.id
         subtitles['time'] = time.time() - start_time
-        subtitles['params'] ={
-                'title':title,
-                'filepath':filepath,
-                'langs':langs,
-                'year':year,
-                'tvshow':tvshow,
-                'season':season,
-                'episode':episode}
+        subtitles['params'] = {
+                'title': title,
+                'filepath': filepath,
+                'langs': langs,
+                'year': year,
+                'tvshow': tvshow,
+                'season': season,
+                'episode': episode}
         subtitles.setdefault('list', [])
         self.log.info("search finished, found %d subtitles in %.2fs" % (len(subtitles['list']), subtitles['time']))
         return subtitles
-
 
     def _search(self, title, filepath, langs, season, episode, tvshow, year):
         """
         implement your search logic
         """
-        return {'list':[{'filename':'', 'language_name':'', 'size':'', 'sync':''}, ]}
-
+        return {'list': [{'filename': '', 'language_name': '', 'size': '', 'sync': ''}, ]}
 
     def download(self, subtitles, selected_subtitle, path=None):
         """
@@ -186,7 +185,7 @@ class BaseSeeker(object):
         except Exception:
             exc_value, exc_traceback = sys.exc_info()[1:]
             self.log.error("unknown download error occured: %s" % str(exc_value))
-            self.log.error("traceback: \n%s"% "".join(traceback.format_tb(exc_traceback)))
+            self.log.error("traceback: \n%s" % "".join(traceback.format_tb(exc_traceback)))
             err = SubtitlesDownloadError(SubtitlesErrors.UNKNOWN_ERROR, str(exc_value))
             err.provider = self.id
             err.wrapped_error = exc_value
@@ -195,10 +194,8 @@ class BaseSeeker(object):
         self.log.info("download finished, compressed: %s, lang: %s, filepath:%s" % (toString(compressed), toString(lang), toString(filepath)))
         return compressed, lang, filepath
 
-
     def _download(self, subtitles, selected_subtitle, path):
         """
         implement your download logic
         """
         return False, "", ""
-    

@@ -13,23 +13,25 @@ from ..utilities import log, languageTranslate, normalizeString
 def Search(item):
     pn_server = PNServer()
     pn_server.Create()
-    if item['temp'] :
+    if item['temp']:
         item['OShash'] = "000000000000"
         item['SLhash'] = "000000000000"
     else:
         item['OShash'] = OpensubtitlesHash(item)
         item['SLhash'] = calculateSublightHash(item['file_original_path'])
-        log(__scriptid__ , "xbmc module OShash: %s, SLhash:%s"%(item['OShash'], item['SLhash']))
+        log(__scriptid__, "xbmc module OShash: %s, SLhash:%s" % (item['OShash'], item['SLhash']))
 
-    log(__scriptid__ , "Search for [%s] by name" % (os.path.basename(item['file_original_path']),))
+    log(__scriptid__, "Search for [%s] by name" % (os.path.basename(item['file_original_path']),))
     subtitles_list = pn_server.SearchSubtitlesWeb(item)
     return subtitles_list
+
 
 def Download(params):
     pn_server = PNServer()
     pn_server.Create()
     url = pn_server.Download(params)
     return url
+
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack):  # standard input
     pn_utilities.settings_provider = settings_provider
@@ -46,7 +48,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 
     if not item['title']:
         log(__scriptid__, "VideoPlayer.OriginalTitle not found")
-        item['title']  = normalizeString(os.path.basename(item['file_original_path']))
+        item['title'] = normalizeString(os.path.basename(item['file_original_path']))
 
     if item['episode'].lower().find("s") > -1:  # Check if season is "Special"
         item['season'] = "0"  #
@@ -62,10 +64,11 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
     elif (item['file_original_path'].find("stack://") > -1):
         stackPath = item['file_original_path'].split(" , ")
         item['file_original_path'] = stackPath[0][8:]
-        
+
     return Search(item), "", ""
 
-def download_subtitles (subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
+
+def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
     pn_utilities.settings_provider = settings_provider
     params = subtitles_list[pos]
     # params["hash"] = params['OShash']
