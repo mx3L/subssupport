@@ -192,7 +192,7 @@ msgstr "Żadne"
 
 #: subtitles.py:1991 subtitles.py:2568
 msgid "Choose subtitles"
-msgstr "Wybież napisy"
+msgstr "Wybierz napisy"
 
 #: subtitles.py:1994
 msgid "Change encoding"
