@@ -11,16 +11,20 @@
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  
 #    GNU General Public License for more details.
 #
 #################################################################################
+from __future__ import absolute_import
 import socket
 import sys
 import time
 import traceback
 
-from utilities import langToCountry, languageTranslate, SimpleLogger, toString
+from .utilities import langToCountry, languageTranslate, SimpleLogger, toString
+
+
+import six
 
 
 class SubtitlesErrors:
@@ -76,8 +80,8 @@ class BaseSeeker(object):
 
     def __init__(self, tmp_path, download_path, settings=None, settings_provider=None, logo=None, *args, **kwargs):
         self.log = SimpleLogger(self.__class__.__name__, log_level=SimpleLogger.LOG_INFO)
-        assert hasattr(self, 'id') and isinstance(self.id, basestring), 'you have to provide class variable: "id" with provider id'
-        assert hasattr(self, 'provider_name') and isinstance(self.provider_name, basestring), 'you have to provide class variable: "provider_name" with provider name'
+        assert hasattr(self, 'id') and isinstance(self.id, six.string_types), 'you have to provide class variable: "id" with provider id'
+        assert hasattr(self, 'provider_name') and isinstance(self.provider_name, six.string_types), 'you have to provide class variable: "provider_name" with provider name'
         assert hasattr(self, 'supported_langs') and isinstance(self.supported_langs, list), 'you have to provide class variable: "supported_langs" with list of supported langs'
         if not hasattr(self, 'description'):
             self.description = ""

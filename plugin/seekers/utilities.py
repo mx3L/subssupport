@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 import re
 import struct
 import unicodedata
@@ -7,9 +8,15 @@ try:
     from hashlib import md5
 except:
     from md5 import new as md5
-
+from six.moves.urllib.request import Request
+from six.moves.urllib.request import urlopen
 import os
-import urllib2
+
+import six
+
+if six.PY3:
+    long = int
+
 
 SUPRESS_LOG = True
 
@@ -17,10 +24,10 @@ SUPRESS_LOG = True
 def log(module, msg):
     if SUPRESS_LOG:
         return
-    if isinstance(msg, unicode):
-        print module, msg.encode('utf-8')
+    if six.PY2 and isinstance(msg, six.text_type):
+        print(module, msg.encode('utf-8'))
     else:
-        print module, msg
+        print(module, msg)
 
 
 LANGUAGES = (
@@ -244,7 +251,7 @@ def hashFile(file_path, rar):
 
 def normalizeString(str):
     return unicodedata.normalize(
-           'NFKD', unicode(unicode(str, 'utf-8'))
+           'NFKD', six.text_type(six.text_type(str, 'utf-8'))
            ).encode('ascii', 'ignore')
 
 
@@ -255,7 +262,7 @@ def OpensubtitlesHashRar(firsrarfile):
     if a != 'Rar!':
         raise Exception('ERROR: This is not rar file.')
     seek = 0
-    for i in range(4):
+    for i in list(range(4)):
         f.seek(max(0, seek), 0)
         a = f.read(100)
         type, flag, size = struct.unpack('<BHH', a[2:2 + 5])
@@ -316,7 +323,7 @@ def langToCountry(lang):
     return 'UNK'
 
 
-class HeadRequest(urllib2.Request):
+class HeadRequest(Request):
     def get_method(self):
         return "HEAD"
 
@@ -329,7 +336,7 @@ def getFileSize(filepath):
         return None
     if filepath.startswith('http://'):
         try:
-            resp = urllib2.urlopen(HeadRequest(filepath))
+            resp = urlopen(HeadRequest(filepath))
             return long(resp.info().get('Content-Length'))
         except Exception:
             return None
@@ -343,11 +350,11 @@ def getFileSize(filepath):
 
 def getCompressedFileType(filepath):
     signature_dict = {
-                         "\x50\x4b\x03\x04": "zip",
-                         "\x52\x61\x72\x21\x1A": "rar"
+                         b"\x50\x4b\x03\x04": "zip",
+                         b"\x52\x61\x72\x21\x1A": "rar"
     }
     max_len = max(len(x) for x in signature_dict)
-    with open(filepath) as f:
+    with open(filepath, "rb") as f:
         file_start = f.read(max_len)
     for signature, filetype in signature_dict.items():
         if file_start.startswith(signature):
@@ -356,7 +363,7 @@ def getCompressedFileType(filepath):
 
 
 def detectSearchParams(title):
-    print '[detectSearchParams] detecting parameters for - title: %s' % title
+    print('[detectSearchParams] detecting parameters for - title: %s' % title)
     season = episode = tvshow = ""
     titlemovie, year = regex_movie(title)
     if titlemovie:
@@ -377,14 +384,14 @@ def detectSearchParams(title):
                 tvshow = ""
         else:
             year = ""
-    print '[detectSearchParams] detected -  title: %s, year: %s, tvshow: %s, season: %s, episode: %s' % (title, year, tvshow, season, episode)
+    print('[detectSearchParams] detected -  title: %s, year: %s, tvshow: %s, season: %s, episode: %s' % (title, year, tvshow, season, episode))
     return title, year, tvshow, season, episode
 
 
 class SimpleLogger(object):
 
     LOG_FORMAT = "[{0}]{1}"
-    LOG_NONE, LOG_ERROR, LOG_INFO, LOG_DEBUG = range(4)
+    LOG_NONE, LOG_ERROR, LOG_INFO, LOG_DEBUG = list(range(4))
 
     def __init__(self, prefix_name, log_level=LOG_INFO):
         self.prefix_name = prefix_name
@@ -425,11 +432,11 @@ class SimpleLogger(object):
         return self.LOG_FORMAT.format(self.prefix_name, text)
 
     def _out_fnc(self, text):
-        print text
+        print(text)
 
 
 def toString(text):
-    if isinstance(text, basestring):
-        if isinstance(text, unicode):
+    if six.PY2 and isinstance(text, six.string_types):
+        if isinstance(text, six.text_type):
             return text.encode('utf-8')
     return text
