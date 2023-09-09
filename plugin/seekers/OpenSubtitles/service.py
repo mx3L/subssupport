@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import absolute_import
 import os
 from ..utilities import log, hashFile
-from os_utilities import OSDBServer
+from .os_utilities import OSDBServer
+import six
 
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack):  # standard input
@@ -49,7 +51,7 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
 
 def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, session_id):  # standard input
     user_agent = settings_provider.getSetting("user_agent")
-    destination = os.path.join(tmp_sub_dir, "%s.srt" % subtitles_list[pos]["ID"])
+    destination = os.path.join(six.ensure_str(tmp_sub_dir), "%s.srt" % subtitles_list[pos]["ID"])
     result = OSDBServer(user_agent).download(subtitles_list[pos]["ID"], destination, session_id)
     if not result:
         import urllib
