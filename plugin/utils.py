@@ -1,12 +1,15 @@
-import urllib2
+from __future__ import print_function
 import os
+
+import six
+from six.moves import urllib
 
 
 def load(subpath):
     if subpath.startswith('http'):
-        req = urllib2.Request(subpath)
+        req = urllib.request.Request(subpath)
         try:
-            response = urllib2.urlopen(req)
+            response = urllib.request.urlopen(req)
             text = response.read()
         except Exception:
             raise
@@ -16,23 +19,23 @@ def load(subpath):
         return text
     else:
         try:
-            with open(subpath, 'r') as f:
+            with open(subpath, 'rb') as f:
                 return f.read()
         except Exception:
             return ""
 
 
 def toString(text):
-    if isinstance(text, basestring):
-        if isinstance(text, unicode):
-            return text.encode('utf-8')
+    if isinstance(text, str):
+        if isinstance(text, six.text_type):
+            return six.ensure_str(text)
     return text
 
 
 def toUnicode(text):
-    if isinstance(text, basestring):
+    if isinstance(text, str):
         if isinstance(text, str):
-            return text.decode('utf-8', 'ignore')
+            return six.ensure_text(text, errors='ignore')
     return text
 
 
@@ -54,14 +57,14 @@ def decode(text, encodings, current_encoding=None, decode_from_start=False):
     while current_idx != current_encoding_idx:
         enc = encodings[current_idx]
         try:
-            print '[decode] trying encoding', enc, '...'
-            utext = unicode(text, enc)
-            print '[decode] decoded with', enc, 'encoding'
+            print('[decode] trying encoding', enc, '...')
+            utext = text.decode(enc)
+            print('[decode] decoded with', enc, 'encoding')
             used_encoding = enc
             return utext, used_encoding
         except Exception:
             if enc == encodings[-1] and current_encoding_idx == -1:
-                print '[decode] cannot decode with provided encodings'
+                print('[decode] cannot decode with provided encodings')
                 raise Exception("decode error")
             elif enc == encodings[-1] and current_encoding_idx != -1:
                 current_idx = 0
@@ -71,7 +74,7 @@ def decode(text, encodings, current_encoding=None, decode_from_start=False):
                 continue
 
 
-class HeadRequest(urllib2.Request):
+class HeadRequest(urllib.request.Request):
     def get_method(self):
         return "HEAD"
 
@@ -96,7 +99,7 @@ def which(program):
 class SimpleLogger(object):
 
     LOG_FORMAT = "[{0}]{1}"
-    LOG_NONE, LOG_ERROR, LOG_INFO, LOG_DEBUG = range(4)
+    LOG_NONE, LOG_ERROR, LOG_INFO, LOG_DEBUG = list(range(4))
 
     def __init__(self, prefix_name, log_level=LOG_INFO):
         self.prefix_name = prefix_name
@@ -137,4 +140,4 @@ class SimpleLogger(object):
             return self.LOG_FORMAT.format(self.prefix_name, text)
 
     def _out_fnc(self, text):
-        print text
+        print(text)

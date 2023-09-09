@@ -15,19 +15,26 @@
 #    GNU General Public License for more details.
 #
 #################################################################################
+from __future__ import absolute_import
+from __future__ import print_function
 from . import _
 import os
 import shutil
 from twisted.web.client import downloadPage
 import xml.etree.cElementTree
-
+from enigma import eTimer, ePicLoad, gPixmapPtr, getPrevAsciiCode
+from Tools.Directories import fileExists, pathExists
 from Components.Label import Label
+from Components.ConfigList import ConfigList
+from Components.Sources.StaticText import StaticText
 from Components.AVSwitch import AVSwitch
 from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigList
 from Components.Console import Console
 from Components.Language import language
 from Components.Pixmap import Pixmap
+from Components.Input import Input
+from Screens.InputBox import InputBox
 from Components.Sources.List import List
 from Components.ConfigList import ConfigListScreen
 from Components.config import ConfigText, ConfigSubsection, ConfigDirectory, \
@@ -36,12 +43,17 @@ from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Tools.Directories import fileExists, SCOPE_SKIN, resolveFilename
+from Components.ActionMap import NumberActionMap, ActionMap, HelpableActionMap
+from Components.config import ConfigText, KEY_0, KEY_DELETE, KEY_BACKSPACE, config
+from enigma import getDesktop, eListboxPythonMultiContent, eListbox, eTimer, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_HALIGN_CENTER, RT_WRAP, loadPNG
 
-from compat import LanguageEntryComponent, eConnectCallback
+from .compat import LanguageEntryComponent, eConnectCallback
 from enigma import addFont, ePicLoad, eEnv, getDesktop
-from utils import toString
+from .utils import toString
 
+import six
 
+          
 def getDesktopSize():
     s = getDesktop(0).size()
     return (s.width(), s.height())
@@ -163,7 +175,7 @@ class MyLanguageSelection(Screen):
                 ("Türkçe", "tr", "TR"),
                 ("Ukrainian", "uk", "UA")]:
             if str(lang[1] + "_" + lang[2]) not in languageCountryList:
-                print 'adding', lang
+                print('adding', lang)
                 languageList.append((str(lang[1] + "_" + lang[2]), lang))
         MyLanguageSelection.LANGUAGE_LIST = languageList
 
@@ -191,7 +203,7 @@ class ConfigFinalText(ConfigText):
     def __init__(self, default="", visible_width=60):
         ConfigText.__init__(self, default, fixed_size=True, visible_width=visible_width)
 
-    def handleKey(self, key):
+    def handleKey(self, key, callback=None):
         pass
 
     def getValue(self):
@@ -211,8 +223,8 @@ class Captcha(object):
     def __init__(self, session, captchaCB, imagePath, destPath='/tmp/captcha.png'):
         self.session = session
         self.captchaCB = captchaCB
-        self.destPath = destPath.encode('utf-8')
-        imagePath = imagePath.encode('utf-8')
+        self.destPath = destPath.encode('utf-8') if six.PY2 else destPath
+        imagePath = imagePath.encode('utf-8') if six.PY2 else imagePath
 
         if os.path.isfile(imagePath):
             self.openCaptchaDialog(imagePath)
@@ -223,31 +235,41 @@ class Captcha(object):
         self.session.openWithCallback(self.captchaCB, CaptchaDialog, captchaPath)
 
     def downloadCaptchaSuccess(self, txt=""):
-        print "[Captcha] downloaded successfully:"
+        print("[Captcha] downloaded successfully:")
         self.openCaptchaDialog(self.dest)
 
     def downloadCaptchaError(self, err):
-        print "[Captcha] download error:", err
+        print("[Captcha] download error:", err)
         self.captchaCB('')
 
 
 class CaptchaDialog(VirtualKeyBoard):
     skin = """
-    <screen name="CaptchDialog" position="center,center" size="560,460" zPosition="99" title="Virtual keyboard">
+    <screen name="CaptchDialog" position="center,center" size="560,485" zPosition="99" title="Virtual keyboard">
         <ePixmap pixmap="skin_default/vkey_text.png" position="9,165" zPosition="-4" size="542,52" alphatest="on" />
         <widget source="country" render="Pixmap" position="490,0" size="60,40" alphatest="on" borderWidth="2" borderColor="yellow" >
             <convert type="ValueToPixmap">LanguageCode</convert>
         </widget>
         <widget name="header" position="10,10" size="500,20" font="Regular;20" transparent="1" noWrap="1" />
+	<widget position="10,455" size="60,35" name="Green" pixmap="skin_default/buttons/key_green.png" zPosition="3"  alphatest="blend" />
+        <eLabel text="Save" zPosition="3" position="50,450" size="120,35" font="Regular;20" transparent="1" backgroundColor="black" halign="center" valign="center" />
         <widget name="captcha" position="10, 50" size ="540,110" alphatest="blend" zPosition="-1" />
         <widget name="text" position="12,165" size="536,46" font="Regular;46" transparent="1" noWrap="1" halign="right" />
         <widget name="list" position="10,220" size="540,225" selectionDisabled="1" transparent="1" />
     </screen>
     """
 
-    def __init__(self, session, captcha_file):
+    def __init__(self, session, captcha_file, **kwargs):
         VirtualKeyBoard.__init__(self, session, _('Type text of picture'))
         self["captcha"] = Pixmap()
+        self['Password'] = Label()
+        self['Green'] = Pixmap()
+        self['key_green'] = StaticText(_('Save'))
+        self["text"] = self['text']
+        self["myActionMap"] = NumberActionMap(["WizardActions", "InputBoxActions", "ColorActions"],
+        	{           		
+                        "green": self.save
+           	}, -1)
         self.Scale = AVSwitch().getFramebufferScale()
         self.picPath = captcha_file
         self.picLoad = ePicLoad()
@@ -272,8 +294,20 @@ class CaptchaDialog(VirtualKeyBoard):
     def __onClose(self):
         del self.picLoad_conn
         del self.picLoad
-
-
+                
+    def save(self):
+        Password = self['text'].getText()
+        code = str(Password)
+        #with open(LINKFILE, "a") as f: f.write(Password)
+        Distnt = '/tmp/'
+        Path = '/tmp/code'
+        if pathExists(Distnt):
+            Password = self['text'].getText()
+            if Password != '':
+                file = open(Path, 'w')
+                file.write(Password.replace(' ', ''))
+                file.close()
+      
 class DelayMessageBox(MessageBox):
     def __init__(self, session, seconds, message):
         MessageBox.__init__(self, session, message, type=MessageBox.TYPE_INFO, timeout=seconds, close_on_any_key=False, enable_input=False)
@@ -281,7 +315,7 @@ class DelayMessageBox(MessageBox):
 
 
 def messageCB(text):
-    print text.encode('utf-8')
+    print(text.encode('utf-8') if six.PY2 else text)
 
 
 class E2SettingsProvider(dict):
@@ -294,7 +328,7 @@ class E2SettingsProvider(dict):
         self.createSettings()
 
     def __repr__(self):
-        return '[E2SettingsProvider-%s]' % self.__providerName.encode('utf-8')
+        return '[E2SettingsProvider-%s]' % self.__providerName.encode('utf-8') if six.PY2 else self.__providerName
 
     def __setitem__(self, key, value):
         self.setSetting(key, value)
@@ -322,7 +356,7 @@ class E2SettingsProvider(dict):
         return dict((key, self.getConfigEntry(key).value) for key in self.__defaults.keys())
 
     def createSettings(self):
-        for name, value in self.__defaults.iteritems():
+        for name, value in six.iteritems(self.__defaults):
             type = value['type']
             default = value['default']
             self.createConfigEntry(name, type, default)
@@ -337,7 +371,7 @@ class E2SettingsProvider(dict):
         elif type == 'password':
             setattr(self.__rootConfigListEntry, name, ConfigPassword(default=default))
         else:
-            print repr(self), 'cannot create entry of unknown type:', type
+            print(repr(self), 'cannot create entry of unknown type:', type)
 
     def getConfigEntry(self, key):
         try:
@@ -357,20 +391,20 @@ class E2SettingsProvider(dict):
         try:
             return self.getConfigEntry(key).value
         except Exception as e:
-            print repr(self), e, 'returning empty string for key:', key
+            print(repr(self), e, 'returning empty string for key:', key)
             return ""
 
     def setSetting(self, key, val):
         try:
             self.getConfigEntry(key).value = val
         except Exception as e:
-            print repr(self), e, 'cannot set setting:', key, ':', val
+            print(repr(self), e, 'cannot set setting:', key, ':', val)
 
 
 def unrar(rarPath, destDir, successCB, errorCB):
     def rarSubNameCB(result, retval, extra_args):
         if retval == 0:
-            print '[Unrar] getting rar sub name', result
+            print('[Unrar] getting rar sub name', result)
             rarSubNames = result.split('\n')
             rarPath = extra_args[0]
             destDir = extra_args[1]
@@ -378,7 +412,7 @@ def unrar(rarPath, destDir, successCB, errorCB):
                 for subName in rarSubNames:
                     os.unlink(os.path.join(destDir, subName))
             except OSError as e:
-                print e
+                print(e)
             # unrar needs rar Extension?
             if os.path.splitext(rarPath)[1] != '.rar':
                 oldRarPath = rarPath
@@ -391,19 +425,19 @@ def unrar(rarPath, destDir, successCB, errorCB):
                 os.unlink(extra_args[0])
             except OSError:
                 pass
-            print '[Unrar] problem when getting rar sub name:', result
+            print('[Unrar] problem when getting rar sub name:', result)
             errorCB(_("unpack error: cannot get subname"))
 
     def rarUnpackCB(result, retval, extra_args):
         if retval == 0:
-            print '[Unrar] successfully unpacked rar archive'
+            print('[Unrar] successfully unpacked rar archive')
             result = []
             rarSubNames = extra_args[0]
             for subName in rarSubNames:
                 result.append(os.path.join(destDir, subName))
             successCB(result)
         else:
-            print '[Unrar] problem when unpacking rar archive', result
+            print('[Unrar] problem when unpacking rar archive', result)
             try:
                 os.unlink(extra_args[0])
             except OSError:
@@ -435,7 +469,7 @@ def getFps(session, validOnly=False):
         if validOnly:
             validFps = min([23.976, 23.98, 24.0, 25.0, 29.97, 30.0], key=lambda x: abs(x - fps))
             if fps != validFps and abs(fps - validFps) > 0.01:
-                print "[getFps] unsupported fps: %.4f!" % (fps)
+                print("[getFps] unsupported fps: %.4f!" % (fps))
                 return None
             return fps_float(validFps)
         return fps_float(fps)
@@ -451,7 +485,7 @@ def getFonts():
         return FONTS.keys()
     allFonts = []
     fontDir = eEnv.resolve("${datadir}/fonts/")
-    print '[getFonts] fontDir: %s' % fontDir
+    print('[getFonts] fontDir: %s' % fontDir)
     for font in os.listdir(fontDir):
         fontPath = os.path.join(fontDir, font)
         if os.path.isdir(fontPath):
@@ -470,7 +504,7 @@ def getFonts():
             try:
                 skin = xml.etree.cElementTree.parse(skinPath).getroot()
             except Exception as e:
-                print e
+                print(e)
                 continue
             for c in skin.findall("fonts"):
                 for font in c.findall("font"):
@@ -478,7 +512,7 @@ def getFonts():
                     filename = get_attr("filename", "<NONAME>")
                     name = get_attr("name", "Regular")
                     fonts[filename] = name
-                    print '[getFonts] find font %s in %s' % (name, skinFile)
+                    print('[getFonts] find font %s in %s' % (name, skinFile))
     for fontFilepath in allFonts:
         fontFilename = os.path.basename(fontFilepath)
         if fontFilename not in fonts.keys():
