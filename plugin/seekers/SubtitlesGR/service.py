@@ -1,11 +1,60 @@
 # -*- coding: UTF-8 -*-
+from __future__ import absolute_import
+from __future__ import print_function
+
+
+import difflib
 import os
 import re
-import urllib
-import urllib2
-
+import string
+from six.moves import html_parser
+from six.moves.urllib.request import FancyURLopener
+from six.moves.urllib.parse import quote_plus, urlencode
+import urllib.request
+import urllib.parse
 from ..utilities import log
+import html
+import urllib3
+import requests, re
+import requests , json, re,random,string,time,warnings
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from six.moves import html_parser
+warnings.simplefilter('ignore',InsecureRequestWarning)
+import os, os.path
+from six.moves.urllib.request import HTTPCookieProcessor, build_opener, install_opener, Request, urlopen
+from six.moves.urllib.parse import urlencode
+from six.moves import http_cookiejar
 
+from ..utilities import languageTranslate, log, getFileSize
+from ..utilities import log
+import urllib3
+from urllib import request, parse
+from urllib.parse import urlencode
+import urllib.request
+import urllib.parse
+import six
+from six.moves import urllib
+from six.moves import xmlrpc_client
+
+import time
+import calendar
+import re
+from six.moves import html_parser
+from ..seeker import SubtitlesDownloadError, SubtitlesErrors
+
+HDR= {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; rv:109.0) Gecko/20100101 Firefox/115.0',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+      'Accept-Language': 'fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3',
+      'Content-Type': 'text/html; charset=UTF-8',
+      'Host': 'www.greeksubtitles.info',
+      'Referer': 'http://www.greeksubtitles.info',
+      'Upgrade-Insecure-Requests': '1',
+      'Connection': 'keep-alive',
+      'Accept-Encoding':'gzip, deflate'}#, deflate'}
+      
+s = requests.Session()   
+
+main_url2 = "http://gr.greek-subtitles.com"
 main_url = "http://www.subtitles.gr"
 debug_pretext = "subtitles.gr"
 
@@ -15,9 +64,9 @@ def get_url(url, referer=None):
         headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'}
     else:
         headers = {'User-agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0', 'Referer': referer}
-    req = urllib2.Request(url, None, headers)
-    response = urllib2.urlopen(req)
-    content = response.read()
+    req = urllib.request.Request(url, None, headers)
+    response = urllib.request.urlopen(req)
+    content = response.read().decode('utf-8') 
     response.close()
     content = content.replace('\n', '')
     return content
@@ -60,9 +109,8 @@ def search_subtitles(file_original_path, title, tvshow, year, season, episode, s
         searchstring = "%s S%#02dE%#02d" % (tvshow, int(season), int(episode))
     else:
         searchstring = title
-
     log(__name__, "%s Search string = %s" % (debug_pretext, searchstring))
-    get_subtitles_list(searchstring, "el", "Greek", subtitles_list)
+    get_subtitles_list(searchstring, "en", "Greek", subtitles_list)
     return subtitles_list, "", msg #standard output
 
 
@@ -70,58 +118,90 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
     language = subtitles_list[pos]["language_name"]
     id = subtitles_list[pos]["id"]
     id = re.compile('(.+?.+?)/').findall(id)[-1]
-    id = 'http://www.findsubtitles.eu/getp.php?id=%s' % (id)
-
-    try:
-        log(__name__, "%s Getting url: %s" % (debug_pretext, id))
-        response = urllib.urlopen(id)
-        content = response.read()
-        type = content[:4]
-    except:
-        log(__name__, "%s Failed to parse url:%s" % (debug_pretext, id))
-        return True, language, "" #standard output
-
-    if type == 'Rar!':
-        local_tmp_file = os.path.join(tmp_sub_dir, "subtitlesgr.rar")
-    elif type == 'PK':
-        local_tmp_file = os.path.join(tmp_sub_dir, "subtitlesgr.zip")
-    else:
-        log(__name__, "%s Failed to get correct content type" % (debug_pretext))
-        return True, language, "" #standard output
-
-    log(__name__, "%s Saving subtitles to '%s'" % (debug_pretext, local_tmp_file))
-    local_file_handle = open(local_tmp_file, "wb")
-    local_file_handle.write(content)
-    local_file_handle.close()
-    return True, language, local_tmp_file
+    downloadlink = 'http://www.greeksubtitles.info/getp.php?id=%s' % (id)
+    #id = 'http://www.findsubtitles.eu/getp.php?id=%s' % (id)
+    print(downloadlink)   
+    if downloadlink:
+        log(__name__ , "%s Downloadlink: %s " % (debug_pretext, downloadlink))
+        viewstate = 0
+        previouspage = 0
+        subtitleid = 0
+        typeid = "zip"
+        filmid = 0
+        #postparams = { '__EVENTTARGET': 's$lc$bcr$downloadLink', '__EVENTARGUMENT': '' , '__VIEWSTATE': viewstate, '__PREVIOUSPAGE': previouspage, 'subtitleId': subtitleid, 'typeId': typeid, 'filmId': filmid}
+        postparams = urllib3.request.urlencode({ '__EVENTTARGET': 's$lc$bcr$downloadLink', '__EVENTARGUMENT': '' , '__VIEWSTATE': viewstate, '__PREVIOUSPAGE': previouspage, 'subtitleId': subtitleid, 'typeId': typeid, 'filmId': filmid})
+        #class MyOpener(urllib.FancyURLopener):
+            #version = 'User-Agent=Mozilla/5.0 (Windows NT 6.1; rv:109.0) Gecko/20100101 Firefox/115.0'
+        #my_urlopener = MyOpener()
+        #my_urlopener.addheader('Referer', url)
+        log(__name__ , "%s Fetching subtitles using url with referer header '%s' and post parameters '%s'" % (debug_pretext, downloadlink, postparams))
+        #response = my_urlopener.open(downloadlink, postparams)
+        response = s.get(downloadlink,data=postparams,headers=HDR,verify=False,allow_redirects=True) 
+        print(response.content)
+        local_tmp_file = zip_subs
+        try:
+            log(__name__ , "%s Saving subtitles to '%s'" % (debug_pretext, local_tmp_file))
+            if not os.path.exists(tmp_sub_dir):
+                os.makedirs(tmp_sub_dir)
+            local_file_handle = open(local_tmp_file, 'wb')
+            local_file_handle.write(response.content)
+            local_file_handle.close()
+            # Check archive type (rar/zip/else) through the file header (rar=Rar!, zip=PK) urllib3.request.urlencode
+            myfile = open(local_tmp_file, "rb")
+            myfile.seek(0)
+            if (myfile.read(1).decode('utf-8') == 'R'):
+                typeid = "rar"
+                packed = True
+                log(__name__ , "Discovered RAR Archive")
+            else:
+                myfile.seek(0)
+                if (myfile.read(1).decode('utf-8') == 'P'):
+                    typeid = "zip"
+                    packed = True
+                    log(__name__ , "Discovered ZIP Archive")
+                else:
+                    typeid = "srt"
+                    packed = False
+                    subs_file = local_tmp_file
+                    log(__name__ , "Discovered a non-archive file")
+            myfile.close()
+            log(__name__ , "%s Saving to %s" % (debug_pretext, local_tmp_file))
+        except:
+            log(__name__ , "%s Failed to save subtitle to %s" % (debug_pretext, local_tmp_file))
+        if packed:
+            subs_file = typeid
+        log(__name__ , "%s Subtitles saved to '%s'" % (debug_pretext, local_tmp_file))
+        return packed, language, subs_file  # standard output
 
 
 def get_subtitles_list(searchstring, languageshort, languagelong, subtitles_list):
-    url = '%s/search.php?name=%s&sort=downloads+desc' % (main_url, urllib.quote_plus(searchstring))
+    url = '%s/search.php?name=%s&sort=downloads+desc' % (main_url2, urllib.parse.quote_plus(searchstring))
     try:
         log(__name__, "%s Getting url: %s" % (debug_pretext, url))
-        content = get_url(url, referer=main_url)
+        content = get_url(url,referer=main_url2)
+        print(content)        
     except:
+        pass
         log(__name__, "%s Failed to get url:%s" % (debug_pretext, url))
         return
     try:
-        log(__name__, "%s Getting '%s' subs ..." % (debug_pretext, languageshort))
-        subtitles = re.compile('(<img src=.+?flags/el.gif.+?</tr>)').findall(content)
+        log( __name__ ,"%s Getting '%s' subs ..." % (debug_pretext, languageshort))
+        subtitles = re.compile('(<img src=.+?flags/el.gif.+?</td>)').findall(content)
     except:
-        log(__name__, "%s Failed to get subtitles" % (debug_pretext))
+        log( __name__ ,"%s Failed to get subtitles" % (debug_pretext))
         return
     for subtitle in subtitles:
         try:
-            filename = re.compile('title = "(.+?)"').findall(subtitle)[0]
+            filename = re.compile('title="(.+?)"').findall(subtitle)[0]
             filename = filename.split("subtitles for")[-1]
             filename = filename.strip()
             id = re.compile('href="(.+?)"').findall(subtitle)[0]
             try:
-                uploader = re.compile('class="link_from">(.+?)</a>').findall(subtitle)[0]
+                uploader = re.compile('class="link_from"> (.+?)</a>').findall(subtitle)[0]
                 uploader = uploader.strip()
                 if uploader == 'movieplace':
                     uploader = 'GreekSubtitles'
-                filename = '[%s] %s' % (uploader, filename)
+                filename += '[%s] %s' % (uploader, filename)
             except:
                 pass
             try:
@@ -136,8 +216,8 @@ def get_subtitles_list(searchstring, languageshort, languagelong, subtitles_list
                 rating = 0
                 pass
             if not (uploader == 'Εργαστήρι Υποτίτλων' or uploader == 'subs4series'):
-                log(__name__, "%s Subtitles found: %s (id = %s)" % (debug_pretext, filename, id))
-                subtitles_list.append({'rating': str(rating), 'no_files': 1, 'filename': filename, 'sync': False, 'id': id, 'language_flag': 'flags/' + languageshort + '.gif', 'language_name': languagelong})
+                log( __name__ ,"%s Subtitles found: %s (id = %s)" % (debug_pretext, filename, id))
+                subtitles_list.append({'rating': str(rating), 'no_files': 1, 'filename': filename, 'sync': False, 'id' : id, 'language_flag': 'flags/' + languageshort + '.gif', 'language_name': languagelong})
         except:
             pass
     return
