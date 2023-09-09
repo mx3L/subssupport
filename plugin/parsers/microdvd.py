@@ -1,6 +1,7 @@
+from __future__ import absolute_import
 import re
 import traceback
-from baseparser import BaseParser, ParseError, HEX_COLORS
+from .baseparser import BaseParser, ParseError, HEX_COLORS
 
 
 class MicroDVDParser(BaseParser):
@@ -76,8 +77,8 @@ class MicroDVDParser(BaseParser):
 
         for m in re.finditer("\{(\d+)\}\{(\d+)\}(.*)", text):
             try:
-                startTime = float(long(m.group(1)) / float(fps)) * 1000
-                endTime = float(long(m.group(2)) / float(fps)) * 1000
+                startTime = float(int(m.group(1)) / float(fps)) * 1000
+                endTime = float(int(m.group(2)) / float(fps)) * 1000
                 text = '\n'.join(m.group(3).split('|'))
                 subs.append(self.createSub(text, startTime, endTime))
             except Exception as e:
