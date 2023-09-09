@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
-
-import urllib2
+from __future__ import absolute_import
+from __future__ import print_function
 import requests
 import re
 from ..utilities import log as _log
+
+from six.moves import urllib
+import six
+
 
 ses = requests.Session()
 
@@ -85,7 +89,7 @@ def get_language_info(language):
 
     for lang in LANGUAGES:
         if lang[0] == language:
-            return {'name': lang[0], '2let': lang[2], '3let': lang[3]}
+            return {'name': lang[0], '2et': lang[2], '3et': lang[3]}
 
 
 def log(module, msg):
@@ -95,12 +99,12 @@ def log(module, msg):
 def geturl(url1, headers=None, params=None):
     try:
         res = ses.get(url1, headers=headers, verify=False, timeout=5)
-        print 'res.status_code', res.status_code
+        print('res.status_code', res.status_code)
         if res.status_code == 200:
-            return res.content
+            return six.ensure_str(res.content)
         e = res.raise_for_status()
-        print('Download error', e)
+        print(('Download error', e))
         return ''
     except requests.exceptions.RequestException as e:
-        print('Download error', str(e))
+        print(('Download error', str(e)))
         return ''
