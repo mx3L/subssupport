@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import urllib
-from ti_utilities import OSDBServer
+from __future__ import absolute_import
+from .ti_utilities import OSDBServer
 
 from ..utilities import languageTranslate, log
+
+
+from six.moves import urllib
 
 
 def search_subtitles(file_original_path, title, tvshow, year, season, episode, set_temp, rar, lang1, lang2, lang3, stack): #standard input
@@ -25,7 +28,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
 
     if url != None:
         local_file = open(zip_subs, "w" + "b")
-        f = urllib.urlopen(url)
+        f = urllib.request.urlopen(url)
         local_file.write(f.read())
         local_file.close()
 

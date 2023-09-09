@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
-
-import urllib
+from __future__ import absolute_import
 import base64
 import unicodedata
 from xml.dom import minidom
 from ..utilities import languageTranslate, log
+
+import six
+from six.moves import urllib
+
 
 LANGUAGES = (
     # Full Language name[0]
@@ -30,7 +33,7 @@ def languageTranslate(lang, lang_from, lang_to):
 
 def normalizeString(str):
     return unicodedata.normalize(
-        'NFKD', unicode(unicode(str, 'utf-8'))
+        'NFKD', six.text_type(six.text_type(str, 'utf-8'))
     ).encode('ascii', 'ignore')
 
 
@@ -200,7 +203,7 @@ class OSDBServer:
         return tvinfo
 
     def fetch(self, url):
-        socket = urllib.urlopen(url)
+        socket = urllib.request.urlopen(url)
         result = socket.read()
         socket.close()
         xmldoc = minidom.parseString(result)

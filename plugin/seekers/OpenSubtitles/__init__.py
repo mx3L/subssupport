@@ -1,2 +1,3 @@
+from __future__ import absolute_import
 # Dummy file to make this directory a package.
-import service as opensubtitles
+from . import service as opensubtitles

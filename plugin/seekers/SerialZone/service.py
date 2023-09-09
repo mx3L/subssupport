@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-
+from __future__ import absolute_import
 import urllib
 import re
 from ..utilities import log, hashFile, languageTranslate
@@ -183,6 +183,6 @@ class SerialZoneClient(object):
 					except:
 						subtitle_version['file_size'] = -1
 					subtitle['versions'].append(subtitle_version)
-			# print subtitle
+			# print(subtitle)
 			subtitles.append(subtitle)
 		return subtitles

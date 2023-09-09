@@ -3,6 +3,8 @@ Created on Aug 2, 2014
 
 @author: marko
 '''
+from __future__ import absolute_import
+from __future__ import print_function
 
 import sys
 import json
@@ -45,7 +47,7 @@ def captchaCB(image):
 
 
 def messageCB(text):
-    print 'messageCB:', text
+    print('messageCB:', text)
 
 
 def updateCB(*args):
@@ -63,7 +65,10 @@ def overwriteFileCB(*args):
 
 
 def scriptError(e):
-    from seekers.seeker import SubtitlesErrors, BaseSubtitlesError
+    try:
+        from .seekers.seeker import SubtitlesErrors, BaseSubtitlesError
+    except (ValueError, ImportError):
+        from seekers.seeker import SubtitlesErrors, BaseSubtitlesError
     if isinstance(e, BaseSubtitlesError):
         send(Messages.MESSAGE_ERROR_SCRIPT, {'error_code': e.code, 'provider': e.provider})
     else:
@@ -112,8 +117,11 @@ def main():
     sys.stdout = open('/tmp/subssupport.log', 'w')
     sys.stderr = sys.stdout
     options = recieve()
-    print 'recieved options: %r' % options
-    from seek import SubsSeeker
+    print('recieved options: %r' % options)
+    try:
+        from .seek import SubsSeeker
+    except (ValueError, ImportError):
+        from seek import SubsSeeker
     seeker = SubsSeeker(options.get('download_path', '/tmp/'),
                         options.get('tmp_path', '/tmp/'),
                         captchaCB, delayCB, messageCB,

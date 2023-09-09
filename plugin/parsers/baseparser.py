@@ -48,10 +48,10 @@ class BaseParser(object):
         @param end: end time of subtitle in ms
 
         """
-        duration = long(end - start)
+        duration = int(end - start)
         # convert to pts
-        start = long(start * 90)
-        end = long(end * 90)
+        start = int(start * 90)
+        end = int(end * 90)
         if self.rowParse:
             rows = []
             style = newStyle = 'regular'

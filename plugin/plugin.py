@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 from . import _
 from Components.ActionMap import ActionMap
 from Components.Sources.List import List
@@ -6,10 +7,10 @@ from Components.config import config
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 
-from e2_utils import isFullHD
-from subtitles import E2SubsSeeker, SubsSearch, initSubsSettings, \
+from .e2_utils import isFullHD
+from .subtitles import E2SubsSeeker, SubsSearch, initSubsSettings, \
     SubsSetupGeneral, SubsSearchSettings, SubsSetupExternal, SubsSetupEmbedded
-from subtitlesdvb import SubsSupportDVB, SubsSetupDVBPlayer
+from .subtitlesdvb import SubsSupportDVB, SubsSetupDVBPlayer
 
 
 def openSubtitlesSearch(session, **kwargs):

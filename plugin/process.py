@@ -16,13 +16,16 @@
 #
 #################################################################################
 
+from __future__ import absolute_import, division
 import os
 import traceback
-from urllib2 import URLError, HTTPError
 
-from parsers.baseparser import ParseError, NoSubtitlesParseError
-from seekers.utilities import getFileSize, SimpleLogger
-from utils import load, decode, toString
+from .parsers.baseparser import ParseError, NoSubtitlesParseError
+from .seekers.utilities import getFileSize, SimpleLogger
+from .utils import load, decode, toString
+
+from six.moves.urllib.error import URLError, HTTPError
+
 
 SUBTITLES_FILE_MAX_SIZE = 400 * 1024  # 400KB
 
@@ -75,12 +78,13 @@ class SubsLoader(object):
             traceback.print_exc()
             self.log.error("cannot decode subtitles'")
             raise DecodeError()
+
         return decoded_text, encoding
 
     def load(self, subfile, current_encoding=None, fps=None):
         filename = os.path.basename(subfile)
         self.log.info("<%s> loading ...", filename)
-        while 1:
+        while True:
             decoded_text, encoding = self._process_path(subfile, current_encoding)
             try:
                 sublist = self._parse(decoded_text, os.path.splitext(subfile)[1], fps)
@@ -99,8 +103,8 @@ class SubsLoader(object):
         filename = os.path.basename(subfile)
         size = getFileSize(subfile)
         if size and size > SUBTITLES_FILE_MAX_SIZE:
-            self.log.error("<%s> not supported subtitles size ({%d}KB > {%d}KB)!", filename, size / 1024, SUBTITLES_FILE_MAX_SIZE / 1024)
-            raise LoadError('"%s" - not supported subtitles size: "%dKB"' % (toString(os.path.basename(subfile)), size / 1024))
+            self.log.error("<%s> not supported subtitles size ({%d}KB > {%d}KB)!", filename, size // 1024, SUBTITLES_FILE_MAX_SIZE // 1024)
+            raise LoadError('"%s" - not supported subtitles size: "%dKB"' % (toString(os.path.basename(subfile)), size // 1024))
         try:
             text = load(subfile)
         except (URLError, HTTPError, IOError) as e:
