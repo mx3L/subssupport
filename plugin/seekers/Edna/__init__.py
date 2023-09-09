@@ -1,2 +1,3 @@
+from __future__ import absolute_import
 # Dummy file to make this directory a package.
-import service as edna
+from . import service as edna
