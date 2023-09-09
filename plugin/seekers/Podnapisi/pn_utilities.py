@@ -1,14 +1,22 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import absolute_import
+from __future__ import print_function
 import os
-import urllib
 import zlib
 from xml.dom import minidom
-import xmlrpclib
 
 from ..seeker import SubtitlesDownloadError, SubtitlesErrors
 from ..utilities import log, getFileSize, hashFile
-
+import subprocess
+import six
+from six.moves import urllib
+from six.moves import xmlrpc_client
+import requests , json, re,random,string,time,warnings
+from six.moves import xmlrpc_client
+LINKFILE='/tmp/link'
+LINKFILE2='/tmp/link2'
+LINKFILE0='/tmp/link0'
 
 try:
     # Python 2.6 +
@@ -17,7 +25,7 @@ try:
 except ImportError:
     # Python 2.5 and earlier
     from md5 import md5
-    from sha256 import sha256
+    from .sha256 import sha256
 
 __scriptid__ = 'podnapisi'
 __scriptname__ = 'XBMC Subtitles'
@@ -47,9 +55,9 @@ def dec2hex(n, l=0):
     return s
 
 
-def invert(basestring):
-    asal = [basestring[i:i + 2]
-            for i in range(0, len(basestring), 2)]
+def invert(_basestring):
+    asal = [_basestring[i:i + 2]
+            for i in range(0, len(_basestring), 2)]
     asal.reverse()
     return ''.join(asal)
 
@@ -106,7 +114,7 @@ class PNServer:
         self.connected = False
 
     def Login(self):
-        self.podserver = xmlrpclib.Server('http://ssp.podnapisi.net:8000')
+        self.podserver = xmlrpc_client.Server('http://ssp.podnapisi.net:8000')
         init = self.podserver.initiate(USER_AGENT)
         hash = md5()
         hash.update(settings_provider.getSetting("PNpass"))
@@ -131,7 +139,7 @@ class PNServer:
 
         if (settings_provider.getSetting("PNmatch") == 'true'):
             url = SEARCH_URL_HASH % (item['title'].replace(" ", "+"),
-                                     ','.join(item['3let_language']),
+                                     ','.join(item['3et_language']),
                                      str(item['year']),
                                      str(item['season']),
                                      str(item['episode']),
@@ -139,7 +147,7 @@ class PNServer:
                                      )
         else:
             url = SEARCH_URL % (item['title'].replace(" ", "+"),
-                                 ','.join(item['3let_language']),
+                                 ','.join(item['3et_language']),
                                  str(item['year']),
                                  str(item['season']),
                                  str(item['episode'])
@@ -179,7 +187,7 @@ class PNServer:
         return self.subtitles_list
 
     def Download(self, params):
-        print params
+        print(params)
         subtitle_ids = []
         if (settings_provider.getSetting("PNmatch") == 'true' and params["hash"] != "000000000000"):
             self.Login()
@@ -200,15 +208,17 @@ class PNServer:
             return ""
 
     def fetch(self, url):
-        socket = urllib.urlopen(url)
-        result = socket.read()
-        socket.close()
-        xmldoc = minidom.parseString(result)
-        return xmldoc.getElementsByTagName("subtitle")
+        subprocess.check_output(['wget', '-O', '/tmp/link', url])    
+        with open(LINKFILE, 'r') as f:
+            result = f.read()
+            xmldoc = minidom.parseString(result)
+            return xmldoc.getElementsByTagName("subtitle")
 
     def compare_columns(self, b, a):
         return cmp(b["language_name"], a["language_name"]) or cmp(a["sync"], b["sync"])
 
     def mergesubtitles(self):
-        if(len(self.subtitles_list) > 0):
-            self.subtitles_list = sorted(self.subtitles_list, self.compare_columns)
+        if(len(self.subtitles_list) > 0):      
+            #self.subtitles_list.sort(key=lambda x: [not x['sync'], x['lang_index']])
+            self.subtitles_list = sorted(self.subtitles_list, key=lambda x: [x['sync'], x['language_name']])
+

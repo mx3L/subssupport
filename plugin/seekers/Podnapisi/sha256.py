@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from future.utils import raise_
 __author__ = 'Thomas Dixon'
 __license__ = 'MIT'
 
@@ -41,8 +42,8 @@ class sha256(object):
         self._counter = 0
 
         if m is not None:
-            if type(m) is not str:
-                raise TypeError, '%s() argument 1 must be string, not %s' % (self.__class__.__name__, type(m).__name__)
+            if not isinstance(m, str):
+                raise_(TypeError, '%s() argument 1 must be string, not %s' % (self.__class__.__name__, type(m).__name__))
             self.update(m)
 
     def _rotr(self, x, y):
@@ -50,7 +51,7 @@ class sha256(object):
 
     def _sha256_process(self, c):
         w = [0] * 64
-        w[0:15] = struct.unpack('!16L', c)
+        w[0:15] = struct.unpack('!16', c)
 
         for i in range(16, 64):
             s0 = self._rotr(w[i - 15], 7) ^ self._rotr(w[i - 15], 18) ^ (w[i - 15] >> 3)
@@ -81,8 +82,8 @@ class sha256(object):
     def update(self, m):
         if not m:
             return
-        if type(m) is not str:
-            raise TypeError, '%s() argument 1 must be string, not %s' % (sys._getframe().f_code.co_name, type(m).__name__)
+        if not isinstance(m, str):
+            raise_(TypeError, '%s() argument 1 must be string, not %s' % (sys._getframe().f_code.co_name, type(m).__name__))
 
         self._buffer += m
         self._counter += len(m)
