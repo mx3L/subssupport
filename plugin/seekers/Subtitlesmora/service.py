@@ -117,7 +117,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
     language = subtitles_list[pos]["language_name"]
     id = subtitles_list[pos]["id"]
     #id = re.compile('(.+?.+?)/').findall(id)[-1]
-    downloadlink = 'https://archive.org/download/mora2023/%s' % (id)
+    downloadlink = 'https://archive.org/download/mora25r/%s' % (id)
     #id = 'http://www.findsubtitles.eu/getp.php?id=%s' % (id)
     print(downloadlink)   
     if downloadlink:
@@ -173,7 +173,7 @@ def download_subtitles(subtitles_list, pos, zip_subs, tmp_sub_dir, sub_folder, s
         return packed, language, subs_file  # standard output
 
 def get_subtitles_list(title, searchstring, languageshort, languagelong, subtitles_list):
-    url = '%s/download/mora2023' % (main_url) 
+    url = '%s/download/mora25r' % (main_url) 
     title = title.strip()
     #url = 'https://archive.org/download/iptvworld-1/A/'  quote_plus(title)
     d = quote_plus(title)
@@ -199,7 +199,7 @@ def get_subtitles_list(title, searchstring, languageshort, languagelong, subtitl
     for subtitle in subtitles:
         try:
             filename = re.compile('<td><a href=".+?">(.+?)</a></td>').findall(subtitle)[0]
-            filename = filename.strip().replace('.mora.25r.srt', '')
+            filename = filename.strip().replace('.srt', '')
             #print(filename) 
             id = re.compile('href="(.+?)"').findall(subtitle)[0]
             #print(id) 
