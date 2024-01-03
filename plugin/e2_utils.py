@@ -20,8 +20,9 @@ from __future__ import print_function
 from . import _
 import os
 import shutil
-from twisted.web.client import downloadPage
 import xml.etree.cElementTree
+from twisted.web import client
+
 from enigma import eTimer, ePicLoad, gPixmapPtr, getPrevAsciiCode
 from Tools.Directories import fileExists, pathExists
 from Components.Label import Label
@@ -229,13 +230,17 @@ class Captcha(object):
         if os.path.isfile(imagePath):
             self.openCaptchaDialog(imagePath)
         else:
-            downloadPage(imagePath, destPath).addCallback(self.downloadCaptchaSuccess).addErrback(self.downloadCaptchaError)
+            from twisted.internet import reactor
+            agent = client.BrowserLikeRedirectAgent(client.Agent(reactor, connectTimeout=3))
+            return agent.request(six.ensure_binary('GET'), six.ensure_binary(imagePath)).addCallback(client.readBody).addCallback(self.downloadCaptchaSuccess).addErrBack(self.downloadCaptchaError)
 
     def openCaptchaDialog(self, captchaPath):
         self.session.openWithCallback(self.captchaCB, CaptchaDialog, captchaPath)
 
-    def downloadCaptchaSuccess(self, txt=""):
+    def downloadCaptchaSuccess(self, captchData):
         print("[Captcha] downloaded successfully:")
+        with open(self.destPath, 'wb') as f:
+            f.write(captchData)
         self.openCaptchaDialog(self.dest)
 
     def downloadCaptchaError(self, err):

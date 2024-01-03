@@ -3105,10 +3105,10 @@ class SubsSearchProcess(object):
         dump = json.dumps(data)
         dump = "%07d%s" % (len(dump), dump)
         try:
-            self.appContainer.write(dump)
+            self.appContainer.write(six.ensure_str(dump))
         # DMM image
         except TypeError:
-            self.appContainer.write(dump, len(dump))
+            self.appContainer.write(six.ensure_str(dump), len(dump))
 
     def dataErrCB(self, data):
         self.log.debug("dataErrCB: '%s'", data)
@@ -3159,7 +3159,9 @@ class Suggestions(object):
 class OpenSubtitlesSuggestions(Suggestions):
     def _getSuggestions(self, queryString):
         query = "http://www.opensubtitles.org/libs/suggest.php?format=json2&SubLanguageID=null&MovieName=" + quote(queryString)
-        return client.getPage(six.ensure_binary(query), timeout=6)
+        from twisted.internet import reactor
+        agent = client.BrowserLikeRedirectAgent(client.Agent(reactor, connectTimeout=6))
+        return agent.request(six.ensure_binary('GET'), six.ensure_binary(query)).addCallback(client.readBody)
 
     def _processResult(self, data):
         return json.loads(data)['result']
@@ -3304,7 +3306,7 @@ class ConfigTextWithSuggestionsAndHistory(ConfigText):
         self.currentWindow = None
 
     def handleKey(self, key, callback=None):
-        ConfigText.handleKey(self, key, callback)
+        ConfigText.handleKey(self, key)
         if key in [KEY_DELETE, KEY_BACKSPACE, KEY_ASCII, KEY_TIMEOUT]:
             self.getSuggestions()
 
